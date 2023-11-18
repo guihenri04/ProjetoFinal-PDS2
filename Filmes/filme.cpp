@@ -1,10 +1,9 @@
 #include "filme.hpp"
 
-int Filme::unidades = 0;
-
-Filme::Filme (int id, int titulo) {
+Filme::Filme (int id, string titulo, int unidades) {
     this -> id = id;
     this -> titulo = titulo;
+    this -> unidades = unidades;
 }
 
 Filme::~Filme () {

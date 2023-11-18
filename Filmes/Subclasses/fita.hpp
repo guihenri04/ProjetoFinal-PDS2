@@ -6,10 +6,10 @@ class Fita : public Filme {
 private:
     bool rebobinada;
 public:
-    Fita(int id, int titulo, bool rebobinada);
+    Fita(int id, string titulo, int unidades, bool rebobinada);
     void rebobinar();
     void assistir();
-    float calcularValor() override;
+    int calcularValor(int dias) override;
 };
 
 #endif

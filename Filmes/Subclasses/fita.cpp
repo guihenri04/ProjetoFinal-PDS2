@@ -1,6 +1,6 @@
 #include "fita.hpp"
 
-Fita::Fita(int id, int titulo, bool rebobinada) : Filme(id, titulo) {
+Fita::Fita(int id, string titulo, int unidades, bool rebobinada) : Filme(id, titulo, unidades) {
     this -> rebobinada = rebobinada;
 }
 
@@ -12,7 +12,7 @@ void Fita::assistir() {
     this -> rebobinada = false;
 }
 
-float Fita::calcularValor() {
+int Fita::calcularValor(int dias) {
     if (this -> rebobinada) {
         return 5;
     } else {
