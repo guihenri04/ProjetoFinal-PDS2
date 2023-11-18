@@ -1,15 +1,17 @@
-#ifndef CONTROLE_HPP
-#define CONTROLE_HPP
+#ifndef LOCADORA_HPP
+#define LOCADORA_HPP
 
 #include "filme.hpp"
 #include "cliente.hpp"
 #include <vector>
 using namespace std;
 
-class Controle {
+class Locadora {
 private:
   vector<Filme> filmes;
+  vector<Cliente> clientes;
 public:
+  Locadora();
   void cadastrarFilme(Filme filme);
   void removerFilme(Filme filme);
   void listarFilmes();
