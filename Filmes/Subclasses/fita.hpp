@@ -1,12 +1,13 @@
-#include "filme.hpp"
 #ifndef FITA_HPP
 #define FITA_HPP
+
+#include "filme.hpp"
 
 class Fita : public Filme {
 private:
     bool rebobinada;
 public:
-    Fita(int id, string titulo, int unidades, bool rebobinada);
+    Fita(int id, string titulo, int unidades);
     void rebobinar();
     void assistir();
     int calcularValor(int dias) override;

@@ -1,7 +1,8 @@
 #include "fita.hpp"
 
-Fita::Fita(int id, string titulo, int unidades, bool rebobinada) : Filme(id, titulo, unidades) {
-    this -> rebobinada = rebobinada;
+Fita::Fita(int id, string titulo, int unidades) : Filme(id, titulo, unidades) {
+    this -> tipo = 'FITA';
+    this -> rebobinada = true;
 }
 
 void Fita::rebobinar() {
