@@ -20,7 +20,7 @@ public:
   void cadastrarFilme(string tipo, int quantidade, int id, const string& titulo, const string& categoria);
   void removerFilme(int codigo);
   void listarFilmes();
-  void cadastrarCliente(Cliente* cliente);
+  void cadastrarCliente(int cpf, string nome);
   void removerCliente(Cliente* cliente);
   void aluguel(Filme* filme, Cliente* cliente);
   void devolucao(Filme* filme, Cliente* cliente);

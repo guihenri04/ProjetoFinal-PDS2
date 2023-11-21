@@ -16,9 +16,11 @@ void Locadora::cadastrarFilme(string tipo, int unidades, int id, const string& t
     for (int i=0; i<filmes.size(); i++) {
         if (id == filmes[i]->id) {
             cout << "ERRO: codigo repetido\n";
+            // sair da funcao.
         }
         if (tipo == filmes[i]->tipo) {
-        cout << "ERRO: dados incorretos\n";
+            cout << "ERRO: dados incorretos\n";
+            // sair da funcao.
         }
     }
 
@@ -39,9 +41,8 @@ void Locadora::cadastrarFilme(string tipo, int unidades, int id, const string& t
     }
 }
 
-
 void Locadora::removerFilme(int codigo) {
-     auto it = std::find_if(filmes.begin(), filmes.end(),
+    auto it = std::find_if(filmes.begin(), filmes.end(),
         [codigo](Filme* filme) { return filme->id == codigo; });
 
     if (it != filmes.end()) {
@@ -59,7 +60,18 @@ void Locadora::listarFilmes() {
     }
 }
 
-void Locadora::cadastrarCliente(Cliente* cliente) {
+void Locadora::cadastrarCliente(int cpf, string nome) {
+    for (int i=0; i<clientes.size(); i++) {
+        if (cpf == clientes[i]->cpf) {
+            cout << "ERRO: CPF repetido\n";
+            // sair da funcao.
+        }
+        if (false) {
+        cout << "ERRO: dados incorretos\n";
+        // sair da funcao.
+        }
+    }
+    Cliente* cliente = new Cliente(cpf, nome);
     this -> clientes.push_back(cliente);
 }
 

@@ -9,10 +9,10 @@ using namespace std;
 
 class Cliente {
 protected:
-  int cpf;
   string nome;
   vector<Filme*> filmesAlugados;
 public:
+  int cpf;
   Cliente(int cpf, string nome);
   ~Cliente();
   void alugar (Filme* filme);
