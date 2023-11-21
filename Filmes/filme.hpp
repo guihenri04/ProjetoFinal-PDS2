@@ -16,6 +16,8 @@ public:
   ~Filme();
   virtual int calcularValor(int dias) = 0;
   void lerFilme();
+  void serAlugado();
+  void serDevolvido();
 };
 
 #endif

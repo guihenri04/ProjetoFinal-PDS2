@@ -7,3 +7,14 @@ Cliente::Cliente(int cpf, string nome) {
 
 Cliente::~Cliente() {
 };
+
+void Cliente::alugar(Filme* filme) {
+    this -> filmesAlugados.pushback(filme);
+}
+
+void Cliente::devolver(Filme* filme) {
+    auto it = find (this->filmesAlugados.begin(), this->filmesAlugados.end(), filme);
+    if (it != this->filmesAlugados.end()) {
+        this->filmesAlugados.erase(it);
+    }
+}
