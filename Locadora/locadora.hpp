@@ -22,6 +22,7 @@ public:
   void listarFilmes(char opcao);
   void cadastrarCliente(int cpf, string nome);
   void removerCliente(int cpf);
+  void listarClientes(char opcao);
   void aluguel(Filme* filme, Cliente* cliente);
   void devolucao(Filme* filme, Cliente* cliente);
 };
