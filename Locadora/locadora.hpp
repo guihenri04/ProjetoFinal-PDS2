@@ -24,7 +24,7 @@ public:
   void removerCliente(int cpf);
   void listarClientes(char opcao);
   void aluguel(int cpf, int id);
-  void devolucao(int cpf);
+  void devolucao(int cpf, int nota);
 };
 
 #endif

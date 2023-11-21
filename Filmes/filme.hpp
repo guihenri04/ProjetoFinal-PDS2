@@ -11,6 +11,9 @@ class Filme {
 protected:
   int id;
   int unidades;
+  int somaNotas;
+  int avaliacao;
+  int vezesAlugado;
   string titulo;
   string tipo;
 public:
@@ -19,7 +22,7 @@ public:
   virtual int calcularValor(int dias) = 0;
   void lerFilme();
   void serAlugado();
-  void serDevolvido();
+  void serDevolvido(int nota);
 };
 
 #endif
