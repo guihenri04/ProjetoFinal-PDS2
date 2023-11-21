@@ -3,6 +3,10 @@
 
 #include "filme.hpp"
 #include "cliente.hpp"
+#include "DVDestoque.hpp"
+#include "DVDlancamento.hpp"
+#include "DVDpromocao.hpp"
+#include "fita.hpp"
 #include <vector>
 #include <algorithm>
 using namespace std;

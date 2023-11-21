@@ -11,7 +11,7 @@ Locadora::~Locadora() {
     }
 }
 
-void Locadora::cadastrarFilme(string tipo, int quantidade, int id, const string& titulo, const string& categoria) {
+void Locadora::cadastrarFilme(string tipo, int unidades, int id, const string& titulo, const string& categoria) {
     
     for (int i=0; i<filmes.size(); i++) {
         if (id == filmes[i]->id) {
@@ -19,14 +19,24 @@ void Locadora::cadastrarFilme(string tipo, int quantidade, int id, const string&
         }
         if (tipo == filmes[i]->tipo) {
         cout << "ERRO: dados incorretos\n";
+        }
     }
 
+    Filme* novoFilme;
+    if (tipo=="FITA") {
+        novoFilme = new Fita(id, titulo, unidades);
+    } else if (categoria=="Estoque") {
+        novoFilme = new dvdEstoque(id, titulo, unidades);
+    } else if (categoria=="Lancamento") {
+        novoFilme = new dvdLancamento(id, titulo, unidades);
+    } else if (categoria=="Promocao") {
+        novoFilme = new dvdPromocao(id, titulo, unidades);
     }
-    Filme* novoFilme = new Filme(tipo, quantidade, id, titulo, categoria);
-    //precisa adicionar categorias para os DVDs
-
-    filmes.push_back(novoFilme);
-    cout << "Filme "<< novoFilme->id <<" cadastrado com sucesso";
+    
+    if (novoFilme) {
+        filmes.push_back(novoFilme);
+        cout << "Filme "<< novoFilme->id <<" cadastrado com sucesso";
+    }
 }
 
 
@@ -66,5 +76,5 @@ void Locadora::aluguel(Filme* filme, Cliente* cliente) {
 
 
 void Locadora::devolucao(Filme* filme, Cliente* cliente) {
-    
+
 }
