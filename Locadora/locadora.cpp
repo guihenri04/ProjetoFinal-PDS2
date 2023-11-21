@@ -170,13 +170,22 @@ void Locadora::devolucao(int cpf) {
         cout << "ERRO: CPF inexistente\n";
         return;
     }
-    string nome = cliente -> nome;
-    cout << "Cliente " << cpf << " " << nome << " devolveu os filmes:" << endl;
+
+    cout << "Cliente " << cpf << " " << cliente -> nome << " devolveu os filmes:" << endl;
     int total = 0;
     for (const auto& filme : cliente -> filmesAlugados) {
-        cout << filme->id << " " ;
-        cout << filme->calcularValor(1) << endl;
-        total += filme->calcularValor(1);
+        cout << filme -> id << " " ;
+        cout << filme -> calcularValor(1) << endl;
+        total += filme -> calcularValor(1);
+    }
+
+    if(cliente->pontos>10) {
+        total = 0,9 * total;
+        cliente->pontos = cliente->pontos - 10;
     }
     cout << "Total a pagar: " << total << endl;
+    for (const auto& filme : cliente -> filmesAlugados) {
+        filme -> serDevolvido();
+    }
+    cliente -> devolver();
 }

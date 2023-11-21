@@ -19,7 +19,7 @@ public:
   ~Cliente();
   void lerCliente();
   void alugar (Filme* filme);
-  void devolver (Filme* filme);
+  void devolver ();
 };
 
 #endif
