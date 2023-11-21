@@ -11,8 +11,7 @@ class Filme {
 protected:
   int id;
   int unidades;
-  int somaNotas;
-  int avaliacao;
+  float avaliacao;
   int vezesAlugado;
   string titulo;
   string tipo;
