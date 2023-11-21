@@ -48,9 +48,9 @@ void Locadora::removerFilme(int codigo) {
     if (it != filmes.end()) {
         delete *it; 
         filmes.erase(it);
-        std::cout << "Filme " << codigo << " removido com sucesso\n";
+        cout << "Filme " << codigo << " removido com sucesso\n";
     } else {
-        std::cout << "ERRO: código inexistente\n";
+        cout << "ERRO: código inexistente\n";
     }
 }
 
@@ -81,20 +81,23 @@ void Locadora::cadastrarCliente(int cpf, string nome) {
     for (int i=0; i<clientes.size(); i++) {
         if (cpf == clientes[i]->cpf) {
             cout << "ERRO: CPF repetido\n";
-            // sair da funcao.
+            return;
         }
         if (false) {
         cout << "ERRO: dados incorretos\n";
-        // sair da funcao.
+            return;
         }
     }
     Cliente* cliente = new Cliente(cpf, nome);
     this -> clientes.push_back(cliente);
 }
 
-void Locadora::removerCliente(Cliente* cliente) {
-    auto it = find (this->clientes.begin(), this->clientes.end(), cliente);
+void Locadora::removerCliente(int cpf) {
+    auto it = find_if(this->clientes.begin(), this->clientes.end(),
+                           [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
+
     if (it != this->clientes.end()) {
+        delete *it;
         this->clientes.erase(it);
     }
 }
