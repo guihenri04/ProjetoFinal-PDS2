@@ -155,6 +155,23 @@ void Locadora::aluguel(int cpf, int id) {
 }
 
 
-void Locadora::devolucao(Filme* filme, Cliente* cliente) {
-
+void Locadora::devolucao(int cpf) {
+    auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
+        [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
+    Cliente* cliente;
+    if (itCliente != this->clientes.end()) {
+        cliente = *itCliente;
+    } else {
+        cout << "ERRO: CPF inexistente\n";
+        return;
+    }
+    string nome = cliente -> nome;
+    cout << "Cliente " << cpf << " " << nome << " devolveu os filmes:" << endl;
+    int total = 0;
+    for (const auto& filme : cliente -> filmesAlugados) {
+        cout << filme->id << " " ;
+        cout << filme->calcularValor(1) << endl;
+        total += filme->calcularValor(1);
+    }
+    cout << "Total a pagar: " << total << endl;
 }
