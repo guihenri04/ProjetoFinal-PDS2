@@ -1,8 +1,6 @@
 {
     "files.associations": {
-        "new": "cpp"
-    },
-    "conventionalCommits.scopes": [
-        "locadora"
-    ]
+        "new": "cpp",
+        "iostream": "cpp"
+    }
 }

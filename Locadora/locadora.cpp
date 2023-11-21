@@ -107,6 +107,29 @@ void Locadora::removerCliente(int cpf) {
     }
 }
 
+ void Locadora::listarClientes(char opcao){
+
+     if (opcao != 'C' && opcao != 'N') {
+        cout << "ERRO: opção de ordenação inválida\n";
+        return;
+    }
+    vector<Cliente*> clientesOrdenados = clientes;
+
+    auto compara = [opcao](const Cliente* a, const Cliente* b) {
+        if (opcao == 'C') {
+            return a->cpf < b->cpf;
+        } else {
+            return a->nome < b->nome;
+        }
+    };
+
+   sort(clientesOrdenados.begin(), clientesOrdenados.end(), compara);
+
+    for (const auto& cliente : clientesOrdenados) {
+        cliente->lerCliente();
+    }
+}
+
 void Locadora::aluguel(Filme* filme, Cliente* cliente) {
     filme->serAlugado();
     cliente->alugar(filme);

@@ -8,6 +8,11 @@ Cliente::Cliente(int cpf, string nome) {
 Cliente::~Cliente() {
 };
 
+void Cliente::lerCliente(){
+    cout << this -> cpf << " ";
+    cout << this -> nome << endl;
+}
+
 void Cliente::alugar(Filme* filme) {
     this -> filmesAlugados.push_back(filme);
 }
