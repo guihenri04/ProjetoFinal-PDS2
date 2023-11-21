@@ -46,14 +46,14 @@ void Locadora::cadastrarFilme(string tipo, int unidades, int id, const string& t
     }
 }
 
-void Locadora::removerFilme(int codigo) {
+void Locadora::removerFilme(int id) {
     auto it = std::find_if(filmes.begin(), filmes.end(),
-        [codigo](Filme* filme) { return filme->id == codigo; });
+        [id](Filme* filme) { return filme->id == id; });
 
     if (it != filmes.end()) {
         delete *it; 
         filmes.erase(it);
-        cout << "Filme " << codigo << " removido com sucesso\n";
+        cout << "Filme " << id << " removido com sucesso\n";
     } else {
         cout << "ERRO: código inexistente\n";
     }
@@ -80,7 +80,6 @@ void Locadora::listarFilmes(char opcao) {
         filme->lerFilme();
     }
 }
-
 
 void Locadora::cadastrarCliente(int cpf, string nome) {
     for (int i=0; i<clientes.size(); i++) {
@@ -130,9 +129,29 @@ void Locadora::removerCliente(int cpf) {
     }
 }
 
-void Locadora::aluguel(Filme* filme, Cliente* cliente) {
-    filme->serAlugado();
+void Locadora::aluguel(int cpf, int id) {
+    auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
+        [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
+    Cliente* cliente;
+    if (itCliente != this->clientes.end()) {
+        cliente = *itCliente;
+    } else {
+        cout << "ERRO: CPF inexistente\n";
+        return;
+    }
+
+    auto itFilme = std::find_if(filmes.begin(), filmes.end(),
+        [id](Filme* filme) { return filme->id == id; });
+    Filme* filme;
+    if (itFilme != this->filmes.end()) {
+        filme = *itFilme;
+    } else {
+        cout << "ERRO: Filme " << id<< " inexistente\n";
+        return;
+    }
+
     cliente->alugar(filme);
+    filme->serAlugado();
 }
 
 

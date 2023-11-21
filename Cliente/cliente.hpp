@@ -10,10 +10,10 @@ using namespace std;
 class Cliente {
   friend class Locadora;
 protected:
-  vector<Filme*> filmesAlugados;
-public:
   string nome;
   int cpf;
+  vector<Filme*> filmesAlugados;
+public:
   Cliente(int cpf, string nome);
   ~Cliente();
   void lerCliente();
