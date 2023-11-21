@@ -4,6 +4,7 @@
 #include "filme.hpp"
 #include "cliente.hpp"
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 class Locadora {
@@ -12,8 +13,8 @@ private:
   vector<Cliente*> clientes;
 public:
   Locadora();
-  void cadastrarFilme(Filme* filme);
-  void removerFilme(Filme* filme);
+  void cadastrarFilme(string tipo, int quantidade, int id, const string& titulo, const string& categoria);
+  void removerFilme(int codigo);
   void listarFilmes();
   void cadastrarCliente(Cliente* cliente);
   void removerCliente(Cliente* cliente);
