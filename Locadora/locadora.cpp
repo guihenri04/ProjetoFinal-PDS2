@@ -1,13 +1,18 @@
 #include "locadora.hpp"
 
 Locadora::Locadora() {
-    vector<Filme> filmes;
-    vector<Cliente> clientes;
+    vector<Filme*> filmes;
+    vector<Cliente*> clientes;
+    this -> filmes = filmes;
+    this -> clientes = clientes;
 }
 
 Locadora::~Locadora() {
     for (Filme* filme : filmes) {
         delete filme;
+    }
+    for (Cliente* cliente : clientes) {
+        delete cliente;
     }
 }
 
@@ -16,11 +21,11 @@ void Locadora::cadastrarFilme(string tipo, int unidades, int id, const string& t
     for (int i=0; i<filmes.size(); i++) {
         if (id == filmes[i]->id) {
             cout << "ERRO: codigo repetido\n";
-            // sair da funcao.
+            return;
         }
         if (tipo == filmes[i]->tipo) {
             cout << "ERRO: dados incorretos\n";
-            // sair da funcao.
+            return;
         }
     }
 
@@ -37,7 +42,7 @@ void Locadora::cadastrarFilme(string tipo, int unidades, int id, const string& t
     
     if (novoFilme) {
         filmes.push_back(novoFilme);
-        cout << "Filme "<< novoFilme->id <<" cadastrado com sucesso";
+        cout << "Filme "<< novoFilme->id <<" cadastrado com sucesso\n";
     }
 }
 
@@ -48,9 +53,9 @@ void Locadora::removerFilme(int codigo) {
     if (it != filmes.end()) {
         delete *it; 
         filmes.erase(it);
-        std::cout << "Filme " << codigo << " removido com sucesso\n";
+        cout << "Filme " << codigo << " removido com sucesso\n";
     } else {
-        std::cout << "ERRO: código inexistente\n";
+        cout << "ERRO: código inexistente\n";
     }
 }
 
@@ -64,11 +69,11 @@ void Locadora::cadastrarCliente(int cpf, string nome) {
     for (int i=0; i<clientes.size(); i++) {
         if (cpf == clientes[i]->cpf) {
             cout << "ERRO: CPF repetido\n";
-            // sair da funcao.
+            return;
         }
         if (false) {
-        cout << "ERRO: dados incorretos\n";
-        // sair da funcao.
+            cout << "ERRO: dados incorretos\n";
+            return;
         }
     }
     Cliente* cliente = new Cliente(cpf, nome);
@@ -83,7 +88,8 @@ void Locadora::removerCliente(Cliente* cliente) {
 }
 
 void Locadora::aluguel(Filme* filme, Cliente* cliente) {
-
+    filme->serAlugado();
+    cliente->alugar(filme);
 }
 
 

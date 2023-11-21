@@ -16,3 +16,13 @@ void Filme::lerFilme() {
     cout << this -> tipo << endl;
 }
 
+void Filme::serAlugado() {
+    if (unidades==0) {
+        cout << "ERRO: filme indisponivel\n";
+    }
+    this -> unidades--;
+}
+
+void Filme::serDevolvido() {
+    this -> unidades++;
+}
