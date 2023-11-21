@@ -16,11 +16,11 @@ void Locadora::cadastrarFilme(string tipo, int unidades, int id, const string& t
     for (int i=0; i<filmes.size(); i++) {
         if (id == filmes[i]->id) {
             cout << "ERRO: codigo repetido\n";
-            // sair da funcao.
+            return; 
         }
-        if (tipo == filmes[i]->tipo) {
+        if (tipo != "F" && tipo !="D") {
             cout << "ERRO: dados incorretos\n";
-            // sair da funcao.
+            return; 
         }
     }
 
@@ -54,11 +54,28 @@ void Locadora::removerFilme(int codigo) {
     }
 }
 
-void Locadora::listarFilmes() {
-    for (Filme* filme : filmes) {
+void Locadora::listarFilmes(char opcao) {
+    if (opcao != 'C' && opcao != 'T') {
+        cout << "ERRO: opção de ordenação inválida\n";
+        return;
+    }
+    vector<Filme*> filmesOrdenados = filmes;
+
+    auto compara = [opcao](const Filme* a, const Filme* b) {
+        if (opcao == 'C') {
+            return a->id < b->id;
+        } else {
+            return a->titulo < b->titulo;
+        }
+    };
+
+   sort(filmesOrdenados.begin(), filmesOrdenados.end(), compara);
+
+    for (const auto& filme : filmesOrdenados) {
         filme->lerFilme();
     }
 }
+
 
 void Locadora::cadastrarCliente(int cpf, string nome) {
     for (int i=0; i<clientes.size(); i++) {

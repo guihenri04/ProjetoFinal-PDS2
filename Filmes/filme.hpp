@@ -8,11 +8,11 @@ using namespace std;
 
 class Filme {
 protected:
- 
-  int unidades;
-  string titulo;
+
   
 public:
+ int unidades;
+  string titulo;
   int id;
   string tipo;
   Filme(int id, string titulo, int unidades);
