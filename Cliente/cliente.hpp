@@ -13,6 +13,7 @@ protected:
   string nome;
   int cpf;
   vector<Filme*> filmesAlugados;
+  vector<Filme*> historico;
   int pontos;
 public:
   Cliente(int cpf, string nome);

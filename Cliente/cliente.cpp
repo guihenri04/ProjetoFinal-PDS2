@@ -7,6 +7,12 @@ Cliente::Cliente(int cpf, string nome) {
 }
 
 Cliente::~Cliente() {
+    for (Filme* filme : filmesAlugados) {
+        delete filme;
+    }
+    for (Filme* filme : historico) {
+        delete filme;
+    }
 };
 
 void Cliente::lerCliente(){
@@ -17,6 +23,7 @@ void Cliente::lerCliente(){
 void Cliente::alugar(Filme* filme) {
     this -> filmesAlugados.push_back(filme);
     this -> pontos++;
+    this -> historico.push_back(filme);
 }
 
 void Cliente::devolver() {
