@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
+#include <vector>
 #include "filme.hpp"
 #ifndef CLIENTE_HPP
 #define CLIENTE_HPP

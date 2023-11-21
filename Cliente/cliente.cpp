@@ -9,7 +9,7 @@ Cliente::~Cliente() {
 };
 
 void Cliente::alugar(Filme* filme) {
-    this -> filmesAlugados.pushback(filme);
+    this -> filmesAlugados.push_back(filme);
 }
 
 void Cliente::devolver(Filme* filme) {
