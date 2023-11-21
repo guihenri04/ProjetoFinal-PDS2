@@ -11,14 +11,35 @@ Locadora::~Locadora() {
     }
 }
 
-void Locadora::cadastrarFilme(Filme* filme) {
-    this -> filmes.push_back(filme);
+void Locadora::cadastrarFilme(string tipo, int quantidade, int id, const string& titulo, const string& categoria) {
+    
+    for (int i=0; i<filmes.size(); i++) {
+        if (id == filmes[i]->id) {
+            cout << "ERRO: codigo repetido\n";
+        }
+        if (tipo == filmes[i]->tipo) {
+        cout << "ERRO: dados incorretos\n";
+    }
+
+    }
+    Filme* novoFilme = new Filme(tipo, quantidade, id, titulo, categoria);
+    //precisa adicionar categorias para os DVDs
+
+    filmes.push_back(novoFilme);
+    cout << "Filme "<< novoFilme->id <<" cadastrado com sucesso";
 }
 
-void Locadora::removerFilme(Filme* filme) {
-    auto it = find (this->filmes.begin(), this->filmes.end(), filme);
-    if (it != this->filmes.end()) {
-        this->filmes.erase(it);
+
+void Locadora::removerFilme(int codigo) {
+     auto it = std::find_if(filmes.begin(), filmes.end(),
+        [codigo](Filme* filme) { return filme->id == codigo; });
+
+    if (it != filmes.end()) {
+        delete *it; 
+        filmes.erase(it);
+        std::cout << "Filme " << codigo << " removido com sucesso\n";
+    } else {
+        std::cout << "ERRO: código inexistente\n";
     }
 }
 

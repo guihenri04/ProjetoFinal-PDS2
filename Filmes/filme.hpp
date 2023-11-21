@@ -7,11 +7,13 @@ using namespace std;
 
 class Filme {
 protected:
-  int id;
+ 
   int unidades;
   string titulo;
-  string tipo;
+  
 public:
+  int id;
+  string tipo;
   Filme(int id, string titulo, int unidades);
   ~Filme();
   virtual int calcularValor(int dias) = 0;
