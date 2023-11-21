@@ -1,6 +1,6 @@
 {
     "files.associations": {
-        "vector": "cpp"
+        "new": "cpp"
     },
     "conventionalCommits.scopes": [
         "locadora"
