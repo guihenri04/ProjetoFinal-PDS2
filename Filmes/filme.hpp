@@ -7,14 +7,13 @@
 using namespace std;
 
 class Filme {
+  friend class Locadora;
 protected:
+  int id;
   int unidades;
   string titulo;
-public:
- int unidades;
-  string titulo;
-  int id;
   string tipo;
+public:
   Filme(int id, string titulo, int unidades);
   ~Filme();
   virtual int calcularValor(int dias) = 0;

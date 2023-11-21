@@ -8,6 +8,7 @@
 using namespace std;
 
 class Cliente {
+  friend class Locadora;
 protected:
   vector<Filme*> filmesAlugados;
 public:
