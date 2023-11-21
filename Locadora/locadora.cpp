@@ -23,23 +23,28 @@ void Locadora::cadastrarFilme(string tipo, int unidades, int id, const string& t
             cout << "ERRO: codigo repetido\n";
             return;
         }
-        if (tipo != "F" && tipo !="D") {
-            cout << "ERRO: dados incorretos\n";
-            return;
-        }
     }
+    if (tipo != "F" && tipo !="D") {
+        cout << "ERRO: dados incorretos\n";
+        return;
+    }
+    if (tipo == "D") {
+        if(categoria!= "E" && categoria!= "L" && categoria!= "P") {
+            cout << "ERRO: dados incorretos\n";
+        }
+    } 
 
     Filme* novoFilme;
-    if (tipo=="FITA") {
+    if (tipo=="F") {
         novoFilme = new Fita(id, titulo, unidades);
-    } else if (categoria=="Estoque") {
+    } else if (categoria=="E") {
         novoFilme = new dvdEstoque(id, titulo, unidades);
-    } else if (categoria=="Lancamento") {
+    } else if (categoria=="L") {
         novoFilme = new dvdLancamento(id, titulo, unidades);
-    } else if (categoria=="Promocao") {
+    } else if (categoria=="P") {
         novoFilme = new dvdPromocao(id, titulo, unidades);
-    }
-    
+    } 
+
     if (novoFilme) {
         filmes.push_back(novoFilme);
         cout << "Filme "<< novoFilme->id <<" cadastrado com sucesso\n";
