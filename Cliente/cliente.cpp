@@ -54,9 +54,7 @@ void Cliente::definirSimilares (vector <Cliente*> clientes) {
         this -> similares = clientes;
         return;
     }   
-    int s1 = 0;
-    int s2 = 0;
-    int s3 = 0;
+    int s1, s2, s3 = 0;
     Cliente* c1;
     Cliente* c2;
     Cliente* c3;
@@ -85,42 +83,37 @@ void Cliente::definirSimilares (vector <Cliente*> clientes) {
 }
 
 vector <Filme*> Cliente::recomendarPorSimilar(Cliente* cliente) {
-    if (cliente->historico.size() > 0) {
-        cout << "Ainda não há filmes recomendados." << endl;
-        return;
-    }
     vector <Filme*> recomendados;
     set<Filme*> conjuntoRecomendados;
     bool aindaTemFilmes = true;
 
-    while (aindaTemFilmes) {
+    for (int i = 1; aindaTemFilmes; i++) {
         bool inedito = true;
-        for (int i = 1; true; i++) {
-            Filme* recomendado = cliente->historico[cliente->historico.size()-i];
-            for (Filme* filmeVisto : this -> historico) {
-                if (recomendado == filmeVisto) {
-                    inedito = false;
-                    break;
-                }
-            }
-            if (inedito) {
-                recomendados.push_back(recomendado);
-                conjuntoRecomendados.insert(recomendado);
-                break;
-            }
-            if (cliente->historico.size()-i == 0) {
-                aindaTemFilmes = false;
+        Filme* recomendado = cliente->historico[cliente->historico.size()-i];
+        for (Filme* filmeVisto : this -> historico) {
+            if (recomendado == filmeVisto) {
+                inedito = false;
                 break;
             }
         }
+        if (inedito) {
+            recomendados.push_back(recomendado);
+            conjuntoRecomendados.insert(recomendado);
+            break;
+        }
+        if (cliente->historico.size()-i == 0) {
+            aindaTemFilmes = false;
+            break;
+        }
     }
+    
     recomendados.assign(conjuntoRecomendados.begin(), conjuntoRecomendados.end());
     return recomendados;
 }
 
 void Cliente::recomendar(vector <Cliente*> clientes) {
     this -> definirSimilares(clientes);
-    if (this -> similares.size() == 0) {
+    if (this -> similares.size() == 0 || this-> historico.size()==0) {
         cout << "Ainda não há filmes recomendados." << endl;
         return;
     }
