@@ -189,3 +189,21 @@ void Locadora::devolucao(int cpf, int nota) {
     }
     cliente -> devolver();
 }
+
+void Locadora::recomendarFilmes(int cpf) {
+    auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
+        [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
+    Cliente* cliente;
+    if (itCliente != this->clientes.end()) {
+        cliente = *itCliente;
+    } else {
+        cout << "ERRO: CPF inexistente\n";
+        return;
+    }
+
+    cliente -> recomendar(this -> clientes);
+    for (Filme* filme : cliente -> recomendados) {
+        filme -> lerFilme();
+    }
+
+}

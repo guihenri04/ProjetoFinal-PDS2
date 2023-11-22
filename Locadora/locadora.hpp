@@ -25,6 +25,7 @@ public:
   void listarClientes(char opcao);
   void aluguel(int cpf, int id);
   void devolucao(int cpf, int nota);
+  void recomendarFilmes(int cpf);
 };
 
 #endif
