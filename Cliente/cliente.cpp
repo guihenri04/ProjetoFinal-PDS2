@@ -1,4 +1,5 @@
 #include "cliente.hpp"
+#include <set>
 
 Cliente::Cliente(int cpf, string nome) {
     this -> cpf = cpf;
@@ -21,6 +22,9 @@ void Cliente::lerCliente(){
 }
 
 void Cliente::alugar(Filme* filme) {
+    if (filme->unidades==0) {
+        return;
+    }
     this -> filmesAlugados.push_back(filme);
     this -> pontos++;
     this -> historico.push_back(filme);
@@ -30,6 +34,7 @@ void Cliente::devolver() {
     for (const auto& filme : this->filmesAlugados) {
         delete filme;
     }
+    this->filmesAlugados.clear();
 }
 
 int Cliente::calcularSimilaridade (Cliente* cliente2) {
@@ -80,31 +85,45 @@ void Cliente::definirSimilares (vector <Cliente*> clientes) {
 }
 
 vector <Filme*> Cliente::recomendarPorSimilar(Cliente* cliente) {
+    if (cliente->historico.size() > 0) {
+        cout << "Ainda não há filmes recomendados." << endl;
+        return;
+    }
     vector <Filme*> recomendados;
-    bool inedito = true;
+    set<Filme*> conjuntoRecomendados;
     bool aindaTemFilmes = true;
+    
     while (aindaTemFilmes) {
+        bool inedito = true;
         for (int i = 1; true; i++) {
-            if (cliente->historico.size()-i < 0) {
-                aindaTemFilmes = false;
-                break;
-            }
             Filme* recomendado = cliente->historico[cliente->historico.size()-i];
             for (Filme* filmeVisto : this -> historico) {
-                if (recomendado == filmeVisto) inedito = false;
+                if (recomendado == filmeVisto) {
+                    inedito = false;
+                    break;
+                }
             }
             if (inedito) {
                 recomendados.push_back(recomendado);
+                conjuntoRecomendados.insert(recomendado);
+                break;
+            }
+            if (cliente->historico.size()-i == 0) {
+                aindaTemFilmes = false;
                 break;
             }
         }
     }
+    recomendados.assign(conjuntoRecomendados.begin(), conjuntoRecomendados.end());
+    return recomendados;
 }
 
 void Cliente::recomendar(vector <Cliente*> clientes) {
     if (this -> similares.size() == 0) {
         cout << "Ainda não há filmes recomendados." << endl;
+        return;
     }
+    this->recomendados.clear();
     for (Cliente* cliente : clientes) {
         vector <Filme*> recomendados = this -> recomendarPorSimilar(cliente); 
         for (Filme* filme : recomendados) {

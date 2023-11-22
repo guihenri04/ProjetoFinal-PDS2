@@ -8,6 +8,7 @@ using namespace std;
 
 class Filme {
   friend class Locadora;
+  friend class Cliente;
 protected:
   int id;
   int unidades;
