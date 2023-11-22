@@ -92,7 +92,7 @@ vector <Filme*> Cliente::recomendarPorSimilar(Cliente* cliente) {
     vector <Filme*> recomendados;
     set<Filme*> conjuntoRecomendados;
     bool aindaTemFilmes = true;
-    
+
     while (aindaTemFilmes) {
         bool inedito = true;
         for (int i = 1; true; i++) {
@@ -119,6 +119,7 @@ vector <Filme*> Cliente::recomendarPorSimilar(Cliente* cliente) {
 }
 
 void Cliente::recomendar(vector <Cliente*> clientes) {
+    this -> definirSimilares(clientes);
     if (this -> similares.size() == 0) {
         cout << "Ainda não há filmes recomendados." << endl;
         return;
