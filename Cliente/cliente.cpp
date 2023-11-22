@@ -14,6 +14,12 @@ Cliente::~Cliente() {
     for (Filme* filme : historico) {
         delete filme;
     }
+    for (Filme* filme : recomendados) {
+        delete filme;
+    }
+    for (Cliente* cliente : similares) {
+        delete cliente;
+    }
 };
 
 void Cliente::lerCliente(){
