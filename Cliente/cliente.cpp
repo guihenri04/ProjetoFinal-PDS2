@@ -125,9 +125,13 @@ void Cliente::recomendar(vector <Cliente*> clientes) {
     }
     this->recomendados.clear();
     for (Cliente* cliente : clientes) {
-        vector <Filme*> recomendados = this -> recomendarPorSimilar(cliente); 
-        for (Filme* filme : recomendados) {
-            this -> recomendados.push_back(filme);
+        if (this->cpf == cliente->cpf) {
+            break;
+        } else {
+            vector <Filme*> recomendados = this -> recomendarPorSimilar(cliente); 
+            for (Filme* filme : recomendados) {
+                this -> recomendados.push_back(filme);
+            }
         }
     }
 }
