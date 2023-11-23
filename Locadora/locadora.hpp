@@ -17,6 +17,7 @@ private:
   vector<Cliente*> clientes;
 public:
   Locadora();
+  ~Locadora();
   void cadastrarFilme(string tipo, int quantidade, int id, const string& titulo, const string& categoria);
   void removerFilme(int codigo);
   void listarFilmes(char opcao);

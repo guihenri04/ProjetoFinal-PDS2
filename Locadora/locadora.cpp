@@ -159,7 +159,6 @@ void Locadora::aluguel(int cpf, int id) {
     filme->serAlugado();
 }
 
-
 void Locadora::devolucao(int cpf, int nota) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
         [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
