@@ -18,21 +18,26 @@ Locadora::~Locadora() {
 
 void Locadora::cadastrarFilme(string tipo, int unidades, int id, const string& titulo, const string& categoria) {
     
-    for (int i=0; i<filmes.size(); i++) {
+    for (int i=0; i<filmes.size(); i++) { // codigo repetido
         if (id == filmes[i]->id) {
             cout << "ERRO: codigo repetido\n";
             return;
         }
     }
-    if (tipo != "F" && tipo !="D") {
+    if (tipo != "F" && tipo !="D") { // tipo invalido
         cout << "ERRO: dados incorretos\n";
         return;
     }
     if (tipo == "D") {
-        if(categoria!= "E" && categoria!= "L" && categoria!= "P") {
+        if(categoria!= "E" && categoria!= "L" && categoria!= "P") { // categoria invalida
             cout << "ERRO: dados incorretos\n";
+            return;
         }
     } 
+    if (unidades<0 || id<0) { // unidades ou id negativos
+        cout << "ERRO: dados incorretos\n";
+        return;
+    }
 
     Filme* novoFilme;
     if (tipo=="F") {
@@ -58,15 +63,19 @@ void Locadora::removerFilme(int id) {
     if (it != filmes.end()) {
         delete *it; 
         filmes.erase(it);
-        cout << "Filme " << id << " removido com sucesso\n";
+        cout << "Filme " << id << " removido com sucesso.\n";
     } else {
-        cout << "ERRO: código inexistente\n";
+        cout << "ERRO: código inexistente.\n"; // Id invalido
     }
 }
 
 void Locadora::listarFilmes(char opcao) {
     if (opcao != 'C' && opcao != 'T') {
-        cout << "ERRO: opção de ordenação inválida\n";
+        cout << "ERRO: opção de ordenação inválida.\n";
+        return;
+    }
+    if(this->filmes.size()==0) {
+        cout << "Ainda não há filmes para listar." << endl;
         return;
     }
     vector<Filme*> filmesOrdenados = filmes;
@@ -88,11 +97,11 @@ void Locadora::listarFilmes(char opcao) {
 
 void Locadora::cadastrarCliente(int cpf, string nome) {
     for (int i=0; i<clientes.size(); i++) {
-        if (cpf == clientes[i]->cpf) {
+        if (cpf == clientes[i]->cpf) { // CPF repetido
             cout << "ERRO: CPF repetido\n";
             return;
         }
-        if (false) {
+        if (cpf<10000000000 || cpf>99999999999) { // CPF invalido
             cout << "ERRO: dados incorretos\n";
             return;
         }
@@ -102,10 +111,17 @@ void Locadora::cadastrarCliente(int cpf, string nome) {
 }
 
 void Locadora::removerCliente(int cpf) {
+    if (cpf<10000000000 || cpf>99999999999) { // CPF invalido
+        cout << "ERRO: dados incorretos.\n";
+        return;
+    }
     auto it = find_if(this->clientes.begin(), this->clientes.end(),
                            [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
 
-    if (it != this->clientes.end()) {
+    if (it == clientes.end()) { // CPF não encontrado
+        cout << "ERRO: dados incorretos.\n";
+        return;
+    } else {
         delete *it;
         this->clientes.erase(it);
     }
@@ -113,10 +129,15 @@ void Locadora::removerCliente(int cpf) {
 
  void Locadora::listarClientes(char opcao){
 
-     if (opcao != 'C' && opcao != 'N') {
-        cout << "ERRO: opção de ordenação inválida\n";
+    if (opcao != 'C' && opcao != 'N') {
+        cout << "ERRO: opção de ordenação inválida.\n";
         return;
     }
+    if (this->clientes.size()==0) {
+        cout << "Ainda não há clientes para listar." << endl;
+        return;
+    }
+
     vector<Cliente*> clientesOrdenados = clientes;
 
     auto compara = [opcao](const Cliente* a, const Cliente* b) {
@@ -140,7 +161,7 @@ void Locadora::aluguel(int cpf, int id) {
     Cliente* cliente;
     if (itCliente != this->clientes.end()) {
         cliente = *itCliente;
-    } else {
+    } else { // cpf inexistente
         cout << "ERRO: CPF inexistente\n";
         return;
     }
@@ -150,7 +171,7 @@ void Locadora::aluguel(int cpf, int id) {
     Filme* filme;
     if (itFilme != this->filmes.end()) {
         filme = *itFilme;
-    } else {
+    } else { // filme inexistente
         cout << "ERRO: Filme " << id<< " inexistente\n";
         return;
     }
@@ -159,7 +180,7 @@ void Locadora::aluguel(int cpf, int id) {
     filme->serAlugado();
 }
 
-void Locadora::devolucao(int cpf, int nota) {
+void Locadora::devolucao(int cpf, vector<int> nota) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
         [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
     Cliente* cliente;
@@ -183,8 +204,10 @@ void Locadora::devolucao(int cpf, int nota) {
         cliente->pontos = cliente->pontos - 10;
     }
     cout << "Total a pagar: " << total << endl;
+    int i = 0;
     for (const auto& filme : cliente -> filmesAlugados) {
-        filme -> serDevolvido(nota);
+        filme -> serDevolvido(nota[i]);
+        i++;
     }
     cliente -> devolver();
 }
