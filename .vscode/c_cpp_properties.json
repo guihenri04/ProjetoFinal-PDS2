@@ -7,7 +7,7 @@
                 "${workspaceFolder}/Cliente",
                 "${workspaceFolder}/Filmes",
                 "${workspaceFolder}/Locadora",
-                "${workspaceFolder}/Tests",
+                "${workspaceFolder}/Tests"
             ],
             "defines": [],
             "cStandard": "c17",
