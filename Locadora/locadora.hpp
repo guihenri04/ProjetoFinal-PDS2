@@ -9,6 +9,7 @@
 #include "fita.hpp"
 #include <vector>
 #include <algorithm>
+
 using namespace std;
 
 class Locadora {
