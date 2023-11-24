@@ -7,13 +7,14 @@
                 "${workspaceFolder}/Cliente",
                 "${workspaceFolder}/Filmes",
                 "${workspaceFolder}/Locadora",
-                "${workspaceFolder}/Tests"
+                "${workspaceFolder}/Tests",
+                "${workspaceFolder}/Filmes/Subclasses"
             ],
             "defines": [],
             "cStandard": "c17",
             "cppStandard": "gnu++14",
             "intelliSenseMode": "linux-gcc-x64",
-            "compilerPath": "/usr/bin/gcc"
+            "compilerPath": "/usr/bin/g++"
         }
     ],
     "version": 4
