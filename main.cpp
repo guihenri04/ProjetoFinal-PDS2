@@ -1,5 +1,4 @@
-#include "locadora.hpp"
-
+#include "Locadora/locadora.hpp"
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -11,9 +10,6 @@
 using namespace std;
 
 
-
-using namespace std;
-
 int main() {
 
     string comando;
@@ -24,11 +20,24 @@ int main() {
         cin >> comando;
 
       
-        if (comando.size() == 2) {              //divide a string e verificaa
+        if (comando.size() >= 2) {              //divide a string e verificaa
             switch (comando[0]) {
+
+
+
+
+
+//ler arquivo case la
+
+
+
+
+
                 case 'C':
                     switch (comando[1]) {
+
                         case 'F':
+                        cadastrarFilme();
                            // cadastrar filme 
                             break;
 
@@ -44,7 +53,7 @@ int main() {
                 case 'R':
                     switch (comando[1]) {
                         case 'F':
-                        // remover filme  
+                            // remover filme  
                            
                             break;
 
@@ -58,7 +67,7 @@ int main() {
                             break;
                     }
                     break;
-                // Adicione outros casos conforme necessário
+               
                 case 'L':
                     switch (comando[1]) {
                         case 'F':
@@ -126,6 +135,5 @@ int main() {
             cout << "Comando inválido \n";
         }
     }
-
-    return 0;
+    return 0;
 }
