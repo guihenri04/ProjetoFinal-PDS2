@@ -1,12 +1,12 @@
 #ifndef LOCADORA_HPP
 #define LOCADORA_HPP
 
-#include "filme.hpp"
-#include "cliente.hpp"
-#include "DVDestoque.hpp"
-#include "DVDlancamento.hpp"
-#include "DVDpromocao.hpp"
-#include "fita.hpp"
+#include "../Filmes/filme.hpp"
+#include "../Cliente/cliente.hpp"
+#include "../Filmes/Subclasses/DVDestoque.hpp"
+#include "../Filmes/Subclasses/DVDlancamento.hpp"
+#include "../Filmes/Subclasses/DVDpromocao.hpp"
+#include "../Filmes/Subclasses/fita.hpp"
 #include <vector>
 #include <algorithm>
 

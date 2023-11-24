@@ -1,7 +1,7 @@
 #ifndef DVDLANCAMENTO_HPP
 #define DVDLANCAMENTO_HPP
 
-#include "filme.hpp"
+#include "../Filmes/filme.hpp"
 
 class dvdLancamento : public Filme {
 public:

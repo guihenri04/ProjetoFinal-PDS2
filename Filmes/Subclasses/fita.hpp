@@ -1,7 +1,7 @@
 #ifndef FITA_HPP
 #define FITA_HPP
 
-#include "filme.hpp"
+#include "../Filmes/filme.hpp"
 
 class Fita : public Filme {
 private:

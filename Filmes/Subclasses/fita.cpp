@@ -1,4 +1,4 @@
-#include "fita.hpp"
+#include "../Filmes/Subclasses/fita.hpp"
 
 Fita::Fita(int id, string titulo, int unidades) : Filme(id, titulo, unidades) {
     this -> tipo = 'FITA';

@@ -1,4 +1,4 @@
-#include "DVDestoque.hpp"
+#include "../Filmes/Subclasses/DVDestoque.hpp"
 
 dvdEstoque::dvdEstoque(int id, string titulo, int unidades) : Filme(id, titulo, unidades) {
     this -> tipo = "DVD";
