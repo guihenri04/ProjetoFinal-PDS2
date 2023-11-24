@@ -4,7 +4,10 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/Cliente"
+                "${workspaceFolder}/Cliente",
+                "${workspaceFolder}/Filmes",
+                "${workspaceFolder}/Locadora",
+                "${workspaceFolder}/Tests",
             ],
             "defines": [],
             "cStandard": "c17",
