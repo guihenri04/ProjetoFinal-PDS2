@@ -6,9 +6,9 @@
 * @brief Método do arquivo "cliente.hpp" para identificação dos clientes.
 * Este método registra o cpf, o nome e a quantidade de pontos que cada cliente tem, para controle da própria locadora, 
 * além de auxiliar em futuras promoções(pontos).
-* @param cpf Indica o cpf do cliente para identificação.
-* @param nome Indica o nome do cliente.
-* @param pontos Indica a quantidade de pontos que cada cliente tem para falicitar o controle de futuras promoções.
+* @param cpf Armazena o cpf do cliente para identificação.
+* @param nome Armazena o nome do cliente.
+* @param pontos Armazena a quantidade de pontos que cada cliente tem para falicitar o controle de futuras promoções.
 */
 
 Cliente::Cliente(int cpf, string nome) {
@@ -16,6 +16,13 @@ Cliente::Cliente(int cpf, string nome) {
     this -> nome = nome;
     this -> pontos = 0;
 }
+
+/** @brief Destrutor da classe "Cliente".
+ * 
+ * 
+ * 
+ * 
+ */
 
 Cliente::~Cliente() {
     for (Filme* filme : filmesAlugados) {
@@ -32,10 +39,23 @@ Cliente::~Cliente() {
     }
 };
 
+/** @brief método "lerCliente" classe "Cliente", utilizado especialmente para exibição.
+ * Esse método exibe para o usuário o cpf e o nome do cliente registrado na locadora.
+ */
+
 void Cliente::lerCliente(){
     cout << this -> cpf << " ";
     cout << this -> nome << endl;
 }
+
+/** @brief método "alugar" da classe "Cliente", utilizado para registro.
+ * Esse método registra a quantidade de filmes alugados pelo cliente, lista esses filmes, adiciona pontos para uma
+ * possível futura promoção e registra o histórico de filmes que já foram alugados pelo cliente.
+ *  @param unidades Indica a quantidade de filmes alugados pelo cliente.
+ *  @param filme Indica o filme alugado pelo cliente.
+ *  @param filmesAlugados Armazena os filmes alugados da locadora pelos clientes.
+ *  @param historico Armazena os filmes alugados pelo cliente em seu historico.
+ */
 
 void Cliente::alugar(Filme* filme) {
     if (filme->unidades==0) {
@@ -45,6 +65,11 @@ void Cliente::alugar(Filme* filme) {
     this -> pontos++;
     this -> historico.push_back(filme);
 }
+
+/** @brief método da "devolver da" classe "Cliente", utilizado especialmente para controle.
+ * Esse método controla a quantidade de filmes alugados pelos clientes (o filme devolvido à locadora é retirado do vetor
+ * filmesAlugados, para controle).
+ */
 
 void Cliente::devolver() {
     for (const auto& filme : this->filmesAlugados) {
