@@ -4,6 +4,7 @@
 #include "../Cliente/cliente.hpp"
 #include "../Filmes/Subclasses/DVDestoque.hpp"
 #include "../Filmes/filme.hpp"
+
 using namespace std;
 
 
@@ -31,9 +32,6 @@ TEST_CASE("Cliente-lerCliente"){
 
 TEST_CASE("Cliente-alugar"){
     dvdEstoque dvdE(0, "Divergente", 10);
-    dvdLancamento dvdL(1, "Luisa Carla", 8);
-    dvdPromocao dvdP(2, "Luisa Acidentada", 5);
-    Fita fita(2, "Luisa Mulher", 7);
     Filme* filme1=&dvdE;
     Cliente* cliente;
     cliente -> alugar(filme1);

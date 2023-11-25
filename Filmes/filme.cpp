@@ -27,7 +27,7 @@ void Filme::serAlugado() {
 
 void Filme::serDevolvido(int nota) {
     float soma = this -> avaliacao * this -> vezesAlugado;
-    float soma = soma + nota;
+    soma = soma + nota;
     this -> unidades++;
     this -> vezesAlugado++;
     this -> avaliacao = soma / float(this -> vezesAlugado);
