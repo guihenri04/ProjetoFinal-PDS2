@@ -12,9 +12,6 @@ class Cliente {
 protected:
   string nome;
   int cpf;
-  int pontos;
-  vector<Filme*> filmesAlugados;
-  vector<Filme*> historico;
   vector<Filme*> recomendados;
   vector<Cliente*> similares;
   int calcularSimilaridade (Cliente* cliente);
@@ -27,6 +24,9 @@ public:
   void alugar (Filme* filme);
   void devolver ();
   void recomendar(vector <Cliente*> clientes);
+  int pontos;
+  vector<Filme*> filmesAlugados;
+  vector<Filme*> historico;
 };
 
 #endif
