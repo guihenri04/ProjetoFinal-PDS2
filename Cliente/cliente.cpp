@@ -39,7 +39,7 @@ Cliente::~Cliente() {
     }
 };
 
-/** @brief método "lerCliente" classe "Cliente", utilizado especialmente para exibição.
+/** @brief Método "lerCliente" classe "Cliente", utilizado especialmente para exibição.
  * Esse método exibe para o usuário o cpf e o nome do cliente registrado na locadora.
  */
 
@@ -48,7 +48,7 @@ void Cliente::lerCliente(){
     cout << this -> nome << endl;
 }
 
-/** @brief método "alugar" da classe "Cliente", utilizado para registro.
+/** @brief Método "alugar" da classe "Cliente", utilizado para registro.
  * Esse método registra a quantidade de filmes alugados pelo cliente, lista esses filmes, adiciona pontos para uma
  * possível futura promoção e registra o histórico de filmes que já foram alugados pelo cliente.
  *  @param unidades Indica a quantidade de filmes alugados pelo cliente.
@@ -66,7 +66,7 @@ void Cliente::alugar(Filme* filme) {
     this -> historico.push_back(filme);
 }
 
-/** @brief método da "devolver da" classe "Cliente", utilizado especialmente para controle.
+/** @brief Método "devolver" da classe "Cliente", utilizado especialmente para controle.
  * Esse método controla a quantidade de filmes alugados pelos clientes (o filme devolvido à locadora é retirado do vetor
  * filmesAlugados, para controle).
  */
