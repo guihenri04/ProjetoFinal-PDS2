@@ -24,7 +24,7 @@ int main() {
         cin >> comando;
 
       
-        if (comando.size() >= 2) {              //divide a string e verificaa
+        if (comando.size() == 2) {              //divide a string e verificaa
             switch (comando[0]) {
                 case 'C':
                     switch (comando[1]) {
@@ -44,7 +44,7 @@ int main() {
                 case 'R':
                     switch (comando[1]) {
                         case 'F':
-                            // remover filme  
+                        // remover filme  
                            
                             break;
 
@@ -127,5 +127,5 @@ int main() {
         }
     }
 
-    return 0;
+    return 0;
 }

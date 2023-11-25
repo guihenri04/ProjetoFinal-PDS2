@@ -5,6 +5,6 @@ dvdPromocao::dvdPromocao(int id, string titulo, int unidades) : Filme(id, titulo
 }
 
 int dvdPromocao::calcularValor(int dias) {
-    return 10;
+    return 10 * dias;
 }
 
