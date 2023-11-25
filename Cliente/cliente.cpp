@@ -1,6 +1,16 @@
 #include "cliente.hpp"
 #include <set>
 
+/**
+* @file cliente.cpp
+* @brief Método do arquivo "cliente.hpp" para identificação dos clientes.
+* Este método registra o cpf, o nome e a quantidade de pontos que cada cliente tem, para controle da própria locadora, 
+* além de auxiliar em futuras promoções(pontos).
+* @param cpf Indica o cpf do cliente para identificação.
+* @param nome Indica o nome do cliente.
+* @param pontos Indica a quantidade de pontos que cada cliente tem para falicitar o controle de futuras promoções.
+*/
+
 Cliente::Cliente(int cpf, string nome) {
     this -> cpf = cpf;
     this -> nome = nome;
