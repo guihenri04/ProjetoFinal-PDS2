@@ -1,18 +1,16 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "doctest.h"
+#include "../doctest.h"
 #include <sstream>
-#include "cliente.cpp"
-#include "cliente.hpp"
-#include "filme.hpp"
-#include "filme.cpp"
-
-
+#include "../Cliente/cliente.hpp"
+#include "../Filmes/Subclasses/DVDestoque.hpp"
+#include "../Filmes/filme.hpp"
 using namespace std;
 
-#include "DVDestoque.hpp"
-#include "DVDpromocao.hpp"
+
+
+/*#include "DVDpromocao.hpp"
 #include "DVDlancamento.hpp"
-#include "fita.hpp"
+#include "fita.hpp"*/
 
 
 string saida_cliente(Cliente* cliente){
@@ -23,9 +21,6 @@ cliente->lerCliente();
 cout.rdbuf(cout_saida);
 return saida.str();
 }
-
-
-
 
 
 TEST_CASE("Cliente-lerCliente"){
@@ -53,6 +48,9 @@ TEST_CASE("Cliente-devolver"){
     CHECK(cliente->filmesAlugados.size() == 0);
 }
 
+
+
+/*
 TEST_CASE("Cliente-recomendar"){
 
 }
@@ -69,4 +67,4 @@ TEST_CASE("Cliente-calcularSimilaridade"){
     Filme* filme1=&dvdE;
     Filme* filme2=&dvdE2;
 
-}
+}*/
