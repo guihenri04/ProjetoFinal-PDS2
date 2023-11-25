@@ -1,4 +1,4 @@
-#include "../Filmes/Subclasses/DVDpromocao.hpp"
+#include "DVDpromocao.hpp"
 
 dvdPromocao::dvdPromocao(int id, string titulo, int unidades) : Filme(id, titulo, unidades) {
     this -> tipo = 'DVD';

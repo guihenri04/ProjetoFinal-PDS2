@@ -1,7 +1,7 @@
 #ifndef DVDESTOQUE_HPP
 #define DVDESTOQUE_HPP
 
-#include "Filmes/filme.hpp"
+#include "../filme.hpp"
 
 class dvdEstoque : public Filme {
 public:
