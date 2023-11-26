@@ -1,16 +1,12 @@
 #include "fita.hpp"
 
 Fita::Fita(int id, string titulo, int unidades) : Filme(id, titulo, unidades) {
-    this -> tipo = 'FITA';
+    this -> tipo = "FITA";
     this -> rebobinada = true;
 }
 
 void Fita::rebobinar() {
     this -> rebobinada = true;
-}
-
-void Fita::assistir() {
-    this -> rebobinada = false;
 }
 
 int Fita::calcularValor(int dias) {
@@ -19,4 +15,7 @@ int Fita::calcularValor(int dias) {
     } else {
         return 7;
     }
+}
+void Fita::serAlugado() {
+    this -> rebobinada = false;
 }

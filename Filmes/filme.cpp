@@ -4,7 +4,7 @@ Filme::Filme (int id, string titulo, int unidades) {
     this -> id = id;
     this -> titulo = titulo;
     this -> unidades = unidades;
-    this -> vezesAlugado = 0;
+    this -> vezesAvaliado = 0;
     this -> avaliacao = 5;
 }
 
@@ -25,10 +25,12 @@ void Filme::serAlugado() {
     this -> unidades--;
 }
 
-void Filme::serDevolvido(int nota) {
-    float soma = this -> avaliacao * this -> vezesAlugado;
-    soma = soma + nota;
+void Filme::serDevolvido() {
     this -> unidades++;
-    this -> vezesAlugado++;
-    this -> avaliacao = soma / float(this -> vezesAlugado);
 }
+
+  void Filme::serAvaliado(int nota) {
+    float soma = this -> avaliacao * this -> vezesAvaliado;
+    soma = soma + nota;
+    this -> avaliacao = soma / float(this -> vezesAvaliado);
+  }

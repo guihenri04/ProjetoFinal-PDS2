@@ -16,7 +16,7 @@ Locadora::~Locadora() {
     }
 }
 
-void Locadora::cadastrarFilme(string tipo, int unidades, int id, const string& titulo, const string& categoria) {
+void Locadora::cadastrarFilme(char tipo, int unidades, int id, const string& titulo, const char& categoria) {
     
     for (int i=0; i<filmes.size(); i++) { // codigo repetido
         if (id == filmes[i]->id) {
@@ -24,12 +24,12 @@ void Locadora::cadastrarFilme(string tipo, int unidades, int id, const string& t
             return;
         }
     }
-    if (tipo != "F" && tipo !="D") { // tipo invalido
+    if (tipo != 'F' && tipo !='D') { // tipo invalido
         cout << "ERRO: dados incorretos\n";
         return;
     }
-    if (tipo == "D") {
-        if(categoria!= "E" && categoria!= "L" && categoria!= "P") { // categoria invalida
+    if (tipo == 'D') {
+        if(categoria!= 'E' && categoria!= 'L' && categoria!= 'P') { // categoria invalida
             cout << "ERRO: dados incorretos\n";
             return;
         }
@@ -40,13 +40,13 @@ void Locadora::cadastrarFilme(string tipo, int unidades, int id, const string& t
     }
 
     Filme* novoFilme;
-    if (tipo=="F") {
+    if (tipo=='F') {
         novoFilme = new Fita(id, titulo, unidades);
-    } else if (categoria=="E") {
+    } else if (categoria == 'E') {
         novoFilme = new dvdEstoque(id, titulo, unidades);
-    } else if (categoria=="L") {
+    } else if (categoria == 'L') {
         novoFilme = new dvdLancamento(id, titulo, unidades);
-    } else if (categoria=="P") {
+    } else if (categoria == 'P') {
         novoFilme = new dvdPromocao(id, titulo, unidades);
     } 
 
@@ -180,7 +180,7 @@ void Locadora::aluguel(int cpf, int id) {
     filme->serAlugado();
 }
 
-void Locadora::devolucao(int cpf, vector<int> nota) {
+void Locadora::devolucao(int cpf) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
         [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
     Cliente* cliente;
@@ -204,10 +204,8 @@ void Locadora::devolucao(int cpf, vector<int> nota) {
         cliente->pontos = cliente->pontos - 10;
     }
     cout << "Total a pagar: " << total << endl;
-    int i = 0;
     for (const auto& filme : cliente -> filmesAlugados) {
-        filme -> serDevolvido(nota[i]);
-        i++;
+        filme -> serDevolvido();
     }
     cliente -> devolver();
 }
@@ -228,4 +226,18 @@ void Locadora::recomendarFilmes(int cpf) {
         filme -> lerFilme();
     }
 
+}
+
+void Locadora::avaliarFilme(int id, int nota) {
+    auto itFilme = std::find_if(filmes.begin(), filmes.end(),
+        [id](Filme* filme) { return filme->id == id; });
+    Filme* filme;
+    if (itFilme != this->filmes.end()) {
+        filme = *itFilme;
+    } else { // filme inexistente
+        cout << "ERRO: Filme " << id<< " inexistente\n";
+        return;
+    }
+
+    filme->serAvaliado(nota);
 }

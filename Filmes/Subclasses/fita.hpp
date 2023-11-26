@@ -9,8 +9,8 @@ private:
 public:
     Fita(int id, string titulo, int unidades);
     void rebobinar();
-    void assistir();
     int calcularValor(int dias) override;
+    void serAlugado() override;
 };
 
 #endif
