@@ -53,7 +53,7 @@ void Cliente::lerCliente(){
  * possível futura promoção e registra o histórico de filmes que já foram alugados pelo cliente.
  *  @param unidades Indica a quantidade de filmes alugados pelo cliente.
  *  @param filme Indica o filme alugado pelo cliente.
- *  @param filmesAlugados Armazena os filmes alugados da locadora pelos clientes.
+ *  @param filmesAlugados Armazena quais filmes estão alugados da locadora pelos clientes.
  *  @param historico Armazena os filmes alugados pelo cliente em seu historico.
  */
 
