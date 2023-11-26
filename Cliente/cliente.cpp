@@ -101,14 +101,17 @@ int Cliente::calcularSimilaridade (Cliente* cliente2) {
 }
 
 /** @brief Método "definirSimilares" da classe "Cliente", utilizado para fins de recomendação.
- *  @details Esse método recebe um vetor contendo três clientes e, a partir daí, realiza uma filtragem, comparando os filmes
- * assistidos por eles e objetivando encontrar aquele cliente com similaridade mais próxima à de um outro cliente específico. 
- * Caso esse vetor possua menos que três elementos, essa comparação não é realizada. Durante essa filtragem feita pelo método, são atribuidos
- * graus de similaridade baseados nos filmes assistidos pelos clientes, os quais serão utilizados para a elaboração de um "ranking" que listará 
- * aqueles clientes com gostos mais próximos à de um outro cliente específico. O cliente com maior grau de similaridade fica em primeiro lugar
- * e assim por diante. Por fim, eles são adicionados a um outro vetor ("similares") de acordo com o ranking previamente feito.
- * @param clientes Armazena até três clientes.
- * @param similares Armazena os clientes de acordo com a similaridade deles, utilizando como base o "ranking".
+ *  @details Esse método recebe um vetor de clientes e, a partir daí, realiza uma filtragem, em busca
+ * de selecionar os 3 usuários com maior similaridade com o cliente atual, e colocá-los no seu 
+ * atributo "similares:. Caso esse vetor parâmetro possua menos que três clientes, essa comparação não 
+ * precisa ser realizada, e os clientes já são alocados nos similares imediatamente. Caso haja mais 
+ * de 3, a seleção prossegue. Para cada cliente do parâmetro, é calculado o grau de similaridade,
+ * e comparado com os 3 clientes mais similares. Se o grau de similaridade for maior que algum,
+ * esse ranking é reformulado para encaixar o novo cliente similar. O cliente com maior similaridade
+ * fica em primeiro lugar e assim por diante. Depois de percorrer todo o vetor, os 3 clientes são
+ * adicionados ao vetor "similares" de acordo com o ranking previamente feito.
+ * @param clientes Armazena os clientes.
+ * @param similares Armazena os 3 clientes de acordo com a similaridade deles, utilizando como base o "ranking".
  * @param c1 Cliente com maior grau de similaridade àquele recebido pelo método.
  * @param c2 Cliente com grau de similaridade intermediário àquele recebido pelo método.
  * @param c3 Cliente com menor grau de similaridade àquele recebido pelo método.
@@ -126,6 +129,9 @@ void Cliente::definirSimilares (vector <Cliente*> clientes) {
     Cliente* c2;
     Cliente* c3;
     for (Cliente* cliente : clientes) {
+        if (cliente->cpf==this->cpf) {
+            continue;
+        }
         int similaridade = this -> calcularSimilaridade(cliente);
         if (similaridade > s1) {
             s3 = s2;
@@ -150,11 +156,11 @@ void Cliente::definirSimilares (vector <Cliente*> clientes) {
 }
 
 /** @brief Método "recomendarPorSimilar" da classe "Cliente", utilizado para fins de recomendação.
- *  @details Esse método recebe um cliente como parâmetro (cliente mais similar encontrado pelo método anterior)
- * e percorre pelos filmes assistidos por ele, comparando-os com o do histórico de um outro cliente específico. Caso esse outro
- * cliente não tenha visto algum desses filmes similares, o filme é considerado inétido e recomendado à ele. Caso contrário, 
- * não. Pós isso, os filmes recomendados são adiconados à um outro vetor ("conjuntoRecomendados"). Caso existam filmes repetidos,
- * eles são excluidos pelo "set".
+ *  @details Esse método recebe um cliente como parâmetro e percorre os filmes assistidos por ele,
+ * comparando-os com os filmes no histórico do cliente atual. Caso o cliente atual não tenha visto
+ * o filme, o filme é considerado inédito. Caso contrário, o filme é ignorado. Pós isso, os filmes
+ * inéditos são adiconados à um outro vetor ("conjuntoRecomendados"). Caso existam filmes repetidos,
+ * eles são excluidos utilizando "set".
  * @param recomendados Armazena os filmes do cliente que foram considerados recomendados.
  * @param conjuntoRecomendados Armazena os filmes recomendados considerados inétidos.
  * @param aindaTemFilmes Determina se ainda existem filmes no vetor "historico".
@@ -193,10 +199,13 @@ vector <Filme*> Cliente::recomendarPorSimilar(Cliente* cliente) {
 }
 /**
  * @brief Método "recomendar" da classe "Cliente", utilizado para fins de recomendação.
- * @details Esse método análisa os filmes similares de um determinado cliente e o histórico de filmes assistidos pelo mesmo.
- * Os filmes similares vistos pelo cliente são adicionados no vetor "recomendados", utilizando como base o método "recomendarPorSimilar". 
- * Caso o cliente não possua nenhum file similar ou seu histórico de filmes assistidos esteja vazio (nenhum filme foi visto), o método 
- * alerta sobre isso.
+ * @details Esse método recebe como parâmetro um vetor de clientes e retorna, a partir deles, um vetor
+ * de filmes recomendados. Para isso, ele começa definindo os clientes de gosto mais similar ao cliente
+ * atual, pelo método "definirSimilares". Caso depois dessa chamada não existam clientes similares ou o
+ * cliente atual ainda não tenha alugado nenhum filme na locadora, o método retorna que ainda é impossível
+ * recomendar filmes à esse cliente. Se não, é utilizado o método "recomendarPorSimilar" para que cada
+ * um dos clientes no vetor "similares" forneça um vetor de filmes, que se juntarão em um só vetor de 
+ * filmes recomendados, que fica no atributo "recomendados".
  * @param definirSimilares Define os filmes similares com base em um cliente específico.
 */
 
