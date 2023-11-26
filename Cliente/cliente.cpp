@@ -153,7 +153,7 @@ vector <Filme*> Cliente::recomendarPorSimilar(Cliente* cliente) {
             conjuntoRecomendados.insert(recomendado);
             break;
         }
-        if (cliente->historico.size()-i == 0) {
+        if (cliente->historico.size()-i == 0) { 
             aindaTemFilmes = false;
             break;
         }
@@ -170,14 +170,10 @@ void Cliente::recomendar(vector <Cliente*> clientes) {
         return;
     }
     this->recomendados.clear();
-    for (Cliente* cliente : clientes) {
-        if (this->cpf == cliente->cpf) {
-            break;
-        } else {
-            vector <Filme*> recomendados = this -> recomendarPorSimilar(cliente); 
-            for (Filme* filme : recomendados) {
-                this -> recomendados.push_back(filme);
-            }
+    for (Cliente* cliente : similares) {
+        vector <Filme*> recomendados = this -> recomendarPorSimilar(cliente); 
+        for (Filme* filme : recomendados) {
+            this -> recomendados.push_back(filme);
         }
     }
 }
