@@ -171,8 +171,8 @@ void Cliente::recomendar(vector <Cliente*> clientes) {
     }
     this->recomendados.clear();
     for (Cliente* cliente : similares) {
-        vector <Filme*> recomendados = this -> recomendarPorSimilar(cliente); 
-        for (Filme* filme : recomendados) {
+        vector <Filme*> filmes = this -> recomendarPorSimilar(cliente); 
+        for (Filme* filme : filmes) {
             this -> recomendados.push_back(filme);
         }
     }
