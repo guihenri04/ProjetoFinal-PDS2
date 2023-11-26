@@ -13,7 +13,7 @@ class Filme {
 protected:
   int id;
   float avaliacao;
-  int vezesAlugado;
+  int vezesAvaliado;
   string titulo;
   string tipo;
 public:
