@@ -19,7 +19,7 @@ private:
 public:
   Locadora();
   ~Locadora();
-  void cadastrarFilme(string tipo, int quantidade, int id, const string& titulo, const string& categoria);
+  void cadastrarFilme(char tipo, int quantidade, int id, const string& titulo, const char& categoria);
   void removerFilme(int codigo);
   void listarFilmes(char opcao);
   void cadastrarCliente(int cpf, string nome);

@@ -11,7 +11,7 @@ using namespace std;
 
 
 int main() {
-
+    Locadora CineMax;
     string comando;
 
     while (true) {
@@ -20,28 +20,50 @@ int main() {
         cin >> comando;
 
       
-        if (comando.size() >= 2) {              //divide a string e verificaa
+        if (comando.size() >= 2) { //divide a string e verifica
             switch (comando[0]) {
-
-
-
-
-
-//ler arquivo case la
-
-
-
-
 
                 case 'C':
                     switch (comando[1]) {
 
-                        case 'F':
-                        cadastrarFilme();
-                           // cadastrar filme 
-                            break;
+                        case 'F': {
+                            cout << "CADASTRAR FILME" << endl;
 
-                        case 'C':                            // cadastrar cliente   
+                            cout << "Digite o tipo (D para DVD ou F para fita): " << endl;
+                            char tipo; 
+                            cin >> tipo;
+                            if (tipo != 'F' && tipo != 'D') {
+                                cout << "ERRO: dados incorretos\n";
+                                return;
+                            }
+
+                            cout << "Digite o número de unidades:" << endl;
+                            int unidades;
+                            cin >> unidades;
+
+                            cout << "Digite o código:" << endl;
+                            int id; 
+                            cin >> id;
+
+                            cout << "Digite o título:" << endl;
+                            string titulo; 
+                            getline(cin,titulo);
+
+                            char categoria = 'X';
+                            if (tipo == 'D') {
+                                cout << "Digite o categoria do DVD (E, L ou P):" << endl;
+                                cin >> categoria;
+                                if (categoria != 'E' && categoria != 'L' && categoria != 'P') {
+                                    cout << "ERRO: dados incorretos\n";
+                                    return;
+                                }
+                            }
+
+                            CineMax.cadastrarFilme(tipo, unidades, id, titulo, categoria);
+                            break;
+                        }
+
+                        case 'C': // cadastrar cliente   
                            
                             break;
                     

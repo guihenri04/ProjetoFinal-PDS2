@@ -16,7 +16,7 @@ Locadora::~Locadora() {
     }
 }
 
-void Locadora::cadastrarFilme(string tipo, int unidades, int id, const string& titulo, const string& categoria) {
+void Locadora::cadastrarFilme(char tipo, int unidades, int id, const string& titulo, const char& categoria) {
     
     for (int i=0; i<filmes.size(); i++) { // codigo repetido
         if (id == filmes[i]->id) {
@@ -24,12 +24,12 @@ void Locadora::cadastrarFilme(string tipo, int unidades, int id, const string& t
             return;
         }
     }
-    if (tipo != "F" && tipo !="D") { // tipo invalido
+    if (tipo != 'F' && tipo !='D') { // tipo invalido
         cout << "ERRO: dados incorretos\n";
         return;
     }
-    if (tipo == "D") {
-        if(categoria!= "E" && categoria!= "L" && categoria!= "P") { // categoria invalida
+    if (tipo == 'D') {
+        if(categoria!= 'E' && categoria!= 'L' && categoria!= 'P') { // categoria invalida
             cout << "ERRO: dados incorretos\n";
             return;
         }
@@ -40,13 +40,13 @@ void Locadora::cadastrarFilme(string tipo, int unidades, int id, const string& t
     }
 
     Filme* novoFilme;
-    if (tipo=="F") {
+    if (tipo=='F') {
         novoFilme = new Fita(id, titulo, unidades);
-    } else if (categoria=="E") {
+    } else if (categoria == 'E') {
         novoFilme = new dvdEstoque(id, titulo, unidades);
-    } else if (categoria=="L") {
+    } else if (categoria == 'L') {
         novoFilme = new dvdLancamento(id, titulo, unidades);
-    } else if (categoria=="P") {
+    } else if (categoria == 'P') {
         novoFilme = new dvdPromocao(id, titulo, unidades);
     } 
 
