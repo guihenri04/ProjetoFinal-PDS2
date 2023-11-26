@@ -100,6 +100,14 @@ int Cliente::calcularSimilaridade (Cliente* cliente2) {
     return similaridade;
 }
 
+/** @brief Método "definirSimilares" da classe "Cliente", utilizado para controle.
+ *  @details Esse método 
+ * 
+ * 
+ * 
+ * 
+ * 
+*/
 void Cliente::definirSimilares (vector <Cliente*> clientes) {
     if (clientes.size()<=3) {
         this -> similares = clientes;
