@@ -23,46 +23,40 @@ cout.rdbuf(cout_saida);
 return saida.str();
 }
 
-
-TEST_CASE("Cliente-lerCliente"){
-    Cliente cliente1(1, "maria");
-    Cliente* pointerCliente1 = &cliente1;
-    CHECK(saida_cliente(pointerCliente1) == "1 maria\n");
-}
-
-TEST_CASE("Cliente-alugar"){
-    dvdEstoque dvdE(0, "Divergente", 10);
-    Filme* filme1=&dvdE;
-    Cliente* cliente;
-    cliente -> alugar(filme1);
-    CHECK(cliente->filmesAlugados.size() == 1);
-    CHECK(cliente->historico.size() == 1);
-    CHECK(cliente->pontos == 1);
-}
-
-TEST_CASE("Cliente-devolver"){
-    Cliente* cliente;
-    cliente -> devolver();
-    CHECK(cliente->filmesAlugados.size() == 0);
-}
-
-
-
-/*
-TEST_CASE("Cliente-recomendar"){
-
-}
-
-
-TEST_CASE("Cliente-calcularSimilaridade"){
-    Cliente* cliente;
+    dvdEstoque dvdE(1, "Divergente", 10);
+    dvdEstoque dvdE2(2, "Feliz", 11);
+    Filme* filme=&dvdE;
+    Filme* filme2=&dvdE2;
     Cliente cliente1(1, "maria");
     Cliente cliente2(2, "joao");
     Cliente* pointerCliente1 = &cliente1;
     Cliente* pointerCliente2 = &cliente2;
-    dvdEstoque dvdE(0, "Divergente", 10);
-    dvdEstoque dvdE2(2, "Feliz", 3);
-    Filme* filme1=&dvdE;
-    Filme* filme2=&dvdE2;
 
-}*/
+
+TEST_CASE("Cliente-lerCliente"){
+    CHECK(saida_cliente(pointerCliente1) == "1 maria\n");
+}
+
+TEST_CASE("Cliente-alugar"){
+    pointerCliente1 -> alugar(filme);
+    CHECK(pointerCliente1->filmesAlugados.size() == 1);
+    CHECK(pointerCliente1->historico.size() == 1);
+    CHECK(pointerCliente1->pontos == 1);
+    pointerCliente1->filmesAlugados.clear();
+    pointerCliente1->historico.clear();
+    pointerCliente1->pontos = 0;
+}
+
+TEST_CASE("Cliente-devolver"){
+    pointerCliente1->alugar(filme);
+    CHECK(pointerCliente1->filmesAlugados.size() == 1);
+    pointerCliente1->devolver();
+    CHECK(pointerCliente1->filmesAlugados.size() == 0);
+}
+
+
+TEST_CASE("Cliente-calcularSimilaridade"){
+pointerCliente1->alugar(filme);
+pointerCliente2->alugar(filme);
+CHECK (pointerCliente1->calcularSimilaridade(pointerCliente2) == 1);
+}

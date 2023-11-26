@@ -14,8 +14,6 @@ protected:
   int cpf;
   vector<Filme*> recomendados;
   vector<Cliente*> similares;
-  int calcularSimilaridade (Cliente* cliente);
-  void definirSimilares (vector <Cliente*> clientes);
   vector <Filme*> recomendarPorSimilar(Cliente* cliente);
 public:
   Cliente(int cpf, string nome);
@@ -25,6 +23,8 @@ public:
   void devolver ();
   void recomendar(vector <Cliente*> clientes);
   int pontos;
+  int calcularSimilaridade (Cliente* cliente);
+  void definirSimilares (vector <Cliente*> clientes);
   vector<Filme*> filmesAlugados;
   vector<Filme*> historico;
 };

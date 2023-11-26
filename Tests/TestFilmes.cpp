@@ -1,16 +1,12 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "doctest.h"
-#include "filme.cpp"
-#include "filme.hpp"
-#include "cliente.cpp"
-#include "cliente.hpp"
+#include "../doctest.h"
+#include "../Filmes/filme.hpp"
+#include "../Cliente/cliente.hpp"
 
 using namespace std;
 
-#include "DVDestoque.hpp"
-#include "DVDpromocao.hpp"
-#include "DVDlancamento.hpp"
-#include "fita.hpp"
+#include "../Filmes/Subclasses/DVDestoque.hpp"
+
 
 string saida_filme(Filme* filme){
 stringstream saida;
