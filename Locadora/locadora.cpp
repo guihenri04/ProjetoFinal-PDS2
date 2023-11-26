@@ -180,7 +180,7 @@ void Locadora::aluguel(int cpf, int id) {
     filme->serAlugado();
 }
 
-void Locadora::devolucao(int cpf, vector<int> nota) {
+void Locadora::devolucao(int cpf) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
         [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
     Cliente* cliente;
@@ -204,10 +204,8 @@ void Locadora::devolucao(int cpf, vector<int> nota) {
         cliente->pontos = cliente->pontos - 10;
     }
     cout << "Total a pagar: " << total << endl;
-    int i = 0;
     for (const auto& filme : cliente -> filmesAlugados) {
-        filme -> serDevolvido(nota[i]);
-        i++;
+        filme -> serDevolvido();
     }
     cliente -> devolver();
 }
@@ -228,4 +226,18 @@ void Locadora::recomendarFilmes(int cpf) {
         filme -> lerFilme();
     }
 
+}
+
+void Locadora::avaliarFilme(int id, int nota) {
+    auto itFilme = std::find_if(filmes.begin(), filmes.end(),
+        [id](Filme* filme) { return filme->id == id; });
+    Filme* filme;
+    if (itFilme != this->filmes.end()) {
+        filme = *itFilme;
+    } else { // filme inexistente
+        cout << "ERRO: Filme " << id<< " inexistente\n";
+        return;
+    }
+
+    filme->serAvaliado(nota);
 }
