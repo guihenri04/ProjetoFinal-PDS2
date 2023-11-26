@@ -100,14 +100,21 @@ int Cliente::calcularSimilaridade (Cliente* cliente2) {
     return similaridade;
 }
 
-/** @brief Método "definirSimilares" da classe "Cliente", utilizado para controle.
+/** @brief Método "definirSimilares" da classe "Cliente", utilizado para fins de recomendação.
  *  @details Esse método recebe um vetor contendo três clientes e, a partir daí, realiza uma filtragem, comparando os filmes
  * assistidos por eles e objetivando encontrar aquele cliente com similaridade mais próxima à de um outro cliente específico. 
  * Caso esse vetor possua menos que três elementos, essa comparação não é realizada. Durante essa filtragem feita pelo método, são atribuidos
  * graus de similaridade baseados nos filmes assistidos pelos clientes, os quais serão utilizados para a elaboração de um "ranking" que listará 
  * aqueles clientes com gostos mais próximos à de um outro cliente específico. O cliente com maior grau de similaridade fica em primeiro lugar
  * e assim por diante. Por fim, eles são adicionados a um outro vetor ("similares") de acordo com o ranking previamente feito.
- * 
+ * @param clientes Armazena até três clientes.
+ * @param similares Armazena os clientes de acordo com a similaridade deles, utilizando como base o "ranking".
+ * @param c1 Cliente com maior grau de similaridade àquele recebido pelo método.
+ * @param c2 Cliente com grau de similaridade intermediário àquele recebido pelo método.
+ * @param c3 Cliente com menor grau de similaridade àquele recebido pelo método.
+ * @param s1 Maior grau de similaridade.
+ * @param s2 Grau de similaridade intermediário.
+ * @param s3 Menor grau de similaridade.
 */
 void Cliente::definirSimilares (vector <Cliente*> clientes) {
     if (clientes.size()<=3) {
@@ -142,6 +149,20 @@ void Cliente::definirSimilares (vector <Cliente*> clientes) {
     this -> similares.push_back(c3);
 }
 
+/** @brief Método "recomendarPorSimilar" da classe "Cliente", utilizado para fins de recomendação.
+ *  @details Esse método recebe um cliente como parâmetro (cliente mais similar encontrado pelo método anterior)
+ * e percorre pelos filmes assistidos por ele, comparando-os com o do histórico de um outro cliente específico. Caso esse outro
+ * cliente não tenha visto algum desses filmes similares, o filme é considerado inétido e recomendado à ele. Caso contrário, 
+ * não. Pós isso, os filmes recomendados são adiconados à um outro vetor ("conjuntoRecomendados"). Caso existam filmes repetidos,
+ * eles são excluidos pelo "set".
+ * @param recomendados Armazena os filmes do cliente que foram considerados recomendados.
+ * @param conjuntoRecomendados Armazena os filmes recomendados considerados inétidos.
+ * @param aindaTemFilmes Determina se ainda existem filmes no vetor "historico".
+ * @param inedito Determina se o filme é inétido ou não com base nos filmes do cliente com elevada similaridade.
+ * @param filmeVisto Determina se o filme foi visto ou não por algum outro cliente específico.
+ * @param recomendado Registra o filme recomendado com basse no histórico do cliente de elevada similaridade.
+*/
+
 vector <Filme*> Cliente::recomendarPorSimilar(Cliente* cliente) {
     vector <Filme*> recomendados;
     set<Filme*> conjuntoRecomendados;
@@ -170,6 +191,14 @@ vector <Filme*> Cliente::recomendarPorSimilar(Cliente* cliente) {
     recomendados.assign(conjuntoRecomendados.begin(), conjuntoRecomendados.end());
     return recomendados;
 }
+/**
+ * @brief Método "recomendar" da classe "Cliente", utilizado para fins de recomendação.
+ * @details Esse método análisa os filmes similares de um determinado cliente e o histórico de filmes assistidos pelo mesmo.
+ * Os filmes similares vistos pelo cliente são adicionados no vetor "recomendados", utilizando como base o método "recomendarPorSimilar". 
+ * Caso o cliente não possua nenhum file similar ou seu histórico de filmes assistidos esteja vazio (nenhum filme foi visto), o método 
+ * alerta sobre isso.
+ * @param definirSimilares Define os filmes similares com base em um cliente específico.
+*/
 
 void Cliente::recomendar(vector <Cliente*> clientes) {
     this -> definirSimilares(clientes);
