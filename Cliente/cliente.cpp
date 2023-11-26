@@ -101,11 +101,12 @@ int Cliente::calcularSimilaridade (Cliente* cliente2) {
 }
 
 /** @brief Método "definirSimilares" da classe "Cliente", utilizado para controle.
- *  @details Esse método 
- * 
- * 
- * 
- * 
+ *  @details Esse método recebe um vetor contendo três clientes e, a partir daí, realiza uma filtragem, comparando os filmes
+ * assistidos por eles e objetivando encontrar aquele cliente com similaridade mais próxima à de um outro cliente específico. 
+ * Caso esse vetor possua menos que três elementos, essa comparação não é realizada. Durante essa filtragem feita pelo método, são atribuidos
+ * graus de similaridade baseados nos filmes assistidos pelos clientes, os quais serão utilizados para a elaboração de um "ranking" que listará 
+ * aqueles clientes com gostos mais próximos à de um outro cliente específico. O cliente com maior grau de similaridade fica em primeiro lugar
+ * e assim por diante. Por fim, eles são adicionados a um outro vetor ("similares") de acordo com o ranking previamente feito.
  * 
 */
 void Cliente::definirSimilares (vector <Cliente*> clientes) {

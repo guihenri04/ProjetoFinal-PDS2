@@ -29,12 +29,12 @@ using namespace std;
 * ("vector<Filme*> historico").
 * @param nome Registra o nome do cliente.
 * @param cpf Registra o cpf do cliente.
-* @param vector<Filme*> recomendados Usado na recomendação de filmes aos clientes.
-* @param vector<Cliente*> similares Usado no calculo de similaridade entre os filmes alugados pelos clientes.
-* @param vector <Filme*> recomendarPorSimilar(Cliente* cliente) Usado na recomendação de filmes por similaridade entre os clientes.
+* @param recomendados Usado na recomendação de filmes aos clientes.
+* @param similares Usado no calculo de similaridade entre os filmes alugados pelos clientes.
+* @param recomendarPorSimilar Usado na recomendação de filmes por similaridade entre os clientes.
 * @param pontos Registra a quantidade de pontos de cada cliente.
-* @param vector<Filme*> filmesAlugados Usado no controle dos filmes alugados.
-* @param vector<Filme*> historico Usado no controle dos filmes adicionados ao histórico dos clientes.
+* @param filmesAlugados Usado no controle dos filmes alugados.
+* @param historico Usado no controle dos filmes adicionados ao histórico dos clientes.
 */
 
 
