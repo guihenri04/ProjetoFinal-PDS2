@@ -22,7 +22,8 @@ public:
   virtual int calcularValor(int dias) = 0;
   void lerFilme();
   void serAlugado();
-  void serDevolvido(int nota);
+  void serDevolvido();
+  void serAvaliado(int nota);
   int unidades;
 };
 
