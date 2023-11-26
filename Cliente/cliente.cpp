@@ -67,7 +67,7 @@ void Cliente::alugar(Filme* filme) {
 }
 
 /** @brief Método "devolver" da classe "Cliente", utilizado especialmente para controle.
- *  @details Esse método controla a quantidade de filmes alugados pelos clientes (o filme devolvido à locadora é retirado do vetor
+ *  @details Esse método controla a quantidade e quais filmes foram alugados pelos clientes (o filme devolvido à locadora é retirado do vetor
  * filmesAlugados, para controle).
  */
 
