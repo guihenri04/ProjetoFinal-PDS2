@@ -39,7 +39,7 @@ int main() {
                         cin >> tipo;
                         if (tipo != 'F' && tipo != 'D') {
                             cout << "ERRO: dados incorretos\n";
-                            return;
+                            return 0;
                         }
 
                         cout << "Digite o número de unidades:" << endl;
@@ -60,7 +60,7 @@ int main() {
                             cin >> categoria;
                             if (categoria != 'E' && categoria != 'L' && categoria != 'P') {
                                 cout << "ERRO: dados incorretos\n";
-                                return;
+                                return 0;
                             }
                         }
 
