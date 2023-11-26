@@ -4,7 +4,7 @@
 /**
 * @file cliente.cpp
 * @brief Método do arquivo "cliente.hpp" para identificação dos clientes.
-* Este método registra o cpf, o nome e a quantidade de pontos que cada cliente tem, para controle da própria locadora, 
+* @details Esse método registra o cpf, o nome e a quantidade de pontos que cada cliente tem, para controle da própria locadora, 
 * além de auxiliar em futuras promoções(pontos).
 * @param cpf Armazena o cpf do cliente para identificação.
 * @param nome Armazena o nome do cliente.
@@ -40,7 +40,7 @@ Cliente::~Cliente() {
 };
 
 /** @brief Método "lerCliente" classe "Cliente", utilizado especialmente para exibição.
- * Esse método exibe para o usuário o cpf e o nome do cliente registrado na locadora.
+ *  @details Esse método exibe para o usuário o cpf e o nome do cliente registrado na locadora.
  */
 
 void Cliente::lerCliente(){
@@ -49,7 +49,7 @@ void Cliente::lerCliente(){
 }
 
 /** @brief Método "alugar" da classe "Cliente", utilizado para registro.
- * Esse método registra a quantidade de filmes alugados pelo cliente, lista esses filmes, adiciona pontos para uma
+ *  @details Esse método registra a quantidade de filmes alugados pelo cliente, lista esses filmes, adiciona pontos para uma
  * possível futura promoção e registra o histórico de filmes que já foram alugados pelo cliente.
  *  @param unidades Indica a quantidade de filmes alugados pelo cliente.
  *  @param filme Indica o filme alugado pelo cliente.
@@ -67,7 +67,7 @@ void Cliente::alugar(Filme* filme) {
 }
 
 /** @brief Método "devolver" da classe "Cliente", utilizado especialmente para controle.
- * Esse método controla a quantidade de filmes alugados pelos clientes (o filme devolvido à locadora é retirado do vetor
+ *  @details Esse método controla a quantidade de filmes alugados pelos clientes (o filme devolvido à locadora é retirado do vetor
  * filmesAlugados, para controle).
  */
 
@@ -77,6 +77,17 @@ void Cliente::devolver() {
     }
     this->filmesAlugados.clear();
 }
+
+/** @brief Método "calcularSimilaridade" da classe "Cliente", utilizado para controle.
+ *  @details Esse método analisa o filme alugado por um clinte diretamente do seu histórico e compara esse filme
+ * com os filmes alugados por outro cliente, também de acordo com seu histórico. Caso esses filmes sejam iguais,
+ * existe uma similaridade entre os gostos do clientes, a qual aumenta (a similaridade será importante para o
+ * sistema de recomendação).
+ *  @param similaridade Registra a quantidade de filmes similares com base no histórico dos clientes.
+ *  @param filme1 Filme pertencente ao histórico do cliente 1.
+ *  @param filme2 Filme pertencente ao histórico do cliente 2.
+ *  @return Retorna a quantidade de filmes similares entre os dois clientes.
+ */
 
 int Cliente::calcularSimilaridade (Cliente* cliente2) {
     int similaridade = 0;
