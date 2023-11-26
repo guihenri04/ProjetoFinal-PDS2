@@ -3,8 +3,8 @@
 
 /**
 * @file cliente.cpp
-* @brief Método do arquivo "cliente.hpp" para identificação dos clientes.
-* @details Esse método registra o cpf, o nome e a quantidade de pontos que cada cliente tem, para controle da própria locadora, 
+* @brief Construtor do arquivo "cliente.hpp" para identificação dos clientes.
+* @details Esse construtor registra o cpf, o nome e a quantidade de pontos que cada cliente tem, para controle da própria locadora, 
 * além de auxiliar em futuras promoções(pontos).
 * @param cpf Armazena o cpf do cliente para identificação.
 * @param nome Armazena o nome do cliente.
