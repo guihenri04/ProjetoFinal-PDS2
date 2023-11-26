@@ -26,8 +26,9 @@ public:
   void removerCliente(int cpf);
   void listarClientes(char opcao);
   void aluguel(int cpf, int id);
-  void devolucao(int cpf, vector<int> nota);
+  void devolucao(int cpf);
   void recomendarFilmes(int cpf);
+  void avaliarFilme(int id, int nota);
 };
 
 #endif
