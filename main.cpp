@@ -7,10 +7,7 @@
 #include <iomanip>
 #include <sstream>
 
-
-
 using namespace std;
-
 
 int main() {
 
@@ -267,7 +264,11 @@ int main() {
                         long long cpf;
                         cin >> cpf;
 
-                        CineMax.devolucao(cpf);
+                        cout << "Digite o número de dias que o cliente manteve os filmes:" << endl;
+                        int dias;
+                        cin >> dias;
+
+                        CineMax.devolucao(cpf, dias);
 
                         break;
                     }

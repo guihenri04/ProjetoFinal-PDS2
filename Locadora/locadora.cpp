@@ -180,7 +180,7 @@ void Locadora::aluguel(long long cpf, int id) {
     cout << "Filme "<< filme->id <<" alugado por " << cliente->nome << " com sucesso\n";
 }
 
-void Locadora::devolucao(long long cpf) {
+void Locadora::devolucao(long long cpf, int dias) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
         [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
     Cliente* cliente;
@@ -195,8 +195,9 @@ void Locadora::devolucao(long long cpf) {
     int total = 0;
     for (const auto& filme : cliente -> filmesAlugados) {
         cout << filme -> id << " " ;
-        cout << filme -> calcularValor(1) << endl;
-        total += filme -> calcularValor(1);
+        int valor = filme -> calcularValor(dias);
+        cout << valor << endl;
+        total += valor;
     }
 
     if(cliente->pontos>10) {
