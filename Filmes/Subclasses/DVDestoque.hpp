@@ -11,7 +11,7 @@
  * serão recebidos por eles.
  * @class dvdEstoque
  * @details Na classe "dvdEstoque", que herda publicamente a classe "Filme", existem como atributos públicos um construtor, o qual
- * recebe como parãmetros o id de identificação de um filme, seu título e a quantidade de unidades disponíveis dele para aluguel
+ * recebe como parâmetros o id de identificação de um filme, seu título e a quantidade de unidades disponíveis dele para locação
  * ("dvdEstoque(int id, string titulo, int unidades)"). Existe também um método para calcular quanto será pago pelo aluguel do filme
  * de acordo com a quantidade de dias que ele ficou alugado, o qual substitui uma função virtual na classe base, no caso, "Filme"
  * ("int calcularValor(int dias) override").
