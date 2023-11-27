@@ -20,7 +20,6 @@ int main() {
         cout << "Digite um comando: " << endl;                                          // fazer menu
         cin >> comando;
 
-      
         if (comando.size() < 2) {
             cout << "Comando inválido." << endl;
             break;
@@ -139,7 +138,9 @@ int main() {
                         cout << "Digite o nome do arquivo: " << endl;
 
                         string nomeArquivo;                                                                             //arrumar forma de pegar parametros do arquivo
-                        cin >> nomeArquivo;                                                                                // passar para a funçao cadstra
+                        cin >> nomeArquivo;   
+                        
+                        cin.ignore();                                                                             // passar para a funçao cadstra
 
                         ifstream arquivo(nomeArquivo);
                         string linha;
