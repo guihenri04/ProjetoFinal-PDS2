@@ -20,7 +20,6 @@ int main() {
         cout << "Digite um comando: " << endl;                                          // fazer menu
         cin >> comando;
 
-      
         if (comando.size() < 2) {
             cout << "Comando inválido." << endl;
             break;
@@ -49,7 +48,8 @@ int main() {
 
                         cout << "Digite o título:" << endl;
                         string titulo; 
-                        getline(cin,titulo);
+                        cin.ignore();
+                        getline(cin, titulo);
 
                         char categoria = 'X';
                         if (tipo == 'D') {
@@ -74,7 +74,8 @@ int main() {
 
                         cout << "Digite o nome do cliente:" << endl;
                         string nome;
-                        getline(cin,nome);
+                        cin.ignore();
+                        getline(cin, nome);
 
                         CineMax.cadastrarCliente(cpf,nome);
 
@@ -137,17 +138,33 @@ int main() {
                         cout << "Digite o nome do arquivo: " << endl;
 
                         string nomeArquivo;                                                                             //arrumar forma de pegar parametros do arquivo
-                        cin >> nomeArquivo;                                                                                // passar para a funçao cadstra
+                        cin >> nomeArquivo;   
+                        
+                        cin.ignore();                                                                             // passar para a funçao cadstra
 
                         ifstream arquivo(nomeArquivo);
                         string linha;
 
                         if (arquivo.is_open()) {
 
+                            char tipo; 
+                            int unidade;
+                            int id;
+                            string titulo;
+                            char categoria;
+
                             string linha;
                             int contador = 0;
 
-                            while (std::getline(arquivo, linha)) {
+                            while (getline(arquivo, linha)) {
+
+                                istringstream iss(linha);
+
+                                if (iss >> tipo >> unidade >> id >> titulo >> categoria) {
+
+                                CineMax.cadastrarFilme(tipo, unidade, id, titulo, categoria);
+
+                                }
 
                                 contador++;
                             }
