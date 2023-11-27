@@ -69,7 +69,7 @@ int main() {
                         cout << "CADASTRAR CLIENTE" << endl;
 
                         cout << "Digite o CPF do cliente:" << endl;
-                        int cpf;
+                        long cpf;
                         cin >> cpf;
 
                         cout << "Digite o nome do cliente:" << endl;
@@ -111,7 +111,7 @@ int main() {
                         cout << "REMOVER CLIENTE" << endl;
                         cout << "Digite o CPF do cliente que deseja remover:" << endl;
 
-                        int cpf;
+                        long cpf;
                         cin >> cpf;
                         
                         CineMax.removerCliente(cpf);
@@ -119,9 +119,10 @@ int main() {
                         break;
                     }
                     
-                    default:
-                            cout << "Comando inválido.\n";
-                            continue;                                                                   
+                    default: {
+                        cout << "Comando inválido.\n";
+                        continue;    
+                    }                                                               
                 }
                 break;
             }
@@ -158,14 +159,12 @@ int main() {
 
                         else {
 
-                        cout << "ERRO: Arquivo inexistente!" << endl;
+                            cout << "ERRO: Arquivo inexistente!" << endl;
 
                         }
 
                         break;
                     }
-
-                    
 
                     case 'F': {
 
@@ -213,7 +212,7 @@ int main() {
                         cout << "ALUGUEL DE FILME" << endl;
 
                         cout << "Digite o CPF do cliente que alugou o filme:" << endl;
-                        int cpf;
+                        long cpf;
                         cin >> cpf;
 
                         cout << "DIgite o ID do filme alugado:" << endl;
@@ -225,10 +224,12 @@ int main() {
                         break;
                     }
                        
-                    default: 
+                    default: {
 
                         cout << "Comando inválido." << endl;
-                        continue;        
+                        continue;    
+
+                    }   
                 
                 }
                 break;
@@ -241,8 +242,8 @@ int main() {
                         
                         cout << "DEVOLUÇÃO DE FILME" << endl;
 
-                        cout << "Digite o CPF do cliente que realiza a devolução do filme:" << endl;
-                        int cpf;
+                        cout << "Digite o CPF do cliente que realiza a devolução dos filmes:" << endl;
+                        long cpf;
                         cin >> cpf;
 
                         CineMax.devolucao(cpf);
@@ -280,10 +281,10 @@ int main() {
                 break;
             }
             
-            default: {
-                cout << "Comando inválido." << endl;
-                continue;
-            }
+                default: {
+                    cout << "Comando inválido." << endl;
+                    continue;
+                }
 
             }
         
