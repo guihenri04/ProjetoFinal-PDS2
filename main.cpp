@@ -144,10 +144,24 @@ int main() {
 
                         if (arquivo.is_open()) {
 
+                            char tipo; 
+                            int unidade;
+                            int id;
+                            string titulo;
+                            char categoria;
+
                             string linha;
                             int contador = 0;
 
-                            while (std::getline(arquivo, linha)) {
+                            while (getline(arquivo, linha)) {
+
+                                istringstream iss(linha);
+
+                                if (iss >> tipo >> unidade >> id >> titulo >> categoria) {
+
+                                CineMax.cadastrarFilme(tipo, unidade, id, titulo, categoria);
+
+                                }
 
                                 contador++;
                             }
