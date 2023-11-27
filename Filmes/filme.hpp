@@ -7,6 +7,30 @@
 
 using namespace std;
 
+/**
+ * @file cliente.hpp
+ * @brief Arquivo de cabeçalho no qual contém os atributos e a especifição dos métodos utilizados no arquivo "filme.cpp".
+ * @details Esse arquivo define a classe na qual contém os métodos que serão utilizados no desenvolvimento do 
+ * código do arquivo "filme.cpp", especifica o tipo desses métodos (o que eles irão retornar) e os parâmetros que 
+ * serão recebidos por eles.
+ * @class Filme
+ * @details Na classe "Filme", a qual possui como classe amiga "Locadora" e "Cliente", existem como atributos protegidos o 
+ * id do filme ("int id"), a nota de avaliação recebida pelo filme ("float avaliação"), quantas vezes esse filme foi avaliado
+ * ("int vezesAvaliado"), o nome do filme ("string titulo") e o tipo desse filme, seja ação, comédia, etc ("string tipo"). 
+ * A classe também contém como atributos públicos um construtor que recebe o id, o nome e a quantidade de disponível de determinado filme
+ * ("Filme(int id, string titulo, int unidades)") e um destrutor ("~Filme()"). Existe também um método para calcular quanto será pago pelo
+ * aluguel do filme, de acordo com o tempo de aluguel ("virtual int calcularValor(int dias) = 0"), um método para identificar
+ * os filmes ("void lerFilme()"), um método para alugar os filmes disponíveis ("virtual void serAlugado()"), um método para devolver
+ * os filmes que foram alugados ("void serDevolvido()") e um método para avaliar o filme alugado ("void serAvaliado(int nota)"). Além
+ * disso, contém um atributo público para controlar a quantidade de filmes disponíveis na locadora ("int unidades").
+ * @param id Determina o id do filme para identificação.
+ * @param avaliacao Define a avaliação recebida pelo filme.
+ * @param vezesAvaliado Determina quantas vezes um filme foi avaliado.
+ * @param titulo Determina o nome do filme.
+ * @param tipo Determina o tipo do filme.
+ * @param unidades Determina quantas unidades de um filme estão disponíveis para aluguel.
+*/
+
 class Filme {
   friend class Locadora;
   friend class Cliente;
