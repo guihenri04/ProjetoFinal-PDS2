@@ -136,8 +136,8 @@ int main() {
                         cout << "LER ARQUIVO DE CADASTRO" << endl;
                         cout << "Digite o nome do arquivo: " << endl;
 
-                        string nomeArquivo;
-                        cin >> nomeArquivo;
+                        string nomeArquivo;                                                                             //arrumar forma de pegar parametros do arquivo
+                        cin >> nomeArquivo;                                                                                // passar para a funçao cadstra
 
                         ifstream arquivo(nomeArquivo);
                         string linha;
@@ -170,8 +170,8 @@ int main() {
                     case 'F': {
 
                         cout << "LISTAR FILMES" << endl;
-                        cout << " -> Caso queira listar os filmes pela ordem de seus títulos, digite T:" << endl;
-                        cout << " -> Caso queira listar os filmes pela ordem de seus códigos, digite C: " << endl;
+                        cout << " -> Caso queira listar os filmes por ordem de seus títulos, digite T:" << endl;
+                        cout << " -> Caso queira listar os filmes por ordem de seus códigos, digite C: " << endl;
 
                         char opcaof;
                         cin >> opcaof;
@@ -184,8 +184,8 @@ int main() {
                     case 'C': {
 
                         cout << "LISTAR CLIENTES" << endl;
-                        cout << " -> Caso queira listar os clientes pela ordem de seus códigos (CPFs), digite C:" << endl;
-                        cout << " -> Caso queira listar os clientes pela ordem de seus nomes, digite N:" << endl;
+                        cout << " -> Caso queira listar os clientes por ordem de seus códigos (CPFs), digite C:" << endl;
+                        cout << " -> Caso queira listar os clientes por ordem de seus nomes, digite N:" << endl;
 
                         char opcaoc;
                         cin >> opcaoc;
