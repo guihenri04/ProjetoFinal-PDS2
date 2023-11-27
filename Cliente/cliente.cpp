@@ -82,14 +82,14 @@ void Cliente::devolver() {
 
 /** 
  * @brief Método "calcularSimilaridade" da classe "Cliente", utilizado para controle.
- *  @details Esse método analisa o filme alugado por um clinte diretamente do seu histórico e compara esse filme
+ * @details Esse método analisa o filme alugado por um clinte diretamente do seu histórico e compara esse filme
  * com os filmes alugados por outro cliente, também de acordo com seu histórico. Caso esses filmes sejam iguais,
  * existe uma similaridade entre os gostos do clientes, a qual aumenta (a similaridade será importante para o
  * sistema de recomendação).
- *  @param similaridade Registra a quantidade de filmes similares com base no histórico dos clientes.
- *  @param filme1 Filme pertencente ao histórico do cliente 1.
- *  @param filme2 Filme pertencente ao histórico do cliente 2.
- *  @return Retorna a quantidade de filmes similares entre os dois clientes.
+ * @param similaridade Registra a quantidade de filmes similares com base no histórico dos clientes.
+ * @param filme1 Filme pertencente ao histórico do cliente 1.
+ * @param filme2 Filme pertencente ao histórico do cliente 2.
+ * @return Retorna a quantidade de filmes similares entre os dois clientes.
  */
 
 int Cliente::calcularSimilaridade (Cliente* cliente2) {
