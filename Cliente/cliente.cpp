@@ -38,7 +38,8 @@ Cliente::~Cliente() {
     }
 };
 
-/** @brief Método "lerCliente" classe "Cliente", utilizado especialmente para exibição.
+/** 
+ * @brief Método "lerCliente" classe "Cliente", utilizado especialmente para exibição.
  *  @details Esse método exibe para o usuário o cpf e o nome do cliente registrado na locadora.
  */
 
@@ -47,7 +48,8 @@ void Cliente::lerCliente(){
     cout << this -> nome << endl;
 }
 
-/** @brief Método "alugar" da classe "Cliente", utilizado para registro.
+/** 
+ * @brief Método "alugar" da classe "Cliente", utilizado para registro.
  *  @details Esse método registra a quantidade de filmes alugados pelo cliente, lista esses filmes, adiciona pontos para uma
  * possível futura promoção e registra o histórico de filmes que já foram alugados pelo cliente.
  *  @param unidades Indica a quantidade de filmes alugados pelo cliente.
@@ -65,7 +67,8 @@ void Cliente::alugar(Filme* filme) {
     this -> historico.push_back(filme);
 }
 
-/** @brief Método "devolver" da classe "Cliente", utilizado especialmente para controle.
+/** 
+ * @brief Método "devolver" da classe "Cliente", utilizado especialmente para controle.
  *  @details Esse método controla a quantidade e quais filmes foram alugados pelos clientes (o filme devolvido à locadora é retirado do vetor
  * filmesAlugados, para controle).
  */
@@ -77,7 +80,8 @@ void Cliente::devolver() {
     this->filmesAlugados.clear();
 }
 
-/** @brief Método "calcularSimilaridade" da classe "Cliente", utilizado para controle.
+/** 
+ * @brief Método "calcularSimilaridade" da classe "Cliente", utilizado para controle.
  *  @details Esse método analisa o filme alugado por um clinte diretamente do seu histórico e compara esse filme
  * com os filmes alugados por outro cliente, também de acordo com seu histórico. Caso esses filmes sejam iguais,
  * existe uma similaridade entre os gostos do clientes, a qual aumenta (a similaridade será importante para o
@@ -100,7 +104,8 @@ int Cliente::calcularSimilaridade (Cliente* cliente2) {
     return similaridade;
 }
 
-/** @brief Método "definirSimilares" da classe "Cliente", utilizado para fins de recomendação.
+/** 
+ * @brief Método "definirSimilares" da classe "Cliente", utilizado para fins de recomendação.
  *  @details Esse método recebe um vetor de clientes e, a partir daí, realiza uma filtragem, em busca
  * de selecionar os 3 usuários com maior similaridade com o cliente atual, e colocá-los no seu 
  * atributo "similares". Caso esse vetor parâmetro possua menos que três clientes, essa comparação não 
@@ -155,7 +160,8 @@ void Cliente::definirSimilares (vector <Cliente*> clientes) {
     this -> similares.push_back(c3);
 }
 
-/** @brief Método "recomendarPorSimilar" da classe "Cliente", utilizado para fins de recomendação.
+/** 
+ * @brief Método "recomendarPorSimilar" da classe "Cliente", utilizado para fins de recomendação.
  *  @details Esse método recebe um cliente como parâmetro e percorre os filmes assistidos por ele,
  * comparando-os com os filmes no histórico do cliente atual. Caso o cliente atual não tenha visto
  * o filme, o filme é considerado inédito. Caso contrário, o filme é ignorado. Pós isso, os filmes
