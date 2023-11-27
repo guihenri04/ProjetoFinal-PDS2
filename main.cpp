@@ -259,16 +259,56 @@ int main() {
                 break;
             }
 
+            case 'N': {
+                switch (comando[1]) {
 
+                    case 'F': {
+                        
+                        cout << "AVALIAR FILME" << endl;
 
+                        cout << "Digite o id do filme a ser avaliado:" << endl;
+                        int id;
+                        cin >> id;
+                        cout << "Digite a nota do filme, de 0 a 5:" << endl;
+                        int nota;
+                        cin >> nota;
 
+                        CineMax.avaliarFilme(id,nota);
 
-            //sistemas de recomendaçao e avaliaçao, perguntar luisa : cases ai ar
+                        break;
+                    }
+                    
+                    default: {
+                        cout << "Comando inválido." << endl;
+                        continue;
+                    }
+                }
+                break;
+            }
 
+            case 'S': {
+                switch (comando[1]) {
 
+                    case 'F': {
+                        
+                        cout << "SUGERIR FILMES" << endl;
 
+                        cout << "Digite o cpf do cliente que busca recomendações:" << endl;
+                        long cpf;
+                        cin >> cpf;
 
+                        CineMax.recomendarFilmes(cpf);
 
+                        break;
+                    }
+                    
+                    default: {
+                        cout << "Comando inválido." << endl;
+                        continue;
+                    }
+                }
+                break;
+            }
 
             case 'F': { 
 
