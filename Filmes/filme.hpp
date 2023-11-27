@@ -42,7 +42,7 @@ protected:
   string tipo;
 public:
   Filme(int id, string titulo, int unidades);
-  ~Filme();
+  virtual ~Filme() = default;
   virtual int calcularValor(int dias) = 0;
   void lerFilme();
   virtual void serAlugado();
