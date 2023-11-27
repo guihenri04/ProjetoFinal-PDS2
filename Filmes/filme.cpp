@@ -3,11 +3,11 @@
 /** 
  * @file filme.cpp
  * @brief Construtor do arquivo "filme.hpp" para identificação e controle dos filmes da locadora.
- * @details Esse construtor registra o id, o nome e a quantidade de filmes disponíveis para aluguel, auxiliando a locadora no controle.
+ * @details Esse construtor registra o id, o nome e a quantidade de filmes disponíveis para locação, auxiliando a locadora no controle.
  * Além disso, registra as avaliações (iniciada em 5) e quantas vezes determinado filme foi avaliado (iniciada em zero).
  * @param id Identifica o filme.
  * @param titulo Armzena o nome do filme.
- * @param unidades Registra quantas unidades de um filme estão disponíveis para aluguel.
+ * @param unidades Registra quantas unidades de um filme estão disponíveis para locação.
  * @param vezesAvaliado Registra quantas vezes um filme foi avaliado.
  * @param avaliacao Regista a nota de avaliação recebida por um filme.
 */
@@ -28,7 +28,7 @@ Filme::Filme (int id, string titulo, int unidades) {
 
 /**
  * @brief Método "lerFilme" da classe "Filme", utilizado especialmente para exibição.
- * @details Esse método exibe para o usuário o id do filme, seu título, a quantidade de unidades restantes para aluguel 
+ * @details Esse método exibe para o usuário o id do filme, seu título, a quantidade de unidades restantes para locação 
  * na locadora e o tipo do filme.
  * @param tipo Armazena o tipo do filme.
 */
@@ -42,7 +42,7 @@ void Filme::lerFilme() {
 /**
  * @brief Método "serAlugado" da classe "Filme", utilizado especialmente para controle.
  * @details Esse método controla a quantidade de exemplares de um determinado filme que está na locadora para ser alugado.
- * Caso não existam mais unidades para serem alugadas, o método exibe uma mensagem de erro, informando sobrei isso.
+ * Caso não existam mais unidades para serem alugadas, o método exibe uma mensagem de erro, informando sobre isso.
 */
 
 void Filme::serAlugado() {
