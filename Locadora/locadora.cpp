@@ -17,8 +17,8 @@ Locadora::~Locadora() {
 }
 
 void Locadora::cadastrarFilme(char tipo, int unidades, int id, const string& titulo, const char& categoria) {
-    
-    for (int i=0; i<filmes.size(); i++) { // codigo repetido
+    int n=filmes.size();
+    for (int i=0; i<n; i++) { // codigo repetido
         if (id == filmes[i]->id) {
             cout << "ERRO: codigo repetido\n";
             return;
@@ -96,7 +96,8 @@ void Locadora::listarFilmes(char opcao) {
 }
 
 void Locadora::cadastrarCliente(long cpf, string nome) {
-    for (int i=0; i<clientes.size(); i++) {
+    int n= clientes.size();
+    for (int i=0; i<n; i++) {
         if (cpf == clientes[i]->cpf) { // CPF repetido
             cout << "ERRO: CPF repetido\n";
             return;
@@ -196,7 +197,7 @@ void Locadora::devolucao(long cpf) {
     }
 
     if(cliente->pontos>10) {
-        total = 0,9 * total;
+        total = 0.9 * total;
         cliente->pontos = cliente->pontos - 10;
     }
     cout << "Total a pagar: " << total << endl;
