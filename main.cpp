@@ -1,4 +1,4 @@
-#include "Locadora/locadora.cpp"
+#include "Locadora/locadora.hpp"
 #include <fstream>
 #include <iostream>
 #include <string>
