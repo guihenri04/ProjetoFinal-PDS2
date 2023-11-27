@@ -24,11 +24,11 @@ using namespace std;
  * os filmes que foram alugados ("void serDevolvido()") e um método para avaliar o filme alugado ("void serAvaliado(int nota)"). Além
  * disso, contém um atributo público para controlar a quantidade de filmes disponíveis na locadora ("int unidades").
  * @param id Determina o id do filme para identificação.
- * @param avaliacao Define a avaliação recebida pelo filme.
- * @param vezesAvaliado Determina quantas vezes um filme foi avaliado.
- * @param titulo Determina o nome do filme.
- * @param tipo Determina o tipo do filme.
- * @param unidades Determina quantas unidades de um filme estão disponíveis para aluguel.
+ * @param avaliacao Registra a avaliação recebida pelo filme.
+ * @param vezesAvaliado Registra quantas vezes um filme foi avaliado.
+ * @param titulo Armazena o nome do filme.
+ * @param tipo Armazena o tipo do filme.
+ * @param unidades Registra quantas unidades de um filme estão disponíveis para aluguel.
 */
 
 class Filme {
