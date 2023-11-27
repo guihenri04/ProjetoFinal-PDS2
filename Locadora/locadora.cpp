@@ -101,7 +101,7 @@ void Locadora::cadastrarCliente(long cpf, string nome) {
             cout << "ERRO: CPF repetido\n";
             return;
         }
-        if (cpf<10000000000 || cpf>99999999999) { // CPF invalido
+        if (cpf<10000000000) { // CPF invalido
             cout << "ERRO: dados incorretos\n";
             return;
         }
@@ -111,10 +111,6 @@ void Locadora::cadastrarCliente(long cpf, string nome) {
 }
 
 void Locadora::removerCliente(long cpf) {
-    if (cpf<10000000000 || cpf>99999999999) { // CPF invalido
-        cout << "ERRO: dados incorretos.\n";
-        return;
-    }
     auto it = find_if(this->clientes.begin(), this->clientes.end(),
                            [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
 
