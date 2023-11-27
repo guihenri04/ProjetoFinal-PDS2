@@ -17,7 +17,7 @@ using namespace std;
  * @details Na classe "Filme", a qual possui como classe amiga "Locadora" e "Cliente", existem como atributos protegidos o 
  * id do filme ("int id"), a nota de avaliação recebida pelo filme ("float avaliação"), quantas vezes esse filme foi avaliado
  * ("int vezesAvaliado"), o nome do filme ("string titulo") e o tipo desse filme, seja fita, DVD, etc ("string tipo"). 
- * A classe também contém como atributos públicos um construtor que recebe o id, o nome e a quantidade de disponível de determinado filme
+ * A classe também contém como atributos públicos um construtor que recebe o id, o nome e a quantidade disponível de determinado filme
  * ("Filme(int id, string titulo, int unidades)") e um destrutor ("~Filme()"). Existe também um método para calcular quanto será pago pelo
  * aluguel do filme, de acordo com o tempo de aluguel ("virtual int calcularValor(int dias) = 0"), um método para identificar
  * os filmes ("void lerFilme()"), um método para alugar os filmes disponíveis ("virtual void serAlugado()"), um método para devolver
@@ -28,7 +28,7 @@ using namespace std;
  * @param vezesAvaliado Registra quantas vezes um filme foi avaliado.
  * @param titulo Armazena o nome do filme.
  * @param tipo Armazena o tipo do filme.
- * @param unidades Registra quantas unidades de um filme estão disponíveis para aluguel.
+ * @param unidades Registra quantas unidades de um filme estão disponíveis para locação.
 */
 
 class Filme {
