@@ -4,7 +4,7 @@
  * @file filme.cpp
  * @brief Construtor do arquivo "filme.hpp" para identificação e controle dos filmes da locadora.
  * @details Esse construtor registra o id, o nome e a quantidade de filmes disponíveis para aluguel, auxiliando a locadora no controle.
- * Além disso, registra as avaliações e quantas vezes determinado filme foi avaliado.
+ * Além disso, registra as avaliações (iniciada em 5) e quantas vezes determinado filme foi avaliado (iniciada em zero).
  * @param id Identifica o filme.
  * @param titulo Armzena o nome do filme.
  * @param unidades Registra quantas unidades de um filme estão disponíveis para aluguel.
