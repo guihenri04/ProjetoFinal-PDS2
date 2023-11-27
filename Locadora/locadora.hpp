@@ -22,12 +22,12 @@ public:
   void cadastrarFilme(char tipo, int quantidade, int id, const string& titulo, const char& categoria);
   void removerFilme(int codigo);
   void listarFilmes(char opcao);
-  void cadastrarCliente(int cpf, string nome);
-  void removerCliente(int cpf);
+  void cadastrarCliente(long cpf, string nome);
+  void removerCliente(long cpf);
   void listarClientes(char opcao);
-  void aluguel(int cpf, int id);
-  void devolucao(int cpf);
-  void recomendarFilmes(int cpf);
+  void aluguel(long cpf, int id);
+  void devolucao(long cpf);
+  void recomendarFilmes(long cpf);
   void avaliarFilme(int id, int nota);
 };
 

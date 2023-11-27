@@ -95,7 +95,7 @@ void Locadora::listarFilmes(char opcao) {
     }
 }
 
-void Locadora::cadastrarCliente(int cpf, string nome) {
+void Locadora::cadastrarCliente(long cpf, string nome) {
     for (int i=0; i<clientes.size(); i++) {
         if (cpf == clientes[i]->cpf) { // CPF repetido
             cout << "ERRO: CPF repetido\n";
@@ -110,7 +110,7 @@ void Locadora::cadastrarCliente(int cpf, string nome) {
     this -> clientes.push_back(cliente);
 }
 
-void Locadora::removerCliente(int cpf) {
+void Locadora::removerCliente(long cpf) {
     if (cpf<10000000000 || cpf>99999999999) { // CPF invalido
         cout << "ERRO: dados incorretos.\n";
         return;
@@ -155,7 +155,7 @@ void Locadora::removerCliente(int cpf) {
     }
 }
 
-void Locadora::aluguel(int cpf, int id) {
+void Locadora::aluguel(long cpf, int id) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
         [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
     Cliente* cliente;
@@ -180,7 +180,7 @@ void Locadora::aluguel(int cpf, int id) {
     filme->serAlugado();
 }
 
-void Locadora::devolucao(int cpf) {
+void Locadora::devolucao(long cpf) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
         [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
     Cliente* cliente;
@@ -210,7 +210,7 @@ void Locadora::devolucao(int cpf) {
     cliente -> devolver();
 }
 
-void Locadora::recomendarFilmes(int cpf) {
+void Locadora::recomendarFilmes(long cpf) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
         [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
     Cliente* cliente;

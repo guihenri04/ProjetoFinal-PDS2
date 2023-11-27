@@ -43,12 +43,12 @@ class Cliente {
   friend class Locadora;
 protected:
   string nome;
-  int cpf;
+  long cpf;
   vector<Filme*> recomendados;
   vector<Cliente*> similares;
   vector <Filme*> recomendarPorSimilar(Cliente* cliente);
 public:
-  Cliente(int cpf, string nome);
+  Cliente(long cpf, string nome);
   ~Cliente();
   void lerCliente();
   void alugar (Filme* filme);
