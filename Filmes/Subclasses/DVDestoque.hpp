@@ -21,7 +21,6 @@
  * @param dias Registra quantos dias um determinado filme ficou alugado.
 */
 
-
 class dvdEstoque : public Filme {
 public:
     dvdEstoque(int id, string titulo, int unidades);
