@@ -1,4 +1,4 @@
-#include "Locadora/locadora.hpp"
+#include "Locadora/locadora.cpp"
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -11,36 +11,34 @@ using namespace std;
 
 
 int main() {
+
     Locadora CineMax;
     string comando;
 
     while (true) {
 
-        cout << "Digite um comando: "; // fazer uma listinha com opçoes faz bem??
+        cout << "Digite um comando: " << endl;                                          // fazer menu
         cin >> comando;
 
       
         if (comando.size() < 2) {
-            cout << "Comando inválido.\n";
+            cout << "Comando inválido." << endl;
             return 0;
         }
 
 
         switch (comando[0]) {
 
-            case 'C': {
+            case 'C': {                                                       
                 switch (comando[1]) {
 
                     case 'F': {
+
                         cout << "CADASTRAR FILME" << endl;
 
                         cout << "Digite o tipo (D para DVD ou F para fita): " << endl;
                         char tipo; 
                         cin >> tipo;
-                        if (tipo != 'F' && tipo != 'D') {
-                            cout << "ERRO: dados incorretos\n";
-                            return 0;
-                        }
 
                         cout << "Digite o número de unidades:" << endl;
                         int unidades;
@@ -55,113 +53,256 @@ int main() {
                         getline(cin,titulo);
 
                         char categoria = 'X';
+
+                        CineMax.cadastrarFilme(tipo, unidades, id, titulo, categoria); // coloquei esse, eh necessario? 
+
                         if (tipo == 'D') {
-                            cout << "Digite o categoria do DVD (E, L ou P):" << endl;
+
+                            cout << "Digite a categoria do DVD (E, L ou P):" << endl;
+                            cout << "-> E: DVDs em estoque" << endl;
+                            cout << "-> L: DVDs no lançamento" << endl;
+                            cout << "-> P: DVDs na promoção" << endl;
                             cin >> categoria;
-                            if (categoria != 'E' && categoria != 'L' && categoria != 'P') {
-                                cout << "ERRO: dados incorretos\n";
-                                return 0;
-                            }
+
+                            CineMax.cadastrarFilme(tipo, unidades, id, titulo, categoria); // esse  esta dentro do if 
+
                         }
 
-                        CineMax.cadastrarFilme(tipo, unidades, id, titulo, categoria);
+                        break;    
+                    }
+
+                    
+
+                    case 'C': {
+                        
+                        cout << "CADASTRAR CLIENTE" << endl;
+
+                        cout << "Digite o CPF do cliente:" << endl;
+                        int cpf;
+                        cin >> cpf;
+
+                        cout << "Digite o nome do cliente:" << endl;
+                        string nome;                                                            //nome precisa de getline?
+                        cin >> nome;
+
+                        CineMax.cadastrarCliente(cpf,nome);
+
                         break;
                     }
 
-                    case 'C': // cadastrar cliente   
-                        
-                        break;
-                
                     default:
+
                         cout << "Comando inválido.\n";
-                        break;
-                }
-                break;
-            }
-            case 'R': {
-                switch (comando[1]) {
-                    case 'F':
-                        // remover filme  
-                        
-                        break;
-
-                    case 'C':
-                        // remover cliente
-                        
-                        break;
-                                                                                    //outros casos?
-                    default:
-                        
-                        break;
-                }
-                break;
+                        break;            
+                
             
-            case 'L':
-                switch (comando[1]) {
-                    case 'F':
-                        // lista  filmes
-                        
-                        
-                        break;
+                }
 
-                    case 'C':
-                        // lista clientes
+            case 'R': {                                               
+                switch (comando[1]) {
+
+                    case 'F': {
                         
+                        cout << "REMOVER FILME" << endl;
+                        cout << "Digite o ID do filme que deseja remover:" << endl;
+
+                        int id;
+                        cin >> id;
+
+                        CineMax.removerFilme(id);
+
                         break;
+                    }
+
+                    case 'C': {
+
+                        cout << "REMOVER CLIENTE" << endl;
+                        cout << "Digite o CPF do cliente que deseja remover:" << endl;
+
+                        int cpf;
+                        cin >> cpf;
+                        
+                        CineMax.removerCliente(cpf);
+
+                        break;
+                    }
                     
                     default:
-                        cout << "Comando inválido.\n";
-                        break;
+                            cout << "Comando inválido.\n";
+                            break;                                                                   
                 }
                 break;
             }
+
+            case 'L': {                          
+                switch (comando[1]) {
+
+                    case 'A': {
+                        
+                        cout << "LER ARQUIVO DE CADASTRO" << endl;
+                        cout << "Digite o nome do arquivo: " << endl;
+
+                        string nomeArquivo;
+                        cin >> nomeArquivo;
+
+                        ifstream arquivo(nomeArquivo);
+                        string linha;
+
+                        if (arquivo.is_open()) {
+
+                            string linha;
+                            int contador = 0;
+
+                            while (std::getline(arquivo, linha)) {
+
+                                contador++;
+                            }
+
+                        arquivo.close();
+
+                        cout << contador << "Filmes cadastrados com sucesso!" << endl;
+
+                        } 
+
+                        else {
+
+                        cout << "ERRO: Arquivo inexistente!" << endl;
+
+                        }
+
+                        break;
+                    }
+
+                    
+
+                    case 'F': {
+
+                        cout << "LISTAR FILMES" << endl;
+                        cout << " -> Caso queira listar os filmes pela ordem de seus títulos, digite T:" << endl;
+                        cout << " -> Caso queira listar os filmes pela ordem de seus códigos, digite C: " << endl;
+
+                        char opcaof;
+                        cin >> opcaof;
+
+                        CineMax.listarFilmes(opcaof);
+                        
+                        break;
+                    }
+                    
+                    case 'C': {
+
+                        cout << "LISTAR CLIENTES" << endl;
+                        cout << " -> Caso queira listar os clientes pela ordem de seus códigos (CPFs), digite C:" << endl;
+                        cout << " -> Caso queira listar os clientes pela ordem de seus nomes, digite N:" << endl;
+
+                        char opcaoc;
+                        cin >> opcaoc;
+
+                        CineMax.listarClientes(opcaoc);
+                        
+                        break;
+                    }
+
+                    default:
+                        cout << "Comando inválido." << endl;
+
+                        break;    
+                }
+
+                break;
+                
+            }
+
             case 'A': {
                 switch (comando[1]) {
-                    case 'L':
+
+                    case 'L': {
                         
-                        // aluguel
+                        cout << "ALUGUEL DE FILME" << endl;
+
+                        cout << "Digite o CPF do cliente que alugou o filme:" << endl;
+                        int cpf;
+                        cin >> cpf;
+
+                        cout << "DIgite o ID do filme alugado:" << endl;
+                        int id;
+                        cin >> id;
                         
+                        CineMax.aluguel(cpf, id);
+
                         break;
-                    
-                    default:
-                        cout << "Comando inválido.\n";
-                        break;
+                    }
+                       
+                    default: 
+
+                        cout << "Comando inválido." << endl;
+
+                        break;        
+                
                 }
-                break;
             }
+
             case 'D': {
                 switch (comando[1]) {
-                    case 'V':    
-                        // devolucao
-                        break;
 
-                    default:
-                        cout << "Comando inválido.\n";
+                    case 'V': {
+                        
+                        cout << "DEVOLUÇÃO DE FILME" << endl;
+
+                        cout << "Digite o CPF do cliente que realiza a devolução do filme:" << endl;
+                        int cpf;
+                        cin >> cpf;
+
+                        CineMax.devolucao(cpf);
+
                         break;
+                    }
+                    
+                    default: 
+
+                        cout << "Comando inválido." << endl;
+
+                    break;
                 }
+
                 break;
             }
-            case 'F': {
-                switch (comando[1]) {
-                    case 'S':
 
-                        cout << "Programa encerrado!\n";
+
+
+
+
+            //sistemas de recomendaçao e avaliaçao, perguntar luisa : cases ai ar
+
+
+
+
+
+
+            case 'F': { 
+
+                switch (comando[1]) {
+                    case 'S': 
+
+                        cout << "Programa encerrado!" << endl;
+
                         return 0;
 
-                    default:
-                        cout << "Comando inválido.\n";
-                        break;
-                }
                 break;
-            }
-            default: {
-                cout << "Comando inválido.\n";
+            
+            default: 
+
+                cout << "Comando inválido." << endl;
+
                 break;
+            
             }
         }
         
     }
 
-    return 0;
+        }
+    }
 
+    return 0;
 }
