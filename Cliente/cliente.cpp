@@ -15,6 +15,14 @@ Cliente::Cliente(long cpf, string nome) {
     this -> cpf = cpf;
     this -> nome = nome;
     this -> pontos = 0;
+    vector<Filme*> recomendados;
+    vector<Cliente*> similares; 
+    vector<Filme*> filmesAlugados; 
+    vector<Filme*> historico;
+    this -> recomendados = recomendados;
+    this -> similares = similares;
+    this -> filmesAlugados = filmesAlugados;
+    this -> historico = historico;
 }
 
 /** @brief Destrutor da classe "Cliente".
@@ -74,9 +82,6 @@ void Cliente::alugar(Filme* filme) {
  */
 
 void Cliente::devolver() {
-    for (const auto& filme : this->filmesAlugados) {
-        delete filme;
-    }
     this->filmesAlugados.clear();
 }
 

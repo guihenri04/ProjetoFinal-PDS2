@@ -44,9 +44,6 @@ class Cliente {
 protected:
   string nome;
   long cpf;
-  vector<Filme*> recomendados;
-  vector<Cliente*> similares;
-  vector <Filme*> recomendarPorSimilar(Cliente* cliente);
 public:
   Cliente(long cpf, string nome);
   ~Cliente();
@@ -59,6 +56,9 @@ public:
   void definirSimilares (vector <Cliente*> clientes);
   vector<Filme*> filmesAlugados;
   vector<Filme*> historico;
+  vector<Cliente*> similares;
+  vector<Filme*> recomendados;
+  vector <Filme*> recomendarPorSimilar(Cliente* cliente);
 };
 
 #endif
