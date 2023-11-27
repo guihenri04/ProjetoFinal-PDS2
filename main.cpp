@@ -63,9 +63,7 @@ int main() {
 
                         break;    
                     }
-
                     
-
                     case 'C': {
                         
                         cout << "CADASTRAR CLIENTE" << endl;
@@ -83,13 +81,14 @@ int main() {
                         break;
                     }
 
-                    default:
+                    default: {
 
                         cout << "Comando inválido.\n";
                         continue;            
-                
-            
+        
+                    }
                 }
+            }
 
             case 'R': {                                               
                 switch (comando[1]) {
@@ -196,13 +195,14 @@ int main() {
                         break;
                     }
 
-                    default:
+                    default: { 
+
                         cout << "Comando inválido." << endl;
                         continue ;
-                }
 
-                break;
-                
+                    }
+                }
+                break;      
             }
 
             case 'A': {
@@ -278,17 +278,17 @@ int main() {
                         return 0;
 
                 break;
+            }
             
-            default: 
-
+            default: {
                 cout << "Comando inválido." << endl;
                 continue;
             }
+
+            }
+        
         }
         
-    }
-
-        }
     }
 
     return 0;
