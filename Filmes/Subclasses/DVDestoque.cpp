@@ -13,10 +13,12 @@ dvdEstoque::dvdEstoque(int id, string titulo, int unidades) : Filme(id, titulo, 
 }
 
 /**
- * @brief Método "lerFilme" da classe "Filme", utilizado especialmente para exibição.
- * @details Esse método exibe para o usuário o id do filme, seu título, a quantidade de unidades restantes para locação 
- * na locadora e o tipo do filme.
- * @param tipo Armazena o tipo do filme.
+ * @brief Método "calcularValor" da classe "dvdEstoque", utilizado especialmente para controle e registro.
+ * @details Esse método calcula quanto o cliente terá de pagar pelo aluguel do filme de acordo com a quantidade de dias
+ * que ele ficou alugado.
+ * @param dias Armazena quantos dias um determinado filme ficou alugado.
+ * @return Retorna o preço que o cliente terá de pagar pelo aluguel do filme, sendo 10 reais por dia o preço da locação
+ * de um DVD da categoria "Estoque".
 */
 
 int dvdEstoque::calcularValor(int dias) {
