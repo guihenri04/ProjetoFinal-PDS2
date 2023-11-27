@@ -49,7 +49,8 @@ int main() {
 
                         cout << "Digite o título:" << endl;
                         string titulo; 
-                        getline(cin,titulo);
+                        cin.ignore();
+                        getline(cin, titulo);
 
                         char categoria = 'X';
                         if (tipo == 'D') {
@@ -74,7 +75,8 @@ int main() {
 
                         cout << "Digite o nome do cliente:" << endl;
                         string nome;
-                        getline(cin,nome);
+                        cin.ignore();
+                        getline(cin, nome);
 
                         CineMax.cadastrarCliente(cpf,nome);
 
