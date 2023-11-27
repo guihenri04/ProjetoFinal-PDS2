@@ -53,20 +53,18 @@ int main() {
                         getline(cin,titulo);
 
                         char categoria = 'X';
-
-                        CineMax.cadastrarFilme(tipo, unidades, id, titulo, categoria); // coloquei esse, eh necessario? 
-
                         if (tipo == 'D') {
-
                             cout << "Digite a categoria do DVD (E, L ou P):" << endl;
                             cout << "-> E: DVDs em estoque" << endl;
                             cout << "-> L: DVDs no lançamento" << endl;
                             cout << "-> P: DVDs na promoção" << endl;
                             cin >> categoria;
-
-                            CineMax.cadastrarFilme(tipo, unidades, id, titulo, categoria); // esse  esta dentro do if 
-
+                            if (categoria!='E' && categoria!='L' && categoria!='P') {
+                                cout << "Comando inválido." << endl;
+                                return 0;
+                            }
                         }
+                        CineMax.cadastrarFilme(tipo, unidades, id, titulo, categoria);
 
                         break;    
                     }
