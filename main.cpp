@@ -23,9 +23,8 @@ int main() {
       
         if (comando.size() < 2) {
             cout << "Comando inválido." << endl;
-            return 0;
+            continue;
         }
-
 
         switch (comando[0]) {
 
@@ -59,10 +58,6 @@ int main() {
                             cout << "-> L: DVDs no lançamento" << endl;
                             cout << "-> P: DVDs na promoção" << endl;
                             cin >> categoria;
-                            if (categoria!='E' && categoria!='L' && categoria!='P') {
-                                cout << "Comando inválido." << endl;
-                                return 0;
-                            }
                         }
                         CineMax.cadastrarFilme(tipo, unidades, id, titulo, categoria);
 
@@ -80,8 +75,8 @@ int main() {
                         cin >> cpf;
 
                         cout << "Digite o nome do cliente:" << endl;
-                        string nome;                                                            //nome precisa de getline?
-                        cin >> nome;
+                        string nome;
+                        getline(cin,nome);
 
                         CineMax.cadastrarCliente(cpf,nome);
 
@@ -91,7 +86,7 @@ int main() {
                     default:
 
                         cout << "Comando inválido.\n";
-                        break;            
+                        continue;            
                 
             
                 }
@@ -127,7 +122,7 @@ int main() {
                     
                     default:
                             cout << "Comando inválido.\n";
-                            break;                                                                   
+                            continue;                                                                   
                 }
                 break;
             }
@@ -203,8 +198,7 @@ int main() {
 
                     default:
                         cout << "Comando inválido." << endl;
-
-                        break;    
+                        continue ;
                 }
 
                 break;
@@ -234,10 +228,10 @@ int main() {
                     default: 
 
                         cout << "Comando inválido." << endl;
-
-                        break;        
+                        continue;        
                 
                 }
+                break;
             }
 
             case 'D': {
@@ -256,13 +250,11 @@ int main() {
                         break;
                     }
                     
-                    default: 
-
+                    default: {
                         cout << "Comando inválido." << endl;
-
-                    break;
+                        continue;
+                    }
                 }
-
                 break;
             }
 
@@ -283,7 +275,6 @@ int main() {
                     case 'S': 
 
                         cout << "Programa encerrado!" << endl;
-
                         return 0;
 
                 break;
@@ -291,9 +282,7 @@ int main() {
             default: 
 
                 cout << "Comando inválido." << endl;
-
-                break;
-            
+                continue;
             }
         }
         
