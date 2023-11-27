@@ -260,10 +260,10 @@ int main() {
                 break;
             }
 
-            case 'N': {
+            case 'P': {                                //pessoal "P" avaliaçao A sugestao S
                 switch (comando[1]) {
 
-                    case 'F': {
+                    case 'A': {
                         
                         cout << "AVALIAR FILME" << endl;
 
@@ -279,18 +279,7 @@ int main() {
                         break;
                     }
                     
-                    default: {
-                        cout << "Comando inválido." << endl;
-                        break;
-                    }
-                }
-                break;
-            }
-
-            case 'S': {
-                switch (comando[1]) {
-
-                    case 'F': {
+                    case 'S': {
                         
                         cout << "SUGERIR FILMES" << endl;
 
@@ -302,7 +291,7 @@ int main() {
 
                         break;
                     }
-                    
+
                     default: {
                         cout << "Comando inválido." << endl;
                         break;
@@ -311,15 +300,17 @@ int main() {
                 break;
             }
 
+
             case 'F': { 
                 switch (comando[1]) {
-                    case 'S': 
+
+                    case 'S': {
 
                         cout << "Programa encerrado!" << endl;
                         return 0;
 
-                break;
-            
+                    break;
+                    }
             
                     default: {
                         cout << "Comando inválido." << endl;
@@ -327,6 +318,7 @@ int main() {
                     }
 
                 }
+                break;
             }
         
         }
