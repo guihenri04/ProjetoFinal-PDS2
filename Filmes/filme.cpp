@@ -21,12 +21,6 @@ Filme::Filme (int id, string titulo, int unidades) {
 }
 
 /**
- * @brief Destrutor da classe "Filme".
- * @details Esse destrutor é responsável por fazer a desalocação de memória manual das variáveis responsáveis pela
- * identificação de um filme, para que elas possam ser reutilizadas na identificação de um novo filme.
-*/
-
-/**
  * @brief Método "lerFilme" da classe "Filme", utilizado especialmente para exibição.
  * @details Esse método exibe para o usuário o id do filme, seu título, a quantidade de unidades restantes para locação 
  * na locadora e o tipo do filme.
