@@ -23,7 +23,7 @@ int main() {
       
         if (comando.size() < 2) {
             cout << "Comando inválido." << endl;
-            continue;
+            break;
         }
 
         switch (comando[0]) {
@@ -84,10 +84,11 @@ int main() {
                     default: {
 
                         cout << "Comando inválido.\n";
-                        continue;            
+                        break;            
         
                     }
                 }
+                break;
             }
 
             case 'R': {                                               
@@ -121,7 +122,7 @@ int main() {
                     
                     default: {
                         cout << "Comando inválido.\n";
-                        continue;    
+                        break;    
                     }                                                               
                 }
                 break;
@@ -197,7 +198,7 @@ int main() {
                     default: { 
 
                         cout << "Comando inválido." << endl;
-                        continue ;
+                        break ;
 
                     }
                 }
@@ -227,7 +228,7 @@ int main() {
                     default: {
 
                         cout << "Comando inválido." << endl;
-                        continue;    
+                        break;    
 
                     }   
                 
@@ -253,7 +254,7 @@ int main() {
                     
                     default: {
                         cout << "Comando inválido." << endl;
-                        continue;
+                        break;
                     }
                 }
                 break;
@@ -280,7 +281,7 @@ int main() {
                     
                     default: {
                         cout << "Comando inválido." << endl;
-                        continue;
+                        break;
                     }
                 }
                 break;
@@ -304,14 +305,13 @@ int main() {
                     
                     default: {
                         cout << "Comando inválido." << endl;
-                        continue;
+                        break;
                     }
                 }
                 break;
             }
 
             case 'F': { 
-
                 switch (comando[1]) {
                     case 'S': 
 
@@ -319,13 +319,14 @@ int main() {
                         return 0;
 
                 break;
-            }
             
-                default: {
-                    cout << "Comando inválido." << endl;
-                    continue;
-                }
+            
+                    default: {
+                        cout << "Comando inválido." << endl;
+                        break;
+                    }
 
+                }
             }
         
         }
