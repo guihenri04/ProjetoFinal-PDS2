@@ -13,9 +13,26 @@ int main() {
 
     Locadora CineMax;
     string comando;
+    cout << endl << "Bem vindo à nossa locadora! Digite o comando e clique em enter para executá-lo." << endl << endl;
+    cout << "Comandos disponíveis:" << endl;
+    cout << "CC: Cadastrar Cliente" << endl;    
+    cout << "CF: Cadastrar Filme" << endl;
+    cout << "RC: Remover Cliente" << endl;  
+    cout << "RF: Remover Filme" << endl;
+    cout << "LA: Ler Arquivo de Cadastro" << endl;
+    cout << "LC: Listar Clientes" << endl;
+    cout << "LF: Listar Filmes" << endl;
+    cout << "RF: Remover Filme" << endl;
+    cout << "AL: Aluguel de Filme" << endl;
+    cout << "DV: Devolução de Filme" << endl;
+    cout << "PA: Avaliar Filme" << endl;
+    cout << "PS: Sugerir Filmes" << endl;
+    cout << "FS: Finalizar Sistema" << endl;
+
 
     while (true) {
 
+        cout << endl << "-------------------------------------------------------------------------------------- " << endl << endl;  
         cout << "Digite um comando: " << endl;                                          // fazer menu
         cin >> comando;
 
@@ -31,7 +48,7 @@ int main() {
 
                     case 'F': {
 
-                        cout << "CADASTRAR FILME" << endl;
+                        cout << endl << "CADASTRAR FILME" << endl;
 
                         cout << "Digite o tipo (D para DVD ou F para fita): " << endl;
                         char tipo; 
@@ -66,7 +83,7 @@ int main() {
                     
                     case 'C': {
                         
-                        cout << "CADASTRAR CLIENTE" << endl;
+                        cout << endl << "CADASTRAR CLIENTE" << endl;
 
                         cout << "Digite o CPF do cliente:" << endl;
                         long long cpf;
@@ -97,7 +114,7 @@ int main() {
 
                     case 'F': {
                         
-                        cout << "REMOVER FILME" << endl;
+                        cout << endl << "REMOVER FILME" << endl;
                         cout << "Digite o ID do filme que deseja remover:" << endl;
 
                         int id;
@@ -110,7 +127,7 @@ int main() {
 
                     case 'C': {
 
-                        cout << "REMOVER CLIENTE" << endl;
+                        cout << endl << "REMOVER CLIENTE" << endl;
                         cout << "Digite o CPF do cliente que deseja remover:" << endl;
 
                         long long cpf;
@@ -134,7 +151,7 @@ int main() {
 
                     case 'A': {
                         
-                        cout << "LER ARQUIVO DE CADASTRO" << endl;
+                        cout << endl << "LER ARQUIVO DE CADASTRO" << endl;
                         cout << "Digite o nome do arquivo: " << endl;
 
                         string nomeArquivo;                                                                             
@@ -186,7 +203,7 @@ int main() {
 
                     case 'F': {
 
-                        cout << "LISTAR FILMES" << endl;
+                        cout << endl <<"LISTAR FILMES" << endl;
                         cout << " -> Caso queira listar os filmes por ordem de seus títulos, digite T:" << endl;
                         cout << " -> Caso queira listar os filmes por ordem de seus códigos, digite C: " << endl;
 
@@ -200,7 +217,7 @@ int main() {
                     
                     case 'C': {
 
-                        cout << "LISTAR CLIENTES" << endl;
+                        cout << endl <<"LISTAR CLIENTES" << endl;
                         cout << " -> Caso queira listar os clientes por ordem de seus códigos (CPFs), digite C:" << endl;
                         cout << " -> Caso queira listar os clientes por ordem de seus nomes, digite N:" << endl;
 
@@ -227,7 +244,7 @@ int main() {
 
                     case 'L': {
                         
-                        cout << "ALUGUEL DE FILME" << endl;
+                        cout << endl << "ALUGUEL DE FILME" << endl;
 
                         cout << "Digite o CPF do cliente que alugou o filme:" << endl;
                         long long cpf;
@@ -258,7 +275,7 @@ int main() {
 
                     case 'V': {
                         
-                        cout << "DEVOLUÇÃO DE FILME" << endl;
+                        cout << endl <<"DEVOLUÇÃO DE FILME" << endl;
 
                         cout << "Digite o CPF do cliente que realiza a devolução dos filmes:" << endl;
                         long long cpf;
@@ -286,7 +303,7 @@ int main() {
 
                     case 'A': {
                         
-                        cout << "AVALIAR FILME" << endl;
+                        cout << endl <<"AVALIAR FILME" << endl;
 
                         cout << "Digite o id do filme a ser avaliado:" << endl;
                         int id;
@@ -302,7 +319,7 @@ int main() {
                     
                     case 'S': {
                         
-                        cout << "SUGERIR FILMES" << endl;
+                        cout << endl <<"SUGERIR FILMES" << endl;
 
                         cout << "Digite o cpf do cliente que busca recomendações:" << endl;
                         long long cpf;
@@ -327,7 +344,7 @@ int main() {
 
                     case 'S': {
 
-                        cout << "Programa encerrado!" << endl;
+                        cout << endl << "Programa encerrado!" << endl;
                         return 0;
 
                     break;
