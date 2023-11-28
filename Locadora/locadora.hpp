@@ -20,12 +20,12 @@ public:
   void cadastrarFilme(char tipo, int quantidade, int id, const string& titulo, const char& categoria);
   void removerFilme(int codigo);
   void listarFilmes(char opcao);
-  void cadastrarCliente(long cpf, string nome);
-  void removerCliente(long cpf);
+  void cadastrarCliente(long long cpf, string nome);
+  void removerCliente(long long cpf);
   void listarClientes(char opcao);
-  void aluguel(long cpf, int id);
-  void devolucao(long cpf);
-  void recomendarFilmes(long cpf);
+  void aluguel(long long cpf, int id);
+  void devolucao(long long cpf);
+  void recomendarFilmes(long long cpf);
   void avaliarFilme(int id, int nota);
   vector<Filme*> filmes;
   vector<Cliente*> clientes;

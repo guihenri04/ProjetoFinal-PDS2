@@ -5,6 +5,8 @@
 #include <algorithm>
 #include <vector>
 #include <iomanip>
+#include <sstream>
+
 
 
 using namespace std;
@@ -20,10 +22,9 @@ int main() {
         cout << "Digite um comando: " << endl;                                          // fazer menu
         cin >> comando;
 
-      
         if (comando.size() < 2) {
             cout << "Comando inválido." << endl;
-            break;
+            continue;
         }
 
         switch (comando[0]) {
@@ -48,8 +49,8 @@ int main() {
                         cin >> id;
 
                         cout << "Digite o título:" << endl;
-                        string titulo; 
                         cin.ignore();
+                        string titulo; 
                         getline(cin, titulo);
 
                         char categoria = 'X';
@@ -59,6 +60,7 @@ int main() {
                             cout << "-> L: DVDs no lançamento" << endl;
                             cout << "-> P: DVDs na promoção" << endl;
                             cin >> categoria;
+                            cin.ignore();
                         }
                         CineMax.cadastrarFilme(tipo, unidades, id, titulo, categoria);
 
@@ -70,7 +72,7 @@ int main() {
                         cout << "CADASTRAR CLIENTE" << endl;
 
                         cout << "Digite o CPF do cliente:" << endl;
-                        long cpf;
+                        long long cpf;
                         cin >> cpf;
 
                         cout << "Digite o nome do cliente:" << endl;
@@ -114,7 +116,7 @@ int main() {
                         cout << "REMOVER CLIENTE" << endl;
                         cout << "Digite o CPF do cliente que deseja remover:" << endl;
 
-                        long cpf;
+                        long long cpf;
                         cin >> cpf;
                         
                         CineMax.removerCliente(cpf);
@@ -138,8 +140,10 @@ int main() {
                         cout << "LER ARQUIVO DE CADASTRO" << endl;
                         cout << "Digite o nome do arquivo: " << endl;
 
-                        string nomeArquivo;                                                                             //arrumar forma de pegar parametros do arquivo
-                        cin >> nomeArquivo;                                                                                // passar para a funçao cadstra
+                        string nomeArquivo;                                                                             
+                        cin >> nomeArquivo;   
+                        
+                        cin.ignore();                                                                             
 
                         ifstream arquivo(nomeArquivo);
                         string linha;
@@ -229,7 +233,7 @@ int main() {
                         cout << "ALUGUEL DE FILME" << endl;
 
                         cout << "Digite o CPF do cliente que alugou o filme:" << endl;
-                        long cpf;
+                        long long cpf;
                         cin >> cpf;
 
                         cout << "DIgite o ID do filme alugado:" << endl;
@@ -260,7 +264,7 @@ int main() {
                         cout << "DEVOLUÇÃO DE FILME" << endl;
 
                         cout << "Digite o CPF do cliente que realiza a devolução dos filmes:" << endl;
-                        long cpf;
+                        long long cpf;
                         cin >> cpf;
 
                         CineMax.devolucao(cpf);
@@ -300,7 +304,7 @@ int main() {
                         cout << "SUGERIR FILMES" << endl;
 
                         cout << "Digite o cpf do cliente que busca recomendações:" << endl;
-                        long cpf;
+                        long long cpf;
                         cin >> cpf;
 
                         CineMax.recomendarFilmes(cpf);
@@ -343,3 +347,30 @@ int main() {
 
     return 0;
 }
+
+
+/*
+⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣴⣶⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣤⣴⣶⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣄⡀⠀⠀⠀⠀⣀⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⡀⠀⠀⠀⠀
+⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀
+⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀
+⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠺⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄
+⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣄⠀⠙⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇  porque voces deixam nossos corações assim, mulheres?
+⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⢀⠀⢙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁
+⠀⠀⢿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀
+⠀⠀⠈⢿⣿⣿⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀
+⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠀⠀⠀
+⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠙⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠸⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠀⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⠈⢿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⣿⣿⣿⣿⣿⣿⣿⡿⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⢸⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⢿⣿⣿⣿⣿⣿⡟⠀⠀⣾⣷⣿⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⡻⣿⣿⣿⠁⠀⣰⣿⡿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⠀⠀⠿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+
+*/
