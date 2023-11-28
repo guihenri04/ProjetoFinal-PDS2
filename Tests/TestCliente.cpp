@@ -79,11 +79,13 @@ TEST_CASE("Cliente-definirSimilares"){
     pointerCliente1->alugar(filme);
     pointerCliente2->alugar(filme);
     pointerCliente3->alugar(filme);
+    pointerCliente1->alugar(filme2);
     pointerCliente2->alugar(filme2);
-    pointerCliente3->alugar(filme2);
-    pointerCliente4->alugar(filme);
     pointerCliente1->definirSimilares(clientes);
-    CHECK(MeusCliente->similares.size() == 3);
+    CHECK(pointerCliente1->similares.size() == 3);
+    CHECK(pointerCliente1->similares[0] == pointerCliente2);
+    CHECK(pointerCliente1->similares[1] == pointerCliente3);
+    CHECK(pointerCliente1->similares[2] == pointerCliente4);
     zerar_v(pointerCliente1);
     zerar_v(pointerCliente2);
     zerar_v(pointerCliente3);
