@@ -198,6 +198,15 @@ void Locadora::removerCliente(long long cpf) {
     }
 }
 
+/** 
+ * @brief Método "listarClientes" da classe "Locadora", utilizado para exibição.
+ * @details Esse método lista os clientes cadastrados na locadora. Ele recebe o parâmetro "opção" e verifica
+ * se a opção de ordenação é valida. Se não for válida, o método exibe uma mensagem de erro. Caso o vetor 
+ * "clientes" esteja vazio, significa que não há clientes cadastrado na locadora, então o método exibe uma 
+ * mensagem avisando sobre isso. Caso a opção de ordenação seja válida e existirem clientes cadastrados na locadora,
+ * o método lista esses clientes de acordo com o cpf ou nome.
+ * @param opcao Armazena a opção de listagem dos clientes (nome ou cpf).
+ */
  void Locadora::listarClientes(char opcao){
 
     if (opcao != 'C' && opcao != 'N') {
@@ -226,6 +235,16 @@ void Locadora::removerCliente(long long cpf) {
     }
 }
 
+/**
+ * @brief Método "aluguel" da classe "locadora", utilizado especialmente para controle e registro.
+ * @details O método recebe como parâmetros o cpf de um cliente que deseja alugar um filme e o id de 
+ * identificação desse mesmo filme. A partir daí, ele percorre o vetor "clientes", procurando pelo cpf
+ * informado e o vetor "filmes", procurando pelo id do filme informado. Caso o cliente ou o filme não existirem,
+ * o método exibe uma mensagem de erro. Caso contrário, ocorre uma verificação para saber se ainda existem
+ * cópias do filme disponíveis para locação. Caso existam, o método registra que o filme foi alugado
+ * pelo cliente. Caso contrário, o método informa que não existem mais unidades do filme disponiveis para
+ * aluguel.
+*/
 void Locadora::aluguel(long long cpf, int id) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
         [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
@@ -255,6 +274,19 @@ void Locadora::aluguel(long long cpf, int id) {
         cout << "Filme "<< filme->id <<" está em falta.\n";
     }
 }
+
+/**
+ * @brief Método "devolucao" da classe "Locadora", utilizado especialmente para controle e registro.
+ * @details O método recebe como parâmetros o cpf de um cliente e os dias nos quais ele ficou com um
+ * filme alugado. A partir daí, a função procura pelo cpf informado no vetor "clientes". Caso esse cliente
+ * não exista, o método exibe uma mensagem de erro. Caso contrário, ocorre uma busca pela lista de filmes
+ * alugados por esse cliente e calcula quanto ele deve pagar com base nos dias que ele ficou com o filme alugado.
+ * Além disso, o método verifica se o cliente em questão possui mais de 10 pontos. Caso possua, ocorre uma 
+ * aplicação de 10% de desconto sobre o valor do aluguel. Por fim, o método exibe o valor que o cliente terá
+ * que pagar e chama outros dois métodos: "serDevolvido()", para registrar que o filme foi devolvido à locadora
+ * e "devolver()", para registrar que o cliente devolveu o filme à locadora.
+ * @param dias Armazena a quantidade de dias que um cliente ficou com o filme alugado.
+*/
 
 void Locadora::devolucao(long long cpf, int dias) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
@@ -287,6 +319,15 @@ void Locadora::devolucao(long long cpf, int dias) {
     cliente -> devolver();
 }
 
+/**
+ * @brief Método "recomendarFilmes" da classe "Locadora".
+ * @details O método recebe como parâmetro um cpf e procura no vetor "clientes" pelo cliente com o cpf informado.
+ * Se o cliente não for encontrado, uma mensagem de erro é exibida. Caso contrário, ocorre a chamada do método
+ * "recomendar()" para o cliente em questão, o qual recomenda filmes com base nos gostos desse cliente e nos gostos 
+ * de outros clientes da locadora que são considerados similares à ele. Por fim, a função percorre a lista de filmes 
+ * recomendados e chama o método "lerFilme()", o qual exibe informações sobre os filmes recomendados na tela.
+*/
+
 void Locadora::recomendarFilmes(long long cpf) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
         [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
@@ -305,6 +346,15 @@ void Locadora::recomendarFilmes(long long cpf) {
     }
 
 }
+
+/**
+ * @brief Método "avaliarFilme" da classe "Locadora".
+ * @details O método recebe como parâmetros o id de identificação de um filme e a nota dada à ele
+ * por um cliente. A partir daí, o método percorre o vetor "filmes" procurando pelo id informado.
+ * Caso o filme não seja encontrado, o método exibe uma mensagem de erro. Caso contrário, ocorre a
+ * chamada do método "serAvaliado()", o qual atribui a nota dada pelo cliente à esse filme em questão.
+ * @param nota Armazena a nota recebida por um filme.
+*/
 
 void Locadora::avaliarFilme(int id, int nota) {
     auto itFilme = std::find_if(filmes.begin(), filmes.end(),
