@@ -39,7 +39,7 @@ void Locadora::cadastrarFilme(char tipo, int unidades, int id, const string& tit
         return;
     }
 
-    Filme* novoFilme;
+    Filme* novoFilme = nullptr;
     if (tipo=='F') {
         novoFilme = new Fita(id, titulo, unidades);
     } else if (categoria == 'E') {
@@ -50,7 +50,7 @@ void Locadora::cadastrarFilme(char tipo, int unidades, int id, const string& tit
         novoFilme = new dvdPromocao(id, titulo, unidades);
     } 
 
-    if (novoFilme) {
+    if (novoFilme!=nullptr) {
         filmes.push_back(novoFilme);
         cout << "Filme "<< novoFilme->id <<" cadastrado com sucesso\n";
     }
