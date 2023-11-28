@@ -31,7 +31,7 @@ public:
     Fita(int id, string titulo, int unidades);
     void rebobinar();
     int calcularValor(int dias) override;
-    void serAlugado() override;
+    int serAlugado() override;
 };
 
 #endif

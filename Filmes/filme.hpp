@@ -44,7 +44,7 @@ public:
   virtual ~Filme() = default;
   virtual int calcularValor(int dias) = 0;
   void lerFilme();
-  virtual void serAlugado();
+  virtual int serAlugado();
   void serDevolvido();
   void serAvaliado(int nota);
   int unidades;
