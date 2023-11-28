@@ -32,7 +32,7 @@ return saida.str();
 }
 
 TEST_CASE("Filmes-lerFilme"){
-    CHECK(saida_filme(filme1) == "1 Divergente 0/n");
+    CHECK(saida_filme(filme1) == "1 Divergente 0 DVD\n");
 }
 
 TEST_CASE("Filmes-serAlugado"){
@@ -42,8 +42,8 @@ TEST_CASE("Filmes-serAlugado"){
 }
 
 TEST_CASE ("Filmes-serDevolvido"){
-    filme1->serDevolvido();
-    CHECK(filme1->unidades = 1);
+    filme2->serDevolvido();
+    CHECK(filme2->unidades == 2);
 }
 
 /*TEST_CASE("Filmes-serAvaliado"){
