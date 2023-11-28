@@ -33,4 +33,5 @@ void Filme::serDevolvido() {
     float soma = this -> avaliacao * this -> vezesAvaliado;
     soma = soma + nota;
     this -> avaliacao = soma / float(this -> vezesAvaliado);
+    this->vezesAvaliado++;
   }

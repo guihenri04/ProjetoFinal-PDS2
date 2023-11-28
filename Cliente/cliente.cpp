@@ -71,9 +71,6 @@ void Cliente::alugar(Filme* filme) {
  */
 
 void Cliente::devolver() {
-    for (const auto& filme : this->filmesAlugados) {
-        delete filme;
-    }
     this->filmesAlugados.clear();
 }
 

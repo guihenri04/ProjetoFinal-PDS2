@@ -12,7 +12,6 @@ class Filme {
   friend class Cliente;
 protected:
   int id;
-  float avaliacao;
   int vezesAvaliado;
   string titulo;
   string tipo;
@@ -25,6 +24,7 @@ public:
   void serDevolvido();
   void serAvaliado(int nota);
   int unidades;
+  float avaliacao;
 };
 
 #endif
