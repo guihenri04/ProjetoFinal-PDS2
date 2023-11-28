@@ -5,6 +5,7 @@
 #include "../Cliente/cliente.hpp"
 
 using namespace std;
+enum Metodo {ler_filme, ser_alugado, ser_avaliado  };
 
 #include "../Filmes/Subclasses/DVDestoque.hpp"
 
@@ -13,32 +14,29 @@ using namespace std;
     dvdEstoque dvdE2(1, "Divergente", 2);
     Filme* filme2=&dvdE2;
 
-string saida_filme(Filme* filme){
+string saida_filme(Filme* filme, Metodo metodo){
 stringstream saida;
 auto cout_saida = cout.rdbuf();
 cout.rdbuf(saida.rdbuf());
+if( metodo == ler_filme){
 filme->lerFilme();
-cout.rdbuf(cout_saida);
-return saida.str();
-}
-
-string saida_filme2(Filme* filme){
-stringstream saida;
-auto cout_saida = cout.rdbuf();
-cout.rdbuf(saida.rdbuf());
+}else if(metodo == ser_alugado){
 filme->serAlugado();
+}else if (metodo == ser_avaliado){
+filme->serAvaliado(6);
+}
 cout.rdbuf(cout_saida);
 return saida.str();
 }
 
 TEST_CASE("Filmes-lerFilme"){
-    CHECK(saida_filme(filme1) == "1 Divergente 0 DVD\n");
+    CHECK(saida_filme(filme1, ler_filme) == "1 Divergente 0 DVD\n");
 }
 
 TEST_CASE("Filmes-serAlugado"){
     filme2->serAlugado();
     CHECK(filme2->unidades == 1); 
-    CHECK(saida_filme2(filme1) == "ERRO: filme indisponivel\n");  
+    CHECK(saida_filme(filme1, ser_alugado) == "ERRO: filme indisponivel\n");  
 }
 
 TEST_CASE ("Filmes-serDevolvido"){
@@ -46,7 +44,13 @@ TEST_CASE ("Filmes-serDevolvido"){
     CHECK(filme2->unidades == 2);
 }
 
-/*TEST_CASE("Filmes-serAvaliado"){
-    filme2->serAvaliado(4);
-    CHECK(filme2->avaliacao = 4);
-}*/
+TEST_CASE("Filmes-serAvaliado"){
+    filme2->serAvaliado(2);
+    CHECK(filme2->avaliacao == 3.5);
+    filme2->serAvaliado(2);
+    CHECK(filme2->avaliacao == 3);
+    // test de avaliação superior a 5
+    CHECK(saida_filme(filme2, ser_avaliado) == "ERRO: O filme pode ser avaliado em no máximo 5\n");
+
+    
+}

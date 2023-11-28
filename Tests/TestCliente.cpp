@@ -28,6 +28,8 @@ void zerar_v(Cliente* cliente){
     cliente->historico.clear();
     cliente->pontos = 0;
 }
+
+
     dvdEstoque dvdE(1, "Divergente", 10);
     dvdEstoque dvdE2(2, "Feliz", 11);
     dvdEstoque dvdE3(3, "CBUM", 4);
@@ -43,7 +45,7 @@ void zerar_v(Cliente* cliente){
     Cliente* pointerCliente3 = &cliente3;
     Cliente* pointerCliente4 = &cliente4;
     vector <Cliente*> clientes = {pointerCliente2, pointerCliente3, pointerCliente4};
-    Cliente* MeusCliente;
+
 
 TEST_CASE("Cliente-lerCliente"){
     CHECK(saida_cliente(pointerCliente1) == "1 luisa\n");

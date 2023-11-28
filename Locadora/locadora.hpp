@@ -14,8 +14,6 @@ using namespace std;
 
 class Locadora {
 private:
-  vector<Filme*> filmes;
-  vector<Cliente*> clientes;
 public:
   Locadora();
   ~Locadora();
@@ -29,6 +27,8 @@ public:
   void devolucao(long cpf);
   void recomendarFilmes(long cpf);
   void avaliarFilme(int id, int nota);
+  vector<Filme*> filmes;
+  vector<Cliente*> clientes;
 };
 
 #endif
