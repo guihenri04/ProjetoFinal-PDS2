@@ -57,7 +57,7 @@ void Locadora::cadastrarFilme(char tipo, int unidades, int id, const string& tit
 }
 
 void Locadora::removerFilme(int id) {
-    auto it = std::find_if(filmes.begin(), filmes.end(),
+    auto it = find_if(filmes.begin(), filmes.end(),
         [id](Filme* filme) { return filme->id == id; });
 
     if (it != filmes.end()) {

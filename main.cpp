@@ -250,7 +250,7 @@ int main() {
                         long long cpf;
                         cin >> cpf;
 
-                        cout << "DIgite o ID do filme alugado:" << endl;
+                        cout << "Digite o ID do filme alugado:" << endl;
                         int id;
                         cin >> id;
                         
