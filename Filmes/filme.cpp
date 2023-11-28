@@ -39,13 +39,13 @@ void Filme::lerFilme() {
  * Caso não existam mais unidades para serem alugadas, o método exibe uma mensagem de erro, informando sobre isso.
 */
 
-int Filme::serAlugado() {
+bool Filme::serAlugado() {
     if (unidades==0) {
         cout << "ERRO: filme indisponivel\n";
-        return 1;
+        return false;
     }
     this -> unidades--;
-    return 0;
+    return true;
 }
 
 /**

@@ -175,9 +175,12 @@ void Locadora::aluguel(long long cpf, int id) {
         return;
     }
 
-    if (filme->serAlugado()== 0) {
+    bool aindaTemCopias =  filme->serAlugado();
+    if (aindaTemCopias) {
         cliente->alugar(filme);
         cout << "Filme "<< filme->id <<" alugado por " << cliente->nome << " com sucesso\n";
+    } else {
+        cout << "Filme "<< filme->id <<" está em falta.\n";
     }
 }
 
