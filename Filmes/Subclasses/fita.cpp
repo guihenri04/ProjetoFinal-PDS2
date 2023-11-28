@@ -47,6 +47,10 @@ int Fita::calcularValor(int dias) {
  * @details Esse método determina que, sempre que uma fita for alugada, ela será automaticamente considerada desrebobinada.
 */
 
-void Fita::serAlugado() {
-    this -> rebobinada = false;
+int Fita::serAlugado() {
+    if (this -> serAlugado() == 0) {
+        this -> rebobinada = false;
+        return 0; 
+    }
+    return 1;
 }

@@ -39,7 +39,7 @@ void Locadora::cadastrarFilme(char tipo, int unidades, int id, const string& tit
         return;
     }
 
-    Filme* novoFilme;
+    Filme* novoFilme = nullptr;
     if (tipo=='F') {
         novoFilme = new Fita(id, titulo, unidades);
     } else if (categoria == 'E') {
@@ -50,7 +50,7 @@ void Locadora::cadastrarFilme(char tipo, int unidades, int id, const string& tit
         novoFilme = new dvdPromocao(id, titulo, unidades);
     } 
 
-    if (novoFilme) {
+    if (novoFilme!=nullptr) {
         filmes.push_back(novoFilme);
         cout << "Filme "<< novoFilme->id <<" cadastrado com sucesso\n";
     }
@@ -175,9 +175,10 @@ void Locadora::aluguel(long long cpf, int id) {
         return;
     }
 
-    cliente->alugar(filme);
-    filme->serAlugado();
-    cout << "Filme "<< filme->id <<" alugado por " << cliente->nome << " com sucesso\n";
+    if (filme->serAlugado()== 0) {
+        cliente->alugar(filme);
+        cout << "Filme "<< filme->id <<" alugado por " << cliente->nome << " com sucesso\n";
+    }
 }
 
 void Locadora::devolucao(long long cpf, int dias) {
