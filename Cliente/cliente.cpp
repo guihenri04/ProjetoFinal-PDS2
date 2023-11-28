@@ -58,12 +58,12 @@ void Cliente::lerCliente(){
 
 /** 
  * @brief Método "alugar" da classe "Cliente", utilizado para registro.
- *  @details Esse método registra a quantidade de filmes alugados pelo cliente, lista esses filmes, adiciona pontos para uma
+ * @details Esse método registra a quantidade de filmes alugados pelo cliente, lista esses filmes, adiciona pontos para uma
  * possível futura promoção e registra o histórico de filmes que já foram alugados pelo cliente.
- *  @param unidades Indica a quantidade de filmes alugados pelo cliente.
- *  @param filme Indica o filme alugado pelo cliente.
- *  @param filmesAlugados Armazena quais filmes estão alugados da locadora pelos clientes.
- *  @param historico Armazena os filmes alugados pelo cliente em seu historico.
+ * @param unidades Indica a quantidade de filmes alugados pelo cliente.
+ * @param filme Indica o filme alugado pelo cliente.
+ * @param filmesAlugados Armazena quais filmes estão alugados da locadora pelos clientes.
+ * @param historico Armazena os filmes alugados pelo cliente em seu historico.
  */
 
 void Cliente::alugar(Filme* filme) {
