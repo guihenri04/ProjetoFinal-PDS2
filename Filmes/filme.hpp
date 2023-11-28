@@ -8,7 +8,7 @@
 using namespace std;
 
 /**
- * @file cliente.hpp
+ * @file filme.hpp
  * @brief Arquivo de cabeçalho no qual contém os atributos e a especifição dos métodos utilizados no arquivo "filme.cpp".
  * @details Esse arquivo define a classe na qual contém os métodos que serão utilizados no desenvolvimento do 
  * código do arquivo "filme.cpp", especifica o tipo desses métodos (o que eles irão retornar) e os parâmetros que 
