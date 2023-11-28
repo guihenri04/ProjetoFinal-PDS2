@@ -24,7 +24,7 @@ int main() {
 
         if (comando.size() < 2) {
             cout << "Comando inválido." << endl;
-            break;
+            continue;
         }
 
         switch (comando[0]) {
@@ -72,7 +72,7 @@ int main() {
                         cout << "CADASTRAR CLIENTE" << endl;
 
                         cout << "Digite o CPF do cliente:" << endl;
-                        long cpf;
+                        long long cpf;
                         cin >> cpf;
 
                         cout << "Digite o nome do cliente:" << endl;
@@ -116,7 +116,7 @@ int main() {
                         cout << "REMOVER CLIENTE" << endl;
                         cout << "Digite o CPF do cliente que deseja remover:" << endl;
 
-                        long cpf;
+                        long long cpf;
                         cin >> cpf;
                         
                         CineMax.removerCliente(cpf);
@@ -233,7 +233,7 @@ int main() {
                         cout << "ALUGUEL DE FILME" << endl;
 
                         cout << "Digite o CPF do cliente que alugou o filme:" << endl;
-                        long cpf;
+                        long long cpf;
                         cin >> cpf;
 
                         cout << "DIgite o ID do filme alugado:" << endl;
@@ -264,7 +264,7 @@ int main() {
                         cout << "DEVOLUÇÃO DE FILME" << endl;
 
                         cout << "Digite o CPF do cliente que realiza a devolução dos filmes:" << endl;
-                        long cpf;
+                        long long cpf;
                         cin >> cpf;
 
                         CineMax.devolucao(cpf);
@@ -304,7 +304,7 @@ int main() {
                         cout << "SUGERIR FILMES" << endl;
 
                         cout << "Digite o cpf do cliente que busca recomendações:" << endl;
-                        long cpf;
+                        long long cpf;
                         cin >> cpf;
 
                         CineMax.recomendarFilmes(cpf);

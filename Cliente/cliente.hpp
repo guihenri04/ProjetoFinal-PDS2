@@ -43,9 +43,9 @@ class Cliente {
   friend class Locadora;
 protected:
   string nome;
-  long cpf;
+  long long cpf;
 public:
-  Cliente(long cpf, string nome);
+  Cliente(long long cpf, string nome);
   ~Cliente();
   void lerCliente();
   void alugar (Filme* filme);

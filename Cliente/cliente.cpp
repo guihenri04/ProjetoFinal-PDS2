@@ -11,7 +11,7 @@
 * @param pontos Armazena a quantidade de pontos que cada cliente tem para falicitar o controle de futuras promoções.
 */
 
-Cliente::Cliente(long cpf, string nome) {
+Cliente::Cliente(long long cpf, string nome) {
     this -> cpf = cpf;
     this -> nome = nome;
     this -> pontos = 0;
