@@ -180,7 +180,7 @@ void Locadora::aluguel(long long cpf, int id) {
     cout << "Filme "<< filme->id <<" alugado por " << cliente->nome << " com sucesso\n";
 }
 
-void Locadora::devolucao(long long cpf, int dis) {
+void Locadora::devolucao(long long cpf, int dias) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
         [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
     Cliente* cliente;
