@@ -109,6 +109,7 @@ void Locadora::cadastrarCliente(long cpf, string nome) {
     }
     Cliente* cliente = new Cliente(cpf, nome);
     this -> clientes.push_back(cliente);
+    cout << "Cliente "<< cliente->nome <<" cadastrado com sucesso\n";
 }
 
 void Locadora::removerCliente(long cpf) {
@@ -120,6 +121,7 @@ void Locadora::removerCliente(long cpf) {
         return;
     } else {
         delete *it;
+        cout << "Cliente removido com sucesso\n";
         this->clientes.erase(it);
     }
 }
@@ -175,6 +177,7 @@ void Locadora::aluguel(long cpf, int id) {
 
     cliente->alugar(filme);
     filme->serAlugado();
+    cout << "Filme "<< filme->id <<" alugado por " << cliente->nome << " com sucesso\n";
 }
 
 void Locadora::devolucao(long cpf) {
@@ -219,6 +222,7 @@ void Locadora::recomendarFilmes(long cpf) {
     }
 
     cliente -> recomendar(this -> clientes);
+    cout << "Filmes recomendados para " << cliente->nome << ":" << endl;
     for (Filme* filme : cliente -> recomendados) {
         filme -> lerFilme();
     }
@@ -237,4 +241,5 @@ void Locadora::avaliarFilme(int id, int nota) {
     }
 
     filme->serAvaliado(nota);
+    cout << "Filme "<< filme->id <<" avaliado com sucesso\n";    
 }
