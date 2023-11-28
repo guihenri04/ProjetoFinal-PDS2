@@ -16,25 +16,25 @@ using namespace std;
 * @class Cliente 
 * @details Na classe "Cliente", a qual possui como classe amiga "Locadora", existem como atributos protegidos o 
 * nome do cliente ("string nome"), seu cpf ("int cpf"), um vetor de ponteiro de filmes recomendados ("vector<Filme*> recomendados"), 
-* um vetor de ponteiro de filmes similares ("vector<Cliente*> similares"), um método para calcular a quantidade de
-* filmes similares alugados pelos clientes ("int calcularSimilaridade (Cliente* cliente)"), um  método para definir quais clientes
-* possuem gostos similares ("void definirSimilares (vector <Cliente*> clientes)") e um vetor de ponteiros para recomendar os filmes 
+* um vetor de ponteiro de filmes similares ("vector<Cliente*> similares") e um vetor de ponteiros para recomendar os filmes 
 * aos clientes com base na similaridade entre os gostos dos mesmos ("vector <Filme*> recomendarPorSimilar(Cliente* cliente)").
 * A classe também contém como atributos públicos um construtor que recebe o cpf e o nome do cliente ("Cliente(int cpf, string nome)")
 * um destrutor ("~Cliente()") e os pontos dos clientes com base nos filmes alugados ("int pontos"). Existe também um método para 
 * identificação de clientes ("void lerCliente()"), um método para controlar a quantidade e quais filmes foram alugados ("void alugar (Filme* filme)"), 
 * um método para controlar a quantidade e quais filmes foram devolvidos ("void devolver ()"), um método para recomendar filmes aos clientes 
-* ("void recomendar(vector <Cliente*> clientes)"), um vetor de ponteiros para controlar quais filmes foram alugados 
+* ("void recomendar(vector <Cliente*> clientes)"), um método para calcular a quantidade de filmes similares alugados pelos 
+* clientes ("int calcularSimilaridade (Cliente* cliente)"), um  método para definir quais clientes possuem gostos 
+* similares ("void definirSimilares (vector <Cliente*> clientes)"), um vetor de ponteiros para controlar quais filmes foram alugados 
 * ("vector<Filme*> filmesAlugados") e, por fim, um vetor de ponteiros para adicionar filmes ao histórico dos clientes
 * ("vector<Filme*> historico").
 * @param nome Registra o nome do cliente.
 * @param cpf Registra o cpf do cliente.
-* @param vector<Filme*> recomendados Usado na recomendação de filmes aos clientes.
-* @param vector<Cliente*> similares Usado no calculo de similaridade entre os filmes alugados pelos clientes.
-* @param vector <Filme*> recomendarPorSimilar(Cliente* cliente) Usado na recomendação de filmes por similaridade entre os clientes.
+* @param recomendados Usado na recomendação de filmes aos clientes.
+* @param similares Usado no calculo de similaridade entre os filmes alugados pelos clientes.
+* @param recomendarPorSimilar Usado na recomendação de filmes por similaridade entre os clientes.
 * @param pontos Registra a quantidade de pontos de cada cliente.
-* @param vector<Filme*> filmesAlugados Usado no controle dos filmes alugados.
-* @param vector<Filme*> historico Usado no controle dos filmes adicionados ao histórico dos clientes.
+* @param filmesAlugados Usado no controle dos filmes alugados.
+* @param historico Usado no controle dos filmes adicionados ao histórico dos clientes.
 */
 
 
@@ -43,9 +43,9 @@ class Cliente {
   friend class Locadora;
 protected:
   string nome;
-  int cpf;
+  long cpf;
 public:
-  Cliente(int cpf, string nome);
+  Cliente(long cpf, string nome);
   ~Cliente();
   void lerCliente();
   void alugar (Filme* filme);
