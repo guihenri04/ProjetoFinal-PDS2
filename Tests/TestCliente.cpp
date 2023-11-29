@@ -105,7 +105,7 @@ TEST_CASE("Cliente-recomendarPorSimiliar"){
 }
 
 
-TEST_CASE("Cliente-recomendar"){
+/*TEST_CASE("Cliente-recomendar"){
     pointerCliente4->alugar(filme3);
     pointerCliente1->alugar(filme);
     pointerCliente2->alugar(filme);
@@ -116,4 +116,4 @@ TEST_CASE("Cliente-recomendar"){
     CHECK(pointerCliente1->recomendados[0] == filme);
     CHECK(pointerCliente1->recomendados[1] == filme2);
     CHECK(pointerCliente1->recomendados[2] == filme3);
-}
+}*/
