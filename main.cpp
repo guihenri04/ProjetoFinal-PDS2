@@ -9,6 +9,10 @@
 
 using namespace std;
 
+void printColoredText(const std::string& text, int colorCode) {
+    std::cout << "\033[" << colorCode << "m" << text << "\033[0m";
+    }
+
 int main() {
 
 /**
@@ -22,21 +26,28 @@ int main() {
 */
     Locadora CineMax;
     string comando;
-    cout << endl << "Bem vindo à nossa locadora! Digite o comando e clique em enter para executá-lo." << endl << endl;
-    cout << "Comandos disponíveis:" << endl;
-    cout << "CC: Cadastrar Cliente" << endl;    
-    cout << "CF: Cadastrar Filme" << endl;
-    cout << "RC: Remover Cliente" << endl;  
-    cout << "RF: Remover Filme" << endl;
-    cout << "LA: Ler Arquivo de Cadastro" << endl;
-    cout << "LC: Listar Clientes" << endl;
-    cout << "LF: Listar Filmes" << endl;
-    cout << "RF: Remover Filme" << endl;
-    cout << "AL: Aluguel de Filme" << endl;
-    cout << "DV: Devolução de Filme" << endl;
-    cout << "PA: Avaliar Filme" << endl;
-    cout << "PS: Sugerir Filmes" << endl;
-    cout << "FS: Finalizar Sistema" << endl;
+    
+    cout << endl;
+    printColoredText( "Bem-vindo ao software da CINEMAX ! Digite o comando e pressione enter para executá-lo.\n", 35 );
+    cout << endl;
+    printColoredText("+----------------------------------+\n", 34); 
+    printColoredText("| Comandos disponíveis:            |\n", 34); 
+    printColoredText("+----------------------------------+\n", 34); 
+    
+    printColoredText("| CC: Cadastrar Cliente            |\n", 36); 
+    printColoredText("| CF: Cadastrar Filme              |\n", 36); 
+    printColoredText("| RC: Remover Cliente              |\n", 36); 
+    printColoredText("| RF: Remover Filme                |\n", 36);                                             //  31 red 32verde 33amarelo 31vermelho 34azul  35roxo 36ciano
+    printColoredText("| LA: Ler Arquivo de Cadastro      |\n", 36); 
+    printColoredText("| LC: Listar Clientes              |\n", 36); 
+    printColoredText("| LF: Listar Filmes                |\n", 36);
+    printColoredText("| AL: Aluguel de Filme             |\n", 36);
+    printColoredText("| DV: Devolução de Filme           |\n", 36); 
+    printColoredText("| PA: Avaliar Filme                |\n", 36); 
+    printColoredText("| PS: Sugerir Filmes               |\n", 36); 
+    printColoredText("| FS: Finalizar Sistema            |\n", 36); 
+    printColoredText("+----------------------------------+\n", 34); 
+
 
 /**
  * @details O código pede para que um comando seja digitado pelo usuário. Caso o comando seja 
@@ -48,12 +59,15 @@ int main() {
 */
     while (true) {
 
-        cout << endl << "-------------------------------------------------------------------------------------- " << endl << endl;  
+        
+        cout << endl; 
+        printColoredText("+----------------------------------+\n", 34);   
         cout << "Digite um comando: " << endl;
         cin >> comando;
+        printColoredText("+----------------------------------+\n", 34); 
 
         if (comando.size() < 2) {
-            cout << "Comando inválido." << endl;
+            printColoredText("Comando Inválido!\n", 31);
             continue;
         }
 
@@ -120,7 +134,7 @@ int main() {
 
                     default: {
 
-                        cout << "Comando inválido.\n";
+                        printColoredText("Comando Inválido!\n", 31);
                         break;            
         
                     }
@@ -170,7 +184,7 @@ int main() {
                     }
                     
                     default: {
-                        cout << "Comando inválido.\n";
+                        printColoredText("Comando Inválido!\n", 31);
                         break;    
                     }                                                               
                 }
@@ -232,7 +246,7 @@ int main() {
 
                         else {
 
-                            cout << "ERRO: Arquivo inexistente!" << endl;
+                            printColoredText("ERRO: Arquivo inexistente!\n",31);
 
                         }
 
@@ -279,7 +293,7 @@ int main() {
 
                     default: { 
 
-                        cout << "Comando inválido." << endl;
+                        printColoredText("Comando Inválido!\n", 31);
                         break ;
 
                     }
@@ -317,7 +331,7 @@ int main() {
                         }
 
                         if (quantidade<=0) {
-                            cout << "ERRO: a quantidade de filmes alugados deve ser maior que 0";
+                            printColoredText("ERRO: a quantidade de filmes alugados deve ser maior que 0\n", 31);
                         } else {
                             CineMax.aluguel(cpf,filmesAlugados);
                         }
@@ -327,7 +341,7 @@ int main() {
                        
                     default: {
 
-                        cout << "Comando inválido." << endl;
+                        printColoredText("Comando Inválido!\n", 31);
                         break;    
 
                     }   
@@ -361,7 +375,7 @@ int main() {
                     }
                     
                     default: {
-                        cout << "Comando inválido." << endl;
+                        printColoredText("Comando Inválido!\n", 31);
                         break;
                     }
                 }
@@ -411,7 +425,7 @@ int main() {
                     }
 
                     default: {
-                        cout << "Comando inválido." << endl;
+                        printColoredText("Comando Inválido!\n", 31);
                         break;
                     }
                 }
@@ -434,11 +448,13 @@ int main() {
                     }
             
                     default: {
-                        cout << "Comando inválido." << endl;
+                        printColoredText("Comando Inválido!\n", 31);
                         break;
                     }
 
                 }
+                default:
+                printColoredText("Comando Inválido!\n", 31);
                 break;
             }
         
