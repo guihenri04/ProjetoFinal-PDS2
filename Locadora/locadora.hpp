@@ -64,6 +64,7 @@ public:
   void avaliarFilme(int id, int nota);
   vector<Filme*> filmes;
   vector<Cliente*> clientes;
+  bool erro;
 };
 
 #endif

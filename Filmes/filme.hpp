@@ -49,6 +49,7 @@ public:
   void serAvaliado(int nota);
   int unidades;
   float avaliacao;
+  bool erro;
 };
 
 #endif

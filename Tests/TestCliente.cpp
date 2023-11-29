@@ -100,4 +100,20 @@ TEST_CASE("Cliente-recomendarPorSimiliar"){
     vector <Filme*> filme_recomendado = pointerCliente1->recomendarPorSimilar(pointerCliente2);
     CHECK(filme_recomendado.size() == 1);
     CHECK(filme_recomendado[0] == filme2);
+    zerar_v(pointerCliente1);
+    zerar_v(pointerCliente2);
+}
+
+
+TEST_CASE("Cliente-recomendar"){
+    pointerCliente4->alugar(filme3);
+    pointerCliente1->alugar(filme);
+    pointerCliente2->alugar(filme);
+    pointerCliente3->alugar(filme);
+    pointerCliente1->alugar(filme2);
+    pointerCliente2->alugar(filme2);
+    pointerCliente1->recomendar(clientes);
+    CHECK(pointerCliente1->recomendados[0] == filme);
+    CHECK(pointerCliente1->recomendados[1] == filme2);
+    CHECK(pointerCliente1->recomendados[2] == filme3);
 }

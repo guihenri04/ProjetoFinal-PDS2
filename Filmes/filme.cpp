@@ -42,6 +42,7 @@ void Filme::lerFilme() {
 int Filme::serAlugado() {
     if (unidades==0) {
         cout << "ERRO: filme indisponivel\n";
+        erro = true;
         return 1;
     }
     this -> unidades--;
@@ -68,6 +69,7 @@ void Filme::serDevolvido() {
   void Filme::serAvaliado(int nota) {
     if(nota > 5){
         cout << "ERRO: O filme pode ser avaliado em no máximo 5\n";
+        erro = true;
     } else {
     this->vezesAvaliado++;
     float soma = this -> avaliacao * (this -> vezesAvaliado - 1);
