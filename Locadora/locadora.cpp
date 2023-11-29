@@ -165,11 +165,12 @@ void Locadora::cadastrarCliente(long long cpf, string nome) {
             cout << "ERRO: CPF repetido\n";
             return;
         }
-        if (cpf<10000000000) { // CPF invalido
-            cout << "ERRO: dados incorretos\n";
-            return;
-        }
     }
+    if (cpf<10000000000 || cpf>99999999999) { // CPF invalido
+        cout << "ERRO: dados incorretos\n";
+        return;
+    }
+
     Cliente* cliente = new Cliente(cpf, nome);
     this -> clientes.push_back(cliente);
     cout << "Cliente "<< cliente->nome <<" cadastrado com sucesso\n";
@@ -243,7 +244,7 @@ void Locadora::removerCliente(long long cpf) {
  * o método exibe uma mensagem de erro. Caso contrário, ocorre uma verificação para saber se ainda existem
  * cópias do filme disponíveis para locação. Caso existam, o método registra que o filme foi alugado
  * pelo cliente. Caso contrário, o método informa que não existem mais unidades do filme disponiveis para
- * aluguel.
+ * aluguel. Além disso, o método possibilita o aluguel de vários filmes ao mesmo tempo.
 */
 void Locadora::aluguel(long long cpf, vector<int> id) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
@@ -260,7 +261,7 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
     vector<int> inexistentes;
     vector<int> emFalta;
 
-    cout << "Cliente " << cliente->cpf << " " << cliente->nome << "alugou os filmes: " << endl;
+    cout << endl << "Cliente " << cliente->cpf << " " << cliente->nome << " alugou os filmes: " << endl;
     for (int id : id) { // para cada um dos codigos 
         auto itFilme = find_if(filmes.begin(), filmes.end(),
             [id](Filme* filme) { return filme->id == id; }); // encontra filme
