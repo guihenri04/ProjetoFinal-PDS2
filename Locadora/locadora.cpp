@@ -129,7 +129,7 @@ void Locadora::listarFilmes(char opcao) {
         cout << "Ainda não há filmes para listar." << endl;
         return;
     }
-    vector<Filme*> filmesOrdenados = filmes;
+   filmesOrdenados = filmes;
 
     auto compara = [opcao](const Filme* a, const Filme* b) {
         if (opcao == 'C') {
@@ -219,7 +219,7 @@ void Locadora::removerCliente(long long cpf) {
         return;
     }
 
-    vector<Cliente*> clientesOrdenados = clientes;
+    clientesOrdenados = clientes;
 
     auto compara = [opcao](const Cliente* a, const Cliente* b) {
         if (opcao == 'C') {

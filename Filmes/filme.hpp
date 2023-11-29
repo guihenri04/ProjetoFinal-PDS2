@@ -35,7 +35,6 @@ class Filme {
   friend class Locadora;
   friend class Cliente;
 protected:
-  int id;
   int vezesAvaliado;
   string titulo;
   string tipo;
@@ -50,6 +49,7 @@ public:
   int unidades;
   float avaliacao;
   bool erro;
+  int id;
 };
 
 #endif
