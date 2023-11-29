@@ -46,7 +46,7 @@ int Filme::serAlugado() {
         return 1;
     }
     this -> unidades--;
-    return 0;
+    return true;
 }
 
 /**
@@ -67,16 +67,16 @@ void Filme::serDevolvido() {
 */
 
   void Filme::serAvaliado(int nota) {
-    if(nota > 5){
+    if (nota > 5){
         cout << "ERRO: O filme pode ser avaliado em no máximo 5\n";
         erro = true;
     } else {
-    this->vezesAvaliado++;
-    float soma = this -> avaliacao * (this -> vezesAvaliado - 1);
-    soma = soma + nota;
-    this -> avaliacao = soma / float(this -> vezesAvaliado);
-     if (this->avaliacao > 5) {
-         this->avaliacao = 5;
+        this->vezesAvaliado++;
+        float soma = this -> avaliacao * (this -> vezesAvaliado - 1);
+        soma = soma + nota;
+        this -> avaliacao = soma / float(this -> vezesAvaliado);
+        if (this->avaliacao > 5) {
+            this->avaliacao = 5;
+        }
     }
-  }
   }

@@ -58,7 +58,7 @@ public:
   void cadastrarCliente(long long cpf, string nome);
   void removerCliente(long long cpf);
   void listarClientes(char opcao);
-  void aluguel(long long cpf, int id);
+  void aluguel(long long cpf, vector<int> id);
   void devolucao(long long cpf, int dias);
   void recomendarFilmes(long long cpf);
   void avaliarFilme(int id, int nota);
