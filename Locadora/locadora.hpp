@@ -45,6 +45,7 @@ using namespace std;
  * @param nota Armazena a nota recebida por um filme.
  * @param filmes Armazena todos os filmes da locadora.
  * @param clientes Armazena todos os clientes da locadora.
+ * @param erro Informa caso haja erros no código.
 */
 
 class Locadora {
