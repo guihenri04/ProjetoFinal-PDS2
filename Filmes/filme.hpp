@@ -29,6 +29,7 @@ using namespace std;
  * @param titulo Armazena o nome do filme.
  * @param tipo Armazena o tipo do filme.
  * @param unidades Registra quantas unidades de um filme estão disponíveis para locação.
+ * @param erro Informa caso haja erros do código.
 */
 
 class Filme {
