@@ -165,11 +165,12 @@ void Locadora::cadastrarCliente(long long cpf, string nome) {
             cout << "ERRO: CPF repetido\n";
             return;
         }
-        if (cpf<10000000000) { // CPF invalido
-            cout << "ERRO: dados incorretos\n";
-            return;
-        }
     }
+    if (cpf<10000000000 || cpf>99999999999) { // CPF invalido
+        cout << "ERRO: dados incorretos\n";
+        return;
+    }
+
     Cliente* cliente = new Cliente(cpf, nome);
     this -> clientes.push_back(cliente);
     cout << "Cliente "<< cliente->nome <<" cadastrado com sucesso\n";
@@ -260,7 +261,7 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
     vector<int> inexistentes;
     vector<int> emFalta;
 
-    cout << "Cliente " << cliente->cpf << " " << cliente->nome << "alugou os filmes: " << endl;
+    cout << endl << "Cliente " << cliente->cpf << " " << cliente->nome << " alugou os filmes: " << endl;
     for (int id : id) { // para cada um dos codigos 
         auto itFilme = find_if(filmes.begin(), filmes.end(),
             [id](Filme* filme) { return filme->id == id; }); // encontra filme
