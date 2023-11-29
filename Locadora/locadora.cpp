@@ -244,7 +244,7 @@ void Locadora::removerCliente(long long cpf) {
  * o método exibe uma mensagem de erro. Caso contrário, ocorre uma verificação para saber se ainda existem
  * cópias do filme disponíveis para locação. Caso existam, o método registra que o filme foi alugado
  * pelo cliente. Caso contrário, o método informa que não existem mais unidades do filme disponiveis para
- * aluguel.
+ * aluguel. Além disso, o método possibilita o aluguel de vários filmes ao mesmo tempo.
 */
 void Locadora::aluguel(long long cpf, vector<int> id) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),

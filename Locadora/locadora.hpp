@@ -28,7 +28,7 @@ using namespace std;
  * um método para remover clientes utilizando somente o cpf informado ("void removerCliente(long long cpf)"), um método para listar clientes
  * a partir da opção selecionada, seja por nome ou cpf cadastrados ("void listarClientes(char opcao)"), um 
  * método para registrar os clientes que alugaram filmes e quais filmes foram alugados, com base em seus id's
- * ("void aluguel(long long cpf, int id)"), um método para controlar quais clientes fazem a devolução dos filmes e com quantos dias esse cliente ficou
+ * ("void aluguel(long long cpf, vector <int> id)"), um método para controlar quais clientes fazem a devolução dos filmes e com quantos dias esse cliente ficou
  * com o filme alugado ("void devolucao(long long cpf, int dias)"), um método para recomendar filmes aos clientes, de acordo com o cpf informado
  * ("void recomendarFilmes(long long cpf)") e um método para avaliar os filmes, de acordo com seu id e a nota dada ("void avaliarFilme(int id, int nota)").
  * Além disso, a classe conta um vetor de ponteiros para armazenar os filmes da locadora ("vector<Filme*> filmes") e, por fim, um vetor de ponteiros
