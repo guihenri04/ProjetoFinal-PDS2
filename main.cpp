@@ -11,6 +11,15 @@ using namespace std;
 
 int main() {
 
+/**
+ * @file main.cpp
+ * @brief Arquivo principal para execução de todo o código fonte.
+ */
+
+/**
+ * @details Primeiramente, ocorre a criação do objeto "CineMax" a partir da classe "Locadora" e criação de uma string ("comando") para ser utilizada pelo usuário de acordo com
+ * os comandos de execução digitados por ele. Depois, são exibidos para o usuário todos os comandos disponíveis para ele usar.
+*/
     Locadora CineMax;
     string comando;
     cout << endl << "Bem vindo à nossa locadora! Digite o comando e clique em enter para executá-lo." << endl << endl;
@@ -29,7 +38,14 @@ int main() {
     cout << "PS: Sugerir Filmes" << endl;
     cout << "FS: Finalizar Sistema" << endl;
 
-
+/**
+ * @details O código pede para que um comando seja digitado pelo usuário. Caso o comando seja 
+ * "CF" (cadastrar filme), o código solicita ao usuário que seja informado o tipo do filme (DVD ou Fita),
+ * o número de unidades, o id de identificação do filme, seu título e categoria (caso ele seja do tipo DVD).
+ * Em seguida, o método "cadastrarFilme" é chamado a partir do objeto "CineMax", utilizando os parâmetros 
+ * informados pelo usuário.
+ * 
+*/
     while (true) {
 
         cout << endl << "-------------------------------------------------------------------------------------- " << endl << endl;  
@@ -80,7 +96,10 @@ int main() {
 
                         break;    
                     }
-                    
+/**
+ * @details Caso o comando seja "CC" (cadastrar cliente), é solicitado  ao usuário o cpf e o nome do cliente.
+ * Em seguida, o método "cadastrarCliente" é chamado a partir do objeto "CineMax", utilizando os parâmetros fornecidos. 
+*/                  
                     case 'C': {
                         
                         cout << endl << "CADASTRAR CLIENTE" << endl;
@@ -109,6 +128,12 @@ int main() {
                 break;
             }
 
+/**
+ * @details Caso o comando digitado seja "RF" (remover filme), é solicitado ao usuário o id de identificação
+ * do filme no qual ele deseja remover. Em seguida, o método "removerFilme" é chamado a partir do objeto "CineMax",
+ * utilizando o parâmetro informado.
+*/
+
             case 'R': {                                               
                 switch (comando[1]) {
 
@@ -124,6 +149,12 @@ int main() {
 
                         break;
                     }
+
+/**
+ * @details Caso o comando digitado seja "RC" (remover cliente), é solicitado ao usuário o cpf do cliente
+ * que se deseja remover. Em seguida, o método "removerCliente" é chamado a partir do objeto "CineMax",
+ * utilizando o parâmetro informado.
+*/
 
                     case 'C': {
 
@@ -145,6 +176,13 @@ int main() {
                 }
                 break;
             }
+        
+/**
+ * @details Caso o comando digitado seja "LA" (ler arquivo de cadastro), é solicitado ao usuário o nome
+ * do arquivo desejado. A partir daí, o arquivo de cadastro é aberto e lido linha por linha e, para cada linha,
+ * é chamado o método "cadastrarFilme" a partir do objeto "CineMax", com o objetivo de adicionar um novo filme
+ * utilizando os parâmetros lidos.
+*/
 
             case 'L': {                          
                 switch (comando[1]) {
@@ -201,6 +239,11 @@ int main() {
                         break;
                     }
 
+/**
+ * @details Caso o comando "LF" (listar filmes), é solicitado ao usuário a opção de ordenação desejada
+ * por ele, seja por id de identificação ou título. Em seguida, o método "listarFilmes" é chamado a partir
+ * do objeto "CineMax" utilizando o parâmetro informado. 
+*/
                     case 'F': {
 
                         cout << endl <<"LISTAR FILMES" << endl;
@@ -214,7 +257,12 @@ int main() {
                         
                         break;
                     }
-                    
+
+/**
+ * @details Caso o comando digitado seja "LC" (listar clientes), é solicitado ao usuário a opção de ordenação
+ * desejada, seja por cpf ou por nome. A partir daí, o método "listarClientes" é chamado a partir do objeto
+ * "CineMax", utilizando o parâmetro informado.
+*/                  
                     case 'C': {
 
                         cout << endl <<"LISTAR CLIENTES" << endl;
@@ -239,6 +287,12 @@ int main() {
                 break;      
             }
 
+/**
+ * @details Caso o comando "AL" (aluguel de filme) seja digitado, é solicitado ao usuário o cpf do cliente que alugou o filme e
+ * o número de filmes que foram alugados. Em seguida, é pedido o id de identificação de cada filme alugado, de forma
+ * que eles são armazenados em um vetor. Se a quantidade de filmes alugados for menor ou igual a zero, uma mensagem 
+ * de erro é exibida. Se não, o método "aluguel" é chamado a partir do objeto "CineMax", utilizando os parãmetros informados. 
+*/
             case 'A': {
                 switch (comando[1]) {
 
@@ -281,7 +335,11 @@ int main() {
                 }
                 break;
             }
-
+/**
+ * @details Caso o comando digitado seja "DV" (devolução de filme), é solicitado ao usuário o cpf do cliente que está devolvendo
+ * filmes e o número de dias que o cliente ficou com esses filmes alugados. Em seguida, o método "devolucao" é chamado a partir do 
+ * objeto ("CineMax"), utilizando esses parâmetros.
+*/
             case 'D': {
                 switch (comando[1]) {
 
@@ -310,6 +368,12 @@ int main() {
                 break;
             }
 
+/**
+ * @details Caso o código digitado seja "PA" (avaliar filme), é solicitado ao usuário o id de identificação
+ * do filme que se deseja avaliar e nota do filme de 0 a 5. Em seguida, o método "avaliarFilme" é chamado a
+ * partir do objeto "CineMax", utilizando esses parâmetros.
+*/
+
             case 'P': {                                //pessoal "P" avaliaçao A sugestao S
                 switch (comando[1]) {
 
@@ -328,7 +392,11 @@ int main() {
 
                         break;
                     }
-                    
+
+/**
+ * @details Caso o comando digitado seja "PS" (sugerir filmes), é solicitado ao usuário o cpf do cliente que busca recomendações.
+ * Em seguida, o método "recomendarFilmes" é chamado a partir do objeto "CineMax", utilizando esse parâmetro.
+*/                   
                     case 'S': {
                         
                         cout << endl <<"SUGERIR FILMES" << endl;
@@ -350,6 +418,9 @@ int main() {
                 break;
             }
 
+/**
+ * @details Caso o comando "FS" (finalizar sistema) seja digitado, o programa é encerrado.
+*/
 
             case 'F': { 
                 switch (comando[1]) {
