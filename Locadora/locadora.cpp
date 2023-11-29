@@ -245,34 +245,51 @@ void Locadora::removerCliente(long long cpf) {
  * pelo cliente. Caso contrário, o método informa que não existem mais unidades do filme disponiveis para
  * aluguel.
 */
-void Locadora::aluguel(long long cpf, int id) {
+void Locadora::aluguel(long long cpf, vector<int> id) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
-        [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
-    Cliente* cliente;
+        [cpf](const Cliente* cliente) { return cliente->cpf == cpf; }); // encontra cliente
+
+    Cliente* cliente = nullptr;
     if (itCliente != this->clientes.end()) {
         cliente = *itCliente;
     } else { // cpf inexistente
         cout << "ERRO: CPF inexistente\n";
         return;
     }
+    
+    vector<int> inexistentes;
+    vector<int> emFalta;
 
-    auto itFilme = std::find_if(filmes.begin(), filmes.end(),
-        [id](Filme* filme) { return filme->id == id; });
-    Filme* filme;
-    if (itFilme != this->filmes.end()) {
-        filme = *itFilme;
-    } else { // filme inexistente
-        cout << "ERRO: Filme " << id<< " inexistente\n";
-        return;
+    cout << "Cliente " << cliente->cpf << " " << cliente->nome << "alugou os filmes: " << endl;
+    for (int id : id) { // para cada um dos codigos 
+        auto itFilme = find_if(filmes.begin(), filmes.end(),
+            [id](Filme* filme) { return filme->id == id; }); // encontra filme
+
+        Filme* filme = nullptr;
+        if (itFilme != this->filmes.end()) {
+            filme = *itFilme;
+        } else { // filme inexistente
+            inexistentes.push_back(id);
+        }
+
+        if (filme!=nullptr) {
+            bool aindaTemCopias = filme->serAlugado();
+            if (aindaTemCopias) {
+                cliente->alugar(filme);
+                filme->lerFilme();
+            } else { // filme em falta
+                emFalta.push_back(id);
+            }
+        }
     }
 
-    bool aindaTemCopias =  filme->serAlugado();
-    if (aindaTemCopias) {
-        cliente->alugar(filme);
-        cout << "Filme "<< filme->id <<" alugado por " << cliente->nome << " com sucesso\n";
-    } else {
-        cout << "Filme "<< filme->id <<" está em falta.\n";
+    for (int id : inexistentes) {
+        cout << "ERRO: Filme " << id << " inexistente" << endl;
     }
+    for (int id : emFalta) {
+        cout << "ERRO: Filme " << id << " em falta no estoque" << endl;
+    }
+    
 }
 
 /**
