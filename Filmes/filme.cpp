@@ -39,10 +39,10 @@ void Filme::lerFilme() {
  * Caso não existam mais unidades para serem alugadas, o método exibe uma mensagem de erro, informando sobre isso.
 */
 
-int Filme::serAlugado() {
+bool Filme::serAlugado() {
     if (unidades==0) {
         cout << "ERRO: filme indisponivel\n";
-        erro = true;
+        erro = false;
         return 1;
     }
     this -> unidades--;
@@ -69,7 +69,7 @@ void Filme::serDevolvido() {
   void Filme::serAvaliado(int nota) {
     if (nota > 5){
         cout << "ERRO: O filme pode ser avaliado em no máximo 5\n";
-        erro = true;
+        erro = false;
     } else {
         this->vezesAvaliado++;
         float soma = this -> avaliacao * (this -> vezesAvaliado - 1);

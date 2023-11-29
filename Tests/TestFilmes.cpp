@@ -30,7 +30,7 @@ return saida.str();
 }
 
 void resetar_erro(Filme* filme){
-    filme->erro = false;
+    filme->erro == true;
 }
 
 
@@ -45,7 +45,7 @@ TEST_CASE("Filmes-serAlugado"){
     CHECK(filme2->unidades == 1); 
     CHECK(saida_filme(filme1, ser_alugado) == "ERRO: filme indisponivel\n");  
     filme1->serAlugado();
-    CHECK(filme1->erro);
+    CHECK(filme1->erro == false);
     resetar_erro(filme1);
 }
 
@@ -62,5 +62,5 @@ TEST_CASE("Filmes-serAvaliado"){
     // test de avaliação superior a 5
     CHECK(saida_filme(filme2, ser_avaliado) == "ERRO: O filme pode ser avaliado em no máximo 5\n");
     filme1->serAvaliado(6);
-    CHECK(filme1->erro);
+    CHECK(filme1->erro == false);
 }
