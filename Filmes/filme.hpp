@@ -14,15 +14,15 @@ using namespace std;
  * código do arquivo "filme.cpp", especifica o tipo desses métodos (o que eles irão retornar) e os parâmetros que 
  * serão recebidos por eles.
  * @class Filme
- * @details Na classe "Filme", a qual possui como classe amiga "Locadora" e "Cliente", existem como atributos protegidos o 
- * id do filme ("int id"), quantas vezes esse filme foi avaliado ("int vezesAvaliado"), o nome do filme ("string titulo") e o tipo desse filme, seja fita, DVD, etc ("string tipo"). 
+ * @details Na classe "Filme", a qual possui como classe amiga "Locadora" e "Cliente", existem como atributos protegidos 
+ * quantas vezes um determinado filme foi avaliado ("int vezesAvaliado"), o nome do filme ("string titulo") e o tipo desse filme, seja fita, DVD, etc ("string tipo"). 
  * A classe também contém como atributos públicos um construtor que recebe o id, o nome e a quantidade disponível de determinado filme
  * ("Filme(int id, string titulo, int unidades)") e um destrutor virtual, inicializado como default ("~Filme()"). Existe também um método para calcular quanto será pago pelo
  * aluguel do filme, de acordo com o tempo de aluguel ("virtual int calcularValor(int dias) = 0"), um método para identificar
  * os filmes ("void lerFilme()"), um método para alugar os filmes disponíveis ("virtual void serAlugado()"), um método para devolver
  * os filmes que foram alugados ("void serDevolvido()") e um método para avaliar o filme alugado ("void serAvaliado(int nota)"). Além
- * disso, contém um atributo público para controlar a quantidade de filmes disponíveis na locadora ("int unidades") e outro atributo para registrar
- * a nota de avaliação recebida pelo filme ("float avaliação").
+ * disso, contém um atributo público para controlar a quantidade de filmes disponíveis na locadora ("int unidades"), outro atributo para registrar
+ * a nota de avaliação recebida pelo filme ("float avaliação") e, por fim, um atributo que para registrar o id de identificação de um filme ("int id"). 
  * @param id Determina o id do filme para identificação.
  * @param avaliacao Registra a avaliação recebida pelo filme.
  * @param vezesAvaliado Registra quantas vezes um filme foi avaliado.

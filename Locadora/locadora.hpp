@@ -20,7 +20,7 @@ using namespace std;
  * serão recebidos por eles.
  * @class Locadora
  * @details Na classe "Locadora",existem como atributos públicos um construtor ("Locadora()") e um destrutor ("~Locadora()"). 
- * Existe também um método para cadastranr filmes, que recebe como parâmetros o tipo do filme, a quantidade dele, seu id de identificação,
+ * Existe também um método para cadastrar filmes, que recebe como parâmetros o tipo do filme, a quantidade dele, seu id de identificação,
  * seu título e sua e sua categoria, seja estoque, promoção ou lançamento ("void cadastrarFilme(char tipo, int quantidade, int id, const string& titulo, const char& categoria)"),
  * um método para remover filmes de acordo com seu código ("void removerFilme(int codigo)"), um método para listar filmes de
  * de acordo com a opção selecionada, seja a partir do id de identificação ou título do filme ("void listarFilmes(char opcao)"),
@@ -31,8 +31,9 @@ using namespace std;
  * ("void aluguel(long long cpf, vector <int> id)"), um método para controlar quais clientes fazem a devolução dos filmes e com quantos dias esse cliente ficou
  * com o filme alugado ("void devolucao(long long cpf, int dias)"), um método para recomendar filmes aos clientes, de acordo com o cpf informado
  * ("void recomendarFilmes(long long cpf)") e um método para avaliar os filmes, de acordo com seu id e a nota dada ("void avaliarFilme(int id, int nota)").
- * Além disso, a classe conta um vetor de ponteiros para armazenar os filmes da locadora ("vector<Filme*> filmes") e, por fim, um vetor de ponteiros
- * para armazenar os clientes da locadora ("vector<Cliente*> clientes").
+ * Além disso, a classe conta um vetor de ponteiros para armazenar os filmes da locadora ("vector<Filme*> filmes") e um vetor de ponteiros
+ * para armazenar os clientes da locadora ("vector<Cliente*> clientes"). Por fim, existe um vetor de ponteiros que armazena uma lista de clientes ordenados
+ * ("vector<Cliente*> clientesOrdenados") e outro vetor, também de ponteiros, que armazena uma lista de filmes ordenados ("vector<Filme*> filmesOrdenados").
  * @param tipo Armazena o tipo do filme (fita ou DVD).
  * @param quantidade Armazena a quantidade de filmes que serão cadastrados na locadora.
  * @param id Armazena o id de identificação do filme.
