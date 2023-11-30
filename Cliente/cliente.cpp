@@ -237,7 +237,7 @@ void Cliente::recomendar(vector <Cliente*> clientes) {
     this->definirSimilares(clientes);
 
     if (this->similares.size() == 0 || this->historico.size() == 0) {
-        cout << "Ainda não há filmes recomendados." << endl;
+        cout << "Ainda não há filmes recomendados para essa cliente!" << endl;
         return;
     }
 
@@ -251,4 +251,9 @@ void Cliente::recomendar(vector <Cliente*> clientes) {
     }
 
     this->recomendados.assign(conjuntoRecomendados.begin(), conjuntoRecomendados.end());
+
+    if (this->recomendados.size() == 0) {
+        cout << "Ainda não há filmes recomendados para essa cliente!" << endl;
+        return;
+    }
 }

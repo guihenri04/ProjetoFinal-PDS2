@@ -357,8 +357,9 @@ void Locadora::recomendarFilmes(long long cpf) {
         return;
     }
 
+    cout << endl << "Filmes recomendados para " << cliente->nome << ":" << endl;
     cliente -> recomendar(this -> clientes);
-    cout << "Filmes recomendados para " << cliente->nome << ":" << endl;
+
     for (Filme* filme : cliente -> recomendados) {
         filme -> lerFilme();
     }
