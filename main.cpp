@@ -40,6 +40,7 @@ int main() {
     printColoredText("| RF: Remover Filme                |\n", 36);                                             //  31 red 32verde 33amarelo 31vermelho 34azul  35roxo 36ciano
     printColoredText("| LA: Ler Arquivo de Cadastro      |\n", 36); 
     printColoredText("| LC: Listar Clientes              |\n", 36); 
+    printColoredText("| LC: Listar Clientes Bloqueados   |\n", 36); 
     printColoredText("| LF: Listar Filmes                |\n", 36);
     printColoredText("| AL: Aluguel de Filme             |\n", 36);
     printColoredText("| DV: Devolução de Filme           |\n", 36); 
@@ -300,12 +301,25 @@ int main() {
                         break;
                     }
 
+/**
+ * @details Caso o comando digitado seja "LB" (listar bloqueados), o método "listarBloqueados" é chamado a partir do objeto
+ * "CineMax", gerando assim uma lista de clientes que ainda não devolveram seus filmes alugados e não podem alugar novos.
+*/   
+
+                    case 'B': {
+
+                        cout << endl <<"LISTAR CLIENTES BLOQUEADOS" << endl;
+                        CineMax.listarBloqueados();
+                        break;
+                    }
+
                     default: { 
 
                         printColoredText("Comando Inválido!\n", 31);
                         break ;
 
                     }
+
                 }
                 break;      
             }
@@ -316,6 +330,7 @@ int main() {
  * que eles são armazenados em um vetor. Se a quantidade de filmes alugados for menor ou igual a zero, uma mensagem 
  * de erro é exibida. Se não, o método "aluguel" é chamado a partir do objeto "CineMax", utilizando os parãmetros informados. 
 */
+
             case 'A': {
                 switch (comando[1]) {
 
@@ -358,11 +373,13 @@ int main() {
                 }
                 break;
             }
+
 /**
  * @details Caso o comando digitado seja "DV" (devolução de filme), é solicitado ao usuário o cpf do cliente que está devolvendo
  * filmes e o número de dias que o cliente ficou com esses filmes alugados. Em seguida, o método "devolucao" é chamado a partir do 
  * objeto ("CineMax"), utilizando esses parâmetros.
 */
+
             case 'D': {
                 switch (comando[1]) {
 
@@ -397,7 +414,7 @@ int main() {
  * partir do objeto "CineMax", utilizando esses parâmetros.
 */
 
-            case 'P': {                                //pessoal "P" avaliaçao A sugestao S
+            case 'P': {                               
                 switch (comando[1]) {
 
                     case 'A': {
