@@ -255,7 +255,7 @@ int main() {
 
                         else {
 
-                            printColoredText("ERRO: Arquivo inexistente!\n",31);
+                           printColoredText("ERRO: Arquivo inexistente!\n",31);
 
                         }
 
