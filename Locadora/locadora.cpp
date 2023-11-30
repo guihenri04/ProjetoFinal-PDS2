@@ -411,6 +411,10 @@ void Locadora::avaliarFilme(int id, float nota) {
 
 
 void Locadora::listarBloqueados() {
+    if(this->bloqueados.size()<=0) {
+        cout << "Não há clientes bloqueados!" << endl;
+        return;
+    }
     cout << "Os seguintes clientes estão bloqueados:" << endl;
     for (Cliente* cliente : this -> bloqueados) {
         cliente->lerCliente();
