@@ -257,6 +257,11 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
         cout << "ERRO: CPF inexistente\n";
         return;
     }
+
+    if (cliente->bloqueado) {
+        cout << "ERRO: cliente bloqueado! Devolva os filmes antes de alugar novos." << endl;
+        return;
+    }
     
     vector<int> inexistentes;
     vector<int> emFalta;

@@ -45,6 +45,7 @@ class Cliente {
 protected:
   string nome;
   long long cpf;
+  bool bloqueado;
 public:
   Cliente(long long cpf, string nome);
   ~Cliente();

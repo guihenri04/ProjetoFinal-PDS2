@@ -15,6 +15,7 @@ Cliente::Cliente(long long cpf, string nome) {
     this -> cpf = cpf;
     this -> nome = nome;
     this -> pontos = 0;
+    this -> bloqueado = false;
     vector<Filme*> recomendados;
     vector<Cliente*> similares; 
     vector<Filme*> filmesAlugados; 
@@ -73,6 +74,7 @@ void Cliente::alugar(Filme* filme) {
     this -> filmesAlugados.push_back(filme);
     this -> pontos++;
     this -> historico.push_back(filme);
+    this -> bloqueado = true;
 }
 
 /** 
@@ -82,7 +84,8 @@ void Cliente::alugar(Filme* filme) {
  */
 
 void Cliente::devolver() {
-    this->filmesAlugados.clear();
+    this -> filmesAlugados.clear();
+    this -> bloqueado = true;
 }
 
 /** 
