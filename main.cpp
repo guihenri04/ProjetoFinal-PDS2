@@ -408,9 +408,9 @@ int main() {
                         int id;
                         cin >> id;
                         cout << "Digite a nota do filme, de 0 a 5:" << endl;
-                        int nota;
+                        float nota;
                         cin >> nota;
-
+                    
                         CineMax.avaliarFilme(id,nota);
 
                         break;

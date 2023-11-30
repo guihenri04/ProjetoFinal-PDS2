@@ -47,7 +47,7 @@ public:
   void lerFilme();
   virtual bool serAlugado();
   void serDevolvido();
-  void serAvaliado(int nota);
+  void serAvaliado(float nota);
   int unidades;
   float avaliacao;
   bool erro;

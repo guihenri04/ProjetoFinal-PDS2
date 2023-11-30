@@ -310,6 +310,7 @@ void Locadora::devolucao(long long cpf, int dias) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
         [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
     Cliente* cliente;
+    
     if (itCliente != this->clientes.end()) {
         cliente = *itCliente;
     } else {
@@ -350,6 +351,7 @@ void Locadora::recomendarFilmes(long long cpf) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
         [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
     Cliente* cliente;
+
     if (itCliente != this->clientes.end()) {
         cliente = *itCliente;
     } else {
@@ -375,17 +377,18 @@ void Locadora::recomendarFilmes(long long cpf) {
  * @param nota Armazena a nota recebida por um filme.
 */
 
-void Locadora::avaliarFilme(int id, int nota) {
+void Locadora::avaliarFilme(int id, float nota) {
     auto itFilme = std::find_if(filmes.begin(), filmes.end(),
         [id](Filme* filme) { return filme->id == id; });
     Filme* filme;
+
     if (itFilme != this->filmes.end()) {
         filme = *itFilme;
     } else { // filme inexistente
         cout << "ERRO: Filme " << id<< " inexistente\n";
         return;
     }
-
+    
     filme->serAvaliado(nota);
     cout << "Filme "<< filme->id <<" avaliado com sucesso\n";    
 }
