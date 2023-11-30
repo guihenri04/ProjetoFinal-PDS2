@@ -134,10 +134,10 @@ void Cliente::definirSimilares (vector <Cliente*> clientes) {
         this -> similares = clientes;
         return;
     }   
-    int s1, s2, s3 = 0;
-    Cliente* c1;
-    Cliente* c2;
-    Cliente* c3;
+    int s1 = -1, s2 = -1, s3 = -1;
+    Cliente* c1 = nullptr;
+    Cliente* c2 = nullptr;
+    Cliente* c3 = nullptr;
     for (Cliente* cliente : clientes) {
         if (cliente->cpf==this->cpf) {
             continue;
@@ -160,9 +160,18 @@ void Cliente::definirSimilares (vector <Cliente*> clientes) {
             c3 = cliente;
         }
     }
-    this -> similares.push_back(c1);
-    this -> similares.push_back(c2);
-    this -> similares.push_back(c3);
+
+    this->similares.clear();
+    if (c1!=nullptr) {
+        this -> similares.push_back(c1);
+    }
+    if (c2!=nullptr) {
+        this -> similares.push_back(c2);
+    }
+    if (c3!=nullptr) {
+        this -> similares.push_back(c3);
+    }
+    return;
 }
 
 /** 
@@ -185,19 +194,21 @@ vector <Filme*> Cliente::recomendarPorSimilar(Cliente* cliente) {
     set<Filme*> conjuntoRecomendados;
     bool aindaTemFilmes = true;
 
+    if (cliente->historico.size()<=0) {
+        return recomendados;
+    }
+
     for (int i = 1; aindaTemFilmes; i++) {
         bool inedito = true;
         Filme* recomendado = cliente->historico[cliente->historico.size()-i];
         for (Filme* filmeVisto : this -> historico) {
             if (recomendado == filmeVisto) {
                 inedito = false;
-                break;
             }
         }
         if (inedito) {
             recomendados.push_back(recomendado);
             conjuntoRecomendados.insert(recomendado);
-            break;
         }
         if (cliente->historico.size()-i == 0) {
             aindaTemFilmes = false;
@@ -207,7 +218,8 @@ vector <Filme*> Cliente::recomendarPorSimilar(Cliente* cliente) {
     
     recomendados.assign(conjuntoRecomendados.begin(), conjuntoRecomendados.end());
     return recomendados;
-}
+} 
+
 /**
  * @brief Método "recomendar" da classe "Cliente", utilizado para fins de recomendação.
  * @details Esse método recebe como parâmetro um vetor de clientes e retorna, a partir deles, um vetor
@@ -221,20 +233,22 @@ vector <Filme*> Cliente::recomendarPorSimilar(Cliente* cliente) {
 */
 
 void Cliente::recomendar(vector <Cliente*> clientes) {
-    this -> definirSimilares(clientes);
-    if (this -> similares.size() == 0 || this-> historico.size()==0) {
+    this->recomendados.clear();
+    this->definirSimilares(clientes);
+
+    if (this->similares.size() == 0 || this->historico.size() == 0) {
         cout << "Ainda não há filmes recomendados." << endl;
         return;
     }
-    this->recomendados.clear();
-    for (Cliente* cliente : clientes) {
-        if (this->cpf == cliente->cpf) {
-            break;
-        } else {
-            vector <Filme*> recomendados = this -> recomendarPorSimilar(cliente); 
-            for (Filme* filme : recomendados) {
-                this -> recomendados.push_back(filme);
-            }
+
+    set<Filme*> conjuntoRecomendados;
+
+    for (Cliente* cliente : this->similares) {
+        vector<Filme*> recomendadosCliente = this->recomendarPorSimilar(cliente);
+        for (Filme* filme : recomendadosCliente) {
+            conjuntoRecomendados.insert(filme);
         }
     }
+
+    this->recomendados.assign(conjuntoRecomendados.begin(), conjuntoRecomendados.end());
 }
