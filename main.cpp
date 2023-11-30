@@ -81,7 +81,7 @@ int main() {
                         cout << endl << "CADASTRAR FILME" << endl;
 
                         cout << "Digite o tipo (D para DVD ou F para fita): " << endl;
-                        char tipo; 4
+                        char tipo; 
                         cin >> tipo;
 
                         cout << "Digite o número de unidades:" << endl;
