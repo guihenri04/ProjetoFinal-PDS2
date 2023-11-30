@@ -66,7 +66,7 @@ int main() {
         cin >> comando;
         printColoredText("+----------------------------------+\n", 34); 
 
-        if (comando.size() < 2) {
+        if (comando.size() > 2 || comando.size() < 2) {
             printColoredText("Comando Inválido!\n", 31);
             continue;
         }
@@ -81,7 +81,7 @@ int main() {
                         cout << endl << "CADASTRAR FILME" << endl;
 
                         cout << "Digite o tipo (D para DVD ou F para fita): " << endl;
-                        char tipo; 
+                        char tipo; 4
                         cin >> tipo;
 
                         cout << "Digite o número de unidades:" << endl;
