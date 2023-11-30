@@ -60,12 +60,15 @@ public:
   void cadastrarCliente(long long cpf, string nome);
   void removerCliente(long long cpf);
   void listarClientes(char opcao);
+  void listarBloqueados();
   void aluguel(long long cpf, vector<int> id);
   void devolucao(long long cpf, int dias);
   void recomendarFilmes(long long cpf);
   void avaliarFilme(int id, float nota);
+
   vector<Filme*> filmes;
   vector<Cliente*> clientes;
+  vector<Cliente*> bloqueados;
   vector<Cliente*> clientesOrdenados; 
   vector<Filme*> filmesOrdenados;
   bool erro;
