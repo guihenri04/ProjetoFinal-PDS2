@@ -26,7 +26,7 @@ int main() {
 */
     Locadora CineMax;
     string comando;
-    
+
     cout << endl;
     printColoredText( "Bem-vindo ao software da CINEMAX ! Digite o comando e pressione enter para executá-lo.\n", 35 );
     cout << endl;
@@ -395,7 +395,7 @@ int main() {
                         
                         cout << endl <<"AVALIAR FILME" << endl;
 
-                        cout << "Digite o id do filme a ser avaliado:" << endl;
+                        cout << "Digite o ID do filme a ser avaliado:" << endl;
                         int id;
                         cin >> id;
                         cout << "Digite a nota do filme, de 0 a 5:" << endl;
@@ -415,7 +415,7 @@ int main() {
                         
                         cout << endl <<"SUGERIR FILMES" << endl;
 
-                        cout << "Digite o cpf do cliente que busca recomendações:" << endl;
+                        cout << "Digite o CPF do cliente que busca recomendações:" << endl;
                         long long cpf;
                         cin >> cpf;
 
@@ -441,8 +441,24 @@ int main() {
 
                     case 'S': {
 
-                        cout << endl << "Programa encerrado!" << endl;
+                        cout << "Você tem certeza que deseja encerrar o programa?" << endl;
+                        cout << "-> Digite S para encerrar!" << endl;
+                        cout << "-> Digite N para cancelar o encerramento!" << endl;
+
+                        char comandoEncerra;
+                        cin >> comandoEncerra;
+
+                        if (comandoEncerra == 'S'){
+
+                            cout << endl << "Programa encerrado!" << endl;
+                            cout << "Até Logo !";
+                            printColoredText("  :)\n", 33);
+                            
                         return 0;
+                        }
+                        if (comandoEncerra == 'N') {
+                            continue;
+                        } 
 
                     break;
                     }
