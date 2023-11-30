@@ -71,6 +71,15 @@ int main() {
             continue;
         }
 
+/**
+ * @details O código pede para que um comando seja digitado pelo usuário. Caso o comando seja 
+ * "CF" (cadastrar filme), o código solicita ao usuário que seja informado o tipo do filme (DVD ou Fita),
+ * o número de unidades, o id de identificação do filme, seu título e categoria (caso ele seja do tipo DVD).
+ * Em seguida, o método "cadastrarFilme" é chamado a partir do objeto "CineMax", utilizando os parâmetros 
+ * informados pelo usuário.
+ * 
+*/
+
         switch (comando[0]) {
 
             case 'C': {                                                       
