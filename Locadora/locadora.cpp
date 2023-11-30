@@ -310,7 +310,7 @@ void Locadora::devolucao(long long cpf, int dias) {
     auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
         [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
     Cliente* cliente;
-    
+
     if (itCliente != this->clientes.end()) {
         cliente = *itCliente;
     } else {
@@ -328,10 +328,13 @@ void Locadora::devolucao(long long cpf, int dias) {
     }
 
     if(cliente->pontos>10) {
+        cout << "Você ganhou um desconto de 10%. Obrigado pela fidelidade!" << endl;
+        cout << "De: R$" << total << endl;
         total = 0.9 * total;
+        cout << "por: R$" << total << endl;
         cliente->pontos = cliente->pontos - 10;
     }
-    cout << "Total a pagar: " << total << endl;
+    cout << "Total a pagar: R$" << total << endl;
     for (const auto& filme : cliente -> filmesAlugados) {
         filme -> serDevolvido();
     }
