@@ -14,6 +14,28 @@ void printColoredText(const std::string& text, int colorCode) {
     std::cout << "\033[" << colorCode << "m" << text << "\033[0m";
     }
 
+void menu() {
+    printColoredText("+----------------------------------+\n", 34); 
+    printColoredText("| Comandos disponíveis:            |\n", 34); 
+    printColoredText("+----------------------------------+\n", 34); 
+    
+    printColoredText("| ME: Mostrar Menu de Comandos     |\n", 36); 
+    printColoredText("| CC: Cadastrar Cliente            |\n", 36); 
+    printColoredText("| CF: Cadastrar Filme              |\n", 36); 
+    printColoredText("| RC: Remover Cliente              |\n", 36); 
+    printColoredText("| RF: Remover Filme                |\n", 36);                                             //  31 red 32verde 33amarelo 31vermelho 34azul  35roxo 36ciano
+    printColoredText("| LA: Ler Arquivo de Cadastro      |\n", 36); 
+    printColoredText("| LC: Listar Clientes              |\n", 36); 
+    printColoredText("| LC: Listar Clientes Bloqueados   |\n", 36); 
+    printColoredText("| LF: Listar Filmes                |\n", 36);
+    printColoredText("| AL: Aluguel de Filme             |\n", 36);
+    printColoredText("| DV: Devolução de Filme           |\n", 36); 
+    printColoredText("| PA: Avaliar Filme                |\n", 36); 
+    printColoredText("| PS: Sugerir Filmes               |\n", 36); 
+    printColoredText("| FS: Finalizar Sistema            |\n", 36); 
+    printColoredText("+----------------------------------+\n", 34); 
+}
+
 int main() {
 
 /**
@@ -31,24 +53,7 @@ int main() {
     cout << endl;
     printColoredText( "Bem-vindo ao software da CINEMAX ! Digite o comando e pressione enter para executá-lo.\n", 35 );
     cout << endl;
-    printColoredText("+----------------------------------+\n", 34); 
-    printColoredText("| Comandos disponíveis:            |\n", 34); 
-    printColoredText("+----------------------------------+\n", 34); 
-    
-    printColoredText("| CC: Cadastrar Cliente            |\n", 36); 
-    printColoredText("| CF: Cadastrar Filme              |\n", 36); 
-    printColoredText("| RC: Remover Cliente              |\n", 36); 
-    printColoredText("| RF: Remover Filme                |\n", 36);                                             //  31 red 32verde 33amarelo 31vermelho 34azul  35roxo 36ciano
-    printColoredText("| LA: Ler Arquivo de Cadastro      |\n", 36); 
-    printColoredText("| LC: Listar Clientes              |\n", 36); 
-    printColoredText("| LC: Listar Clientes Bloqueados   |\n", 36); 
-    printColoredText("| LF: Listar Filmes                |\n", 36);
-    printColoredText("| AL: Aluguel de Filme             |\n", 36);
-    printColoredText("| DV: Devolução de Filme           |\n", 36); 
-    printColoredText("| PA: Avaliar Filme                |\n", 36); 
-    printColoredText("| PS: Sugerir Filmes               |\n", 36); 
-    printColoredText("| FS: Finalizar Sistema            |\n", 36); 
-    printColoredText("+----------------------------------+\n", 34); 
+    menu();
 
 
 /**
@@ -144,10 +149,8 @@ int main() {
                     }
 
                     default: {
-
                         throw ComandoInvalido();
                         break;            
-        
                     }
                 }
                 break;
@@ -501,6 +504,24 @@ int main() {
                 break;
             }
         
+/**
+ * @details Caso o comando "ME" (Mostrar Menu de Comandos) seja digitado, os comandos disponíveis são mostrados novamente.
+*/
+
+            case 'M': {
+                switch (comando[1]) {
+                    case 'E' : {
+                        cout << endl;
+                        menu();
+                        break;
+                    }
+                    default: {
+                        throw ComandoInvalido();
+                        break;   
+                    }
+                }
+            }
+
         }
         
     }
