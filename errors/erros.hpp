@@ -123,4 +123,11 @@ class AvaliacaoErrada: public exception {
     }
 };
 
+class SemRecomendados: public exception {
+    public:
+    virtual const char* what() const noexcept override {
+      return "ERRO: Ainda não há filmes recomendados para essa cliente!\n";
+    }
+};
+
 #endif

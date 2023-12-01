@@ -1,4 +1,5 @@
 #include "cliente.hpp"
+#include "../errors/erros.hpp"
 #include <set>
 
 /**
@@ -233,27 +234,31 @@ vector <Filme*> Cliente::recomendarPorSimilar(Cliente* cliente) {
 */
 
 void Cliente::recomendar(vector <Cliente*> clientes) {
-    this->recomendados.clear();
-    this->definirSimilares(clientes);
+    try {
+        this->recomendados.clear();
+        this->definirSimilares(clientes);
 
-    if (this->similares.size() == 0) {
-        cout << "Ainda não há filmes recomendados para essa cliente!" << endl;
-        return;
-    }
-
-    set<Filme*> conjuntoRecomendados;
-
-    for (Cliente* cliente : this->similares) {
-        vector<Filme*> recomendadosCliente = this->recomendarPorSimilar(cliente);
-        for (Filme* filme : recomendadosCliente) {
-            conjuntoRecomendados.insert(filme);
+        if (this->similares.size() == 0) {
+            throw SemRecomendados();
+            return;
         }
-    }
 
-    this->recomendados.assign(conjuntoRecomendados.begin(), conjuntoRecomendados.end());
+        set<Filme*> conjuntoRecomendados;
 
-    if (this->recomendados.size() == 0) {
-        cout << "Ainda não há filmes recomendados para essa cliente!" << endl;
-        return;
+        for (Cliente* cliente : this->similares) {
+            vector<Filme*> recomendadosCliente = this->recomendarPorSimilar(cliente);
+            for (Filme* filme : recomendadosCliente) {
+                conjuntoRecomendados.insert(filme);
+            }
+        }
+
+        this->recomendados.assign(conjuntoRecomendados.begin(), conjuntoRecomendados.end());
+
+        if (this->recomendados.size() == 0) {
+            throw SemRecomendados();
+            return;
+        }
+    } catch (SemRecomendados &e) {
+        cerr << e.what() << endl;
     }
 }
