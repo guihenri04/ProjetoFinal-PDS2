@@ -59,17 +59,17 @@ void Locadora::cadastrarFilme(char tipo, int unidades, int id, const string& tit
         }
     }
     if (tipo != 'F' && tipo !='D') { // tipo invalido
-        cout << "ERRO: dados incorretos\n";
+        throw DadosIncorretos();
         return;
     }
     if (tipo == 'D') {
         if(categoria!= 'E' && categoria!= 'L' && categoria!= 'P') { // categoria invalida
-            cout << "ERRO: dados incorretos\n";
+            throw DadosIncorretos();
             return;
         }
     } 
     if (unidades<0 || id<0) { // unidades ou id negativos
-        cout << "ERRO: dados incorretos\n";
+        throw DadosIncorretos();
         return;
     }
 
@@ -107,7 +107,7 @@ void Locadora::removerFilme(int id) {
         filmes.erase(it);
         cout << "Filme " << id << " removido com sucesso.\n";
     } else {
-        cout << "ERRO: código inexistente.\n"; // Id invalido
+        throw CodigoInexistente(); // Id invalido
     }
 }
 
@@ -123,7 +123,7 @@ void Locadora::removerFilme(int id) {
 
 void Locadora::listarFilmes(char opcao) {
     if (opcao != 'C' && opcao != 'T') {
-        cout << "ERRO: opção de ordenação inválida.\n";
+        throw OpcaoInvalida();
         return;
     }
     if(this->filmes.size()==0) {
@@ -163,12 +163,12 @@ void Locadora::cadastrarCliente(long long cpf, string nome) {
     int n= clientes.size();
     for (int i=0; i<n; i++) {
         if (cpf == clientes[i]->cpf) { // CPF repetido
-            cout << "ERRO: CPF repetido\n";
+            throw CPFRepetido();
             return;
         }
     }
     if (cpf<10000000000 || cpf>99999999999) { // CPF invalido
-        cout << "ERRO: dados incorretos\n";
+        throw DadosIncorretos();
         return;
     }
 
@@ -191,7 +191,7 @@ void Locadora::removerCliente(long long cpf) {
                            [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
 
     if (it == clientes.end()) { // CPF não encontrado
-        cout << "ERRO: dados incorretos.\n";
+        throw DadosIncorretos();
         return;
     } else {
         delete *it;
@@ -212,11 +212,11 @@ void Locadora::removerCliente(long long cpf) {
  void Locadora::listarClientes(char opcao){
 
     if (opcao != 'C' && opcao != 'N') {
-        cout << "ERRO: opção de ordenação inválida.\n";
+        throw OpcaoInvalida();
         return;
     }
     if (this->clientes.size()==0) {
-        cout << "Ainda não há clientes para listar." << endl;
+        throw SemClientes();
         return;
     }
 
@@ -255,12 +255,12 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
     if (itCliente != this->clientes.end()) {
         cliente = *itCliente;
     } else { // cpf inexistente
-        cout << "ERRO: CPF inexistente\n";
+        throw CPFInexistente();
         return;
     }
 
     if (cliente->bloqueado==true) {
-        cout << "ERRO: cliente bloqueado! Devolva os filmes antes de alugar novos." << endl;
+        throw ClienteBloqueado();
         return;
     }
     
@@ -292,10 +292,10 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
         }
     }
     for (int id : inexistentes) {
-        cout << "ERRO: Filme " << id << " inexistente" << endl;
+        throw FilmeInexistente(id);
     }
     for (int id : emFalta) {
-        cout << "ERRO: Filme " << id << " em falta no estoque" << endl;
+        throw FilmeFalta(id);
     }
     if (alugou) {
         this->bloqueados.push_back(cliente);
@@ -324,14 +324,14 @@ void Locadora::devolucao(long long cpf, int dias) {
     if (itCliente != this->clientes.end()) {
         cliente = *itCliente;
     } else {
-        cout << "ERRO: CPF inexistente\n";
+        throw CPFInexistente();
         return;
     }
 
     cout << "Cliente " << cpf << " " << cliente -> nome << " devolveu os filmes:" << endl;
     int total = 0;
     if (cliente->filmesAlugados.size()==0) {
-        cout << "ERRO: não há filmes alugados" << endl;
+        throw SemFilmesAlugados();
     }
     for (const auto& filme : cliente -> filmesAlugados) {
         cout << filme -> id << " " ;
@@ -375,7 +375,7 @@ void Locadora::recomendarFilmes(long long cpf) {
     if (itCliente != this->clientes.end()) {
         cliente = *itCliente;
     } else {
-        cout << "ERRO: CPF inexistente\n";
+        throw CPFInexistente();
         return;
     }
 
@@ -405,7 +405,7 @@ void Locadora::avaliarFilme(int id, float nota) {
     if (itFilme != this->filmes.end()) {
         filme = *itFilme;
     } else { // filme inexistente
-        cout << "ERRO: Filme " << id<< " inexistente\n";
+        throw FilmeInexistente(id);
         return;
     }
     

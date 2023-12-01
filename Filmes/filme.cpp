@@ -1,4 +1,5 @@
 #include "filme.hpp"
+#include "../errors/erros.hpp"
 
 /** 
  * @file filme.cpp
@@ -43,7 +44,7 @@ void Filme::lerFilme() {
 
 bool Filme::serAlugado() {
     if (unidades==0) {
-        cout << "ERRO: filme indisponivel\n";
+        throw FilmeFalta(id);
         erro = false;
         return 1;
     }
@@ -70,7 +71,7 @@ void Filme::serDevolvido() {
 
 void Filme::serAvaliado(float nota) {
     if (nota > 5){
-        cout << "ERRO: O filme pode ser avaliado em no máximo 5\n";
+        throw AvaliacaoErrada();
         erro = false;
     } else {
         this->vezesAvaliado++;
