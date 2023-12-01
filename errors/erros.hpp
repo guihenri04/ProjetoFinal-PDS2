@@ -54,12 +54,6 @@ class OpcaoInvalida : public std::exception {
     }
 };
 
-class ClienteBloqueado : public std::exception {
-    public:
-    virtual const char* what() const noexcept override {
-        return "ERRO: cliente bloqueado! Devolva os filmes antes de alugar novos.\n"; 
-    }
-};
 class SemFilmesAlugados: public std::exception {
     public:
     virtual const char* what() const noexcept override {
