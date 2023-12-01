@@ -8,14 +8,10 @@
 
 using namespace std;
 
-void printColoredText(const string& text, int colorCode) {
-    cout << "\033[" << colorCode << "m" << text << "\033[0m";
-}
-
 class ComandoInvalido: public exception {
     public:
     virtual const char* what() const noexcept override {
-      printColoredText("Comando Inválido!\n", 31);
+      return("Comando Inválido!\n");
     }
 };
 
@@ -78,7 +74,7 @@ class SemFilmesAlugados: public std::exception {
 class SemFilmes: public exception {
     public:
     virtual const char* what() const noexcept override {
-      printColoredText("ERRO: A locadora ainda não possui clientes cadastrados.\n", 31);
+      return("ERRO: A locadora ainda não possui clientes cadastrados.\n");
     }
 };
 
@@ -105,14 +101,14 @@ class FilmeFalta: public exception {
 class SemClientes: public exception {
     public:
     virtual const char* what() const noexcept override {
-      printColoredText("ERRO: A locadora ainda não possui filmes cadastrados.\n", 31);
+      return("ERRO: A locadora ainda não possui filmes cadastrados.\n");
     }
 };
 
 class ClienteBloqueado: public exception {
     public:
     virtual const char* what() const noexcept override {
-      printColoredText("ERRO: Cliente bloqueado! Devolva os filmes antes de lugar novos.\n", 31);
+      return("ERRO: Cliente bloqueado! Devolva os filmes antes de lugar novos.\n");
     }
 };
 
