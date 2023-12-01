@@ -86,7 +86,7 @@ int main() {
  * informados pelo usuário.
  * 
 */
-
+    try {
         switch (comando[0]) {
 
             case 'C': {                                                       
@@ -524,7 +524,10 @@ int main() {
 
         }
         
+    } catch (exception& e) {
+        cerr << e.what() << endl;
     }
-
+    
+    }
     return 0;
 }
