@@ -51,42 +51,48 @@ Locadora::~Locadora() {
 */
 
 void Locadora::cadastrarFilme(char tipo, int unidades, int id, const string& titulo, const char& categoria) {
-    int n=filmes.size();
-    for (int i=0; i<n; i++) { // codigo repetido
-        if (id == filmes[i]->id) {
-            throw CodigoRepetido();
-            return;
+    try {
+        int n=filmes.size();
+        for (int i=0; i<n; i++) { // codigo repetido
+            if (id == filmes[i]->id) {
+                throw CodigoRepetido();
+                return;
+            }
         }
-    }
-    if (tipo != 'F' && tipo !='D') { // tipo invalido
-        throw DadosIncorretos();
-        return;
-    }
-    if (tipo == 'D') {
-        if(categoria!= 'E' && categoria!= 'L' && categoria!= 'P') { // categoria invalida
+        if (tipo != 'F' && tipo !='D') { // tipo invalido
             throw DadosIncorretos();
             return;
         }
-    } 
-    if (unidades<0 || id<0) { // unidades ou id negativos
-        throw DadosIncorretos();
-        return;
-    }
+        if (tipo == 'D') {
+            if(categoria!= 'E' && categoria!= 'L' && categoria!= 'P') { // categoria invalida
+                throw DadosIncorretos();
+                return;
+            }
+        } 
+        if (unidades<0 || id<0) { // unidades ou id negativos
+            throw DadosIncorretos();
+            return;
+        }
 
-    Filme* novoFilme = nullptr;
-    if (tipo=='F') {
-        novoFilme = new Fita(id, titulo, unidades);
-    } else if (categoria == 'E') {
-        novoFilme = new dvdEstoque(id, titulo, unidades);
-    } else if (categoria == 'L') {
-        novoFilme = new dvdLancamento(id, titulo, unidades);
-    } else if (categoria == 'P') {
-        novoFilme = new dvdPromocao(id, titulo, unidades);
-    } 
+        Filme* novoFilme = nullptr;
+        if (tipo=='F') {
+            novoFilme = new Fita(id, titulo, unidades);
+        } else if (categoria == 'E') {
+            novoFilme = new dvdEstoque(id, titulo, unidades);
+        } else if (categoria == 'L') {
+            novoFilme = new dvdLancamento(id, titulo, unidades);
+        } else if (categoria == 'P') {
+            novoFilme = new dvdPromocao(id, titulo, unidades);
+        } 
 
-    if (novoFilme!=nullptr) {
-        filmes.push_back(novoFilme);
-        cout << "Filme "<< novoFilme->id <<" cadastrado com sucesso\n";
+        if (novoFilme!=nullptr) {
+            filmes.push_back(novoFilme);
+            cout << "Filme "<< novoFilme->id <<" cadastrado com sucesso\n";
+        }
+    } catch (CodigoRepetido &e) {
+        cerr << e.what() << endl;
+    } catch (DadosIncorretos &e) {
+        cerr << e.what() << endl;
     }
 }
 
