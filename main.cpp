@@ -65,7 +65,7 @@ int main() {
         printColoredText("+----------------------------------+\n", 34); 
 
         if (comando.size() > 2 || comando.size() < 2) {
-            printColoredText("Comando Inválido!\n", 31);
+            throw ComandoInvalido();
             continue;
         }
 
