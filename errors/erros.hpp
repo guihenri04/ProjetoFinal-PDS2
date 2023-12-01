@@ -15,25 +15,25 @@ void printColoredText(const string& text, int colorCode) {
 class CodigoRepetido : public exception {
  public:
     virtual const char* what() const noexcept override {
-        return  "ERRO: codigo repetido.\n";
+        return  "ERRO: Código repetido.\n";
     }
 };    
     class ArquivoInexistente : public exception {
     public:
     virtual const char* what() const noexcept override {
-        return "ERRO: arquivo inexistente.";
+        return "ERRO: Arquivo inexistente.";
     }
 };
     class DadosIncorretos : public exception {
     public:
     virtual const char* what() const noexcept override {
-        return "ERRO: dados incorretos.\n";
+        return "ERRO: Dados incorretos.\n";
     }
 };
     class CodigoInexistente : public exception {
     public:
     virtual const char* what() const noexcept override {
-        return "ERRO: código inexistente.\n";
+        return "ERRO: Código inexistente.\n";
     }
 };
 
@@ -55,14 +55,21 @@ class CPFInexistente : public exception {
 class OpcaoInvalida : public exception {
     public:
     virtual const char* what() const noexcept override {
-        return "ERRO: opção de ordenação inválida.\n";
+        return "ERRO: Opção inválida.\n";
     }
 };
 
 class SemFilmesAlugados: public exception {
     public:
     virtual const char* what() const noexcept override {
-        return "ERRO: não há filmes alugados.\n";
+        return "ERRO: Não há filmes alugados.\n";
+    }
+};
+
+class SemFilmes: public exception {
+    public:
+    virtual const char* what() const noexcept override {
+      printColoredText("ERRO: A locadora ainda não possui filmes cadastrados!\n", 31);
     }
 };
 class FilmeInexistente : public exception {
@@ -86,19 +93,26 @@ class FilmeFalta: public exception {
 class SemClientes: public exception {
     public:
     virtual const char* what() const noexcept override {
-      return "ERRO: ainda não há clientes para listar.\n";
+      return "ERRO: Ainda não há clientes para listar.\n";
     }
 };
 class AvaliacaoErrada: public exception {
     public:
     virtual const char* what() const noexcept override {
-      return "ERRO: O filme pode ser avaliado em no máximo 5\n";
+      return "ERRO: O filme pode ser avaliado em no máximo 5.\n";
     }
 };
 class ComandoInvalido: public exception {
     public:
     virtual const char* what() const noexcept override {
       printColoredText("Comando Inválido!\n", 31);
+    }
+};
+
+class ClienteBloqueado: public exception {
+    public:
+    virtual const char* what() const noexcept override {
+      printColoredText("ERRO: Cliente bloqueado! Devolva os filmes antes de lugar novos.\n", 31);
     }
 };
 

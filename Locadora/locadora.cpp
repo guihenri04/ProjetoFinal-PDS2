@@ -132,28 +132,35 @@ void Locadora::removerFilme(int id) {
 */
 
 void Locadora::listarFilmes(char opcao) {
-    if (opcao != 'C' && opcao != 'T') {
-        throw OpcaoInvalida();
-        return;
-    }
-    if(this->filmes.size()==0) {
-        cout << "Ainda não há filmes para listar." << endl;
-        return;
-    }
-   filmesOrdenados = filmes;
-
-    auto compara = [opcao](const Filme* a, const Filme* b) {
-        if (opcao == 'C') {
-            return a->id < b->id;
-        } else {
-            return a->titulo < b->titulo;
+    try {
+        if (opcao != 'C' && opcao != 'T') {
+            throw OpcaoInvalida();
+            return;
         }
-    };
+        if(this->filmes.size()==0) {
+            throw SemFilmes();
+            return;
+        }
+    filmesOrdenados = filmes;
 
-   sort(filmesOrdenados.begin(), filmesOrdenados.end(), compara);
+        auto compara = [opcao](const Filme* a, const Filme* b) {
+            if (opcao == 'C') {
+                return a->id < b->id;
+            } else {
+                return a->titulo < b->titulo;
+            }
+        };
 
-    for (const auto& filme : filmesOrdenados) {
-        filme->lerFilme();
+    sort(filmesOrdenados.begin(), filmesOrdenados.end(), compara);
+
+        for (const auto& filme : filmesOrdenados) {
+            filme->lerFilme();
+        }
+
+    } catch (OpcaoInvalida &e) {
+        cerr << e.what() << endl;
+    } catch (SemFilmes &e) {
+        cerr << e.what() << endl;
     }
 }
 
@@ -291,7 +298,7 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
         }
 
         if (cliente->bloqueado==true) {
-            cout<<"ERRO: cliente bloqueado! Devolva os filmes antes de alugar novos."<<endl;
+            throw ClienteBloqueado();
             return;
         }
         
@@ -323,7 +330,7 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
             }
         }
         for (int id : inexistentes) {
-            throw FilmeInexistente(id);
+            throw FilmeInexistente(id); // vai parar execucao, mas alguns filmes ja foram alugados! tirar o throw?
         }
         for (int id : emFalta) {
             throw FilmeFalta(id);
@@ -335,6 +342,8 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
     } catch (FilmeInexistente &e) {
         cerr << e.what() << endl;
     } catch (FilmeFalta &e) {
+        cerr << e.what() << endl;
+    } catch (ClienteBloqueado &e) {
         cerr << e.what() << endl;
     }
 }
@@ -445,6 +454,10 @@ void Locadora::recomendarFilmes(long long cpf) {
 
 void Locadora::avaliarFilme(int id, float nota) {
     try {
+        if (nota>5) {
+            throw AvaliacaoErrada();
+            return;
+        }
         auto itFilme = std::find_if(filmes.begin(), filmes.end(),
             [id](Filme* filme) { return filme->id == id; });
         Filme* filme;
@@ -458,12 +471,15 @@ void Locadora::avaliarFilme(int id, float nota) {
         
         filme->serAvaliado(nota);
         cout << "Filme "<< filme->id <<" avaliado com sucesso\n";    
+
     } catch (FilmeInexistente &e) {
+        cerr << e.what() << endl;
+    } catch (AvaliacaoErrada &e) {
         cerr << e.what() << endl;
     }
 }
 
-
+// DOCUMENTACAO
 
 void Locadora::listarBloqueados() {
     if(this->bloqueados.size()<=0) {
