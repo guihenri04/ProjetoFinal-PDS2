@@ -90,5 +90,11 @@ class AvaliacaoErrada: public std::exception {
       return "ERRO: O filme pode ser avaliado em no máximo 5\n";
     }
 };
+class AvaliacaoErrada: public std::exception {
+    public:
+    virtual const char* what() const noexcept override {
+      printColoredText("Comando Inválido!\n", 31);
+    }
+};
 
 #endif
