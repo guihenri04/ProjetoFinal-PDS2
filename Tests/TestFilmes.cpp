@@ -29,12 +29,6 @@ cout.rdbuf(cout_saida);
 return saida.str();
 }
 
-void resetar_erro(Filme* filme){
-    filme->erro == true;
-}
-
-
-
 
 TEST_CASE("Filmes-lerFilme"){
     CHECK(saida_filme(filme1, ler_filme) == "1 Divergente 0 DVD\n");
@@ -43,10 +37,9 @@ TEST_CASE("Filmes-lerFilme"){
 TEST_CASE("Filmes-serAlugado"){
     filme2->serAlugado();
     CHECK(filme2->unidades == 1); 
-    CHECK(saida_filme(filme1, ser_alugado) == "ERRO: filme indisponivel\n");  
-    filme1->serAlugado();
-    CHECK(filme1->erro == false);
-    resetar_erro(filme1);
+
+    //Checagem de ERROS
+    CHECK_THROWS(filme1->serAlugado(), FilmeIndisponivel());
 }
 
 TEST_CASE ("Filmes-serDevolvido"){
@@ -63,4 +56,7 @@ TEST_CASE("Filmes-serAvaliado"){
     CHECK(saida_filme(filme2, ser_avaliado) == "ERRO: O filme pode ser avaliado em no máximo 5\n");
     filme1->serAvaliado(6);
     CHECK(filme1->erro == false);
+
+    //Checagem de ERROS
+    CHECK_THROWS(filme2->serAvaliado(10), Maximo5());
 }
