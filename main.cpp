@@ -356,7 +356,7 @@ int main() {
                         }
 
                         if (quantidade<=0) {
-                            throw QuantidadeFilmesErrada();
+                            throw DadosIncorretos();
                         } else {
                             CineMax.aluguel(cpf,filmesAlugados);
                         }
