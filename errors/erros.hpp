@@ -11,7 +11,7 @@ using namespace std;
 class ComandoInvalido: public exception {
     public:
     virtual const char* what() const noexcept override {
-      return("Comando Inválido!");
+      return("Comando Inválido!\nPara relembrar os comandos disponíveis, digite ME.");
     }
 };
 
