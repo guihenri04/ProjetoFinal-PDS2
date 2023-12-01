@@ -260,7 +260,7 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
     }
 
     if (cliente->bloqueado==true) {
-        throw ClienteBloqueado();
+        cout<<"ERRO: cliente bloqueado! Devolva os filmes antes de alugar novos.\n"<<endl;
         return;
     }
     
