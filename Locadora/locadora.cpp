@@ -51,42 +51,48 @@ Locadora::~Locadora() {
 */
 
 void Locadora::cadastrarFilme(char tipo, int unidades, int id, const string& titulo, const char& categoria) {
-    int n=filmes.size();
-    for (int i=0; i<n; i++) { // codigo repetido
-        if (id == filmes[i]->id) {
-            throw CodigoRepetido();
-            return;
+    try {
+        int n=filmes.size();
+        for (int i=0; i<n; i++) { // codigo repetido
+            if (id == filmes[i]->id) {
+                throw CodigoRepetido();
+                return;
+            }
         }
-    }
-    if (tipo != 'F' && tipo !='D') { // tipo invalido
-        throw DadosIncorretos();
-        return;
-    }
-    if (tipo == 'D') {
-        if(categoria!= 'E' && categoria!= 'L' && categoria!= 'P') { // categoria invalida
+        if (tipo != 'F' && tipo !='D') { // tipo invalido
             throw DadosIncorretos();
             return;
         }
-    } 
-    if (unidades<0 || id<0) { // unidades ou id negativos
-        throw DadosIncorretos();
-        return;
-    }
+        if (tipo == 'D') {
+            if(categoria!= 'E' && categoria!= 'L' && categoria!= 'P') { // categoria invalida
+                throw DadosIncorretos();
+                return;
+            }
+        } 
+        if (unidades<0 || id<0) { // unidades ou id negativos
+            throw DadosIncorretos();
+            return;
+        }
 
-    Filme* novoFilme = nullptr;
-    if (tipo=='F') {
-        novoFilme = new Fita(id, titulo, unidades);
-    } else if (categoria == 'E') {
-        novoFilme = new dvdEstoque(id, titulo, unidades);
-    } else if (categoria == 'L') {
-        novoFilme = new dvdLancamento(id, titulo, unidades);
-    } else if (categoria == 'P') {
-        novoFilme = new dvdPromocao(id, titulo, unidades);
-    } 
+        Filme* novoFilme = nullptr;
+        if (tipo=='F') {
+            novoFilme = new Fita(id, titulo, unidades);
+        } else if (categoria == 'E') {
+            novoFilme = new dvdEstoque(id, titulo, unidades);
+        } else if (categoria == 'L') {
+            novoFilme = new dvdLancamento(id, titulo, unidades);
+        } else if (categoria == 'P') {
+            novoFilme = new dvdPromocao(id, titulo, unidades);
+        } 
 
-    if (novoFilme!=nullptr) {
-        filmes.push_back(novoFilme);
-        cout << "Filme "<< novoFilme->id <<" cadastrado com sucesso\n";
+        if (novoFilme!=nullptr) {
+            filmes.push_back(novoFilme);
+            cout << "Filme "<< novoFilme->id <<" cadastrado com sucesso\n";
+        }
+    } catch (CodigoRepetido &e) {
+        cerr << e.what() << endl;
+    } catch (DadosIncorretos &e) {
+        cerr << e.what() << endl;
     }
 }
 
@@ -99,15 +105,19 @@ void Locadora::cadastrarFilme(char tipo, int unidades, int id, const string& tit
  */  
 
 void Locadora::removerFilme(int id) {
-    auto it = find_if(filmes.begin(), filmes.end(),
-        [id](Filme* filme) { return filme->id == id; });
+    try {
+        auto it = find_if(filmes.begin(), filmes.end(),
+            [id](Filme* filme) { return filme->id == id; });
 
-    if (it != filmes.end()) {
-        delete *it; 
-        filmes.erase(it);
-        cout << "Filme " << id << " removido com sucesso.\n";
-    } else {
-        throw CodigoInexistente(); // Id invalido
+        if (it != filmes.end()) {
+            delete *it; 
+            filmes.erase(it);
+            cout << "Filme " << id << " removido com sucesso.\n";
+        } else {
+            throw CodigoInexistente(); // Id invalido
+        }
+    } catch(CodigoInexistente &e) {
+        cerr << e.what() << endl;
     }
 }
 
@@ -122,28 +132,35 @@ void Locadora::removerFilme(int id) {
 */
 
 void Locadora::listarFilmes(char opcao) {
-    if (opcao != 'C' && opcao != 'T') {
-        throw OpcaoInvalida();
-        return;
-    }
-    if(this->filmes.size()==0) {
-        cout << "Ainda não há filmes para listar." << endl;
-        return;
-    }
-   filmesOrdenados = filmes;
-
-    auto compara = [opcao](const Filme* a, const Filme* b) {
-        if (opcao == 'C') {
-            return a->id < b->id;
-        } else {
-            return a->titulo < b->titulo;
+    try {
+        if (opcao != 'C' && opcao != 'T') {
+            throw OpcaoInvalida();
+            return;
         }
-    };
+        if(this->filmes.size()==0) {
+            throw SemFilmes();
+            return;
+        }
+    filmesOrdenados = filmes;
 
-   sort(filmesOrdenados.begin(), filmesOrdenados.end(), compara);
+        auto compara = [opcao](const Filme* a, const Filme* b) {
+            if (opcao == 'C') {
+                return a->id < b->id;
+            } else {
+                return a->titulo < b->titulo;
+            }
+        };
 
-    for (const auto& filme : filmesOrdenados) {
-        filme->lerFilme();
+    sort(filmesOrdenados.begin(), filmesOrdenados.end(), compara);
+
+        for (const auto& filme : filmesOrdenados) {
+            filme->lerFilme();
+        }
+
+    } catch (OpcaoInvalida &e) {
+        cerr << e.what() << endl;
+    } catch (SemFilmes &e) {
+        cerr << e.what() << endl;
     }
 }
 
@@ -160,21 +177,29 @@ void Locadora::listarFilmes(char opcao) {
  */
 
 void Locadora::cadastrarCliente(long long cpf, string nome) {
-    int n= clientes.size();
-    for (int i=0; i<n; i++) {
-        if (cpf == clientes[i]->cpf) { // CPF repetido
-            throw CPFRepetido();
+    try {
+
+        int n= clientes.size();
+        for (int i=0; i<n; i++) {
+            if (cpf == clientes[i]->cpf) { // CPF repetido
+                throw CPFRepetido();
+                return;
+            }
+        }
+        if (cpf<10000000000 || cpf>99999999999) { // CPF invalido
+            throw DadosIncorretos();
             return;
         }
-    }
-    if (cpf<10000000000 || cpf>99999999999) { // CPF invalido
-        throw DadosIncorretos();
-        return;
-    }
 
-    Cliente* cliente = new Cliente(cpf, nome);
-    this -> clientes.push_back(cliente);
-    cout << "Cliente "<< cliente->nome <<" cadastrado com sucesso\n";
+        Cliente* cliente = new Cliente(cpf, nome);
+        this -> clientes.push_back(cliente);
+        cout << "Cliente "<< cliente->nome <<" cadastrado com sucesso\n";
+
+    } catch(CPFRepetido &e) {
+        cerr << e.what() << endl;
+    } catch (DadosIncorretos &e) {
+        cerr << e.what() << endl;
+    }
 }
 
 /** 
@@ -187,16 +212,20 @@ void Locadora::cadastrarCliente(long long cpf, string nome) {
  */
 
 void Locadora::removerCliente(long long cpf) {
-    auto it = find_if(this->clientes.begin(), this->clientes.end(),
-                           [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
+    try {
+        auto it = find_if(this->clientes.begin(), this->clientes.end(),
+                            [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
 
-    if (it == clientes.end()) { // CPF não encontrado
-        throw DadosIncorretos();
-        return;
-    } else {
-        delete *it;
-        cout << "Cliente removido com sucesso\n";
-        this->clientes.erase(it);
+        if (it == clientes.end()) { // CPF não encontrado
+            throw DadosIncorretos();
+            return;
+        } else {
+            delete *it;
+            cout << "Cliente removido com sucesso\n";
+            this->clientes.erase(it);
+        }
+    } catch (DadosIncorretos &e) {
+        cerr << e.what() << endl;
     }
 }
 
@@ -211,29 +240,37 @@ void Locadora::removerCliente(long long cpf) {
  */
  void Locadora::listarClientes(char opcao){
 
-    if (opcao != 'C' && opcao != 'N') {
-        throw OpcaoInvalida();
-        return;
-    }
-    if (this->clientes.size()==0) {
-        throw SemClientes();
-        return;
-    }
+    try {
 
-    clientesOrdenados = clientes;
-
-    auto compara = [opcao](const Cliente* a, const Cliente* b) {
-        if (opcao == 'C') {
-            return a->cpf < b->cpf;
-        } else {
-            return a->nome < b->nome;
+        if (opcao != 'C' && opcao != 'N') {
+            throw OpcaoInvalida();
+            return;
         }
-    };
+        if (this->clientes.size()==0) {
+            throw SemClientes();
+            return;
+        }
 
-   sort(clientesOrdenados.begin(), clientesOrdenados.end(), compara);
+        clientesOrdenados = clientes;
 
-    for (const auto& cliente : clientesOrdenados) {
-        cliente->lerCliente();
+        auto compara = [opcao](const Cliente* a, const Cliente* b) {
+            if (opcao == 'C') {
+                return a->cpf < b->cpf;
+            } else {
+                return a->nome < b->nome;
+            }
+        };
+
+        sort(clientesOrdenados.begin(), clientesOrdenados.end(), compara);
+
+        for (const auto& cliente : clientesOrdenados) {
+            cliente->lerCliente();
+        }
+
+    } catch (OpcaoInvalida &e) {
+        cerr << e.what() << endl;
+    } catch (SemClientes &e) {
+        cerr << e.what() << endl;
     }
 }
 
@@ -248,59 +285,67 @@ void Locadora::removerCliente(long long cpf) {
  * aluguel. Além disso, o método possibilita o aluguel de vários filmes ao mesmo tempo.
 */
 void Locadora::aluguel(long long cpf, vector<int> id) {
-    auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
-        [cpf](const Cliente* cliente) { return cliente->cpf == cpf; }); // encontra cliente
+    try {
+        auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
+            [cpf](const Cliente* cliente) { return cliente->cpf == cpf; }); // encontra cliente
 
-    Cliente* cliente = nullptr;
-    if (itCliente != this->clientes.end()) {
-        cliente = *itCliente;
-    } else { // cpf inexistente
-        throw CPFInexistente();
-        return;
-    }
-
-    if (cliente->bloqueado==true) {
-        cout<<"ERRO: cliente bloqueado! Devolva os filmes antes de alugar novos."<<endl;
-        return;
-    }
-    
-    bool alugou = false;
-    vector<int> inexistentes;
-    vector<int> emFalta;
-
-    cout << endl << "Cliente " << cliente->cpf << " " << cliente->nome << " alugou os filmes: " << endl;
-    for (int id : id) { // para cada um dos codigos 
-        auto itFilme = find_if(filmes.begin(), filmes.end(),
-            [id](Filme* filme) { return filme->id == id; }); // encontra filme
-
-        Filme* filme = nullptr;
-        if (itFilme != this->filmes.end()) {
-            filme = *itFilme;
-        } else { // filme inexistente
-            inexistentes.push_back(id);
+        Cliente* cliente = nullptr;
+        if (itCliente != this->clientes.end()) {
+            cliente = *itCliente;
+        } else { // cpf inexistente
+            throw CPFInexistente();
+            return;
         }
 
-        if (filme!=nullptr) {
-            bool aindaTemCopias = filme->serAlugado();
-            if (aindaTemCopias) {
-                cliente->alugar(filme);
-                filme->lerFilme();
-                alugou = true;
-            } else { // filme em falta
-                emFalta.push_back(id);
+        if (cliente->bloqueado==true) {
+            throw ClienteBloqueado();
+            return;
+        }
+        
+        bool alugou = false;
+        vector<int> inexistentes;
+        vector<int> emFalta;
+
+        cout << endl << "Cliente " << cliente->cpf << " " << cliente->nome << " alugou os filmes: " << endl;
+        for (int id : id) { // para cada um dos codigos 
+            auto itFilme = find_if(filmes.begin(), filmes.end(),
+                [id](Filme* filme) { return filme->id == id; }); // encontra filme
+
+            Filme* filme = nullptr;
+            if (itFilme != this->filmes.end()) {
+                filme = *itFilme;
+            } else { // filme inexistente
+                inexistentes.push_back(id);
+            }
+
+            if (filme!=nullptr) {
+                bool aindaTemCopias = filme->serAlugado();
+                if (aindaTemCopias) {
+                    cliente->alugar(filme);
+                    filme->lerFilme();
+                    alugou = true;
+                } else { // filme em falta
+                    emFalta.push_back(id);
+                }
             }
         }
-    }
-    for (int id : inexistentes) {
-        throw FilmeInexistente(id);
-    }
-    for (int id : emFalta) {
-        throw FilmeFalta(id);
-    }
-    if (alugou) {
-        this->bloqueados.push_back(cliente);
-    }
+        for (int id : inexistentes) {
+            throw FilmeInexistente(id); // vai parar execucao, mas alguns filmes ja foram alugados! tirar o throw?
+        }
+        for (int id : emFalta) {
+            throw FilmeFalta(id);
+        }
+        if (alugou) {
+            this->bloqueados.push_back(cliente);
+        }
 
+    } catch (FilmeInexistente &e) {
+        cerr << e.what() << endl;
+    } catch (FilmeFalta &e) {
+        cerr << e.what() << endl;
+    } catch (ClienteBloqueado &e) {
+        cerr << e.what() << endl;
+    }
 }
 
 /**
@@ -317,75 +362,85 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
 */
 
 void Locadora::devolucao(long long cpf, int dias) {
-    auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
-        [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
-    Cliente* cliente;
+    try {
+        auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
+            [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
+        Cliente* cliente;
 
-    if (itCliente != this->clientes.end()) {
-        cliente = *itCliente;
-    } else {
-        throw CPFInexistente();
-        return;
-    }
+        if (itCliente != this->clientes.end()) {
+            cliente = *itCliente;
+        } else {
+            throw CPFInexistente();
+            return;
+        }
 
-    cout << "Cliente " << cpf << " " << cliente -> nome << " devolveu os filmes:" << endl;
-    int total = 0;
-    if (cliente->filmesAlugados.size()==0) {
-        throw SemFilmesAlugados();
-    }
-    for (const auto& filme : cliente -> filmesAlugados) {
-        cout << filme -> id << " " ;
-        int valor = filme -> calcularValor(dias);
-        cout << valor << endl;
-        total += valor;
-    }
+        cout << "Cliente " << cpf << " " << cliente -> nome << " devolveu os filmes:" << endl;
+        int total = 0;
+        if (cliente->filmesAlugados.size()==0) {
+            throw SemFilmesAlugados();
+        }
+        for (const auto& filme : cliente -> filmesAlugados) {
+            cout << filme -> id << " " ;
+            int valor = filme -> calcularValor(dias);
+            cout << valor << endl;
+            total += valor;
+        }
 
-    if(cliente->pontos>10) {
-        cout << "Você ganhou um desconto de 10%. Obrigado pela fidelidade!" << endl;
-        cout << "De: R$" << total << endl;
-        total = 0.9 * total;
-        cout << "por: R$" << total << endl;
-        cliente->pontos = cliente->pontos - 10;
+        if(cliente->pontos>10) {
+            cout << "Você ganhou um desconto de 10%. Obrigado pela fidelidade!" << endl;
+            cout << "De: R$" << total << endl;
+            total = 0.9 * total;
+            cout << "por: R$" << total << endl;
+            cliente->pontos = cliente->pontos - 10;
+        }
+        
+        cout << "Total a pagar: R$" << total << endl;
+        for (const auto& filme : cliente -> filmesAlugados) {
+            filme -> serDevolvido();
+            cliente->bloqueado=false;
+        }
+        cliente -> devolver();
+        auto it = find(this -> bloqueados.begin(), this -> bloqueados.end(), cliente);
+        this -> bloqueados.erase(it);
+
+    } catch (CPFInexistente &e) {
+        cerr << e.what() << endl;
+    } catch (SemFilmesAlugados &e) {
+        cerr << e.what() << endl;
     }
-    
-    cout << "Total a pagar: R$" << total << endl;
-    for (const auto& filme : cliente -> filmesAlugados) {
-        filme -> serDevolvido();
-        cliente->bloqueado=false;
-    }
-    cliente -> devolver();
-    auto it = find(this -> bloqueados.begin(), this -> bloqueados.end(), cliente);
-    this -> bloqueados.erase(it);
 }
 
 /**
- * @brief Método "recomendarFilmes" da classe "Locadora".
- * @details O método recebe como parâmetro um cpf e procura no vetor "clientes" pelo cliente com o cpf informado.
- * Se o cliente não for encontrado, uma mensagem de erro é exibida. Caso contrário, ocorre a chamada do método
- * "recomendar()" para o cliente em questão, o qual recomenda filmes com base nos gostos desse cliente e nos gostos 
- * de outros clientes da locadora que são considerados similares à ele. Por fim, a função percorre a lista de filmes 
- * recomendados e chama o método "lerFilme()", o qual exibe informações sobre os filmes recomendados na tela.
+    * @brief Método "recomendarFilmes" da classe "Locadora".
+    * @details O método recebe como parâmetro um cpf e procura no vetor "clientes" pelo cliente com o cpf informado.
+    * Se o cliente não for encontrado, uma mensagem de erro é exibida. Caso contrário, ocorre a chamada do método
+    * "recomendar()" para o cliente em questão, o qual recomenda filmes com base nos gostos desse cliente e nos gostos 
+    * de outros clientes da locadora que são considerados similares à ele. Por fim, a função percorre a lista de filmes 
+    * recomendados e chama o método "lerFilme()", o qual exibe informações sobre os filmes recomendados na tela.
 */
 
 void Locadora::recomendarFilmes(long long cpf) {
-    auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
-        [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
-    Cliente* cliente;
+    try {
+        auto itCliente = find_if(this->clientes.begin(), this->clientes.end(),
+            [cpf](const Cliente* cliente) { return cliente->cpf == cpf; });
+        Cliente* cliente;
 
-    if (itCliente != this->clientes.end()) {
-        cliente = *itCliente;
-    } else {
-        throw CPFInexistente();
-        return;
+        if (itCliente != this->clientes.end()) {
+            cliente = *itCliente;
+        } else {
+            throw CPFInexistente();
+            return;
+        }
+
+        cout << endl << "Filmes recomendados para " << cliente->nome << ":" << endl;
+        cliente -> recomendar(this -> clientes);
+
+        for (Filme* filme : cliente -> recomendados) {
+            filme -> lerFilme();
+        }
+    } catch (CPFInexistente &e) {
+        cerr << e.what() << endl;
     }
-
-    cout << endl << "Filmes recomendados para " << cliente->nome << ":" << endl;
-    cliente -> recomendar(this -> clientes);
-
-    for (Filme* filme : cliente -> recomendados) {
-        filme -> lerFilme();
-    }
-
 }
 
 /**
@@ -398,22 +453,33 @@ void Locadora::recomendarFilmes(long long cpf) {
 */
 
 void Locadora::avaliarFilme(int id, float nota) {
-    auto itFilme = std::find_if(filmes.begin(), filmes.end(),
-        [id](Filme* filme) { return filme->id == id; });
-    Filme* filme;
+    try {
+        if (nota>5) {
+            throw AvaliacaoErrada();
+            return;
+        }
+        auto itFilme = std::find_if(filmes.begin(), filmes.end(),
+            [id](Filme* filme) { return filme->id == id; });
+        Filme* filme;
 
-    if (itFilme != this->filmes.end()) {
-        filme = *itFilme;
-    } else { // filme inexistente
-        throw FilmeInexistente(id);
-        return;
+        if (itFilme != this->filmes.end()) {
+            filme = *itFilme;
+        } else { // filme inexistente
+            throw FilmeInexistente(id);
+            return;
+        }
+        
+        filme->serAvaliado(nota);
+        cout << "Filme "<< filme->id <<" avaliado com sucesso\n";    
+
+    } catch (FilmeInexistente &e) {
+        cerr << e.what() << endl;
+    } catch (AvaliacaoErrada &e) {
+        cerr << e.what() << endl;
     }
-    
-    filme->serAvaliado(nota);
-    cout << "Filme "<< filme->id <<" avaliado com sucesso\n";    
 }
 
-
+// DOCUMENTACAO
 
 void Locadora::listarBloqueados() {
     if(this->bloqueados.size()<=0) {
