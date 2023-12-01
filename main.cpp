@@ -69,7 +69,7 @@ int main() {
         printColoredText("+----------------------------------+\n", 34); 
 
         if (comando.size() > 2 || comando.size() < 2) {
-            printColoredText("Comando Inválido!\n", 31);
+            throw ComandoInvalido();
             continue;
         }
 
@@ -145,7 +145,7 @@ int main() {
 
                     default: {
 
-                        printColoredText("Comando Inválido!\n", 31);
+                        throw ComandoInvalido();
                         break;            
         
                     }
@@ -195,7 +195,7 @@ int main() {
                     }
                     
                     default: {
-                        printColoredText("Comando Inválido!\n", 31);
+                        throw ComandoInvalido();
                         break;    
                     }                                                               
                 }
@@ -257,7 +257,7 @@ int main() {
 
                         else {
 
-                           printColoredText("ERRO: Arquivo inexistente!\n",31);
+                           throw ArquivoInexistente();
 
                         }
 
@@ -316,7 +316,7 @@ int main() {
 
                     default: { 
 
-                        printColoredText("Comando Inválido!\n", 31);
+                        throw ComandoInvalido();
                         break ;
 
                     }
@@ -356,7 +356,7 @@ int main() {
                         }
 
                         if (quantidade<=0) {
-                            printColoredText("ERRO: a quantidade de filmes alugados deve ser maior que 0\n", 31);
+                            throw QuantidadeFilmesErrada();
                         } else {
                             CineMax.aluguel(cpf,filmesAlugados);
                         }
@@ -366,7 +366,7 @@ int main() {
                        
                     default: {
 
-                        printColoredText("Comando Inválido!\n", 31);
+                        throw ComandoInvalido();
                         break;    
 
                     }   
@@ -402,7 +402,7 @@ int main() {
                     }
                     
                     default: {
-                        printColoredText("Comando Inválido!\n", 31);
+                        throw ComandoInvalido();
                         break;
                     }
                 }
@@ -452,7 +452,7 @@ int main() {
                     }
 
                     default: {
-                        printColoredText("Comando Inválido!\n", 31);
+                        throw ComandoInvalido();
                         break;
                     }
                 }
@@ -491,13 +491,13 @@ int main() {
                     }
             
                     default: {
-                        printColoredText("Comando Inválido!\n", 31);
+                        throw ComandoInvalido();
                         break;
                     }
 
                 }
                 default:
-                printColoredText("Comando Inválido!\n", 31);
+                throw ComandoInvalido();
                 break;
             }
         

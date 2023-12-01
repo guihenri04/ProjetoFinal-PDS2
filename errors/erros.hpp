@@ -125,5 +125,11 @@ class SemRecomendados: public exception {
       return "ERRO: Ainda não há filmes recomendados para essa cliente!\n";
     }
 };
+class QuantidadeFilmesErrada: public exception {
+    public:
+    virtual const char* what() const noexcept override {
+      return "ERRO: a quantidade de filmes alugados deve ser maior que 0.\n";
+    }
+};
 
 #endif
