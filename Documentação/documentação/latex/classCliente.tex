@@ -1,0 +1,298 @@
+\hypertarget{classCliente}{}\doxysection{Cliente Class Reference}
+\label{classCliente}\index{Cliente@{Cliente}}
+
+
+{\ttfamily \#include $<$cliente.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCliente_ab2903879c2ebdc8f34904e9f13ff4a17}{Cliente}} (long long \mbox{\hyperlink{classCliente_a65cef9d2c9ff6a4bbc82104b8145e93d}{cpf}}, string \mbox{\hyperlink{classCliente_a7ebd7f8e396e9fd8b9c1f5fc20a16fed}{nome}})
+\item 
+\mbox{\hyperlink{classCliente_a29d1d53394350c66363109e33c990b58}{$\sim$\+Cliente}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor da classe \char`\"{}\+Cliente\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCliente_a7f17033a0c1a08e41f268073f63df91c}{ler\+Cliente}} ()
+\begin{DoxyCompactList}\small\item\em Método \char`\"{}ler\+Cliente\char`\"{} classe \char`\"{}\+Cliente\char`\"{}, utilizado especialmente para exibição. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCliente_a6ea37bc5e85d1e65b5dd2c66d1843bbb}{alugar}} (\mbox{\hyperlink{classFilme}{Filme}} $\ast$\mbox{\hyperlink{TestCliente_8cpp_aa0bd2244b1aceb9ea890cb69dad1313d}{filme}})
+\begin{DoxyCompactList}\small\item\em Método \char`\"{}alugar\char`\"{} da classe \char`\"{}\+Cliente\char`\"{}, utilizado para registro. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCliente_afe45044cb497b9abf0765f78d33a4006}{devolver}} ()
+\begin{DoxyCompactList}\small\item\em Método \char`\"{}devolver\char`\"{} da classe \char`\"{}\+Cliente\char`\"{}, utilizado especialmente para controle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCliente_a5d6235f3a304a9a585d88584f733e961}{recomendar}} (vector$<$ \mbox{\hyperlink{classCliente}{Cliente}} $\ast$ $>$ \mbox{\hyperlink{TestCliente_8cpp_a36439a2081b96b4b0bec5db9bf003e5d}{clientes}})
+\begin{DoxyCompactList}\small\item\em Método \char`\"{}recomendar\char`\"{} da classe \char`\"{}\+Cliente\char`\"{}, utilizado para fins de recomendação. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCliente_ab31f2633ff4e2720a7ec3f68fa42b483}{calcular\+Similaridade}} (\mbox{\hyperlink{classCliente}{Cliente}} $\ast$cliente)
+\begin{DoxyCompactList}\small\item\em Método \char`\"{}calcular\+Similaridade\char`\"{} da classe \char`\"{}\+Cliente\char`\"{}, utilizado para controle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCliente_a56c77335f268c0ad0ef51edbe38ca427}{definir\+Similares}} (vector$<$ \mbox{\hyperlink{classCliente}{Cliente}} $\ast$ $>$ \mbox{\hyperlink{TestCliente_8cpp_a36439a2081b96b4b0bec5db9bf003e5d}{clientes}})
+\begin{DoxyCompactList}\small\item\em Método \char`\"{}definir\+Similares\char`\"{} da classe \char`\"{}\+Cliente\char`\"{}, utilizado para fins de recomendação. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classFilme}{Filme}} $\ast$ $>$ \mbox{\hyperlink{classCliente_a1c8e380998c8d825d9185a95ecf54683}{recomendar\+Por\+Similar}} (\mbox{\hyperlink{classCliente}{Cliente}} $\ast$cliente)
+\begin{DoxyCompactList}\small\item\em Método \char`\"{}recomendar\+Por\+Similar\char`\"{} da classe \char`\"{}\+Cliente\char`\"{}, utilizado para fins de recomendação. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classCliente_a1c4d692fe625175c99be405a5ef1356c}{pontos}}
+\item 
+vector$<$ \mbox{\hyperlink{classFilme}{Filme}} $\ast$ $>$ \mbox{\hyperlink{classCliente_acfb7f755cd6ca004bb7aa9b51621d707}{filmes\+Alugados}}
+\item 
+vector$<$ \mbox{\hyperlink{classFilme}{Filme}} $\ast$ $>$ \mbox{\hyperlink{classCliente_a8004dc628fb730473035f60c1b5e556e}{historico}}
+\item 
+vector$<$ \mbox{\hyperlink{classCliente}{Cliente}} $\ast$ $>$ \mbox{\hyperlink{classCliente_abe27955a0ad27c4f888f0346d1dbb552}{similares}}
+\item 
+vector$<$ \mbox{\hyperlink{classFilme}{Filme}} $\ast$ $>$ \mbox{\hyperlink{classCliente_a05ab078e7bfb5583840d12a9715e69e3}{recomendados}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classCliente_a7ebd7f8e396e9fd8b9c1f5fc20a16fed}{nome}}
+\item 
+long long \mbox{\hyperlink{classCliente_a65cef9d2c9ff6a4bbc82104b8145e93d}{cpf}}
+\item 
+bool \mbox{\hyperlink{classCliente_a4a5649ca18c7f4a02755dbfdd66f407e}{bloqueado}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCliente_a18542830527af173120b66ae61407870}{Locadora}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Na classe \char`\"{}\+Cliente\char`\"{}, a qual possui como classe amiga \char`\"{}\+Locadora\char`\"{}, existem como atributos protegidos o nome do cliente (\char`\"{}string nome\char`\"{}) e seu cpf (\char`\"{}long long cpf\char`\"{}). A classe também contém como atributos públicos um construtor que recebe o cpf e o nome do cliente (\char`\"{}\+Cliente(long long cpf, string nome)\char`\"{}) um destrutor (\char`\"{}$\sim$\+Cliente()\char`\"{}) e os pontos dos clientes com base nos filmes alugados (\char`\"{}int pontos\char`\"{}). Existe também um método para identificação de clientes (\char`\"{}void ler\+Cliente()\char`\"{}), um método para controlar a quantidade e quais filmes foram alugados (\char`\"{}void alugar (\+Filme$\ast$ filme)\char`\"{}), um método para controlar a quantidade e quais filmes foram devolvidos (\char`\"{}void devolver ()\char`\"{}), um método para recomendar filmes aos clientes (\char`\"{}void recomendar(vector $<$\+Cliente$\ast$$>$ clientes)\char`\"{}), um método para calcular a quantidade de filmes similares alugados pelos clientes (\char`\"{}int calcular\+Similaridade (\+Cliente$\ast$ cliente)\char`\"{}), um método para definir quais clientes possuem gostos similares (\char`\"{}void definir\+Similares (vector $<$\+Cliente$\ast$$>$ clientes)\char`\"{}), um vetor de ponteiros para controlar quais filmes foram alugados (\char`\"{}vector$<$\+Filme$\ast$$>$ filmes\+Alugados\char`\"{}) um vetor de ponteiros para adicionar filmes ao histórico dos clientes (\char`\"{}vector$<$\+Filme$\ast$$>$ historico\char`\"{}), um vetor de ponteiros de filmes recomendados (\char`\"{}vector$<$\+Filme$\ast$$>$ recomendados\char`\"{}), um vetor de ponteiros de filmes similares (\char`\"{}vector$<$\+Cliente$\ast$$>$ similares\char`\"{}) e, por fim, um vetor de ponteiros para recomendar os filmes aos clientes com base na similaridade entre os gostos dos mesmos (\char`\"{}vector $<$\+Filme$\ast$$>$ recomendar\+Por\+Similar(\+Cliente$\ast$ cliente)\char`\"{}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Registra o nome do cliente. \\
+\hline
+{\em cpf} & Registra o cpf do cliente. \\
+\hline
+{\em recomendados} & Usado na recomendação de filmes aos clientes. \\
+\hline
+{\em similares} & Usado no calculo de similaridade entre os filmes alugados pelos clientes. \\
+\hline
+{\em recomendar\+Por\+Similar} & Usado na recomendação de filmes por similaridade entre os clientes. \\
+\hline
+{\em pontos} & Registra a quantidade de pontos de cada cliente. \\
+\hline
+{\em filmes\+Alugados} & Usado no controle dos filmes alugados. \\
+\hline
+{\em historico} & Usado no controle dos filmes adicionados ao histórico dos clientes. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCliente_ab2903879c2ebdc8f34904e9f13ff4a17}\label{classCliente_ab2903879c2ebdc8f34904e9f13ff4a17}} 
+\index{Cliente@{Cliente}!Cliente@{Cliente}}
+\index{Cliente@{Cliente}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{Cliente()}{Cliente()}}
+{\footnotesize\ttfamily Cliente\+::\+Cliente (\begin{DoxyParamCaption}\item[{long long}]{cpf,  }\item[{string}]{nome }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCliente_a29d1d53394350c66363109e33c990b58}\label{classCliente_a29d1d53394350c66363109e33c990b58}} 
+\index{Cliente@{Cliente}!````~Cliente@{$\sim$Cliente}}
+\index{````~Cliente@{$\sim$Cliente}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{$\sim$Cliente()}{~Cliente()}}
+{\footnotesize\ttfamily Cliente\+::$\sim$\+Cliente (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destrutor da classe \char`\"{}\+Cliente\char`\"{}. 
+
+Esse destrutor trabalha na liberação de memória alocada nos vetores de ponteiros da classe \char`\"{}\+Cliente\char`\"{}, fazendo o controle manual dessa desalocação. Para cada elemento dentro desses vetores, ele realiza uma desalocação, ou seja, deleta esse elemento do vetor. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCliente_a6ea37bc5e85d1e65b5dd2c66d1843bbb}\label{classCliente_a6ea37bc5e85d1e65b5dd2c66d1843bbb}} 
+\index{Cliente@{Cliente}!alugar@{alugar}}
+\index{alugar@{alugar}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{alugar()}{alugar()}}
+{\footnotesize\ttfamily void Cliente\+::alugar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFilme}{Filme}} $\ast$}]{filme }\end{DoxyParamCaption})}
+
+
+
+Método \char`\"{}alugar\char`\"{} da classe \char`\"{}\+Cliente\char`\"{}, utilizado para registro. 
+
+Esse método registra a quantidade de filmes alugados pelo cliente, lista esses filmes, adiciona pontos para uma possível futura promoção e registra o histórico de filmes que já foram alugados pelo cliente. 
+\begin{DoxyParams}{Parameters}
+{\em unidades} & Indica a quantidade de filmes alugados pelo cliente. \\
+\hline
+{\em filme} & Indica o filme alugado pelo cliente. \\
+\hline
+{\em filmes\+Alugados} & Armazena quais filmes estão alugados da locadora pelos clientes. \\
+\hline
+{\em historico} & Armazena os filmes alugados pelo cliente em seu historico. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCliente_ab31f2633ff4e2720a7ec3f68fa42b483}\label{classCliente_ab31f2633ff4e2720a7ec3f68fa42b483}} 
+\index{Cliente@{Cliente}!calcularSimilaridade@{calcularSimilaridade}}
+\index{calcularSimilaridade@{calcularSimilaridade}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{calcularSimilaridade()}{calcularSimilaridade()}}
+{\footnotesize\ttfamily int Cliente\+::calcular\+Similaridade (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCliente}{Cliente}} $\ast$}]{cliente2 }\end{DoxyParamCaption})}
+
+
+
+Método \char`\"{}calcular\+Similaridade\char`\"{} da classe \char`\"{}\+Cliente\char`\"{}, utilizado para controle. 
+
+Esse método analisa o filme alugado por um clinte diretamente do seu histórico e compara esse filme com os filmes alugados por outro cliente, também de acordo com seu histórico. Caso esses filmes sejam iguais, existe uma similaridade entre os gostos do clientes, a qual aumenta (a similaridade será importante para o sistema de recomendação). 
+\begin{DoxyParams}{Parameters}
+{\em similaridade} & Registra a quantidade de filmes similares com base no histórico dos clientes. \\
+\hline
+{\em filme1} & \mbox{\hyperlink{classFilme}{Filme}} pertencente ao histórico do cliente 1. \\
+\hline
+{\em filme2} & \mbox{\hyperlink{classFilme}{Filme}} pertencente ao histórico do cliente 2. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna a quantidade de filmes similares entre os dois clientes. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCliente_a56c77335f268c0ad0ef51edbe38ca427}\label{classCliente_a56c77335f268c0ad0ef51edbe38ca427}} 
+\index{Cliente@{Cliente}!definirSimilares@{definirSimilares}}
+\index{definirSimilares@{definirSimilares}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{definirSimilares()}{definirSimilares()}}
+{\footnotesize\ttfamily void Cliente\+::definir\+Similares (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classCliente}{Cliente}} $\ast$ $>$}]{clientes }\end{DoxyParamCaption})}
+
+
+
+Método \char`\"{}definir\+Similares\char`\"{} da classe \char`\"{}\+Cliente\char`\"{}, utilizado para fins de recomendação. 
+
+Esse método recebe um vetor de clientes e, a partir daí, realiza uma filtragem, em busca de selecionar os 3 usuários com maior similaridade com o cliente atual, e colocá-\/los no seu atributo \char`\"{}similares\char`\"{}. Caso esse vetor parâmetro possua menos que três clientes, essa comparação não precisa ser realizada, e os clientes já são alocados nos similares imediatamente. Caso haja mais de 3, a seleção prossegue. Para cada cliente do parâmetro, é calculado o grau de similaridade, e comparado com os 3 clientes mais similares. Se o grau de similaridade for maior que algum, esse ranking é reformulado para encaixar o novo cliente similar. O cliente com maior similaridade fica em primeiro lugar e assim por diante. Depois de percorrer todo o vetor, os 3 clientes são adicionados ao vetor \char`\"{}similares\char`\"{} de acordo com o ranking previamente feito. 
+\begin{DoxyParams}{Parameters}
+{\em clientes} & Armazena os clientes. \\
+\hline
+{\em similares} & Armazena os 3 clientes de acordo com a similaridade deles, utilizando como base o \char`\"{}ranking\char`\"{}. \\
+\hline
+{\em c1} & \mbox{\hyperlink{classCliente}{Cliente}} com maior grau de similaridade àquele recebido pelo método. \\
+\hline
+{\em c2} & \mbox{\hyperlink{classCliente}{Cliente}} com grau de similaridade intermediário àquele recebido pelo método. \\
+\hline
+{\em c3} & \mbox{\hyperlink{classCliente}{Cliente}} com menor grau de similaridade àquele recebido pelo método. \\
+\hline
+{\em s1} & Maior grau de similaridade. \\
+\hline
+{\em s2} & Grau de similaridade intermediário. \\
+\hline
+{\em s3} & Menor grau de similaridade. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCliente_afe45044cb497b9abf0765f78d33a4006}\label{classCliente_afe45044cb497b9abf0765f78d33a4006}} 
+\index{Cliente@{Cliente}!devolver@{devolver}}
+\index{devolver@{devolver}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{devolver()}{devolver()}}
+{\footnotesize\ttfamily void Cliente\+::devolver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método \char`\"{}devolver\char`\"{} da classe \char`\"{}\+Cliente\char`\"{}, utilizado especialmente para controle. 
+
+Esse método controla a quantidade e quais filmes foram alugados pelos clientes (o filme devolvido à locadora é retirado do vetor filmes\+Alugados, para controle). \mbox{\Hypertarget{classCliente_a7f17033a0c1a08e41f268073f63df91c}\label{classCliente_a7f17033a0c1a08e41f268073f63df91c}} 
+\index{Cliente@{Cliente}!lerCliente@{lerCliente}}
+\index{lerCliente@{lerCliente}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{lerCliente()}{lerCliente()}}
+{\footnotesize\ttfamily void Cliente\+::ler\+Cliente (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método \char`\"{}ler\+Cliente\char`\"{} classe \char`\"{}\+Cliente\char`\"{}, utilizado especialmente para exibição. 
+
+Esse método exibe para o usuário o cpf e o nome do cliente registrado na locadora. \mbox{\Hypertarget{classCliente_a5d6235f3a304a9a585d88584f733e961}\label{classCliente_a5d6235f3a304a9a585d88584f733e961}} 
+\index{Cliente@{Cliente}!recomendar@{recomendar}}
+\index{recomendar@{recomendar}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{recomendar()}{recomendar()}}
+{\footnotesize\ttfamily void Cliente\+::recomendar (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classCliente}{Cliente}} $\ast$ $>$}]{clientes }\end{DoxyParamCaption})}
+
+
+
+Método \char`\"{}recomendar\char`\"{} da classe \char`\"{}\+Cliente\char`\"{}, utilizado para fins de recomendação. 
+
+Esse método recebe como parâmetro um vetor de clientes e retorna, a partir deles, um vetor de filmes recomendados. Para isso, ele começa definindo os clientes de gosto mais similar ao cliente atual, pelo método \char`\"{}definir\+Similares\char`\"{}. Caso depois dessa chamada não existam clientes similares ou o cliente atual ainda não tenha alugado nenhum filme na locadora, o método retorna que ainda é impossível recomendar filmes à esse cliente. Se não, é utilizado o método \char`\"{}recomendar\+Por\+Similar\char`\"{} para que cada um dos clientes no vetor \char`\"{}similares\char`\"{} forneça um vetor de filmes, que se juntarão em um só vetor de filmes recomendados, que fica no atributo \char`\"{}recomendados\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em definir\+Similares} & Define os filmes similares com base em um cliente específico. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCliente_a1c8e380998c8d825d9185a95ecf54683}\label{classCliente_a1c8e380998c8d825d9185a95ecf54683}} 
+\index{Cliente@{Cliente}!recomendarPorSimilar@{recomendarPorSimilar}}
+\index{recomendarPorSimilar@{recomendarPorSimilar}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{recomendarPorSimilar()}{recomendarPorSimilar()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classFilme}{Filme}} $\ast$ $>$ Cliente\+::recomendar\+Por\+Similar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCliente}{Cliente}} $\ast$}]{cliente }\end{DoxyParamCaption})}
+
+
+
+Método \char`\"{}recomendar\+Por\+Similar\char`\"{} da classe \char`\"{}\+Cliente\char`\"{}, utilizado para fins de recomendação. 
+
+Esse método recebe um cliente como parâmetro e percorre os filmes assistidos por ele, comparando-\/os com os filmes no histórico do cliente atual. Caso o cliente atual não tenha visto o filme, o filme é considerado inédito. Caso contrário, o filme é ignorado. Pós isso, os filmes inéditos são adiconados à um outro vetor (\char`\"{}conjunto\+Recomendados\char`\"{}). Caso existam filmes repetidos, eles são excluidos utilizando \char`\"{}set\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em recomendados} & Armazena os filmes do cliente que foram considerados recomendados. \\
+\hline
+{\em conjunto\+Recomendados} & Armazena os filmes recomendados considerados inétidos. \\
+\hline
+{\em ainda\+Tem\+Filmes} & Determina se ainda existem filmes no vetor \char`\"{}historico\char`\"{}. \\
+\hline
+{\em inedito} & Determina se o filme é inétido ou não com base nos filmes do cliente com elevada similaridade. \\
+\hline
+{\em filme\+Visto} & Determina se o filme foi visto ou não por algum outro cliente específico. \\
+\hline
+{\em recomendado} & Registra o filme recomendado com base no histórico do cliente de elevada similaridade. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classCliente_a18542830527af173120b66ae61407870}\label{classCliente_a18542830527af173120b66ae61407870}} 
+\index{Cliente@{Cliente}!Locadora@{Locadora}}
+\index{Locadora@{Locadora}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{Locadora}{Locadora}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classLocadora}{Locadora}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCliente_a4a5649ca18c7f4a02755dbfdd66f407e}\label{classCliente_a4a5649ca18c7f4a02755dbfdd66f407e}} 
+\index{Cliente@{Cliente}!bloqueado@{bloqueado}}
+\index{bloqueado@{bloqueado}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{bloqueado}{bloqueado}}
+{\footnotesize\ttfamily bool Cliente\+::bloqueado\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCliente_a65cef9d2c9ff6a4bbc82104b8145e93d}\label{classCliente_a65cef9d2c9ff6a4bbc82104b8145e93d}} 
+\index{Cliente@{Cliente}!cpf@{cpf}}
+\index{cpf@{cpf}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{cpf}{cpf}}
+{\footnotesize\ttfamily long long Cliente\+::cpf\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCliente_acfb7f755cd6ca004bb7aa9b51621d707}\label{classCliente_acfb7f755cd6ca004bb7aa9b51621d707}} 
+\index{Cliente@{Cliente}!filmesAlugados@{filmesAlugados}}
+\index{filmesAlugados@{filmesAlugados}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{filmesAlugados}{filmesAlugados}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classFilme}{Filme}}$\ast$$>$ Cliente\+::filmes\+Alugados}
+
+\mbox{\Hypertarget{classCliente_a8004dc628fb730473035f60c1b5e556e}\label{classCliente_a8004dc628fb730473035f60c1b5e556e}} 
+\index{Cliente@{Cliente}!historico@{historico}}
+\index{historico@{historico}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{historico}{historico}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classFilme}{Filme}}$\ast$$>$ Cliente\+::historico}
+
+\mbox{\Hypertarget{classCliente_a7ebd7f8e396e9fd8b9c1f5fc20a16fed}\label{classCliente_a7ebd7f8e396e9fd8b9c1f5fc20a16fed}} 
+\index{Cliente@{Cliente}!nome@{nome}}
+\index{nome@{nome}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{nome}{nome}}
+{\footnotesize\ttfamily string Cliente\+::nome\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCliente_a1c4d692fe625175c99be405a5ef1356c}\label{classCliente_a1c4d692fe625175c99be405a5ef1356c}} 
+\index{Cliente@{Cliente}!pontos@{pontos}}
+\index{pontos@{pontos}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{pontos}{pontos}}
+{\footnotesize\ttfamily int Cliente\+::pontos}
+
+\mbox{\Hypertarget{classCliente_a05ab078e7bfb5583840d12a9715e69e3}\label{classCliente_a05ab078e7bfb5583840d12a9715e69e3}} 
+\index{Cliente@{Cliente}!recomendados@{recomendados}}
+\index{recomendados@{recomendados}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{recomendados}{recomendados}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classFilme}{Filme}}$\ast$$>$ Cliente\+::recomendados}
+
+\mbox{\Hypertarget{classCliente_abe27955a0ad27c4f888f0346d1dbb552}\label{classCliente_abe27955a0ad27c4f888f0346d1dbb552}} 
+\index{Cliente@{Cliente}!similares@{similares}}
+\index{similares@{similares}!Cliente@{Cliente}}
+\doxysubsubsection{\texorpdfstring{similares}{similares}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classCliente}{Cliente}}$\ast$$>$ Cliente\+::similares}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Cliente/\mbox{\hyperlink{cliente_8hpp}{cliente.\+hpp}}\item 
+Cliente/\mbox{\hyperlink{cliente_8cpp}{cliente.\+cpp}}\end{DoxyCompactItemize}

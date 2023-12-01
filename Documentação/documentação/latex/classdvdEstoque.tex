@@ -1,0 +1,88 @@
+\hypertarget{classdvdEstoque}{}\doxysection{dvd\+Estoque Class Reference}
+\label{classdvdEstoque}\index{dvdEstoque@{dvdEstoque}}
+
+
+{\ttfamily \#include $<$D\+V\+Destoque.\+hpp$>$}
+
+
+
+Inheritance diagram for dvd\+Estoque\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classdvdEstoque__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dvd\+Estoque\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classdvdEstoque__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdvdEstoque_a9981713d5102534be6d837cf51904e79}{dvd\+Estoque}} (int \mbox{\hyperlink{classFilme_a13c8c0f372cf6afa843eb11a2d79cac3}{id}}, string \mbox{\hyperlink{classFilme_a3d08648c6fb22243ba3d5020b06b64ac}{titulo}}, int \mbox{\hyperlink{classFilme_ac424f2ebe92753aba4d1171becff6da8}{unidades}})
+\item 
+int \mbox{\hyperlink{classdvdEstoque_a56e4b7218b0b6983d6d1be2325eb4032}{calcular\+Valor}} (int dias) override
+\begin{DoxyCompactList}\small\item\em Método \char`\"{}calcular\+Valor\char`\"{} da classe \char`\"{}dvd\+Estoque\char`\"{}, utilizado especialmente para controle e registro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Na classe \char`\"{}dvd\+Estoque\char`\"{}, que herda publicamente a classe \char`\"{}\+Filme\char`\"{}, existem como atributos públicos um construtor, o qual recebe como parâmetros o id de identificação de um filme, seu título e a quantidade de unidades disponíveis dele para locação (\char`\"{}dvd\+Estoque(int id, string titulo, int unidades)\char`\"{}). Existe também um método para calcular quanto será pago pelo aluguel do filme de acordo com a quantidade de dias que ele ficou alugado, o qual substitui uma função virtual na classe base, no caso, \char`\"{}\+Filme\char`\"{} (\char`\"{}int calcular\+Valor(int dias) override\char`\"{}). 
+\begin{DoxyParams}{Parameters}
+{\em id} & Determina o id do filme para identificação. \\
+\hline
+{\em titulo} & Armazena o nome do filme. \\
+\hline
+{\em unidades} & Registra quantas unidades de um filme estão disponíveis para locação. \\
+\hline
+{\em dias} & Registra quantos dias um determinado filme ficou alugado. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdvdEstoque_a9981713d5102534be6d837cf51904e79}\label{classdvdEstoque_a9981713d5102534be6d837cf51904e79}} 
+\index{dvdEstoque@{dvdEstoque}!dvdEstoque@{dvdEstoque}}
+\index{dvdEstoque@{dvdEstoque}!dvdEstoque@{dvdEstoque}}
+\doxysubsubsection{\texorpdfstring{dvdEstoque()}{dvdEstoque()}}
+{\footnotesize\ttfamily dvd\+Estoque\+::dvd\+Estoque (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{string}]{titulo,  }\item[{int}]{unidades }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdvdEstoque_a56e4b7218b0b6983d6d1be2325eb4032}\label{classdvdEstoque_a56e4b7218b0b6983d6d1be2325eb4032}} 
+\index{dvdEstoque@{dvdEstoque}!calcularValor@{calcularValor}}
+\index{calcularValor@{calcularValor}!dvdEstoque@{dvdEstoque}}
+\doxysubsubsection{\texorpdfstring{calcularValor()}{calcularValor()}}
+{\footnotesize\ttfamily int dvd\+Estoque\+::calcular\+Valor (\begin{DoxyParamCaption}\item[{int}]{dias }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Método \char`\"{}calcular\+Valor\char`\"{} da classe \char`\"{}dvd\+Estoque\char`\"{}, utilizado especialmente para controle e registro. 
+
+Esse método calcula quanto o cliente terá de pagar pelo aluguel do filme de acordo com a quantidade de dias que ele ficou alugado. 
+\begin{DoxyParams}{Parameters}
+{\em dias} & Armazena quantos dias um determinado filme ficou alugado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna o preço que o cliente terá de pagar pelo aluguel do filme, sendo 10 reais por dia o preço da locação de um D\+VD da categoria \char`\"{}\+Estoque\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFilme_ade9a8d9de99c732e22045416f86f71f3}{Filme}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Filmes/\+Subclasses/\mbox{\hyperlink{DVDestoque_8hpp}{D\+V\+Destoque.\+hpp}}\item 
+Filmes/\+Subclasses/\mbox{\hyperlink{DVDestoque_8cpp}{D\+V\+Destoque.\+cpp}}\end{DoxyCompactItemize}
