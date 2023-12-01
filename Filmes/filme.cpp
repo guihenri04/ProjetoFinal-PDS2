@@ -45,7 +45,6 @@ void Filme::lerFilme() {
 bool Filme::serAlugado() {
     if (unidades==0) {
         throw FilmeFalta(id);
-        erro = false;
         return 1;
     }
     this -> unidades--;

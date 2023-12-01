@@ -8,7 +8,9 @@
 #include "../Filmes/Subclasses/DVDpromocao.hpp"
 #include "../Filmes/Subclasses/fita.hpp"
 #include "../errors/erros.hpp"
+
     Locadora minhalocadora;
+    Locadora locadorazerada;
     
 
 
@@ -74,7 +76,7 @@ return saida.str();
         CHECK(saida_filme(minhalocadora.filmesOrdenados[2]) == "1 Ficar de boa 6 FITA 4.0★\n" );
 
         //Checagem de ERROS
-        CHECK_THROWS(minhalocadora.listarFilmes('Z'), DadosIncorretos());
+        CHECK_THROWS(minhalocadora.listarFilmes('Z'), OpcaoInvalida());
 
     }
 
@@ -89,7 +91,7 @@ return saida.str();
         CHECK(saida_cliente(minhalocadora.clientes[3]) == "33333333333 alice\n");
 
         //Checagem de ERROS
-        CHECK_THROWS(minhalocadora.cadastrarCliente(15522645707, "joao"), CPF_Repetido());
+        CHECK_THROWS(minhalocadora.cadastrarCliente(15522645707, "joao"), CPFRepetido());
         CHECK_THROWS(minhalocadora.cadastrarCliente(110, "luiz"), DadosIncorretos());
     }
 
@@ -113,10 +115,12 @@ return saida.str();
 
         //Checagem de ERROS
         CHECK_THROWS(minhalocadora.listarClientes('Z'), DadosIncorretos());
+        CHECK_THROWS(locadorazerada.listarClientes('C'), SemClientes());
     }
 
      TEST_CASE("Locadora-aluguel"){
         vector <int> id = {minhalocadora.filmes[0]->id, minhalocadora.filmes[1]->id};
+        
         minhalocadora.aluguel(11111111111, id );
         CHECK(minhalocadora.clientes[0]->historico.size() == 2);
         CHECK(minhalocadora.clientes[0]->filmesAlugados.size() == 2);
@@ -129,7 +133,9 @@ return saida.str();
         CHECK(minhalocadora.filmes[1]->unidades == 4);
 
         //Checagem de ERROS
-        CHECK_THROWS(minhalocadora.aluguel(1111, minhalocadora.filmes[0]->id, minhalocadora.filmes[1]->id), CPF_inexistente());
+        vector <int> id2 ={minhalocadora.filmes[2]->id};
+        CHECK_THROWS(minhalocadora.aluguel(1111, id), CPFInexistente());
+        CHECK_THROWS(minhalocadora.aluguel(11111111111, id2), ClienteBloqueado());
     }
 
     TEST_CASE("Locadora-devolução"){
@@ -139,7 +145,8 @@ return saida.str();
         CHECK(minhalocadora.filmes[1]->unidades == 5);
 
         //Checagem de ERROS
-        CHECK_THROWS(minhalocadora.devolucao(11111, 3), CPF_Inexistente());
+        CHECK_THROWS(minhalocadora.devolucao(11111, 3), CPFInexistente());
+        CHECK_THROWS(minhalocadora.devolucao(44444444444, 2), SemFilmesAlugados());
     }
 
     /*TEST_CASE("Locadora-recomendarFilmes"){
@@ -151,4 +158,7 @@ return saida.str();
         CHECK(minhalocadora.filmes[0]->avaliacao == 3);
         minhalocadora.avaliarFilme(2, 2);
         CHECK(minhalocadora.filmes[0]->avaliacao == 2.66667);
+
+        //Checagem de ERROS
+        CHECK_THROWS(minhalocadora.avaliarFilme(3, 2), FilmeInexistente(3));
     }

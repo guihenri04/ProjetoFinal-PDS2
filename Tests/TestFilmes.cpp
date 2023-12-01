@@ -4,6 +4,7 @@
 #include "../Filmes/filme.hpp"
 #include "../Cliente/cliente.hpp"
 #include "../Filmes/Subclasses/DVDestoque.hpp"
+#include "../errors/erros.hpp"
 using namespace std;
 enum Metodo {ler_filme, ser_alugado, ser_avaliado  };
 
@@ -31,7 +32,7 @@ return saida.str();
 
 
 TEST_CASE("Filmes-lerFilme"){
-    CHECK(saida_filme(filme1, ler_filme) == "1 Divergente 0 DVD\n");
+    CHECK(saida_filme(filme1, ler_filme) == "1 Divergente 0 DVD 4.0★\n");
 }
 
 TEST_CASE("Filmes-serAlugado"){
@@ -39,7 +40,7 @@ TEST_CASE("Filmes-serAlugado"){
     CHECK(filme2->unidades == 1); 
 
     //Checagem de ERROS
-    CHECK_THROWS(filme1->serAlugado(), FilmeIndisponivel());
+    CHECK_THROWS(filme1->serAlugado(), FilmeFalta(1));
 }
 
 TEST_CASE ("Filmes-serDevolvido"){
@@ -49,14 +50,14 @@ TEST_CASE ("Filmes-serDevolvido"){
 
 TEST_CASE("Filmes-serAvaliado"){
     filme2->serAvaliado(2);
-    CHECK(filme2->avaliacao == 3.5);
-    filme2->serAvaliado(2);
     CHECK(filme2->avaliacao == 3);
+    filme2->serAvaliado(2);
+    CHECK(filme2->avaliacao == 2.66667);
     // test de avaliação superior a 5
     CHECK(saida_filme(filme2, ser_avaliado) == "ERRO: O filme pode ser avaliado em no máximo 5\n");
     filme1->serAvaliado(6);
     CHECK(filme1->erro == false);
 
     //Checagem de ERROS
-    CHECK_THROWS(filme2->serAvaliado(10), Maximo5());
+    CHECK_THROWS(filme2->serAvaliado(10), AvaliacaoErrada());
 }
