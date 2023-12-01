@@ -8,36 +8,33 @@
 
 using namespace std;
 
-void printColoredText(const string& text, int colorCode) {
-    cout << "\033[" << colorCode << "m" << text << "\033[0m";
-    }
 
-class CodigoRepetido : public exception {
+class CodigoRepetido : public std::exception {
  public:
     virtual const char* what() const noexcept override {
         return  "ERRO: codigo repetido.\n";
     }
 };    
-    class ArquivoInexistente : public exception {
+    class ArquivoInexistente : public std::exception {
     public:
     virtual const char* what() const noexcept override {
         return "ERRO: arquivo inexistente.";
     }
 };
-    class DadosIncorretos : public exception {
+    class DadosIncorretos : public std::exception {
     public:
     virtual const char* what() const noexcept override {
         return "ERRO: dados incorretos.\n";
     }
 };
-    class CodigoInexistente : public exception {
+    class CodigoInexistente : public std::exception {
     public:
     virtual const char* what() const noexcept override {
         return "ERRO: código inexistente.\n";
     }
 };
 
-  class CPFRepetido : public exception {
+  class CPFRepetido : public std::exception {
     public:
     virtual const char* what() const noexcept override {
         return "ERRO: CPF repetido.\n";
@@ -45,21 +42,21 @@ class CodigoRepetido : public exception {
 };
 
 
-class CPFInexistente : public exception {
+class CPFInexistente : public std::exception {
     public:
     virtual const char* what() const noexcept override {
         return "ERRO: CPF inexistente.\n";
     }
 };
 
-class OpcaoInvalida : public exception {
+class OpcaoInvalida : public std::exception {
     public:
     virtual const char* what() const noexcept override {
         return "ERRO: opção de ordenação inválida.\n";
     }
 };
 
-class SemFilmesAlugados: public exception {
+class SemFilmesAlugados: public std::exception {
     public:
     virtual const char* what() const noexcept override {
         return "ERRO: não há filmes alugados.\n";
@@ -74,7 +71,7 @@ public:
         return erro.c_str();
     }
 };
-class FilmeFalta: public exception {
+class FilmeFalta: public std::exception {
     private:
     int filmeId;
     public:
@@ -83,19 +80,19 @@ class FilmeFalta: public exception {
       return ("ERRO: Filme " + to_string(filmeId) + " em falta no estoque.\n").c_str();
     }
 };
-class SemClientes: public exception {
+class SemClientes: public std::exception {
     public:
     virtual const char* what() const noexcept override {
       return "ERRO: ainda não há clientes para listar.\n";
     }
 };
-class AvaliacaoErrada: public exception {
+class AvaliacaoErrada: public std::exception {
     public:
     virtual const char* what() const noexcept override {
       return "ERRO: O filme pode ser avaliado em no máximo 5\n";
     }
 };
-class ComandoInvalido: public exception {
+class AvaliacaoErrada: public std::exception {
     public:
     virtual const char* what() const noexcept override {
       printColoredText("Comando Inválido!\n", 31);

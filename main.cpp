@@ -10,6 +10,10 @@
 
 using namespace std;
 
+void printColoredText(const std::string& text, int colorCode) {
+    std::cout << "\033[" << colorCode << "m" << text << "\033[0m";
+    }
+
 int main() {
 
 /**
@@ -65,7 +69,7 @@ int main() {
         printColoredText("+----------------------------------+\n", 34); 
 
         if (comando.size() > 2 || comando.size() < 2) {
-            throw ComandoInvalido();
+            printColoredText("Comando Inválido!\n", 31);
             continue;
         }
 
