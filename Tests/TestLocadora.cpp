@@ -7,7 +7,7 @@
 #include "../Filmes/Subclasses/DVDlancamento.hpp"
 #include "../Filmes/Subclasses/DVDpromocao.hpp"
 #include "../Filmes/Subclasses/fita.hpp"
-
+#include "../errors/erros.hpp"
     Locadora minhalocadora;
     
 
@@ -46,6 +46,7 @@ return saida.str();
          minhalocadora.cadastrarFilme('F', 6, 1, "Ficar de boa", 'E' );
          CHECK( minhalocadora.filmes.size() == 4);
          CHECK( saida_filme(minhalocadora.filmes[3]) == "1 Ficar de boa 6 FITA\n" );
+         CHECK_THROWS_AS(minhalocadora.cadastrarFilme('D', 3, 3, "Vou tomar um tacacá", 'E'), CodigoRepetido());
     }
 
     TEST_CASE("Locadora-removerFilme"){

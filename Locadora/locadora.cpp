@@ -1,4 +1,5 @@
 #include "locadora.hpp"
+#include "../errors/erros.hpp"
 
 /**
 * @file locadora.cpp
@@ -53,7 +54,7 @@ void Locadora::cadastrarFilme(char tipo, int unidades, int id, const string& tit
     int n=filmes.size();
     for (int i=0; i<n; i++) { // codigo repetido
         if (id == filmes[i]->id) {
-            cout << "ERRO: codigo repetido\n";
+            throw CodigoRepetido();
             return;
         }
     }
