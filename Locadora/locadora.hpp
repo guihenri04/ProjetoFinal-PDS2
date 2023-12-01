@@ -26,7 +26,8 @@ using namespace std;
  * de acordo com a opção selecionada, seja a partir do id de identificação ou título do filme ("void listarFilmes(char opcao)"),
  * um método para cadastrar clientes, de acordo com o cpf e o nome informados ("void cadastrarCliente(long long cpf, string nome)"),
  * um método para remover clientes utilizando somente o cpf informado ("void removerCliente(long long cpf)"), um método para listar clientes
- * a partir da opção selecionada, seja por nome ou cpf cadastrados ("void listarClientes(char opcao)"), um 
+ * a partir da opção selecionada, seja por nome ou cpf cadastrados ("void listarClientes(char opcao)"), um método para exibir uma lista de
+ * sobre clientes bloqueados na locadora ("void listarBloqueados()"), um 
  * método para registrar os clientes que alugaram filmes e quais filmes foram alugados, com base em seus id's
  * ("void aluguel(long long cpf, vector <int> id)"), um método para controlar quais clientes fazem a devolução dos filmes e com quantos dias esse cliente ficou
  * com o filme alugado ("void devolucao(long long cpf, int dias)"), um método para recomendar filmes aos clientes, de acordo com o cpf informado

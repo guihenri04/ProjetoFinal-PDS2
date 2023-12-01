@@ -479,7 +479,12 @@ void Locadora::avaliarFilme(int id, float nota) {
     }
 }
 
-// DOCUMENTACAO
+/**
+ * @brief Método "listarBloqueados" da classe "Locadora".
+ * @details O método lista os clientes bloqueados da locadora pelo fato de ainda não terem realizado a devolução dos filmes alugados.
+ * caso o vetor "bloqueados" esteja vazio, uma mensagem informando que não há clientes bloqueados é exibida. Caso contrário, uma lista
+ * dos clientes bloqueados é exibida.
+*/
 
 void Locadora::listarBloqueados() {
     if(this->bloqueados.size()<=0) {
