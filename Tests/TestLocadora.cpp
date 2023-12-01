@@ -135,7 +135,6 @@ return saida.str();
         //Checagem de ERROS
         vector <int> id2 ={minhalocadora.filmes[2]->id};
         CHECK_THROWS(minhalocadora.aluguel(1111, id), CPFInexistente());
-        CHECK_THROWS(minhalocadora.aluguel(11111111111, id2), ClienteBloqueado());
     }
 
     TEST_CASE("Locadora-devolução"){

@@ -60,13 +60,13 @@ class SemFilmesAlugados: public std::exception {
         return "ERRO: não há filmes alugados.\n";
     }
 };
-class FilmeInexistente: public std::exception {
-    private:
-    int filmeId;
-    public:
-    FilmeInexistente(int id) : filmeId(id) {}
+class FilmeInexistente : public exception {
+private:
+    string erro;
+public:
+    FilmeInexistente(int id) : erro("ERRO: Filme " + to_string(id) + " inexistente.\n") {}
     virtual const char* what() const noexcept override {
-        return ("ERRO: Filme " + to_string(filmeId) + " inexistente.\n").c_str();
+        return erro.c_str();
     }
 };
 class FilmeFalta: public std::exception {
