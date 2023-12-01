@@ -11,8 +11,8 @@
 
     Locadora minhalocadora;
     Locadora locadorazerada;
+    vector <int> id = {minhalocadora.filmes[0]->id, minhalocadora.filmes[1]->id};
     
-
 
 string saida_filme(Filme* filme){
     stringstream saida;
@@ -119,7 +119,6 @@ return saida.str();
     }
 
      TEST_CASE("Locadora-aluguel"){
-        vector <int> id = {minhalocadora.filmes[0]->id, minhalocadora.filmes[1]->id};
         
         minhalocadora.aluguel(11111111111, id );
         CHECK(minhalocadora.clientes[0]->historico.size() == 2);
@@ -133,7 +132,6 @@ return saida.str();
         CHECK(minhalocadora.filmes[1]->unidades == 4);
 
         //Checagem de ERROS
-        vector <int> id2 ={minhalocadora.filmes[2]->id};
         CHECK_THROWS(minhalocadora.aluguel(1111, id), CPFInexistente());
     }
 

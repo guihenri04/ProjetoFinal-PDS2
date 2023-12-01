@@ -5,7 +5,12 @@
 #include <algorithm>
 #include <vector>
 #include <exception>
+
 using namespace std;
+
+void printColoredText(const std::string& text, int colorCode) {
+    std::cout << "\033[" << colorCode << "m" << text << "\033[0m";
+    }
 
 class CodigoRepetido : public std::exception {
  public:
