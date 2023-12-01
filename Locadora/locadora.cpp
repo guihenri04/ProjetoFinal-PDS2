@@ -259,7 +259,7 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
         return;
     }
 
-    if (cliente->bloqueado) {
+    if (cliente->bloqueado==true) {
         cout << "ERRO: cliente bloqueado! Devolva os filmes antes de alugar novos." << endl;
         return;
     }
@@ -291,7 +291,6 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
             }
         }
     }
-
     for (int id : inexistentes) {
         cout << "ERRO: Filme " << id << " inexistente" << endl;
     }
@@ -331,6 +330,9 @@ void Locadora::devolucao(long long cpf, int dias) {
 
     cout << "Cliente " << cpf << " " << cliente -> nome << " devolveu os filmes:" << endl;
     int total = 0;
+    if (cliente->filmesAlugados.size()==0) {
+        cout << "ERRO: não há filmes alugados" << endl;
+    }
     for (const auto& filme : cliente -> filmesAlugados) {
         cout << filme -> id << " " ;
         int valor = filme -> calcularValor(dias);
@@ -345,9 +347,11 @@ void Locadora::devolucao(long long cpf, int dias) {
         cout << "por: R$" << total << endl;
         cliente->pontos = cliente->pontos - 10;
     }
+    
     cout << "Total a pagar: R$" << total << endl;
     for (const auto& filme : cliente -> filmesAlugados) {
         filme -> serDevolvido();
+        cliente->bloqueado=false;
     }
     cliente -> devolver();
     auto it = find(this -> bloqueados.begin(), this -> bloqueados.end(), cliente);

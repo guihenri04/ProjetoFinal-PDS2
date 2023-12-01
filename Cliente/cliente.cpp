@@ -68,9 +68,6 @@ void Cliente::lerCliente(){
  */
 
 void Cliente::alugar(Filme* filme) {
-    if (filme->unidades==0) {
-        return;
-    }
     this -> filmesAlugados.push_back(filme);
     this -> pontos++;
     this -> historico.push_back(filme);
@@ -85,7 +82,7 @@ void Cliente::alugar(Filme* filme) {
 
 void Cliente::devolver() {
     this -> filmesAlugados.clear();
-    this -> bloqueado = true;
+    this -> bloqueado = false;
 }
 
 /** 
