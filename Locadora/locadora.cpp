@@ -315,7 +315,7 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
             if (itFilme != this->filmes.end()) {
                 filme = *itFilme;
             } else { // filme inexistente
-                cout << "Filme " << id << " inexistente." << endl; 
+                inexistentes.push_back(id);
             }
 
             if (filme!=nullptr) {
@@ -325,18 +325,18 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
                     filme->lerFilme();
                     alugou = true;
                 } else { // filme em falta
-                    cout << "Filme " << id << " em falta." << endl; 
+                    emFalta.push_back(id);
                 }
             }
         }
 
 
-        /*for (int id : inexistentes) {
+        for (int id : inexistentes) {
             cout << "Filme " << id << " inexistente." << endl; 
         }
         for (int id : emFalta) {
             cout << "Filme " << id << " em falta." << endl; 
-        }*/
+        }
             
         
         if (alugou) {
