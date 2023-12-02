@@ -1,0 +1,32 @@
+[
+    {
+      "name": "Locadora",
+      "superclasses": "",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "Filmes",
+        "Clientes",
+        "Clientes Bloqueados",
+        "Cadastrar Filme",
+        "Remover Filme",
+        "Listar Filmes",
+        "Cadastrar Cliente",
+        "Remover Cliente",
+        "Listar Clientes",
+        "Listar Bloqueados",
+        "Aluguel",
+        "Devolução",
+        "Recomendar Filmes para Cliente",
+        "Avaliar Filme"
+      ],
+      "collaborators": [
+        "Filme",
+        "Cliente",
+        "dvdEtoque",
+        "dvdLancamento",
+        "dvdPromoção",
+        "Fita"
+      ]
+    }
+  ]
