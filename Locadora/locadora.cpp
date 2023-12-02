@@ -112,7 +112,7 @@ void Locadora::removerFilme(int id) {
         auto it = find_if(filmes.begin(), filmes.end(),
             [id](Filme* filme) { return filme->id == id; });
 
-        if (it != filmes.end()) {
+        if (it != filmes.end()) { 
             delete *it; 
             filmes.erase(it);
             cout << "Filme " << id << " removido com sucesso!.\n";
