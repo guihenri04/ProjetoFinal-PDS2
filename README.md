@@ -6,7 +6,7 @@ Nosso projeto final do curso de Programação e Desenvolvimento de Software 2 te
 
 Agora, abordando sobre o desenvolvimento do projeto e sobre as principais dificuldades encontradas pelo grupo, pode-se citar que foi de comum acordo à todos os membros a existência de obstáculos no que tange à elaboração e planejamento de como ocorreria a criação e funcionamento do código-fonte de uma forma geral, principalmente no quesito da utilização das classes (decidir o que cada classe faria, quais métodos seriam utilizados em cada uma, entre outras dúvidas). Além disso, a utilização de novas ferramentas, como o Doxygen5 para a elaboração de uma documentação de código mais profissional e a necessidade da realização de testes, submetendo o projeto à diversos ambientes de situações-problema com o obejtivo de verificar possíveis erros durante seu funcionamento também se configuraram como adversidades durante o desenvolvimento deste projeto final. Vale ressaltar também que, a tentativa da elaboração de uma interface mais agradável e dinâmica ao usúario fez com que o grupo se sentisse na necessidade de utilizar ferramentas mais avançadas para alcançar esse objetivo. 
 
-## Nosso sistema:
+## Nosso sistema
 
 Falando mais sobre o funcionamento do código, foi desenvolvido um sistema de cadastro para os clientes de forma automatizada e dinâmica, um sistema de realização de listagem de filmes e clientes, de acordo com a opção de ordenação desejada pelo usuário e, também, um conjunto de sistemas integrados que auxiliam na remoção, no aluguel e na devolução de filmes de maneira prática, rápida e fácil pelos clientes da locadora.
 
@@ -28,7 +28,7 @@ Nosso sistema também tem uma funcionalidade de avaliação de filmes, que deve 
 
 Por fim, nós desenvolvemos também um sistema de recomendação que permite a sugestão de filmes para clientes baseado em seu histórico de aluguéis na locadora. Nossa funcionalidade compara o gosto do nosso cliente com os demais clientes cadastrados na locadora, e a partir dos 3 clientes mais similares, define sugestões de filmes que ainda não foram assistidos pelo cliente. 
 
-## Conclusão:
+## Conclusão
 
 Em conclusão, este projeto final do curso de Programação e Desenvolvimento de Software 2 representou uma oportunidade valiosa para o grupo aplicar os conhecimentos teóricos adquiridos em um contexto prático, enfrentando e superando desafios reais de desenvolvimento de software. Através da criação de um sistema para uma Locadora de Filmes, a equipe não só desenvolveu habilidades técnicas em programação e design de sistemas, mas também aprendeu a importância da colaboração, do planejamento eficaz e da adaptação a novas ferramentas e tecnologias.
 
