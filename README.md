@@ -14,11 +14,11 @@ Além disso, nosso grupo adionou algumas funcionalidades adicionais:
 
 ### Sistema de Fidelidade:
 
-Nosso sistema tem um sistema de fidelidade, que permite que a cada 10 filmes alugados pelo cliente, ele ganhe um desconto de 10% no valor total em sua próxima devolução.
+Nosso sistema tem um sistema de fidelidade, que permite que a cada 10 filmes alugados pelo cliente, ele ganhe um desconto de 10% no valor total em sua próxima devolução. Essa iniciativa visa recompensar nossos clientes frequentes, oferecendo-lhes vantagens e incentivando os aluguéis.
 
 ### Sistema de Bloqueio:
 
-Em nosso sistema, implementamos uma política de segurança que visa garantir a integridade do processo de locação de filmesse. Se um cliente alugou filmes e ainda não devolveu, ele não pode realizar novos aluguéis até que devolva os filmes anteriores.
+Em nosso sistema, implementamos uma política de segurança que visa garantir a integridade do processo de locação de filmes. Se um cliente alugou filmes e ainda não devolveu, ele não pode realizar novos aluguéis até que devolva os filmes anteriores.
 
 ### Sistema de Avaliação:
 
