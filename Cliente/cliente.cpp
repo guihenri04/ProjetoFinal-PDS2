@@ -135,7 +135,7 @@ void Cliente::definirSimilares (vector <Cliente*> clientes) {
         this -> similares = clientes;
         return;
     }   
-    int s1 = -1, s2 = -1, s3 = -1;
+    int s1 = 0, s2 = 0, s3 = 0;
     Cliente* c1 = nullptr;
     Cliente* c2 = nullptr;
     Cliente* c3 = nullptr;
