@@ -10,9 +10,18 @@
 
 using namespace std;
 
+/**
+* @details Função que colore a interface do sistema para o usuário.
+*/
+
 void printColoredText(const std::string& text, int colorCode) {
     std::cout << "\033[" << colorCode << "m" << text << "\033[0m";
     }
+
+/**
+ * @brief Função "void menu()", utilizada especialmente para exibição.
+ * @details Essa função exibe todos os comandos disponíveis para o usuário.
+*/
 
 void menu() {
     printColoredText("+----------------------------------+\n", 34); 
