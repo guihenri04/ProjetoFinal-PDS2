@@ -92,12 +92,14 @@ Collaboration diagram for dvdLancamento:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9ef69471cd2fd2e12cf6bd30a389662c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdvdLancamento.html#a9ef69471cd2fd2e12cf6bd30a389662c">dvdLancamento</a> (int <a class="el" href="classFilme.html#a13c8c0f372cf6afa843eb11a2d79cac3">id</a>, string <a class="el" href="classFilme.html#a3d08648c6fb22243ba3d5020b06b64ac">titulo</a>, int <a class="el" href="classFilme.html#ac424f2ebe92753aba4d1171becff6da8">unidades</a>)</td></tr>
+<tr class="memdesc:a9ef69471cd2fd2e12cf6bd30a389662c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor do arquivo "DVDlancamento.hpp", para identificação e controle dos filmes da locadora.  <a href="classdvdLancamento.html#a9ef69471cd2fd2e12cf6bd30a389662c">More...</a><br /></td></tr>
 <tr class="separator:a9ef69471cd2fd2e12cf6bd30a389662c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75b1326f519867dc5a4c74c154ba8729"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdvdLancamento.html#a75b1326f519867dc5a4c74c154ba8729">calcularValor</a> (int dias) override</td></tr>
 <tr class="memdesc:a75b1326f519867dc5a4c74c154ba8729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método "calcularValor" da classe "dvdLancamento", utilizado especialmente para controle e registro.  <a href="classdvdLancamento.html#a75b1326f519867dc5a4c74c154ba8729">More...</a><br /></td></tr>
 <tr class="separator:a75b1326f519867dc5a4c74c154ba8729"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classFilme"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classFilme')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classFilme.html">Filme</a></td></tr>
 <tr class="memitem:a8e1536b199f97922b51c0963f1b8e102 inherit pub_methods_classFilme"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFilme.html#a8e1536b199f97922b51c0963f1b8e102">Filme</a> (int <a class="el" href="classFilme.html#a13c8c0f372cf6afa843eb11a2d79cac3">id</a>, string <a class="el" href="classFilme.html#a3d08648c6fb22243ba3d5020b06b64ac">titulo</a>, int <a class="el" href="classFilme.html#ac424f2ebe92753aba4d1171becff6da8">unidades</a>)</td></tr>
+<tr class="memdesc:a8e1536b199f97922b51c0963f1b8e102 inherit pub_methods_classFilme"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor do arquivo "filme.hpp" para identificação e controle dos filmes da locadora.  <a href="classFilme.html#a8e1536b199f97922b51c0963f1b8e102">More...</a><br /></td></tr>
 <tr class="separator:a8e1536b199f97922b51c0963f1b8e102 inherit pub_methods_classFilme"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25d83140d2a35c8fd17c62ed7ae549d6 inherit pub_methods_classFilme"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFilme.html#a25d83140d2a35c8fd17c62ed7ae549d6">~Filme</a> ()=default</td></tr>
 <tr class="separator:a25d83140d2a35c8fd17c62ed7ae549d6 inherit pub_methods_classFilme"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,6 +177,14 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Construtor do arquivo "DVDlancamento.hpp", para identificação e controle dos filmes da locadora. </p>
+<p>Esse construtor inclui uma chamada para o construtor da classe base ("Filme"), o qual contém os mesmos parâmetros para identificação do filme ("(int id, string titulo, int unidades)"). Além disso, define o valor de "tipo" como "DVD". </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tipo</td><td>Armazena o tipo do filme. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -2,6 +2,9 @@
 
 /**
  * @file DVDpromocao.cpp
+ */
+
+/**
  * @brief Construtor do arquivo "DVDpromocao.hpp", para identificação e controle dos filmes da locadora.
  * @details Esse construtor inclui uma chamada para o construtor da classe base ("Filme"), o qual contém os mesmos parâmetros para
  * identificação do filme ("(int id, string titulo, int unidades)"). Além disso, define o valor de "tipo" como "DVD".

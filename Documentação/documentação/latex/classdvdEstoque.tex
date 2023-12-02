@@ -28,7 +28,7 @@ Collaboration diagram for dvd\+Estoque\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classdvdEstoque_a9981713d5102534be6d837cf51904e79}{dvd\+Estoque}} (int \mbox{\hyperlink{classFilme_a13c8c0f372cf6afa843eb11a2d79cac3}{id}}, string \mbox{\hyperlink{classFilme_a3d08648c6fb22243ba3d5020b06b64ac}{titulo}}, int \mbox{\hyperlink{classFilme_ac424f2ebe92753aba4d1171becff6da8}{unidades}})
-\item 
+\begin{DoxyCompactList}\small\item\em Construtor do arquivo \char`\"{}\+D\+V\+Destoque.\+hpp\char`\"{}, para identificação e controle dos filmes da locadora. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classdvdEstoque_a56e4b7218b0b6983d6d1be2325eb4032}{calcular\+Valor}} (int dias) override
 \begin{DoxyCompactList}\small\item\em Método \char`\"{}calcular\+Valor\char`\"{} da classe \char`\"{}dvd\+Estoque\char`\"{}, utilizado especialmente para controle e registro. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
@@ -55,6 +55,15 @@ Na classe \char`\"{}dvd\+Estoque\char`\"{}, que herda publicamente a classe \cha
 \doxysubsubsection{\texorpdfstring{dvdEstoque()}{dvdEstoque()}}
 {\footnotesize\ttfamily dvd\+Estoque\+::dvd\+Estoque (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{string}]{titulo,  }\item[{int}]{unidades }\end{DoxyParamCaption})}
 
+
+
+Construtor do arquivo \char`\"{}\+D\+V\+Destoque.\+hpp\char`\"{}, para identificação e controle dos filmes da locadora. 
+
+Esse construtor inclui uma chamada para o construtor da classe base (\char`\"{}\+Filme\char`\"{}), o qual contém os mesmos parâmetros para identificação do filme (\char`\"{}(int id, string titulo, int unidades)\char`\"{}). Além disso, define o valor de \char`\"{}tipo\char`\"{} como \char`\"{}\+D\+V\+D\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em tipo} & Armazena o tipo do filme. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}

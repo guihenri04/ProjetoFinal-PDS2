@@ -2,6 +2,8 @@
 
 /**
  * @file fita.cpp
+ */
+/**
  * @brief Construtor do arquivo "fita.hpp", para identificação e controle dos filmes da locadora.
  * @details Esse construtor inclui uma chamada para o construtor da classe base ("Filme"), o qual contém os mesmos parâmetros para
  * identificação da fita ("(int id, string titulo, int unidades)"). Além disso, define o valor de "tipo" como "FITA" e o valor de 

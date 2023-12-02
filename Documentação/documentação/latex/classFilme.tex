@@ -18,7 +18,7 @@ Inheritance diagram for Filme\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classFilme_a8e1536b199f97922b51c0963f1b8e102}{Filme}} (int \mbox{\hyperlink{classFilme_a13c8c0f372cf6afa843eb11a2d79cac3}{id}}, string \mbox{\hyperlink{classFilme_a3d08648c6fb22243ba3d5020b06b64ac}{titulo}}, int \mbox{\hyperlink{classFilme_ac424f2ebe92753aba4d1171becff6da8}{unidades}})
-\item 
+\begin{DoxyCompactList}\small\item\em Construtor do arquivo \char`\"{}filme.\+hpp\char`\"{} para identificação e controle dos filmes da locadora. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classFilme_a25d83140d2a35c8fd17c62ed7ae549d6}{$\sim$\+Filme}} ()=default
 \item 
 virtual int \mbox{\hyperlink{classFilme_ade9a8d9de99c732e22045416f86f71f3}{calcular\+Valor}} (int dias)=0
@@ -87,6 +87,23 @@ Na classe \char`\"{}\+Filme\char`\"{}, a qual possui como classe amiga \char`\"{
 \doxysubsubsection{\texorpdfstring{Filme()}{Filme()}}
 {\footnotesize\ttfamily Filme\+::\+Filme (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{string}]{titulo,  }\item[{int}]{unidades }\end{DoxyParamCaption})}
 
+
+
+Construtor do arquivo \char`\"{}filme.\+hpp\char`\"{} para identificação e controle dos filmes da locadora. 
+
+Esse construtor registra o id, o nome e a quantidade de filmes disponíveis para locação, auxiliando a locadora no controle. Além disso, registra as avaliações (inicializada em 4) e quantas vezes determinado filme foi avaliado (inicializada em 1). 
+\begin{DoxyParams}{Parameters}
+{\em id} & Identifica o filme. \\
+\hline
+{\em titulo} & Armzena o nome do filme. \\
+\hline
+{\em unidades} & Registra quantas unidades de um filme estão disponíveis para locação. \\
+\hline
+{\em vezes\+Avaliado} & Registra quantas vezes um filme foi avaliado. \\
+\hline
+{\em avaliacao} & Regista a nota de avaliação recebida por um filme. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classFilme_a25d83140d2a35c8fd17c62ed7ae549d6}\label{classFilme_a25d83140d2a35c8fd17c62ed7ae549d6}} 
 \index{Filme@{Filme}!````~Filme@{$\sim$Filme}}
 \index{````~Filme@{$\sim$Filme}!Filme@{Filme}}

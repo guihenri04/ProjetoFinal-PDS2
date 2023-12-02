@@ -28,7 +28,7 @@ Collaboration diagram for Fita\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classFita_a19b485aae324cee2825f5b73bc29d25e}{Fita}} (int \mbox{\hyperlink{classFilme_a13c8c0f372cf6afa843eb11a2d79cac3}{id}}, string \mbox{\hyperlink{classFilme_a3d08648c6fb22243ba3d5020b06b64ac}{titulo}}, int \mbox{\hyperlink{classFilme_ac424f2ebe92753aba4d1171becff6da8}{unidades}})
-\item 
+\begin{DoxyCompactList}\small\item\em Construtor do arquivo \char`\"{}fita.\+hpp\char`\"{}, para identificação e controle dos filmes da locadora. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classFita_aad6292d00350759c3d0333515404982c}{rebobinar}} ()
 \begin{DoxyCompactList}\small\item\em Método \char`\"{}rebobinar\char`\"{} da classe \char`\"{}\+Filme\char`\"{}, utilizado especialmente para controle. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classFita_a78674c33107135606cca34e140b31e84}{calcular\+Valor}} (int dias) override
@@ -61,6 +61,17 @@ Na classe \char`\"{}\+Fita\char`\"{}, que herda publicamente a classe \char`\"{}
 \doxysubsubsection{\texorpdfstring{Fita()}{Fita()}}
 {\footnotesize\ttfamily Fita\+::\+Fita (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{string}]{titulo,  }\item[{int}]{unidades }\end{DoxyParamCaption})}
 
+
+
+Construtor do arquivo \char`\"{}fita.\+hpp\char`\"{}, para identificação e controle dos filmes da locadora. 
+
+Esse construtor inclui uma chamada para o construtor da classe base (\char`\"{}\+Filme\char`\"{}), o qual contém os mesmos parâmetros para identificação da fita (\char`\"{}(int id, string titulo, int unidades)\char`\"{}). Além disso, define o valor de \char`\"{}tipo\char`\"{} como \char`\"{}\+F\+I\+T\+A\char`\"{} e o valor de \char`\"{}rebobinada\char`\"{} como \char`\"{}true\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em tipo} & Armazena o tipo do filme (no caso, filme). \\
+\hline
+{\em rebobinada} & Determina se a fita foi rebobinada ou não. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}

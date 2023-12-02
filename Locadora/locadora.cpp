@@ -3,6 +3,9 @@
 
 /**
 * @file locadora.cpp
+*/
+
+/**
 * @brief Construtor do arquivo "locadora.hpp" para armazenagem dos clientes e filmes da locadora.
 * @details Esse construtor utiliza os vetores "filmes" e "clientes" para armazenar os filmes e clientes
 * da locadora, respectivavente. Depois atribui a esses vetores os membros de dados correspondentes da classe,

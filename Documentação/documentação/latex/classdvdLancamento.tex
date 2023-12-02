@@ -28,7 +28,7 @@ Collaboration diagram for dvd\+Lancamento\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classdvdLancamento_a9ef69471cd2fd2e12cf6bd30a389662c}{dvd\+Lancamento}} (int \mbox{\hyperlink{classFilme_a13c8c0f372cf6afa843eb11a2d79cac3}{id}}, string \mbox{\hyperlink{classFilme_a3d08648c6fb22243ba3d5020b06b64ac}{titulo}}, int \mbox{\hyperlink{classFilme_ac424f2ebe92753aba4d1171becff6da8}{unidades}})
-\item 
+\begin{DoxyCompactList}\small\item\em Construtor do arquivo \char`\"{}\+D\+V\+Dlancamento.\+hpp\char`\"{}, para identificação e controle dos filmes da locadora. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classdvdLancamento_a75b1326f519867dc5a4c74c154ba8729}{calcular\+Valor}} (int dias) override
 \begin{DoxyCompactList}\small\item\em Método \char`\"{}calcular\+Valor\char`\"{} da classe \char`\"{}dvd\+Lancamento\char`\"{}, utilizado especialmente para controle e registro. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
@@ -55,6 +55,15 @@ Na classe \char`\"{}dvd\+Lancamento\char`\"{}, que herda publicamente a classe \
 \doxysubsubsection{\texorpdfstring{dvdLancamento()}{dvdLancamento()}}
 {\footnotesize\ttfamily dvd\+Lancamento\+::dvd\+Lancamento (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{string}]{titulo,  }\item[{int}]{unidades }\end{DoxyParamCaption})}
 
+
+
+Construtor do arquivo \char`\"{}\+D\+V\+Dlancamento.\+hpp\char`\"{}, para identificação e controle dos filmes da locadora. 
+
+Esse construtor inclui uma chamada para o construtor da classe base (\char`\"{}\+Filme\char`\"{}), o qual contém os mesmos parâmetros para identificação do filme (\char`\"{}(int id, string titulo, int unidades)\char`\"{}). Além disso, define o valor de \char`\"{}tipo\char`\"{} como \char`\"{}\+D\+V\+D\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em tipo} & Armazena o tipo do filme. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
