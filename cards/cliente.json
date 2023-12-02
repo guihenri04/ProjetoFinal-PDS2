@@ -1,0 +1,32 @@
+[
+    {
+      "name": "Cliente",
+      "superclasses": "",
+      "subclasses": "",
+      "type": 1,
+      "responsibilities": [
+        "Nome",
+        "CPF",
+        "Bloqueado para Alugar",
+        "Filmes Alugados Atualmente",
+        "Historico de Filmes Alugados",
+        "Clientes Similares",
+        "Filmes Recomendados",
+        "Ler o Cliente",
+        "Alugar Filme",
+        "Devolver Filme",
+        "Gerar Filmes Recomendados",
+        "Pontos",
+        "Calcular Similaridade com outro Cliente",
+        "Definir Clientes Similares"
+      ],
+      "collaborators": [
+        "Filme",
+        "Fita",
+        "dvdEstoque",
+        "dvdLancamento",
+        "dvdPromocao",
+        "Locadora"
+      ]
+    }
+  ]
