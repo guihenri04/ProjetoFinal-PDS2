@@ -1,11 +1,36 @@
 \hypertarget{fita_8cpp}{}\doxysection{Filmes/\+Subclasses/fita.cpp File Reference}
 \label{fita_8cpp}\index{Filmes/Subclasses/fita.cpp@{Filmes/Subclasses/fita.cpp}}
 {\ttfamily \#include \char`\"{}fita.\+hpp\char`\"{}}\newline
-Include dependency graph for fita.\+cpp\+:
-\nopagebreak
+Include dependency graph for fita.\+cpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{fita_8cpp__incl}
 \end{center}
 \end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{fita_8cpp_a57a0f1476c3b3fee34c9736da61dd8f4}{gerar\+Valor\+Aleatorio}} ()
+\begin{DoxyCompactList}\small\item\em Método \char`\"{}calcular\+Valor\char`\"{} da classe \char`\"{}\+Fita\char`\"{}, utilizado especialmente para controle e registro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fita_8cpp_a57a0f1476c3b3fee34c9736da61dd8f4}\label{fita_8cpp_a57a0f1476c3b3fee34c9736da61dd8f4}} 
+\index{fita.cpp@{fita.cpp}!gerarValorAleatorio@{gerarValorAleatorio}}
+\index{gerarValorAleatorio@{gerarValorAleatorio}!fita.cpp@{fita.cpp}}
+\doxysubsubsection{\texorpdfstring{gerarValorAleatorio()}{gerarValorAleatorio()}}
+{\footnotesize\ttfamily bool gerar\+Valor\+Aleatorio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método \char`\"{}calcular\+Valor\char`\"{} da classe \char`\"{}\+Fita\char`\"{}, utilizado especialmente para controle e registro. 
+
+Esse método calcula quanto o cliente terá de pagar pelo aluguel da fita de acordo com a quantidade de dias que ela ficou alugada. Caso o cliente devolva a fita já rebobinada, o aluguel é fixo em 5 reais, caso contrário, é fixo em 7 reais. O atributo rebobinado é gerado aleatoriamente pela função \mbox{\hyperlink{fita_8cpp_a57a0f1476c3b3fee34c9736da61dd8f4}{gerar\+Valor\+Aleatorio()}}. 
+\begin{DoxyParams}{Parameters}
+{\em dias} & Armazena quantos dias um determinado filme (no caso, fita) ficou alugado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna o preço que o cliente terá de pagar pelo aluguel da fita, sendo 5 reais fixos o preço da locação de uma fita rebobinada e 7 reais fixos o de uma não rebobinada. 
+\end{DoxyReturn}

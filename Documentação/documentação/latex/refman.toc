@@ -1,0 +1,272 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Projeto Final -\/ Programação e Desenvolvimento de Software 2}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}O andamento do projeto}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Nosso sistema}{1}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Sistema de Fidelidade\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{1}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Sistema de Bloqueio\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{2}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Sistema de Avaliação\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{2}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Sistema de Recomendação\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{2}{subsection.1.2.4}%
+\contentsline {section}{\numberline {1.3}Conclusão}{2}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Class Documentation}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Arquivo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Inexistente Class Reference}{9}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{10}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Member Function Documentation}{10}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}what()}{10}{subsubsection.5.1.2.1}%
+\contentsline {section}{\numberline {5.2}Avaliacao\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Errada Class Reference}{10}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{11}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Member Function Documentation}{11}{subsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.1}what()}{11}{subsubsection.5.2.2.1}%
+\contentsline {section}{\numberline {5.3}Cliente Class Reference}{11}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{12}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Constructor \& Destructor Documentation}{13}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}Cliente()}{13}{subsubsection.5.3.2.1}%
+\contentsline {subsubsection}{\numberline {5.3.2.2}$\sim $Cliente()}{13}{subsubsection.5.3.2.2}%
+\contentsline {subsection}{\numberline {5.3.3}Member Function Documentation}{13}{subsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3.1}alugar()}{14}{subsubsection.5.3.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.3.2}calcularSimilaridade()}{14}{subsubsection.5.3.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3.3}definirSimilares()}{14}{subsubsection.5.3.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3.4}devolver()}{15}{subsubsection.5.3.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.3.5}lerCliente()}{15}{subsubsection.5.3.3.5}%
+\contentsline {subsubsection}{\numberline {5.3.3.6}recomendar()}{15}{subsubsection.5.3.3.6}%
+\contentsline {subsubsection}{\numberline {5.3.3.7}recomendarPorSimilar()}{16}{subsubsection.5.3.3.7}%
+\contentsline {subsection}{\numberline {5.3.4}Friends And Related Function Documentation}{16}{subsection.5.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.4.1}Locadora}{16}{subsubsection.5.3.4.1}%
+\contentsline {subsection}{\numberline {5.3.5}Member Data Documentation}{16}{subsection.5.3.5}%
+\contentsline {subsubsection}{\numberline {5.3.5.1}bloqueado}{16}{subsubsection.5.3.5.1}%
+\contentsline {subsubsection}{\numberline {5.3.5.2}cpf}{17}{subsubsection.5.3.5.2}%
+\contentsline {subsubsection}{\numberline {5.3.5.3}filmesAlugados}{17}{subsubsection.5.3.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.5.4}historico}{17}{subsubsection.5.3.5.4}%
+\contentsline {subsubsection}{\numberline {5.3.5.5}nome}{17}{subsubsection.5.3.5.5}%
+\contentsline {subsubsection}{\numberline {5.3.5.6}pontos}{17}{subsubsection.5.3.5.6}%
+\contentsline {subsubsection}{\numberline {5.3.5.7}recomendados}{17}{subsubsection.5.3.5.7}%
+\contentsline {subsubsection}{\numberline {5.3.5.8}similares}{17}{subsubsection.5.3.5.8}%
+\contentsline {section}{\numberline {5.4}Cliente\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bloqueado Class Reference}{18}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{18}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Member Function Documentation}{19}{subsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.1}what()}{19}{subsubsection.5.4.2.1}%
+\contentsline {section}{\numberline {5.5}Codigo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Inexistente Class Reference}{19}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{20}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Member Function Documentation}{20}{subsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}what()}{20}{subsubsection.5.5.2.1}%
+\contentsline {section}{\numberline {5.6}Codigo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repetido Class Reference}{20}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{21}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Member Function Documentation}{21}{subsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.2.1}what()}{21}{subsubsection.5.6.2.1}%
+\contentsline {section}{\numberline {5.7}Comando\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Invalido Class Reference}{22}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{22}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Member Function Documentation}{22}{subsection.5.7.2}%
+\contentsline {subsubsection}{\numberline {5.7.2.1}what()}{23}{subsubsection.5.7.2.1}%
+\contentsline {section}{\numberline {5.8}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Inexistente Class Reference}{23}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{24}{subsection.5.8.1}%
+\contentsline {subsection}{\numberline {5.8.2}Member Function Documentation}{24}{subsection.5.8.2}%
+\contentsline {subsubsection}{\numberline {5.8.2.1}what()}{24}{subsubsection.5.8.2.1}%
+\contentsline {section}{\numberline {5.9}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}F\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repetido Class Reference}{24}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{25}{subsection.5.9.1}%
+\contentsline {subsection}{\numberline {5.9.2}Member Function Documentation}{25}{subsection.5.9.2}%
+\contentsline {subsubsection}{\numberline {5.9.2.1}what()}{25}{subsubsection.5.9.2.1}%
+\contentsline {section}{\numberline {5.10}Dados\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Incorretos Class Reference}{25}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{26}{subsection.5.10.1}%
+\contentsline {subsection}{\numberline {5.10.2}Member Function Documentation}{26}{subsection.5.10.2}%
+\contentsline {subsubsection}{\numberline {5.10.2.1}what()}{26}{subsubsection.5.10.2.1}%
+\contentsline {section}{\numberline {5.11}dvd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Estoque Class Reference}{27}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{27}{subsection.5.11.1}%
+\contentsline {subsection}{\numberline {5.11.2}Constructor \& Destructor Documentation}{28}{subsection.5.11.2}%
+\contentsline {subsubsection}{\numberline {5.11.2.1}dvdEstoque()}{28}{subsubsection.5.11.2.1}%
+\contentsline {subsection}{\numberline {5.11.3}Member Function Documentation}{28}{subsection.5.11.3}%
+\contentsline {subsubsection}{\numberline {5.11.3.1}calcularValor()}{28}{subsubsection.5.11.3.1}%
+\contentsline {section}{\numberline {5.12}dvd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lancamento Class Reference}{29}{section.5.12}%
+\contentsline {subsection}{\numberline {5.12.1}Detailed Description}{30}{subsection.5.12.1}%
+\contentsline {subsection}{\numberline {5.12.2}Constructor \& Destructor Documentation}{30}{subsection.5.12.2}%
+\contentsline {subsubsection}{\numberline {5.12.2.1}dvdLancamento()}{30}{subsubsection.5.12.2.1}%
+\contentsline {subsection}{\numberline {5.12.3}Member Function Documentation}{30}{subsection.5.12.3}%
+\contentsline {subsubsection}{\numberline {5.12.3.1}calcularValor()}{30}{subsubsection.5.12.3.1}%
+\contentsline {section}{\numberline {5.13}dvd\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Promocao Class Reference}{31}{section.5.13}%
+\contentsline {subsection}{\numberline {5.13.1}Detailed Description}{32}{subsection.5.13.1}%
+\contentsline {subsection}{\numberline {5.13.2}Constructor \& Destructor Documentation}{32}{subsection.5.13.2}%
+\contentsline {subsubsection}{\numberline {5.13.2.1}dvdPromocao()}{32}{subsubsection.5.13.2.1}%
+\contentsline {subsection}{\numberline {5.13.3}Member Function Documentation}{32}{subsection.5.13.3}%
+\contentsline {subsubsection}{\numberline {5.13.3.1}calcularValor()}{33}{subsubsection.5.13.3.1}%
+\contentsline {section}{\numberline {5.14}Filme Class Reference}{33}{section.5.14}%
+\contentsline {subsection}{\numberline {5.14.1}Detailed Description}{34}{subsection.5.14.1}%
+\contentsline {subsection}{\numberline {5.14.2}Constructor \& Destructor Documentation}{35}{subsection.5.14.2}%
+\contentsline {subsubsection}{\numberline {5.14.2.1}Filme()}{35}{subsubsection.5.14.2.1}%
+\contentsline {subsubsection}{\numberline {5.14.2.2}$\sim $Filme()}{35}{subsubsection.5.14.2.2}%
+\contentsline {subsection}{\numberline {5.14.3}Member Function Documentation}{35}{subsection.5.14.3}%
+\contentsline {subsubsection}{\numberline {5.14.3.1}calcularValor()}{35}{subsubsection.5.14.3.1}%
+\contentsline {subsubsection}{\numberline {5.14.3.2}lerFilme()}{35}{subsubsection.5.14.3.2}%
+\contentsline {subsubsection}{\numberline {5.14.3.3}serAlugado()}{36}{subsubsection.5.14.3.3}%
+\contentsline {subsubsection}{\numberline {5.14.3.4}serAvaliado()}{36}{subsubsection.5.14.3.4}%
+\contentsline {subsubsection}{\numberline {5.14.3.5}serDevolvido()}{36}{subsubsection.5.14.3.5}%
+\contentsline {subsection}{\numberline {5.14.4}Friends And Related Function Documentation}{36}{subsection.5.14.4}%
+\contentsline {subsubsection}{\numberline {5.14.4.1}Cliente}{37}{subsubsection.5.14.4.1}%
+\contentsline {subsubsection}{\numberline {5.14.4.2}Locadora}{37}{subsubsection.5.14.4.2}%
+\contentsline {subsection}{\numberline {5.14.5}Member Data Documentation}{37}{subsection.5.14.5}%
+\contentsline {subsubsection}{\numberline {5.14.5.1}avaliacao}{37}{subsubsection.5.14.5.1}%
+\contentsline {subsubsection}{\numberline {5.14.5.2}erro}{37}{subsubsection.5.14.5.2}%
+\contentsline {subsubsection}{\numberline {5.14.5.3}id}{37}{subsubsection.5.14.5.3}%
+\contentsline {subsubsection}{\numberline {5.14.5.4}tipo}{37}{subsubsection.5.14.5.4}%
+\contentsline {subsubsection}{\numberline {5.14.5.5}titulo}{37}{subsubsection.5.14.5.5}%
+\contentsline {subsubsection}{\numberline {5.14.5.6}unidades}{38}{subsubsection.5.14.5.6}%
+\contentsline {subsubsection}{\numberline {5.14.5.7}vezesAvaliado}{38}{subsubsection.5.14.5.7}%
+\contentsline {section}{\numberline {5.15}Filme\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Falta Class Reference}{38}{section.5.15}%
+\contentsline {subsection}{\numberline {5.15.1}Detailed Description}{39}{subsection.5.15.1}%
+\contentsline {subsection}{\numberline {5.15.2}Constructor \& Destructor Documentation}{39}{subsection.5.15.2}%
+\contentsline {subsubsection}{\numberline {5.15.2.1}FilmeFalta()}{39}{subsubsection.5.15.2.1}%
+\contentsline {subsection}{\numberline {5.15.3}Member Function Documentation}{39}{subsection.5.15.3}%
+\contentsline {subsubsection}{\numberline {5.15.3.1}what()}{39}{subsubsection.5.15.3.1}%
+\contentsline {section}{\numberline {5.16}Filme\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Inexistente Class Reference}{40}{section.5.16}%
+\contentsline {subsection}{\numberline {5.16.1}Detailed Description}{40}{subsection.5.16.1}%
+\contentsline {subsection}{\numberline {5.16.2}Constructor \& Destructor Documentation}{41}{subsection.5.16.2}%
+\contentsline {subsubsection}{\numberline {5.16.2.1}FilmeInexistente()}{41}{subsubsection.5.16.2.1}%
+\contentsline {subsection}{\numberline {5.16.3}Member Function Documentation}{41}{subsection.5.16.3}%
+\contentsline {subsubsection}{\numberline {5.16.3.1}what()}{41}{subsubsection.5.16.3.1}%
+\contentsline {section}{\numberline {5.17}Fita Class Reference}{41}{section.5.17}%
+\contentsline {subsection}{\numberline {5.17.1}Detailed Description}{42}{subsection.5.17.1}%
+\contentsline {subsection}{\numberline {5.17.2}Constructor \& Destructor Documentation}{42}{subsection.5.17.2}%
+\contentsline {subsubsection}{\numberline {5.17.2.1}Fita()}{43}{subsubsection.5.17.2.1}%
+\contentsline {subsection}{\numberline {5.17.3}Member Function Documentation}{43}{subsection.5.17.3}%
+\contentsline {subsubsection}{\numberline {5.17.3.1}calcularValor()}{43}{subsubsection.5.17.3.1}%
+\contentsline {subsubsection}{\numberline {5.17.3.2}serAlugado()}{43}{subsubsection.5.17.3.2}%
+\contentsline {section}{\numberline {5.18}Locadora Class Reference}{44}{section.5.18}%
+\contentsline {subsection}{\numberline {5.18.1}Detailed Description}{45}{subsection.5.18.1}%
+\contentsline {subsection}{\numberline {5.18.2}Constructor \& Destructor Documentation}{45}{subsection.5.18.2}%
+\contentsline {subsubsection}{\numberline {5.18.2.1}Locadora()}{45}{subsubsection.5.18.2.1}%
+\contentsline {subsubsection}{\numberline {5.18.2.2}$\sim $Locadora()}{46}{subsubsection.5.18.2.2}%
+\contentsline {subsection}{\numberline {5.18.3}Member Function Documentation}{46}{subsection.5.18.3}%
+\contentsline {subsubsection}{\numberline {5.18.3.1}aluguel()}{46}{subsubsection.5.18.3.1}%
+\contentsline {subsubsection}{\numberline {5.18.3.2}avaliarFilme()}{46}{subsubsection.5.18.3.2}%
+\contentsline {subsubsection}{\numberline {5.18.3.3}cadastrarCliente()}{47}{subsubsection.5.18.3.3}%
+\contentsline {subsubsection}{\numberline {5.18.3.4}cadastrarFilme()}{47}{subsubsection.5.18.3.4}%
+\contentsline {subsubsection}{\numberline {5.18.3.5}devolucao()}{48}{subsubsection.5.18.3.5}%
+\contentsline {subsubsection}{\numberline {5.18.3.6}listarBloqueados()}{48}{subsubsection.5.18.3.6}%
+\contentsline {subsubsection}{\numberline {5.18.3.7}listarClientes()}{48}{subsubsection.5.18.3.7}%
+\contentsline {subsubsection}{\numberline {5.18.3.8}listarFilmes()}{49}{subsubsection.5.18.3.8}%
+\contentsline {subsubsection}{\numberline {5.18.3.9}recomendarFilmes()}{49}{subsubsection.5.18.3.9}%
+\contentsline {subsubsection}{\numberline {5.18.3.10}removerCliente()}{49}{subsubsection.5.18.3.10}%
+\contentsline {subsubsection}{\numberline {5.18.3.11}removerFilme()}{50}{subsubsection.5.18.3.11}%
+\contentsline {subsection}{\numberline {5.18.4}Member Data Documentation}{50}{subsection.5.18.4}%
+\contentsline {subsubsection}{\numberline {5.18.4.1}bloqueados}{50}{subsubsection.5.18.4.1}%
+\contentsline {subsubsection}{\numberline {5.18.4.2}clientes}{50}{subsubsection.5.18.4.2}%
+\contentsline {subsubsection}{\numberline {5.18.4.3}clientesOrdenados}{50}{subsubsection.5.18.4.3}%
+\contentsline {subsubsection}{\numberline {5.18.4.4}erro}{50}{subsubsection.5.18.4.4}%
+\contentsline {subsubsection}{\numberline {5.18.4.5}filmes}{50}{subsubsection.5.18.4.5}%
+\contentsline {subsubsection}{\numberline {5.18.4.6}filmesOrdenados}{51}{subsubsection.5.18.4.6}%
+\contentsline {section}{\numberline {5.19}Opcao\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Invalida Class Reference}{51}{section.5.19}%
+\contentsline {subsection}{\numberline {5.19.1}Detailed Description}{52}{subsection.5.19.1}%
+\contentsline {subsection}{\numberline {5.19.2}Member Function Documentation}{52}{subsection.5.19.2}%
+\contentsline {subsubsection}{\numberline {5.19.2.1}what()}{52}{subsubsection.5.19.2.1}%
+\contentsline {section}{\numberline {5.20}Sem\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Clientes Class Reference}{52}{section.5.20}%
+\contentsline {subsection}{\numberline {5.20.1}Detailed Description}{53}{subsection.5.20.1}%
+\contentsline {subsection}{\numberline {5.20.2}Member Function Documentation}{53}{subsection.5.20.2}%
+\contentsline {subsubsection}{\numberline {5.20.2.1}what()}{53}{subsubsection.5.20.2.1}%
+\contentsline {section}{\numberline {5.21}Sem\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Filmes Class Reference}{53}{section.5.21}%
+\contentsline {subsection}{\numberline {5.21.1}Detailed Description}{54}{subsection.5.21.1}%
+\contentsline {subsection}{\numberline {5.21.2}Member Function Documentation}{54}{subsection.5.21.2}%
+\contentsline {subsubsection}{\numberline {5.21.2.1}what()}{54}{subsubsection.5.21.2.1}%
+\contentsline {section}{\numberline {5.22}Sem\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Filmes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Alugados Class Reference}{55}{section.5.22}%
+\contentsline {subsection}{\numberline {5.22.1}Member Function Documentation}{55}{subsection.5.22.1}%
+\contentsline {subsubsection}{\numberline {5.22.1.1}what()}{55}{subsubsection.5.22.1.1}%
+\contentsline {section}{\numberline {5.23}Sem\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Recomendados Class Reference}{56}{section.5.23}%
+\contentsline {subsection}{\numberline {5.23.1}Detailed Description}{56}{subsection.5.23.1}%
+\contentsline {subsection}{\numberline {5.23.2}Member Function Documentation}{57}{subsection.5.23.2}%
+\contentsline {subsubsection}{\numberline {5.23.2.1}what()}{57}{subsubsection.5.23.2.1}%
+\contentsline {chapter}{\numberline {6}File Documentation}{59}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Cliente/cliente.cpp File Reference}{59}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Cliente/cliente.hpp File Reference}{59}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{60}{subsection.6.2.1}%
+\contentsline {section}{\numberline {6.3}errors/erros.hpp File Reference}{60}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Filmes/filme.cpp File Reference}{62}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Filmes/filme.hpp File Reference}{62}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{63}{subsection.6.5.1}%
+\contentsline {section}{\numberline {6.6}Filmes/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Subclasses/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}V\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Destoque.cpp File Reference}{63}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Filmes/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Subclasses/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}V\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Destoque.hpp File Reference}{64}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{64}{subsection.6.7.1}%
+\contentsline {section}{\numberline {6.8}Filmes/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Subclasses/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}V\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dlancamento.cpp File Reference}{65}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Filmes/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Subclasses/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}V\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dlancamento.hpp File Reference}{65}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Detailed Description}{66}{subsection.6.9.1}%
+\contentsline {section}{\numberline {6.10}Filmes/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Subclasses/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}V\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dpromocao.cpp File Reference}{66}{section.6.10}%
+\contentsline {section}{\numberline {6.11}Filmes/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Subclasses/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}V\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dpromocao.hpp File Reference}{67}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Detailed Description}{67}{subsection.6.11.1}%
+\contentsline {section}{\numberline {6.12}Filmes/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Subclasses/fita.cpp File Reference}{68}{section.6.12}%
+\contentsline {subsection}{\numberline {6.12.1}Function Documentation}{68}{subsection.6.12.1}%
+\contentsline {subsubsection}{\numberline {6.12.1.1}gerarValorAleatorio()}{68}{subsubsection.6.12.1.1}%
+\contentsline {section}{\numberline {6.13}Filmes/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Subclasses/fita.hpp File Reference}{69}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Detailed Description}{70}{subsection.6.13.1}%
+\contentsline {section}{\numberline {6.14}Locadora/locadora.cpp File Reference}{70}{section.6.14}%
+\contentsline {section}{\numberline {6.15}Locadora/locadora.hpp File Reference}{70}{section.6.15}%
+\contentsline {subsection}{\numberline {6.15.1}Detailed Description}{71}{subsection.6.15.1}%
+\contentsline {section}{\numberline {6.16}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{71}{section.6.16}%
+\contentsline {subsection}{\numberline {6.16.1}Function Documentation}{72}{subsection.6.16.1}%
+\contentsline {subsubsection}{\numberline {6.16.1.1}menu()}{72}{subsubsection.6.16.1.1}%
+\contentsline {subsubsection}{\numberline {6.16.1.2}printColoredText()}{72}{subsubsection.6.16.1.2}%
+\contentsline {section}{\numberline {6.17}R\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}E\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}A\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}M\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}E.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}md File Reference}{72}{section.6.17}%
+\contentsline {section}{\numberline {6.18}testla.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}txt File Reference}{72}{section.6.18}%
+\contentsline {section}{\numberline {6.19}Tests/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cliente.cpp File Reference}{72}{section.6.19}%
+\contentsline {subsection}{\numberline {6.19.1}Macro Definition Documentation}{73}{subsection.6.19.1}%
+\contentsline {subsubsection}{\numberline {6.19.1.1}DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}{73}{subsubsection.6.19.1.1}%
+\contentsline {subsection}{\numberline {6.19.2}Function Documentation}{73}{subsection.6.19.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.1}saida\_cliente()}{73}{subsubsection.6.19.2.1}%
+\contentsline {subsubsection}{\numberline {6.19.2.2}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [1/6]}}{74}{subsubsection.6.19.2.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.3}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [2/6]}}{74}{subsubsection.6.19.2.3}%
+\contentsline {subsubsection}{\numberline {6.19.2.4}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [3/6]}}{74}{subsubsection.6.19.2.4}%
+\contentsline {subsubsection}{\numberline {6.19.2.5}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [4/6]}}{74}{subsubsection.6.19.2.5}%
+\contentsline {subsubsection}{\numberline {6.19.2.6}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [5/6]}}{74}{subsubsection.6.19.2.6}%
+\contentsline {subsubsection}{\numberline {6.19.2.7}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [6/6]}}{74}{subsubsection.6.19.2.7}%
+\contentsline {subsubsection}{\numberline {6.19.2.8}zerar\_v()}{74}{subsubsection.6.19.2.8}%
+\contentsline {subsection}{\numberline {6.19.3}Variable Documentation}{75}{subsection.6.19.3}%
+\contentsline {subsubsection}{\numberline {6.19.3.1}cliente1}{75}{subsubsection.6.19.3.1}%
+\contentsline {subsubsection}{\numberline {6.19.3.2}cliente2}{75}{subsubsection.6.19.3.2}%
+\contentsline {subsubsection}{\numberline {6.19.3.3}cliente3}{75}{subsubsection.6.19.3.3}%
+\contentsline {subsubsection}{\numberline {6.19.3.4}cliente4}{75}{subsubsection.6.19.3.4}%
+\contentsline {subsubsection}{\numberline {6.19.3.5}clientes}{75}{subsubsection.6.19.3.5}%
+\contentsline {subsubsection}{\numberline {6.19.3.6}dvdE}{75}{subsubsection.6.19.3.6}%
+\contentsline {subsubsection}{\numberline {6.19.3.7}dvdE2}{75}{subsubsection.6.19.3.7}%
+\contentsline {subsubsection}{\numberline {6.19.3.8}dvdE3}{76}{subsubsection.6.19.3.8}%
+\contentsline {subsubsection}{\numberline {6.19.3.9}filme}{76}{subsubsection.6.19.3.9}%
+\contentsline {subsubsection}{\numberline {6.19.3.10}filme2}{76}{subsubsection.6.19.3.10}%
+\contentsline {subsubsection}{\numberline {6.19.3.11}filme3}{76}{subsubsection.6.19.3.11}%
+\contentsline {subsubsection}{\numberline {6.19.3.12}pointerCliente1}{76}{subsubsection.6.19.3.12}%
+\contentsline {subsubsection}{\numberline {6.19.3.13}pointerCliente2}{76}{subsubsection.6.19.3.13}%
+\contentsline {subsubsection}{\numberline {6.19.3.14}pointerCliente3}{76}{subsubsection.6.19.3.14}%
+\contentsline {subsubsection}{\numberline {6.19.3.15}pointerCliente4}{76}{subsubsection.6.19.3.15}%
+\contentsline {section}{\numberline {6.20}Tests/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Filmes.cpp File Reference}{77}{section.6.20}%
+\contentsline {subsection}{\numberline {6.20.1}Macro Definition Documentation}{77}{subsection.6.20.1}%
+\contentsline {subsubsection}{\numberline {6.20.1.1}DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}{78}{subsubsection.6.20.1.1}%
+\contentsline {subsection}{\numberline {6.20.2}Enumeration Type Documentation}{78}{subsection.6.20.2}%
+\contentsline {subsubsection}{\numberline {6.20.2.1}Metodo}{78}{subsubsection.6.20.2.1}%
+\contentsline {subsection}{\numberline {6.20.3}Function Documentation}{78}{subsection.6.20.3}%
+\contentsline {subsubsection}{\numberline {6.20.3.1}saida\_filme()}{78}{subsubsection.6.20.3.1}%
+\contentsline {subsubsection}{\numberline {6.20.3.2}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{78}{subsubsection.6.20.3.2}%
+\contentsline {subsubsection}{\numberline {6.20.3.3}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{78}{subsubsection.6.20.3.3}%
+\contentsline {subsubsection}{\numberline {6.20.3.4}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{79}{subsubsection.6.20.3.4}%
+\contentsline {subsubsection}{\numberline {6.20.3.5}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{79}{subsubsection.6.20.3.5}%
+\contentsline {subsection}{\numberline {6.20.4}Variable Documentation}{79}{subsection.6.20.4}%
+\contentsline {subsubsection}{\numberline {6.20.4.1}dvdE}{79}{subsubsection.6.20.4.1}%
+\contentsline {subsubsection}{\numberline {6.20.4.2}dvdE2}{79}{subsubsection.6.20.4.2}%
+\contentsline {subsubsection}{\numberline {6.20.4.3}filme1}{79}{subsubsection.6.20.4.3}%
+\contentsline {subsubsection}{\numberline {6.20.4.4}filme2}{79}{subsubsection.6.20.4.4}%
+\contentsline {section}{\numberline {6.21}Tests/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Locadora.cpp File Reference}{80}{section.6.21}%
+\contentsline {subsection}{\numberline {6.21.1}Macro Definition Documentation}{80}{subsection.6.21.1}%
+\contentsline {subsubsection}{\numberline {6.21.1.1}DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}{81}{subsubsection.6.21.1.1}%
+\contentsline {subsection}{\numberline {6.21.2}Function Documentation}{81}{subsection.6.21.2}%
+\contentsline {subsubsection}{\numberline {6.21.2.1}saida\_cliente()}{81}{subsubsection.6.21.2.1}%
+\contentsline {subsubsection}{\numberline {6.21.2.2}saida\_filme()}{81}{subsubsection.6.21.2.2}%
+\contentsline {subsubsection}{\numberline {6.21.2.3}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [1/9]}}{81}{subsubsection.6.21.2.3}%
+\contentsline {subsubsection}{\numberline {6.21.2.4}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [2/9]}}{81}{subsubsection.6.21.2.4}%
+\contentsline {subsubsection}{\numberline {6.21.2.5}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [3/9]}}{81}{subsubsection.6.21.2.5}%
+\contentsline {subsubsection}{\numberline {6.21.2.6}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [4/9]}}{82}{subsubsection.6.21.2.6}%
+\contentsline {subsubsection}{\numberline {6.21.2.7}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [5/9]}}{82}{subsubsection.6.21.2.7}%
+\contentsline {subsubsection}{\numberline {6.21.2.8}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [6/9]}}{82}{subsubsection.6.21.2.8}%
+\contentsline {subsubsection}{\numberline {6.21.2.9}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [7/9]}}{82}{subsubsection.6.21.2.9}%
+\contentsline {subsubsection}{\numberline {6.21.2.10}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [8/9]}}{82}{subsubsection.6.21.2.10}%
+\contentsline {subsubsection}{\numberline {6.21.2.11}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [9/9]}}{82}{subsubsection.6.21.2.11}%
+\contentsline {subsection}{\numberline {6.21.3}Variable Documentation}{82}{subsection.6.21.3}%
+\contentsline {subsubsection}{\numberline {6.21.3.1}id}{83}{subsubsection.6.21.3.1}%
+\contentsline {subsubsection}{\numberline {6.21.3.2}locadorazerada}{83}{subsubsection.6.21.3.2}%
+\contentsline {subsubsection}{\numberline {6.21.3.3}minhalocadora}{83}{subsubsection.6.21.3.3}%

@@ -94,11 +94,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a19b485aae324cee2825f5b73bc29d25e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFita.html#a19b485aae324cee2825f5b73bc29d25e">Fita</a> (int <a class="el" href="classFilme.html#a13c8c0f372cf6afa843eb11a2d79cac3">id</a>, string <a class="el" href="classFilme.html#a3d08648c6fb22243ba3d5020b06b64ac">titulo</a>, int <a class="el" href="classFilme.html#ac424f2ebe92753aba4d1171becff6da8">unidades</a>)</td></tr>
 <tr class="memdesc:a19b485aae324cee2825f5b73bc29d25e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor do arquivo "fita.hpp", para identificação e controle dos filmes da locadora.  <a href="classFita.html#a19b485aae324cee2825f5b73bc29d25e">More...</a><br /></td></tr>
 <tr class="separator:a19b485aae324cee2825f5b73bc29d25e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad6292d00350759c3d0333515404982c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFita.html#aad6292d00350759c3d0333515404982c">rebobinar</a> ()</td></tr>
-<tr class="memdesc:aad6292d00350759c3d0333515404982c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método "rebobinar" da classe "Filme", utilizado especialmente para controle.  <a href="classFita.html#aad6292d00350759c3d0333515404982c">More...</a><br /></td></tr>
-<tr class="separator:aad6292d00350759c3d0333515404982c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78674c33107135606cca34e140b31e84"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFita.html#a78674c33107135606cca34e140b31e84">calcularValor</a> (int dias) override</td></tr>
-<tr class="memdesc:a78674c33107135606cca34e140b31e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método "calcularValor" da classe "Fita", utilizado especialmente para controle e registro.  <a href="classFita.html#a78674c33107135606cca34e140b31e84">More...</a><br /></td></tr>
 <tr class="separator:a78674c33107135606cca34e140b31e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9715c714755efbaafaca38e3f262c244"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFita.html#a9715c714755efbaafaca38e3f262c244">serAlugado</a> () override</td></tr>
 <tr class="memdesc:a9715c714755efbaafaca38e3f262c244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método "serAlugado" da classe "Filme", utilizado especialmente para controle.  <a href="classFita.html#a9715c714755efbaafaca38e3f262c244">More...</a><br /></td></tr>
@@ -139,7 +135,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a4ef1371a7e8bd21a0b7235d78e6f9742 inherit pro_attribs_classFilme"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Na classe "Fita", que herda publicamente a classe "Filme", existe como atributo privado a variável booleana "rebobinada", que determina se a fita foi rebobinada ou não. A classe também contém como atributos públicos um construtor, o qual recebe como parâmetros um id de identificação de uma fita, seu título e a quantidade de unidades dela disponíveis para locação ("Fita(int id, string titulo, int unidades)"), um método para determinar se a fita foi rebobinada ou não ("void rebobinar()"), um método para calcular quanto será pago pelo aluguel da fita de acordo com a quantidade de dias que ela ficou alugada ("("int <a class="el" href="classFita.html#a78674c33107135606cca34e140b31e84" title="Método &quot;calcularValor&quot; da classe &quot;Fita&quot;, utilizado especialmente para controle e registro.">calcularValor(int dias)</a> override")") e um método para alugar as fitas disponíveis na locadora ("void serAlugado() override"). Ambos métodos substituem funções virtuais na classe base, no caso,"Filme". </p><dl class="params"><dt>Parameters</dt><dd>
+<div class="textblock"><p>Na classe "Fita", que herda publicamente a classe "Filme", existe como atributo privado a variável booleana "rebobinada", que determina se a fita foi rebobinada ou não. A classe também contém como atributos públicos um construtor, o qual recebe como parâmetros um id de identificação de uma fita, seu título e a quantidade de unidades dela disponíveis para locação ("Fita(int id, string titulo, int unidades)"), um método para calcular quanto será pago pelo aluguel da fita de acordo com a quantidade de dias que ela ficou alugada ("("int <a class="el" href="classFita.html#a78674c33107135606cca34e140b31e84">calcularValor(int dias)</a> override")") e um método para alugar as fitas disponíveis na locadora ("void serAlugado() override"). Ambos métodos substituem funções virtuais na classe base, no caso,"Filme". </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rebobinada</td><td>Determina se a fita foi rebobinada ou não. </td></tr>
     <tr><td class="paramname">id</td><td>Determina o id do filme (no caso, fita) para identificação. </td></tr>
@@ -218,36 +214,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Método "calcularValor" da classe "Fita", utilizado especialmente para controle e registro. </p>
-<p>Esse método calcula quanto o cliente terá de pagar pelo aluguel da fita de acordo com a quantidade de dias que ela ficou alugada. Caso o cliente devolva a fita já rebobinada, o aluguel é fixo em 5 reais, caso contrário, é fixo em 7 reais. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dias</td><td>Armazena quantos dias um determinado filme (no caso, fita) ficou alugado. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna o preço que o cliente terá de pagar pelo aluguel da fita, sendo 5 reais fixos o preço da locação de uma fita rebobinada e 7 reais fixos o de uma não rebobinada. </dd></dl>
-
 <p>Implements <a class="el" href="classFilme.html#ade9a8d9de99c732e22045416f86f71f3">Filme</a>.</p>
-
-</div>
-</div>
-<a id="aad6292d00350759c3d0333515404982c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad6292d00350759c3d0333515404982c">&#9670;&nbsp;</a></span>rebobinar()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Fita::rebobinar </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Método "rebobinar" da classe "Filme", utilizado especialmente para controle. </p>
-<p>Esse método determina que uma determinada fita foi rebobinada. </p>
 
 </div>
 </div>

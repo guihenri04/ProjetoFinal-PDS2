@@ -2,6 +2,8 @@
 #define FITA_HPP
 
 #include "../filme.hpp"
+#include <cstdlib>
+#include <ctime>
 
 /**
  * @file fita.hpp
@@ -13,8 +15,7 @@
  * @details Na classe "Fita", que herda publicamente a classe "Filme", existe como atributo privado a variável booleana "rebobinada",
  * que determina se a fita foi rebobinada ou não. A classe também contém como atributos públicos um construtor, o qual
  * recebe como parâmetros um id de identificação de uma fita, seu título e a quantidade de unidades dela disponíveis para locação
- * ("Fita(int id, string titulo, int unidades)"), um método para determinar se a fita foi rebobinada ou não 
- * ("void rebobinar()"), um método para calcular quanto será pago pelo aluguel da fita de acordo com a quantidade de dias que ela ficou 
+ * ("Fita(int id, string titulo, int unidades)"), um método para calcular quanto será pago pelo aluguel da fita de acordo com a quantidade de dias que ela ficou 
  * alugada ("("int calcularValor(int dias) override")") e um método para alugar as fitas disponíveis na locadora ("void serAlugado() override").
  * Ambos métodos substituem funções virtuais na classe base, no caso,"Filme".
  * @param rebobinada Determina se a fita foi rebobinada ou não.
@@ -29,7 +30,6 @@ private:
     bool rebobinada;
 public:
     Fita(int id, string titulo, int unidades);
-    void rebobinar();
     int calcularValor(int dias) override;
     bool serAlugado() override;
 };

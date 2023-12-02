@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['readme_2emd_86',['README.md',['../README_8md.html',1,'']]],
-  ['rebobinar_87',['rebobinar',['../classFita.html#aad6292d00350759c3d0333515404982c',1,'Fita']]],
-  ['recomendados_88',['recomendados',['../classCliente.html#a05ab078e7bfb5583840d12a9715e69e3',1,'Cliente']]],
-  ['recomendar_89',['recomendar',['../classCliente.html#a5d6235f3a304a9a585d88584f733e961',1,'Cliente']]],
-  ['recomendarfilmes_90',['recomendarFilmes',['../classLocadora.html#a921ded6c52392983c1357637d69cace0',1,'Locadora']]],
-  ['recomendarporsimilar_91',['recomendarPorSimilar',['../classCliente.html#a1c8e380998c8d825d9185a95ecf54683',1,'Cliente']]],
-  ['removercliente_92',['removerCliente',['../classLocadora.html#a08645b15f95b1bca211bf763591a07a7',1,'Locadora']]],
-  ['removerfilme_93',['removerFilme',['../classLocadora.html#a8bd30cf90e407d0bb5fce30af1cbae4a',1,'Locadora']]]
+  ['projeto_20final_20_2d_20programação_20e_20desenvolvimento_20de_20software_202_80',['Projeto Final - Programação e Desenvolvimento de Software 2',['../index.html',1,'']]],
+  ['pointercliente1_81',['pointerCliente1',['../TestCliente_8cpp.html#acd6a18a8f7e781dff90785273d1c88c5',1,'TestCliente.cpp']]],
+  ['pointercliente2_82',['pointerCliente2',['../TestCliente_8cpp.html#ac4216cfe8f79c45a20022480e94a46b9',1,'TestCliente.cpp']]],
+  ['pointercliente3_83',['pointerCliente3',['../TestCliente_8cpp.html#a7c69240e819b28f9ef879a97c072da8f',1,'TestCliente.cpp']]],
+  ['pointercliente4_84',['pointerCliente4',['../TestCliente_8cpp.html#a785201e13068e34f0c9640ebb4872c0e',1,'TestCliente.cpp']]],
+  ['pontos_85',['pontos',['../classCliente.html#a1c4d692fe625175c99be405a5ef1356c',1,'Cliente']]],
+  ['printcoloredtext_86',['printColoredText',['../main_8cpp.html#a454c1d1267a6ba836d49598db6620e99',1,'main.cpp']]]
 ];

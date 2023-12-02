@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['printcoloredtext_189',['printColoredText',['../main_8cpp.html#a454c1d1267a6ba836d49598db6620e99',1,'main.cpp']]]
+  ['menu_189',['menu',['../main_8cpp.html#a2a0e843767aeea4f433a28b9c54f573a',1,'main.cpp']]]
 ];
