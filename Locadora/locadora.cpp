@@ -316,7 +316,6 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
                 filme = *itFilme;
             } else { // filme inexistente
                 inexistentes.push_back(id);
-                continue;
             }
 
             if (filme!=nullptr) {
@@ -327,7 +326,6 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
                     alugou = true;
                 } else { // filme em falta
                     emFalta.push_back(id);
-                    continue;
                 }
             }
         }
