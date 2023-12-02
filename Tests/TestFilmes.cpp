@@ -38,9 +38,7 @@ TEST_CASE("Filmes-lerFilme"){
 TEST_CASE("Filmes-serAlugado"){
     filme2->serAlugado();
     CHECK(filme2->unidades == 1); 
-
-    //Checagem de ERROS
-    CHECK_THROWS(filme1->serAlugado(), FilmeFalta(1));
+    CHECK(filme1->serAlugado() == false);
 }
 
 TEST_CASE ("Filmes-serDevolvido"){
@@ -49,14 +47,13 @@ TEST_CASE ("Filmes-serDevolvido"){
 }
 
 TEST_CASE("Filmes-serAvaliado"){
-    filme2->serAvaliado(2);
+    filme2->serAvaliado(1);
+    CHECK(filme2->avaliacao == 2.5);
+    filme2->serAvaliado(4);
     CHECK(filme2->avaliacao == 3);
-    filme2->serAvaliado(2);
-    CHECK(filme2->avaliacao == 2.66667);
     // test de avaliação superior a 5
     CHECK(saida_filme(filme2, ser_avaliado) == "ERRO: O filme pode ser avaliado em no máximo 5\n");
     filme1->serAvaliado(6);
-    CHECK(filme1->erro == false);
 
     //Checagem de ERROS
     CHECK_THROWS(filme2->serAvaliado(10), AvaliacaoErrada());
