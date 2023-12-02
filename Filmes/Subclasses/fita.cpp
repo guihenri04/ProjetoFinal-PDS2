@@ -18,25 +18,22 @@ Fita::Fita(int id, string titulo, int unidades) : Filme(id, titulo, unidades) {
 }
 
 /**
- * @brief Método "rebobinar" da classe "Filme", utilizado especialmente para controle.
- * @details Esse método determina que uma determinada fita foi rebobinada.
-*/
-
-void Fita::rebobinar() {
-    this -> rebobinada = true;
-}
-
-/**
  * @brief Método "calcularValor" da classe "Fita", utilizado especialmente para controle e registro.
  * @details Esse método calcula quanto o cliente terá de pagar pelo aluguel da fita de acordo com a quantidade de dias
  * que ela ficou alugada. Caso o cliente devolva a fita já rebobinada, o aluguel é fixo em 5 reais, caso contrário, é fixo em 7
- * reais.
+ * reais. O atributo rebobinado é gerado aleatoriamente pela função gerarValorAleatorio().
  * @param dias Armazena quantos dias um determinado filme (no caso, fita) ficou alugado.
  * @return Retorna o preço que o cliente terá de pagar pelo aluguel da fita, sendo 5 reais fixos o preço da locação
  * de uma fita rebobinada e 7 reais fixos o de uma não rebobinada.
 */
 
+bool gerarValorAleatorio() {
+    srand(time(0));
+    return (rand() % 2 == 0);
+}
+
 int Fita::calcularValor(int dias) {
+    this->rebobinada = gerarValorAleatorio();
     if (this -> rebobinada) {
         return 5;
     } else {
