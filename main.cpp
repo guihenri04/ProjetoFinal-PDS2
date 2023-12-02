@@ -73,9 +73,12 @@ int main() {
         cin >> comando;
         printColoredText("+----------------------------------+\n", 34); 
 
-        if (comando.size() > 2 || comando.size() < 2) {
-            throw ComandoInvalido();
-            continue;
+        try {
+            if (comando.size() > 2 || comando.size() < 2) {
+                throw ComandoInvalido();
+                continue;
+            }
+        } catch (ComandoInvalido &e) {
         }
 
 /**

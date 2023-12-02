@@ -316,6 +316,7 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
                 filme = *itFilme;
             } else { // filme inexistente
                 inexistentes.push_back(id);
+                continue;
             }
 
             if (filme!=nullptr) {
@@ -326,24 +327,27 @@ void Locadora::aluguel(long long cpf, vector<int> id) {
                     alugou = true;
                 } else { // filme em falta
                     emFalta.push_back(id);
+                    continue;
                 }
             }
         }
+
+
         for (int id : inexistentes) {
-            throw FilmeInexistente(id); // vai parar execucao, mas alguns filmes ja foram alugados! tirar o throw?
+            cout << "Filme " << id << " inexistente." << endl; 
         }
         for (int id : emFalta) {
-            throw FilmeFalta(id);
+            cout << "Filme " << id << " em falta." << endl; 
         }
+            
+        
         if (alugou) {
             this->bloqueados.push_back(cliente);
         }
 
-    } catch (FilmeInexistente &e) {
-        cerr << e.what() << endl;
-    } catch (FilmeFalta &e) {
-        cerr << e.what() << endl;
     } catch (ClienteBloqueado &e) {
+        cerr << e.what() << endl;
+    } catch (CPFInexistente &e) {
         cerr << e.what() << endl;
     }
 }
