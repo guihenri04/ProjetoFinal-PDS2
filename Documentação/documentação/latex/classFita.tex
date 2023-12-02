@@ -1,0 +1,129 @@
+\hypertarget{classFita}{}\doxysection{Fita Class Reference}
+\label{classFita}\index{Fita@{Fita}}
+
+
+{\ttfamily \#include $<$fita.\+hpp$>$}
+
+
+
+Inheritance diagram for Fita\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=124pt]{classFita__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Fita\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=124pt]{classFita__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFita_a19b485aae324cee2825f5b73bc29d25e}{Fita}} (int \mbox{\hyperlink{classFilme_a13c8c0f372cf6afa843eb11a2d79cac3}{id}}, string \mbox{\hyperlink{classFilme_a3d08648c6fb22243ba3d5020b06b64ac}{titulo}}, int \mbox{\hyperlink{classFilme_ac424f2ebe92753aba4d1171becff6da8}{unidades}})
+\begin{DoxyCompactList}\small\item\em Construtor do arquivo \char`\"{}fita.\+hpp\char`\"{}, para identificação e controle dos filmes da locadora. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFita_aad6292d00350759c3d0333515404982c}{rebobinar}} ()
+\begin{DoxyCompactList}\small\item\em Método \char`\"{}rebobinar\char`\"{} da classe \char`\"{}\+Filme\char`\"{}, utilizado especialmente para controle. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classFita_a78674c33107135606cca34e140b31e84}{calcular\+Valor}} (int dias) override
+\begin{DoxyCompactList}\small\item\em Método \char`\"{}calcular\+Valor\char`\"{} da classe \char`\"{}\+Fita\char`\"{}, utilizado especialmente para controle e registro. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFita_a9715c714755efbaafaca38e3f262c244}{ser\+Alugado}} () override
+\begin{DoxyCompactList}\small\item\em Método \char`\"{}ser\+Alugado\char`\"{} da classe \char`\"{}\+Filme\char`\"{}, utilizado especialmente para controle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Na classe \char`\"{}\+Fita\char`\"{}, que herda publicamente a classe \char`\"{}\+Filme\char`\"{}, existe como atributo privado a variável booleana \char`\"{}rebobinada\char`\"{}, que determina se a fita foi rebobinada ou não. A classe também contém como atributos públicos um construtor, o qual recebe como parâmetros um id de identificação de uma fita, seu título e a quantidade de unidades dela disponíveis para locação (\char`\"{}\+Fita(int id, string titulo, int unidades)\char`\"{}), um método para determinar se a fita foi rebobinada ou não (\char`\"{}void rebobinar()\char`\"{}), um método para calcular quanto será pago pelo aluguel da fita de acordo com a quantidade de dias que ela ficou alugada (\char`\"{}(\char`\"{}int \mbox{\hyperlink{classFita_a78674c33107135606cca34e140b31e84}{calcular\+Valor(int dias)}} override\char`\"{})\char`\"{}) e um método para alugar as fitas disponíveis na locadora (\char`\"{}void ser\+Alugado() override\char`\"{}). Ambos métodos substituem funções virtuais na classe base, no caso,\char`\"{}\+Filme\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em rebobinada} & Determina se a fita foi rebobinada ou não. \\
+\hline
+{\em id} & Determina o id do filme (no caso, fita) para identificação. \\
+\hline
+{\em titulo} & Armazena o nome do filme (no caso, fita). \\
+\hline
+{\em unidades} & Registra quantas unidades de um filme (no caso, fita) estão disponíveis para locação. \\
+\hline
+{\em dias} & Registra quantos dias um determinado filme (no caso, fita) ficou alugado. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFita_a19b485aae324cee2825f5b73bc29d25e}\label{classFita_a19b485aae324cee2825f5b73bc29d25e}} 
+\index{Fita@{Fita}!Fita@{Fita}}
+\index{Fita@{Fita}!Fita@{Fita}}
+\doxysubsubsection{\texorpdfstring{Fita()}{Fita()}}
+{\footnotesize\ttfamily Fita\+::\+Fita (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{string}]{titulo,  }\item[{int}]{unidades }\end{DoxyParamCaption})}
+
+
+
+Construtor do arquivo \char`\"{}fita.\+hpp\char`\"{}, para identificação e controle dos filmes da locadora. 
+
+Esse construtor inclui uma chamada para o construtor da classe base (\char`\"{}\+Filme\char`\"{}), o qual contém os mesmos parâmetros para identificação da fita (\char`\"{}(int id, string titulo, int unidades)\char`\"{}). Além disso, define o valor de \char`\"{}tipo\char`\"{} como \char`\"{}\+F\+I\+T\+A\char`\"{} e o valor de \char`\"{}rebobinada\char`\"{} como \char`\"{}true\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em tipo} & Armazena o tipo do filme (no caso, filme). \\
+\hline
+{\em rebobinada} & Determina se a fita foi rebobinada ou não. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFita_a78674c33107135606cca34e140b31e84}\label{classFita_a78674c33107135606cca34e140b31e84}} 
+\index{Fita@{Fita}!calcularValor@{calcularValor}}
+\index{calcularValor@{calcularValor}!Fita@{Fita}}
+\doxysubsubsection{\texorpdfstring{calcularValor()}{calcularValor()}}
+{\footnotesize\ttfamily int Fita\+::calcular\+Valor (\begin{DoxyParamCaption}\item[{int}]{dias }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Método \char`\"{}calcular\+Valor\char`\"{} da classe \char`\"{}\+Fita\char`\"{}, utilizado especialmente para controle e registro. 
+
+Esse método calcula quanto o cliente terá de pagar pelo aluguel da fita de acordo com a quantidade de dias que ela ficou alugada. Caso o cliente devolva a fita já rebobinada, o aluguel é fixo em 5 reais, caso contrário, é fixo em 7 reais. 
+\begin{DoxyParams}{Parameters}
+{\em dias} & Armazena quantos dias um determinado filme (no caso, fita) ficou alugado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna o preço que o cliente terá de pagar pelo aluguel da fita, sendo 5 reais fixos o preço da locação de uma fita rebobinada e 7 reais fixos o de uma não rebobinada. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFilme_ade9a8d9de99c732e22045416f86f71f3}{Filme}}.
+
+\mbox{\Hypertarget{classFita_aad6292d00350759c3d0333515404982c}\label{classFita_aad6292d00350759c3d0333515404982c}} 
+\index{Fita@{Fita}!rebobinar@{rebobinar}}
+\index{rebobinar@{rebobinar}!Fita@{Fita}}
+\doxysubsubsection{\texorpdfstring{rebobinar()}{rebobinar()}}
+{\footnotesize\ttfamily void Fita\+::rebobinar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método \char`\"{}rebobinar\char`\"{} da classe \char`\"{}\+Filme\char`\"{}, utilizado especialmente para controle. 
+
+Esse método determina que uma determinada fita foi rebobinada. \mbox{\Hypertarget{classFita_a9715c714755efbaafaca38e3f262c244}\label{classFita_a9715c714755efbaafaca38e3f262c244}} 
+\index{Fita@{Fita}!serAlugado@{serAlugado}}
+\index{serAlugado@{serAlugado}!Fita@{Fita}}
+\doxysubsubsection{\texorpdfstring{serAlugado()}{serAlugado()}}
+{\footnotesize\ttfamily bool Fita\+::ser\+Alugado (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Método \char`\"{}ser\+Alugado\char`\"{} da classe \char`\"{}\+Filme\char`\"{}, utilizado especialmente para controle. 
+
+Esse método determina que, sempre que uma fita for alugada, ela será automaticamente considerada desrebobinada. 
+
+Reimplemented from \mbox{\hyperlink{classFilme_a63fd99893a62b0ecec6a568261c9c3fe}{Filme}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Filmes/\+Subclasses/\mbox{\hyperlink{fita_8hpp}{fita.\+hpp}}\item 
+Filmes/\+Subclasses/\mbox{\hyperlink{fita_8cpp}{fita.\+cpp}}\end{DoxyCompactItemize}

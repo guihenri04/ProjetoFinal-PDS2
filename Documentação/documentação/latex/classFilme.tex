@@ -1,0 +1,247 @@
+\hypertarget{classFilme}{}\doxysection{Filme Class Reference}
+\label{classFilme}\index{Filme@{Filme}}
+
+
+{\ttfamily \#include $<$filme.\+hpp$>$}
+
+
+
+Inheritance diagram for Filme\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFilme__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFilme_a8e1536b199f97922b51c0963f1b8e102}{Filme}} (int \mbox{\hyperlink{classFilme_a13c8c0f372cf6afa843eb11a2d79cac3}{id}}, string \mbox{\hyperlink{classFilme_a3d08648c6fb22243ba3d5020b06b64ac}{titulo}}, int \mbox{\hyperlink{classFilme_ac424f2ebe92753aba4d1171becff6da8}{unidades}})
+\begin{DoxyCompactList}\small\item\em Construtor do arquivo \char`\"{}filme.\+hpp\char`\"{} para identificação e controle dos filmes da locadora. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classFilme_a25d83140d2a35c8fd17c62ed7ae549d6}{$\sim$\+Filme}} ()=default
+\item 
+virtual int \mbox{\hyperlink{classFilme_ade9a8d9de99c732e22045416f86f71f3}{calcular\+Valor}} (int dias)=0
+\item 
+void \mbox{\hyperlink{classFilme_a403871de6c0d460536036b3b1c154b43}{ler\+Filme}} ()
+\begin{DoxyCompactList}\small\item\em Método \char`\"{}ler\+Filme\char`\"{} da classe \char`\"{}\+Filme\char`\"{}, utilizado especialmente para exibição. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classFilme_a63fd99893a62b0ecec6a568261c9c3fe}{ser\+Alugado}} ()
+\begin{DoxyCompactList}\small\item\em Método \char`\"{}ser\+Alugado\char`\"{} da classe \char`\"{}\+Filme\char`\"{}, utilizado especialmente para controle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFilme_a8a09a192a104b69d10130499f40fc9a1}{ser\+Devolvido}} ()
+\begin{DoxyCompactList}\small\item\em Método \char`\"{}ser\+Devolvido\char`\"{} da classe \char`\"{}\+Filme\char`\"{}, utilizado especialmente para controle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFilme_a047bfe69fb2933d6f7c134fc73767369}{ser\+Avaliado}} (float nota)
+\begin{DoxyCompactList}\small\item\em Método \char`\"{}ser\+Avaliado\char`\"{} da classe \char`\"{}\+Filme\char`\"{}, utilizado para avaliação dos filmes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classFilme_ac424f2ebe92753aba4d1171becff6da8}{unidades}}
+\item 
+float \mbox{\hyperlink{classFilme_a843d5720469303bc44c9f755bd870316}{avaliacao}}
+\item 
+bool \mbox{\hyperlink{classFilme_aa9b58c66fd3b6c740d4faf31f6d20ad4}{erro}}
+\item 
+int \mbox{\hyperlink{classFilme_a13c8c0f372cf6afa843eb11a2d79cac3}{id}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classFilme_a5a2cbe12bdb85c42a6d417624febea60}{vezes\+Avaliado}}
+\item 
+string \mbox{\hyperlink{classFilme_a3d08648c6fb22243ba3d5020b06b64ac}{titulo}}
+\item 
+string \mbox{\hyperlink{classFilme_a4ef1371a7e8bd21a0b7235d78e6f9742}{tipo}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classFilme_a18542830527af173120b66ae61407870}{Locadora}}
+\item 
+class \mbox{\hyperlink{classFilme_a51cdb8deed3e00791ca1b47bf861efab}{Cliente}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Na classe \char`\"{}\+Filme\char`\"{}, a qual possui como classe amiga \char`\"{}\+Locadora\char`\"{} e \char`\"{}\+Cliente\char`\"{}, existem como atributos protegidos quantas vezes um determinado filme foi avaliado (\char`\"{}int vezes\+Avaliado\char`\"{}), o nome do filme (\char`\"{}string titulo\char`\"{}) e o tipo desse filme, seja fita, D\+VD, etc (\char`\"{}string tipo\char`\"{}). A classe também contém como atributos públicos um construtor que recebe o id, o nome e a quantidade disponível de determinado filme (\char`\"{}\+Filme(int id, string titulo, int unidades)\char`\"{}) e um destrutor virtual, inicializado como default (\char`\"{}$\sim$\+Filme()\char`\"{}). Existe também um método para calcular quanto será pago pelo aluguel do filme, de acordo com o tempo de aluguel (\char`\"{}virtual int calcular\+Valor(int dias) = 0\char`\"{}), um método para identificar os filmes (\char`\"{}void ler\+Filme()\char`\"{}), um método para alugar os filmes disponíveis (\char`\"{}virtual void ser\+Alugado()\char`\"{}), um método para devolver os filmes que foram alugados (\char`\"{}void ser\+Devolvido()\char`\"{}) e um método para avaliar o filme alugado (\char`\"{}void ser\+Avaliado(int nota)\char`\"{}). Além disso, contém um atributo público para controlar a quantidade de filmes disponíveis na locadora (\char`\"{}int unidades\char`\"{}), outro atributo para registrar a nota de avaliação recebida pelo filme (\char`\"{}float avaliação\char`\"{}) e, por fim, um atributo que para registrar o id de identificação de um filme (\char`\"{}int id\char`\"{}). 
+\begin{DoxyParams}{Parameters}
+{\em id} & Determina o id do filme para identificação. \\
+\hline
+{\em avaliacao} & Registra a avaliação recebida pelo filme. \\
+\hline
+{\em vezes\+Avaliado} & Registra quantas vezes um filme foi avaliado. \\
+\hline
+{\em titulo} & Armazena o nome do filme. \\
+\hline
+{\em tipo} & Armazena o tipo do filme. \\
+\hline
+{\em unidades} & Registra quantas unidades de um filme estão disponíveis para locação. \\
+\hline
+{\em erro} & Informa caso haja erros do código. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFilme_a8e1536b199f97922b51c0963f1b8e102}\label{classFilme_a8e1536b199f97922b51c0963f1b8e102}} 
+\index{Filme@{Filme}!Filme@{Filme}}
+\index{Filme@{Filme}!Filme@{Filme}}
+\doxysubsubsection{\texorpdfstring{Filme()}{Filme()}}
+{\footnotesize\ttfamily Filme\+::\+Filme (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{string}]{titulo,  }\item[{int}]{unidades }\end{DoxyParamCaption})}
+
+
+
+Construtor do arquivo \char`\"{}filme.\+hpp\char`\"{} para identificação e controle dos filmes da locadora. 
+
+Esse construtor registra o id, o nome e a quantidade de filmes disponíveis para locação, auxiliando a locadora no controle. Além disso, registra as avaliações (inicializada em 4) e quantas vezes determinado filme foi avaliado (inicializada em 1). 
+\begin{DoxyParams}{Parameters}
+{\em id} & Identifica o filme. \\
+\hline
+{\em titulo} & Armzena o nome do filme. \\
+\hline
+{\em unidades} & Registra quantas unidades de um filme estão disponíveis para locação. \\
+\hline
+{\em vezes\+Avaliado} & Registra quantas vezes um filme foi avaliado. \\
+\hline
+{\em avaliacao} & Regista a nota de avaliação recebida por um filme. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFilme_a25d83140d2a35c8fd17c62ed7ae549d6}\label{classFilme_a25d83140d2a35c8fd17c62ed7ae549d6}} 
+\index{Filme@{Filme}!````~Filme@{$\sim$Filme}}
+\index{````~Filme@{$\sim$Filme}!Filme@{Filme}}
+\doxysubsubsection{\texorpdfstring{$\sim$Filme()}{~Filme()}}
+{\footnotesize\ttfamily virtual Filme\+::$\sim$\+Filme (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFilme_ade9a8d9de99c732e22045416f86f71f3}\label{classFilme_ade9a8d9de99c732e22045416f86f71f3}} 
+\index{Filme@{Filme}!calcularValor@{calcularValor}}
+\index{calcularValor@{calcularValor}!Filme@{Filme}}
+\doxysubsubsection{\texorpdfstring{calcularValor()}{calcularValor()}}
+{\footnotesize\ttfamily virtual int Filme\+::calcular\+Valor (\begin{DoxyParamCaption}\item[{int}]{dias }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classFita_a78674c33107135606cca34e140b31e84}{Fita}}, \mbox{\hyperlink{classdvdEstoque_a56e4b7218b0b6983d6d1be2325eb4032}{dvd\+Estoque}}, \mbox{\hyperlink{classdvdLancamento_a75b1326f519867dc5a4c74c154ba8729}{dvd\+Lancamento}}, and \mbox{\hyperlink{classdvdPromocao_ae4234839ba5e5f64f92d238b33f2a6eb}{dvd\+Promocao}}.
+
+\mbox{\Hypertarget{classFilme_a403871de6c0d460536036b3b1c154b43}\label{classFilme_a403871de6c0d460536036b3b1c154b43}} 
+\index{Filme@{Filme}!lerFilme@{lerFilme}}
+\index{lerFilme@{lerFilme}!Filme@{Filme}}
+\doxysubsubsection{\texorpdfstring{lerFilme()}{lerFilme()}}
+{\footnotesize\ttfamily void Filme\+::ler\+Filme (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método \char`\"{}ler\+Filme\char`\"{} da classe \char`\"{}\+Filme\char`\"{}, utilizado especialmente para exibição. 
+
+Esse método exibe para o usuário o id do filme, seu título, a quantidade de unidades restantes para locação na locadora e o tipo do filme. 
+\begin{DoxyParams}{Parameters}
+{\em tipo} & Armazena o tipo do filme. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFilme_a63fd99893a62b0ecec6a568261c9c3fe}\label{classFilme_a63fd99893a62b0ecec6a568261c9c3fe}} 
+\index{Filme@{Filme}!serAlugado@{serAlugado}}
+\index{serAlugado@{serAlugado}!Filme@{Filme}}
+\doxysubsubsection{\texorpdfstring{serAlugado()}{serAlugado()}}
+{\footnotesize\ttfamily bool Filme\+::ser\+Alugado (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Método \char`\"{}ser\+Alugado\char`\"{} da classe \char`\"{}\+Filme\char`\"{}, utilizado especialmente para controle. 
+
+Esse método controla a quantidade de exemplares de um determinado filme que está na locadora para ser alugado. Caso não existam mais unidades para serem alugadas, o método exibe uma mensagem de erro, informando sobre isso. 
+
+Reimplemented in \mbox{\hyperlink{classFita_a9715c714755efbaafaca38e3f262c244}{Fita}}.
+
+\mbox{\Hypertarget{classFilme_a047bfe69fb2933d6f7c134fc73767369}\label{classFilme_a047bfe69fb2933d6f7c134fc73767369}} 
+\index{Filme@{Filme}!serAvaliado@{serAvaliado}}
+\index{serAvaliado@{serAvaliado}!Filme@{Filme}}
+\doxysubsubsection{\texorpdfstring{serAvaliado()}{serAvaliado()}}
+{\footnotesize\ttfamily void Filme\+::ser\+Avaliado (\begin{DoxyParamCaption}\item[{float}]{nota }\end{DoxyParamCaption})}
+
+
+
+Método \char`\"{}ser\+Avaliado\char`\"{} da classe \char`\"{}\+Filme\char`\"{}, utilizado para avaliação dos filmes. 
+
+Esse método registra as avalizações dos filmes e também calcula quantas vezes esse filme foi avaliado com uma determinada nota. Além disso, atribui uma média dessas avaliações para esse mesmo filme. 
+\begin{DoxyParams}{Parameters}
+{\em nota} & Armazena uma nota recebida pelo filme. \\
+\hline
+{\em soma} & Armazena a soma das notas recebidas pelo filme. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFilme_a8a09a192a104b69d10130499f40fc9a1}\label{classFilme_a8a09a192a104b69d10130499f40fc9a1}} 
+\index{Filme@{Filme}!serDevolvido@{serDevolvido}}
+\index{serDevolvido@{serDevolvido}!Filme@{Filme}}
+\doxysubsubsection{\texorpdfstring{serDevolvido()}{serDevolvido()}}
+{\footnotesize\ttfamily void Filme\+::ser\+Devolvido (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método \char`\"{}ser\+Devolvido\char`\"{} da classe \char`\"{}\+Filme\char`\"{}, utilizado especialmente para controle. 
+
+Esse método controla as unidades dos filmes da locadora conforme são devolvidos pelos clientes pós aluguel. 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classFilme_a51cdb8deed3e00791ca1b47bf861efab}\label{classFilme_a51cdb8deed3e00791ca1b47bf861efab}} 
+\index{Filme@{Filme}!Cliente@{Cliente}}
+\index{Cliente@{Cliente}!Filme@{Filme}}
+\doxysubsubsection{\texorpdfstring{Cliente}{Cliente}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classCliente}{Cliente}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classFilme_a18542830527af173120b66ae61407870}\label{classFilme_a18542830527af173120b66ae61407870}} 
+\index{Filme@{Filme}!Locadora@{Locadora}}
+\index{Locadora@{Locadora}!Filme@{Filme}}
+\doxysubsubsection{\texorpdfstring{Locadora}{Locadora}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classLocadora}{Locadora}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classFilme_a843d5720469303bc44c9f755bd870316}\label{classFilme_a843d5720469303bc44c9f755bd870316}} 
+\index{Filme@{Filme}!avaliacao@{avaliacao}}
+\index{avaliacao@{avaliacao}!Filme@{Filme}}
+\doxysubsubsection{\texorpdfstring{avaliacao}{avaliacao}}
+{\footnotesize\ttfamily float Filme\+::avaliacao}
+
+\mbox{\Hypertarget{classFilme_aa9b58c66fd3b6c740d4faf31f6d20ad4}\label{classFilme_aa9b58c66fd3b6c740d4faf31f6d20ad4}} 
+\index{Filme@{Filme}!erro@{erro}}
+\index{erro@{erro}!Filme@{Filme}}
+\doxysubsubsection{\texorpdfstring{erro}{erro}}
+{\footnotesize\ttfamily bool Filme\+::erro}
+
+\mbox{\Hypertarget{classFilme_a13c8c0f372cf6afa843eb11a2d79cac3}\label{classFilme_a13c8c0f372cf6afa843eb11a2d79cac3}} 
+\index{Filme@{Filme}!id@{id}}
+\index{id@{id}!Filme@{Filme}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int Filme\+::id}
+
+\mbox{\Hypertarget{classFilme_a4ef1371a7e8bd21a0b7235d78e6f9742}\label{classFilme_a4ef1371a7e8bd21a0b7235d78e6f9742}} 
+\index{Filme@{Filme}!tipo@{tipo}}
+\index{tipo@{tipo}!Filme@{Filme}}
+\doxysubsubsection{\texorpdfstring{tipo}{tipo}}
+{\footnotesize\ttfamily string Filme\+::tipo\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classFilme_a3d08648c6fb22243ba3d5020b06b64ac}\label{classFilme_a3d08648c6fb22243ba3d5020b06b64ac}} 
+\index{Filme@{Filme}!titulo@{titulo}}
+\index{titulo@{titulo}!Filme@{Filme}}
+\doxysubsubsection{\texorpdfstring{titulo}{titulo}}
+{\footnotesize\ttfamily string Filme\+::titulo\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classFilme_ac424f2ebe92753aba4d1171becff6da8}\label{classFilme_ac424f2ebe92753aba4d1171becff6da8}} 
+\index{Filme@{Filme}!unidades@{unidades}}
+\index{unidades@{unidades}!Filme@{Filme}}
+\doxysubsubsection{\texorpdfstring{unidades}{unidades}}
+{\footnotesize\ttfamily int Filme\+::unidades}
+
+\mbox{\Hypertarget{classFilme_a5a2cbe12bdb85c42a6d417624febea60}\label{classFilme_a5a2cbe12bdb85c42a6d417624febea60}} 
+\index{Filme@{Filme}!vezesAvaliado@{vezesAvaliado}}
+\index{vezesAvaliado@{vezesAvaliado}!Filme@{Filme}}
+\doxysubsubsection{\texorpdfstring{vezesAvaliado}{vezesAvaliado}}
+{\footnotesize\ttfamily int Filme\+::vezes\+Avaliado\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Filmes/\mbox{\hyperlink{filme_8hpp}{filme.\+hpp}}\item 
+Filmes/\mbox{\hyperlink{filme_8cpp}{filme.\+cpp}}\end{DoxyCompactItemize}

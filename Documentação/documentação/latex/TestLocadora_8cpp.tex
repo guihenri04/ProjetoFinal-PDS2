@@ -1,0 +1,157 @@
+\hypertarget{TestLocadora_8cpp}{}\doxysection{Tests/\+Test\+Locadora.cpp File Reference}
+\label{TestLocadora_8cpp}\index{Tests/TestLocadora.cpp@{Tests/TestLocadora.cpp}}
+{\ttfamily \#include \char`\"{}../doctest.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Locadora/locadora.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Filmes/filme.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Cliente/cliente.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Filmes/\+Subclasses/\+D\+V\+Destoque.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Filmes/\+Subclasses/\+D\+V\+Dlancamento.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Filmes/\+Subclasses/\+D\+V\+Dpromocao.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Filmes/\+Subclasses/fita.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../errors/erros.\+hpp\char`\"{}}\newline
+Include dependency graph for Test\+Locadora.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TestLocadora_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{TestLocadora_8cpp_a623b8690a262536536a43eab2d7df03d}{D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+\_\+\+W\+I\+T\+H\+\_\+\+M\+A\+IN}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{TestLocadora_8cpp_ac282c3ef60a554bbd3453ce543dddc79}{saida\+\_\+filme}} (\mbox{\hyperlink{classFilme}{Filme}} $\ast$\mbox{\hyperlink{TestCliente_8cpp_aa0bd2244b1aceb9ea890cb69dad1313d}{filme}})
+\item 
+string \mbox{\hyperlink{TestLocadora_8cpp_a0bdd6b2777da7e4b3cbfd848f5650851}{saida\+\_\+cliente}} (\mbox{\hyperlink{classCliente}{Cliente}} $\ast$lercliente)
+\item 
+\mbox{\hyperlink{TestLocadora_8cpp_a8c6b942eed50d4c949adcfae7493b7da}{T\+E\+S\+T\+\_\+\+C\+A\+SE}} (\char`\"{}Locadora-\/cadastrar\+Filme\char`\"{})
+\item 
+\mbox{\hyperlink{TestLocadora_8cpp_a7e3b88b9f13f3722f5c8e8993195bdaf}{T\+E\+S\+T\+\_\+\+C\+A\+SE}} (\char`\"{}Locadora-\/remover\+Filme\char`\"{})
+\item 
+\mbox{\hyperlink{TestLocadora_8cpp_a3b50a6bb86b7ae00386d31987296b218}{T\+E\+S\+T\+\_\+\+C\+A\+SE}} (\char`\"{}Locadora-\/listar\+Filmes\char`\"{})
+\item 
+\mbox{\hyperlink{TestLocadora_8cpp_a6cae08e348b63e0e924331af0514b8ac}{T\+E\+S\+T\+\_\+\+C\+A\+SE}} (\char`\"{}Locadora-\/cadasstrar\+Cliente\char`\"{})
+\item 
+\mbox{\hyperlink{TestLocadora_8cpp_a76e1eebe538b5f607ae7491044c11022}{T\+E\+S\+T\+\_\+\+C\+A\+SE}} (\char`\"{}Locadora-\/remover\+Cliente\char`\"{})
+\item 
+\mbox{\hyperlink{TestLocadora_8cpp_a4e5f2d40bb8b55424889fdc356cc9358}{T\+E\+S\+T\+\_\+\+C\+A\+SE}} (\char`\"{}Locadora-\/listar\+Clientes\char`\"{})
+\item 
+\mbox{\hyperlink{TestLocadora_8cpp_a3f5d6a055827484491322c2b2d64e080}{T\+E\+S\+T\+\_\+\+C\+A\+SE}} (\char`\"{}Locadora-\/aluguel\char`\"{})
+\item 
+\mbox{\hyperlink{TestLocadora_8cpp_a8e52211f5168d3dd09fefbde9fc049d7}{T\+E\+S\+T\+\_\+\+C\+A\+SE}} (\char`\"{}Locadora-\/devolução\char`\"{})
+\item 
+\mbox{\hyperlink{TestLocadora_8cpp_aadfd936e005ebb8fb246fdd2ec3afe2b}{T\+E\+S\+T\+\_\+\+C\+A\+SE}} (\char`\"{}Locadora-\/avaliar\+Filme\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLocadora}{Locadora}} \mbox{\hyperlink{TestLocadora_8cpp_a941b0d8f4640b7930967699bfac0ebfe}{minhalocadora}}
+\item 
+\mbox{\hyperlink{classLocadora}{Locadora}} \mbox{\hyperlink{TestLocadora_8cpp_a059a89ee8fb0205edd9428af642fbd6b}{locadorazerada}}
+\item 
+vector$<$ int $>$ \mbox{\hyperlink{TestLocadora_8cpp_ad8a8e77529297feaae046b016df63fcd}{id}} = \{minhalocadora.\+filmes\mbox{[}0\mbox{]}-\/$>$id, minhalocadora.\+filmes\mbox{[}1\mbox{]}-\/$>$id\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{TestLocadora_8cpp_a623b8690a262536536a43eab2d7df03d}\label{TestLocadora_8cpp_a623b8690a262536536a43eab2d7df03d}} 
+\index{TestLocadora.cpp@{TestLocadora.cpp}!DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN@{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+\index{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN@{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}!TestLocadora.cpp@{TestLocadora.cpp}}
+\doxysubsubsection{\texorpdfstring{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+{\footnotesize\ttfamily \#define D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+\_\+\+W\+I\+T\+H\+\_\+\+M\+A\+IN}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TestLocadora_8cpp_a0bdd6b2777da7e4b3cbfd848f5650851}\label{TestLocadora_8cpp_a0bdd6b2777da7e4b3cbfd848f5650851}} 
+\index{TestLocadora.cpp@{TestLocadora.cpp}!saida\_cliente@{saida\_cliente}}
+\index{saida\_cliente@{saida\_cliente}!TestLocadora.cpp@{TestLocadora.cpp}}
+\doxysubsubsection{\texorpdfstring{saida\_cliente()}{saida\_cliente()}}
+{\footnotesize\ttfamily string saida\+\_\+cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCliente}{Cliente}} $\ast$}]{lercliente }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{TestLocadora_8cpp_ac282c3ef60a554bbd3453ce543dddc79}\label{TestLocadora_8cpp_ac282c3ef60a554bbd3453ce543dddc79}} 
+\index{TestLocadora.cpp@{TestLocadora.cpp}!saida\_filme@{saida\_filme}}
+\index{saida\_filme@{saida\_filme}!TestLocadora.cpp@{TestLocadora.cpp}}
+\doxysubsubsection{\texorpdfstring{saida\_filme()}{saida\_filme()}}
+{\footnotesize\ttfamily string saida\+\_\+filme (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFilme}{Filme}} $\ast$}]{filme }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{TestLocadora_8cpp_a3f5d6a055827484491322c2b2d64e080}\label{TestLocadora_8cpp_a3f5d6a055827484491322c2b2d64e080}} 
+\index{TestLocadora.cpp@{TestLocadora.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!TestLocadora.cpp@{TestLocadora.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{\char`\"{}Locadora-\/aluguel\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{TestLocadora_8cpp_aadfd936e005ebb8fb246fdd2ec3afe2b}\label{TestLocadora_8cpp_aadfd936e005ebb8fb246fdd2ec3afe2b}} 
+\index{TestLocadora.cpp@{TestLocadora.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!TestLocadora.cpp@{TestLocadora.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{\char`\"{}Locadora-\/avaliar\+Filme\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{TestLocadora_8cpp_a6cae08e348b63e0e924331af0514b8ac}\label{TestLocadora_8cpp_a6cae08e348b63e0e924331af0514b8ac}} 
+\index{TestLocadora.cpp@{TestLocadora.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!TestLocadora.cpp@{TestLocadora.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{\char`\"{}Locadora-\/cadasstrar\+Cliente\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{TestLocadora_8cpp_a8c6b942eed50d4c949adcfae7493b7da}\label{TestLocadora_8cpp_a8c6b942eed50d4c949adcfae7493b7da}} 
+\index{TestLocadora.cpp@{TestLocadora.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!TestLocadora.cpp@{TestLocadora.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{\char`\"{}Locadora-\/cadastrar\+Filme\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{TestLocadora_8cpp_a8e52211f5168d3dd09fefbde9fc049d7}\label{TestLocadora_8cpp_a8e52211f5168d3dd09fefbde9fc049d7}} 
+\index{TestLocadora.cpp@{TestLocadora.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!TestLocadora.cpp@{TestLocadora.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{\char`\"{}Locadora-\/devolução\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{TestLocadora_8cpp_a4e5f2d40bb8b55424889fdc356cc9358}\label{TestLocadora_8cpp_a4e5f2d40bb8b55424889fdc356cc9358}} 
+\index{TestLocadora.cpp@{TestLocadora.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!TestLocadora.cpp@{TestLocadora.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{\char`\"{}Locadora-\/listar\+Clientes\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{TestLocadora_8cpp_a3b50a6bb86b7ae00386d31987296b218}\label{TestLocadora_8cpp_a3b50a6bb86b7ae00386d31987296b218}} 
+\index{TestLocadora.cpp@{TestLocadora.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!TestLocadora.cpp@{TestLocadora.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{\char`\"{}Locadora-\/listar\+Filmes\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{TestLocadora_8cpp_a76e1eebe538b5f607ae7491044c11022}\label{TestLocadora_8cpp_a76e1eebe538b5f607ae7491044c11022}} 
+\index{TestLocadora.cpp@{TestLocadora.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!TestLocadora.cpp@{TestLocadora.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{\char`\"{}Locadora-\/remover\+Cliente\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{TestLocadora_8cpp_a7e3b88b9f13f3722f5c8e8993195bdaf}\label{TestLocadora_8cpp_a7e3b88b9f13f3722f5c8e8993195bdaf}} 
+\index{TestLocadora.cpp@{TestLocadora.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!TestLocadora.cpp@{TestLocadora.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{\char`\"{}Locadora-\/remover\+Filme\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{TestLocadora_8cpp_ad8a8e77529297feaae046b016df63fcd}\label{TestLocadora_8cpp_ad8a8e77529297feaae046b016df63fcd}} 
+\index{TestLocadora.cpp@{TestLocadora.cpp}!id@{id}}
+\index{id@{id}!TestLocadora.cpp@{TestLocadora.cpp}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily vector$<$int$>$ id = \{minhalocadora.\+filmes\mbox{[}0\mbox{]}-\/$>$id, minhalocadora.\+filmes\mbox{[}1\mbox{]}-\/$>$id\}}
+
+\mbox{\Hypertarget{TestLocadora_8cpp_a059a89ee8fb0205edd9428af642fbd6b}\label{TestLocadora_8cpp_a059a89ee8fb0205edd9428af642fbd6b}} 
+\index{TestLocadora.cpp@{TestLocadora.cpp}!locadorazerada@{locadorazerada}}
+\index{locadorazerada@{locadorazerada}!TestLocadora.cpp@{TestLocadora.cpp}}
+\doxysubsubsection{\texorpdfstring{locadorazerada}{locadorazerada}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLocadora}{Locadora}} locadorazerada}
+
+\mbox{\Hypertarget{TestLocadora_8cpp_a941b0d8f4640b7930967699bfac0ebfe}\label{TestLocadora_8cpp_a941b0d8f4640b7930967699bfac0ebfe}} 
+\index{TestLocadora.cpp@{TestLocadora.cpp}!minhalocadora@{minhalocadora}}
+\index{minhalocadora@{minhalocadora}!TestLocadora.cpp@{TestLocadora.cpp}}
+\doxysubsubsection{\texorpdfstring{minhalocadora}{minhalocadora}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLocadora}{Locadora}} minhalocadora}
+

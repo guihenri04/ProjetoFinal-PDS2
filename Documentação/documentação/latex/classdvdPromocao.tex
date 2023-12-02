@@ -1,0 +1,97 @@
+\hypertarget{classdvdPromocao}{}\doxysection{dvd\+Promocao Class Reference}
+\label{classdvdPromocao}\index{dvdPromocao@{dvdPromocao}}
+
+
+{\ttfamily \#include $<$D\+V\+Dpromocao.\+hpp$>$}
+
+
+
+Inheritance diagram for dvd\+Promocao\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classdvdPromocao__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dvd\+Promocao\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classdvdPromocao__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdvdPromocao_a93db33cdba4fbcb309338c729daf53aa}{dvd\+Promocao}} (int \mbox{\hyperlink{classFilme_a13c8c0f372cf6afa843eb11a2d79cac3}{id}}, string \mbox{\hyperlink{classFilme_a3d08648c6fb22243ba3d5020b06b64ac}{titulo}}, int \mbox{\hyperlink{classFilme_ac424f2ebe92753aba4d1171becff6da8}{unidades}})
+\begin{DoxyCompactList}\small\item\em Construtor do arquivo \char`\"{}\+D\+V\+Dpromocao.\+hpp\char`\"{}, para identificação e controle dos filmes da locadora. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classdvdPromocao_ae4234839ba5e5f64f92d238b33f2a6eb}{calcular\+Valor}} (int dias) override
+\begin{DoxyCompactList}\small\item\em Método \char`\"{}calcular\+Valor\char`\"{} da classe \char`\"{}dvd\+Promocao\char`\"{}, utilizado especialmente para controle e registro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Na classe \char`\"{}dvd\+Promocao\char`\"{}, que herda publicamente a classe \char`\"{}\+Filme\char`\"{}, existem como atributos públicos um construtor, o qual recebe como parâmetros o id de identificação de um filme, seu título e a quantidade de unidades disponíveis dele para locação (\char`\"{}dvd\+Promocao(int id, string titulo, int unidades)\char`\"{}). Existe também um método para calcular quanto será pago pelo aluguel do filme de acordo com a quantidade de dias que ele ficou alugado, o qual substitui uma função virtual na classe base, no caso, \char`\"{}\+Filme\char`\"{} (\char`\"{}int calcular\+Valor(int dias) override\char`\"{}). 
+\begin{DoxyParams}{Parameters}
+{\em id} & Determina o id do filme para identificação. \\
+\hline
+{\em titulo} & Armazena o nome do filme. \\
+\hline
+{\em unidades} & Registra quantas unidades de um filme estão disponíveis para locação. \\
+\hline
+{\em dias} & Registra quantos dias um determinado filme ficou alugado. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdvdPromocao_a93db33cdba4fbcb309338c729daf53aa}\label{classdvdPromocao_a93db33cdba4fbcb309338c729daf53aa}} 
+\index{dvdPromocao@{dvdPromocao}!dvdPromocao@{dvdPromocao}}
+\index{dvdPromocao@{dvdPromocao}!dvdPromocao@{dvdPromocao}}
+\doxysubsubsection{\texorpdfstring{dvdPromocao()}{dvdPromocao()}}
+{\footnotesize\ttfamily dvd\+Promocao\+::dvd\+Promocao (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{string}]{titulo,  }\item[{int}]{unidades }\end{DoxyParamCaption})}
+
+
+
+Construtor do arquivo \char`\"{}\+D\+V\+Dpromocao.\+hpp\char`\"{}, para identificação e controle dos filmes da locadora. 
+
+Esse construtor inclui uma chamada para o construtor da classe base (\char`\"{}\+Filme\char`\"{}), o qual contém os mesmos parâmetros para identificação do filme (\char`\"{}(int id, string titulo, int unidades)\char`\"{}). Além disso, define o valor de \char`\"{}tipo\char`\"{} como \char`\"{}\+D\+V\+D\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em tipo} & Armazena o tipo do filme. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdvdPromocao_ae4234839ba5e5f64f92d238b33f2a6eb}\label{classdvdPromocao_ae4234839ba5e5f64f92d238b33f2a6eb}} 
+\index{dvdPromocao@{dvdPromocao}!calcularValor@{calcularValor}}
+\index{calcularValor@{calcularValor}!dvdPromocao@{dvdPromocao}}
+\doxysubsubsection{\texorpdfstring{calcularValor()}{calcularValor()}}
+{\footnotesize\ttfamily int dvd\+Promocao\+::calcular\+Valor (\begin{DoxyParamCaption}\item[{int}]{dias }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Método \char`\"{}calcular\+Valor\char`\"{} da classe \char`\"{}dvd\+Promocao\char`\"{}, utilizado especialmente para controle e registro. 
+
+Esse método calcula quanto o cliente terá de pagar pelo aluguel do filme de acordo com a quantidade de dias que ele ficou alugado. Como o D\+VD está é da categoria \char`\"{}promoção\char`\"{}, seu valor é fixo em 10 reais. 
+\begin{DoxyParams}{Parameters}
+{\em dias} & Armazena quantos dias um determinado filme ficou alugado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna o preço que o cliente terá de pagar pelo aluguel do filme, sendo 10 reais fixos o preço da locação de um D\+VD da categoria \char`\"{}\+Promoção\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFilme_ade9a8d9de99c732e22045416f86f71f3}{Filme}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Filmes/\+Subclasses/\mbox{\hyperlink{DVDpromocao_8hpp}{D\+V\+Dpromocao.\+hpp}}\item 
+Filmes/\+Subclasses/\mbox{\hyperlink{DVDpromocao_8cpp}{D\+V\+Dpromocao.\+cpp}}\end{DoxyCompactItemize}
