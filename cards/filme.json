@@ -1,0 +1,28 @@
+[
+    {
+      "name": "Filme",
+      "superclasses": "",
+      "subclasses": "Fita, dvdEstoque, dvdLancamento, dvdPromocao",
+      "type": 3,
+      "responsibilities": [
+        "Título",
+        "Código",
+        "Tipo de Filme",
+        "Unidades",
+        "Avaliação",
+        "Vezes que foi Avaliado",
+        "Calcular Valor a Ser Pago",
+        "Ler Filme",
+        "Ser Alugado",
+        "Ser Devolvido"
+      ],
+      "collaborators": [
+        "Cliente",
+        "Locadora",
+        "Fita",
+        "dvdEstoque",
+        "dvdLancamento",
+        "dvdPromocao"
+      ]
+    }
+  ]
