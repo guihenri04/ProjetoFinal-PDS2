@@ -233,31 +233,27 @@ int main() {
 
                         if (arquivo.is_open()) {
 
-                            char tipo; 
-                            int unidade;
-                            int id;
-                            string titulo;
-                            char categoria;
-
                             string linha;
                             int contador = 0;
 
                             while (getline(arquivo, linha)) {
 
+                                char tipo; 
+                                int unidade;
+                                int id;
+                                string titulo;
+                                char categoria;
+
                                 istringstream iss(linha);
-
-                                if (iss >> tipo >> unidade >> id >> titulo >> categoria) {
-
+                                iss >> tipo >> unidade >> id >> titulo >> categoria;
                                 CineMax.cadastrarFilme(tipo, unidade, id, titulo, categoria);
-
-                                }
-
                                 contador++;
+                                
                             }
 
-                        arquivo.close();
+                            cout << contador << " Filmes cadastrados com sucesso!" << endl;
 
-                        cout << contador << "Filmes cadastrados com sucesso!" << endl;
+                        arquivo.close();
 
                         } 
 

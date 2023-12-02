@@ -90,7 +90,7 @@ void Locadora::cadastrarFilme(char tipo, int unidades, int id, const string& tit
 
         if (novoFilme!=nullptr) {
             filmes.push_back(novoFilme);
-            cout << "Filme "<< novoFilme->id <<" cadastrado com sucesso\n";
+            cout << "Filme "<< novoFilme->id <<" cadastrado com sucesso!\n";
         }
     } catch (CodigoRepetido &e) {
         cerr << e.what() << endl;
@@ -115,7 +115,7 @@ void Locadora::removerFilme(int id) {
         if (it != filmes.end()) {
             delete *it; 
             filmes.erase(it);
-            cout << "Filme " << id << " removido com sucesso.\n";
+            cout << "Filme " << id << " removido com sucesso!.\n";
         } else {
             throw CodigoInexistente(); // Id invalido
         }
@@ -174,7 +174,7 @@ void Locadora::listarFilmes(char opcao) {
  * do cliente já está cadastrado. Caso esteja, o método exibe uma mensagem de erro informando sobre isso e retorna.
  * Caso o cpf informado seja inválido, o método também exibe uma mensagem de erro e retorna. Por fim, caso o cpf
  * ainda não esteja cadastrado na locadora e seja válido, o cliente é adicionado ao vetor "clientes" da locadora e,
- * portanto, cadastrado na mesma, de forma que o método exibe uma mensagem informando que o cadastro foi um sucesso.
+ * portanto, cadastrado na mesma, de forma que o método exibe uma mensagem informando que o cadastro foi um sucesso!.
  * @param cpf Armazena o cpf do cliente.
  * @param nome Armazena o nome do cliente.
  */
@@ -196,7 +196,7 @@ void Locadora::cadastrarCliente(long long cpf, string nome) {
 
         Cliente* cliente = new Cliente(cpf, nome);
         this -> clientes.push_back(cliente);
-        cout << "Cliente "<< cliente->nome <<" cadastrado com sucesso\n";
+        cout << "Cliente "<< cliente->nome <<" cadastrado com sucesso!\n";
 
     } catch(CPFRepetido &e) {
         cerr << e.what() << endl;
@@ -224,7 +224,7 @@ void Locadora::removerCliente(long long cpf) {
             return;
         } else {
             delete *it;
-            cout << "Cliente removido com sucesso\n";
+            cout << "Cliente removido com sucesso!\n";
             this->clientes.erase(it);
         }
     } catch (DadosIncorretos &e) {
@@ -475,7 +475,7 @@ void Locadora::avaliarFilme(int id, float nota) {
         }
         
         filme->serAvaliado(nota);
-        cout << "Filme "<< filme->id <<" avaliado com sucesso\n";    
+        cout << "Filme "<< filme->id <<" avaliado com sucesso!\n";    
 
     } catch (FilmeInexistente &e) {
         cerr << e.what() << endl;
