@@ -491,6 +491,7 @@ int main() {
                             cout << endl << "Programa encerrado!" << endl;
                             cout << "Até Logo !";
                             printColoredText("  :)\n", 33);
+                            CineMax.~Locadora();
                             
                         return 0;
                         }
